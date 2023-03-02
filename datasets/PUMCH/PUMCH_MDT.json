@@ -1,0 +1,3015 @@
+[
+  {
+    "patient_id": "P000001",
+    "test": "true",
+    "contact": {
+      "institution": "Peking Union Medical College Hospital",
+      "name": "Lun Wang"
+    },
+    "disorders": [
+      "OMIM:192050",
+      "ORPHA:3411"
+    ],
+    "symptoms": [
+      {
+        "id": "HP:0000138",
+        "label": "Ovarian cyst",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000140",
+        "label": "Abnormality of the menstrual cycle",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000148",
+        "label": "Vaginal atresia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001153",
+        "label": "Septate vagina",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001945",
+        "label": "Fever",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002027",
+        "label": "Abdominal pain",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0003762",
+        "label": "Uterus didelphys",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0004626",
+        "label": "Lumbar scoliosis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0030127",
+        "label": "Endometriosis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0100607",
+        "label": "Dysmenorrhea",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0100673",
+        "label": "Vaginal hydrocele",
+        "observed": "yes"
+      }
+    ]
+  },
+  {
+    "patient_id": "P000002",
+    "test": "true",
+    "contact": {
+      "institution": "Peking Union Medical College Hospital",
+      "name": "Lun Wang"
+    },
+    "disorders": [
+      "OMIM:144010",
+      "OMIM:143890"
+    ],
+    "symptoms": [
+      {
+        "id": "HP:0000739",
+        "label": "Anxiety",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000819",
+        "label": "Diabetes mellitus",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000822",
+        "label": "Hypertension",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000975",
+        "label": "Hyperhidrosis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000988",
+        "label": "Skin rash",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001278",
+        "label": "Orthostatic hypotension",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001279",
+        "label": "Syncope",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001646",
+        "label": "Abnormal aortic valve morphology",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001658",
+        "label": "Myocardial infarction",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001933",
+        "label": "Subcutaneous hemorrhage",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002094",
+        "label": "Dyspnea",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002321",
+        "label": "Vertigo",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0003077",
+        "label": "Hyperlipidemia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0005181",
+        "label": "Premature coronary artery atherosclerosis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0007185",
+        "label": "Loss of consciousness",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0012251",
+        "label": "ST segment elevation",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0012393",
+        "label": "Allergy",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0100576",
+        "label": "Amaurosis fugax",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0100749",
+        "label": "Chest pain",
+        "observed": "yes"
+      }
+    ]
+  },
+  {
+    "patient_id": "P000003",
+    "test": "true",
+    "contact": {
+      "institution": "Peking Union Medical College Hospital",
+      "name": "Lun Wang"
+    },
+    "disorders": [
+      "OMIM:181750",
+      "ORPHA:90290"
+    ],
+    "symptoms": [
+      {
+        "id": "HP:0000217",
+        "label": "Xerostomia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001387",
+        "label": "Joint stiffness",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001677",
+        "label": "Coronary artery atherosclerosis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001717",
+        "label": "Coronary artery calcification",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002140",
+        "label": "Ischemic stroke",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002617",
+        "label": "Dilatation",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002829",
+        "label": "Arthralgia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002960",
+        "label": "Autoimmunity",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0005145",
+        "label": "Coronary artery stenosis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0030880",
+        "label": "Raynaud phenomenon",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0030882",
+        "label": "Coronary artery aneurysm",
+        "observed": "yes"
+      }
+    ]
+  },
+  {
+    "patient_id": "P000004",
+    "test": "true",
+    "contact": {
+      "institution": "Peking Union Medical College Hospital",
+      "name": "Lun Wang"
+    },
+    "disorders": [
+      "OMIM:144010",
+      "OMIM:143890"
+    ],
+    "symptoms": [
+      {
+        "id": "HP:0000822",
+        "label": "Hypertension",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000991",
+        "label": "Xanthomatosis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001633",
+        "label": "Abnormal mitral valve morphology",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001638",
+        "label": "Cardiomyopathy",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001640",
+        "label": "Cardiomegaly",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001646",
+        "label": "Abnormal aortic valve morphology",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001653",
+        "label": "Mitral regurgitation",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001659",
+        "label": "Aortic regurgitation",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001677",
+        "label": "Coronary artery atherosclerosis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001681",
+        "label": "Angina pectoris",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0003077",
+        "label": "Hyperlipidemia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0003124",
+        "label": "Hypercholesterolemia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0005180",
+        "label": "Tricuspid regurgitation",
+        "observed": "yes"
+      }
+    ]
+  },
+  {
+    "patient_id": "P000005",
+    "test": "true",
+    "contact": {
+      "institution": "Peking Union Medical College Hospital",
+      "name": "Lun Wang"
+    },
+    "disorders": [
+      "ORPHA:391665",
+      "OMIM:144010",
+      "OMIM:143890",
+      "CCRD:46"
+    ],
+    "symptoms": [
+      {
+        "id": "HP:0000093",
+        "label": "Proteinuria",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000100",
+        "label": "Nephrotic syndrome",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000112",
+        "label": "Nephropathy",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000787",
+        "label": "Nephrolithiasis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000790",
+        "label": "Hematuria",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000821",
+        "label": "Hypothyroidism",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000991",
+        "label": "Xanthomatosis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001650",
+        "label": "Aortic valve stenosis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001903",
+        "label": "Anemia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002140",
+        "label": "Ischemic stroke",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002621",
+        "label": "Atherosclerosis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002902",
+        "label": "Hyponatremia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002955",
+        "label": "Granulomatosis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0003073",
+        "label": "Hypoalbuminemia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0003077",
+        "label": "Hyperlipidemia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0003124",
+        "label": "Hypercholesterolemia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0010979",
+        "label": "Abnormality of lipoprotein cholesterol concentration",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0012578",
+        "label": "Membranous nephropathy",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0100540",
+        "label": "Palpebral edema",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0430021",
+        "label": "Abnormal common carotid artery morphology",
+        "observed": "yes"
+      }
+    ]
+  },
+  {
+    "patient_id": "P000006",
+    "test": "true",
+    "contact": {
+      "institution": "Peking Union Medical College Hospital",
+      "name": "Lun Wang"
+    },
+    "disorders": [
+      "OMIM:618048",
+      "OMIM:617591"
+    ],
+    "symptoms": [
+      {
+        "id": "HP:0000554",
+        "label": "Uveitis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000822",
+        "label": "Hypertension",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000979",
+        "label": "Purpura",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001250",
+        "label": "Seizures",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001281",
+        "label": "Tetany",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001386",
+        "label": "Joint swelling",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001999",
+        "label": "Abnormal facial shape",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0004840",
+        "label": "Hypochromic microcytic anemia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0007185",
+        "label": "Loss of consciousness",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0007417",
+        "label": "Discoid lupus rash",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0008850",
+        "label": "Severe postnatal growth retardation",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0010702",
+        "label": "Increased antibody level in blood",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0012490",
+        "label": "Panniculitis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0012733",
+        "label": "Macule",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0100578",
+        "label": "Lipoatrophy",
+        "observed": "yes"
+      }
+    ]
+  },
+  {
+    "patient_id": "P000007",
+    "test": "true",
+    "contact": {
+      "institution": "Peking Union Medical College Hospital",
+      "name": "Lun Wang"
+    },
+    "disorders": [
+      "ORPHA:140989"
+    ],
+    "symptoms": [
+      {
+        "id": "HP:0000155",
+        "label": "Oral ulcer",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000622",
+        "label": "Blurred vision",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000651",
+        "label": "Diplopia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001123",
+        "label": "Visual field defect",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001251",
+        "label": "Ataxia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001254",
+        "label": "Lethargy",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001259",
+        "label": "Coma",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001260",
+        "label": "Dysarthria",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001262",
+        "label": "Excessive daytime somnolence",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001279",
+        "label": "Syncope",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001287",
+        "label": "Meningitis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001288",
+        "label": "Gait disturbance",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001298",
+        "label": "Encephalopathy",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001575",
+        "label": "Mood changes",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001945",
+        "label": "Fever",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002013",
+        "label": "Vomiting",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002090",
+        "label": "Pneumonia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002140",
+        "label": "Ischemic stroke",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002307",
+        "label": "Drooling",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002315",
+        "label": "Headache",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002383",
+        "label": "Encephalitis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002425",
+        "label": "Anarthria",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002960",
+        "label": "Autoimmunity",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0005180",
+        "label": "Tricuspid regurgitation",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0005297",
+        "label": "Premature occlusive vascular stenosis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0005318",
+        "label": "Cerebral vasculitis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0006956",
+        "label": "Dilation of lateral ventricles",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0007082",
+        "label": "Dilated third ventricle",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0010297",
+        "label": "Bifid tongue",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0010532",
+        "label": "Paroxysmal vertigo",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0011109",
+        "label": "Chronic sinusitis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0012378",
+        "label": "Fatigue",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0012495",
+        "label": "Posterior cerebral artery stenosis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0012531",
+        "label": "Pain",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0430022",
+        "label": "Abnormality of the sphenoid sinus",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0430023",
+        "label": "Abnormality of the maxillary sinus",
+        "observed": "yes"
+      }
+    ]
+  },
+  {
+    "patient_id": "P000008",
+    "test": "true",
+    "contact": {
+      "institution": "Peking Union Medical College Hospital",
+      "name": "Lun Wang"
+    },
+    "disorders": [
+      "OMIM:309900",
+      "ORPHA:580"
+    ],
+    "symptoms": [
+      {
+        "id": "HP:0000023",
+        "label": "Inguinal hernia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000212",
+        "label": "Gingival overgrowth",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000365",
+        "label": "Hearing impairment",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000463",
+        "label": "Anteverted nares",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000750",
+        "label": "Delayed speech and language development",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000768",
+        "label": "Pectus carinatum",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001256",
+        "label": "Intellectual disability, mild",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001438",
+        "label": "Abnormality of abdomen morphology",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001537",
+        "label": "Umbilical hernia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001538",
+        "label": "Protuberant abdomen",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001653",
+        "label": "Mitral regurgitation",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001659",
+        "label": "Aortic regurgitation",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001999",
+        "label": "Abnormal facial shape",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002007",
+        "label": "Frontal bossing",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002094",
+        "label": "Dyspnea",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002751",
+        "label": "Kyphoscoliosis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0005180",
+        "label": "Tricuspid regurgitation",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0005619",
+        "label": "Thoracolumbar kyphosis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0006261",
+        "label": "Abnormal phalangeal joint morphology of the hand",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0008897",
+        "label": "Postnatal growth retardation",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0011220",
+        "label": "Prominent forehead",
+        "observed": "yes"
+      }
+    ]
+  },
+  {
+    "patient_id": "P000009",
+    "test": "true",
+    "contact": {
+      "institution": "Peking Union Medical College Hospital",
+      "name": "Lun Wang"
+    },
+    "disorders": [
+      "OMIM:231005",
+      "OMIM:230900",
+      "ORPHA:355",
+      "CCRD:31",
+      "OMIM:230800",
+      "ORPHA:85212",
+      "OMIM:231000",
+      "ORPHA:77259",
+      "ORPHA:77260",
+      "OMIM:610539",
+      "ORPHA:2072",
+      "OMIM:608013",
+      "ORPHA:77261"
+    ],
+    "symptoms": [
+      {
+        "id": "HP:0000093",
+        "label": "Proteinuria",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000421",
+        "label": "Epistaxis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001254",
+        "label": "Lethargy",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001262",
+        "label": "Excessive daytime somnolence",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001433",
+        "label": "Hepatosplenomegaly",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001538",
+        "label": "Protuberant abdomen",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001640",
+        "label": "Cardiomegaly",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001744",
+        "label": "Splenomegaly",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001876",
+        "label": "Pancytopenia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001945",
+        "label": "Fever",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002653",
+        "label": "Bone pain",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002789",
+        "label": "Tachypnea",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002829",
+        "label": "Arthralgia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0004322",
+        "label": "Short stature",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0005120",
+        "label": "Abnormal cardiac atrium morphology",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0008897",
+        "label": "Postnatal growth retardation",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0012138",
+        "label": "Granulocytic hyperplasia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0030839",
+        "label": "Knee pain",
+        "observed": "yes"
+      }
+    ]
+  },
+  {
+    "patient_id": "P000010",
+    "test": "true",
+    "contact": {
+      "institution": "Peking Union Medical College Hospital",
+      "name": "Lun Wang"
+    },
+    "disorders": [
+      "OMIM:231005",
+      "OMIM:230900",
+      "ORPHA:355",
+      "CCRD:31",
+      "OMIM:230800",
+      "ORPHA:85212",
+      "OMIM:231000",
+      "ORPHA:77259",
+      "ORPHA:77260",
+      "OMIM:610539",
+      "ORPHA:2072",
+      "OMIM:608013",
+      "ORPHA:77261"
+    ],
+    "symptoms": [
+      {
+        "id": "HP:0001250",
+        "label": "Seizures",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001279",
+        "label": "Syncope",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001281",
+        "label": "Tetany",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001744",
+        "label": "Splenomegaly",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001945",
+        "label": "Fever",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002360",
+        "label": "Sleep disturbance",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002653",
+        "label": "Bone pain",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002751",
+        "label": "Kyphoscoliosis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0003365",
+        "label": "Arthralgia of the hip",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0003368",
+        "label": "Abnormality of the femoral head",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0004406",
+        "label": "Spontaneous, recurrent epistaxis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0005107",
+        "label": "Abnormal sacrum morphology",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0012514",
+        "label": "Lower limb pain",
+        "observed": "yes"
+      }
+    ]
+  },
+  {
+    "patient_id": "P000011",
+    "test": "true",
+    "contact": {
+      "institution": "Peking Union Medical College Hospital",
+      "name": "Lun Wang"
+    },
+    "disorders": [
+      "ORPHA:3287",
+      "OMIM:207600"
+    ],
+    "symptoms": [
+      {
+        "id": "HP:0000975",
+        "label": "Hyperhidrosis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001250",
+        "label": "Seizures",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001281",
+        "label": "Tetany",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001342",
+        "label": "Cerebral hemorrhage",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001646",
+        "label": "Abnormal aortic valve morphology",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001903",
+        "label": "Anemia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001945",
+        "label": "Fever",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002013",
+        "label": "Vomiting",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002018",
+        "label": "Nausea",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002027",
+        "label": "Abdominal pain",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002138",
+        "label": "Subarachnoid hemorrhage",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002140",
+        "label": "Ischemic stroke",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002181",
+        "label": "Cerebral edema",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002616",
+        "label": "Aortic root aneurysm",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0004970",
+        "label": "Ascending tubular aorta aneurysm",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0005112",
+        "label": "Abdominal aortic aneurysm",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0005113",
+        "label": "Aortic arch aneurysm",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0005318",
+        "label": "Cerebral vasculitis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0006859",
+        "label": "Posterior leukoencephalopathy",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0007185",
+        "label": "Loss of consciousness",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0009028",
+        "label": "Generalized weakness of limb muscles",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0012493",
+        "label": "Middle cerebral artery stenosis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0012494",
+        "label": "Anterior cerebral artery stenosis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0012495",
+        "label": "Posterior cerebral artery stenosis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0030907",
+        "label": "Thunderclap headache",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0100665",
+        "label": "Angioedema",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0100749",
+        "label": "Chest pain",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0100759",
+        "label": "Clubbing of fingers",
+        "observed": "yes"
+      }
+    ]
+  },
+  {
+    "patient_id": "P000012",
+    "test": "true",
+    "contact": {
+      "institution": "Peking Union Medical College Hospital",
+      "name": "Lun Wang"
+    },
+    "disorders": [
+      "OMIM:615846",
+      "OMIM:610333",
+      "OMIM:615010",
+      "OMIM:225750",
+      "OMIM:610329",
+      "OMIM:612952",
+      "OMIM:610181"
+    ],
+    "symptoms": [
+      {
+        "id": "HP:0000265",
+        "label": "Mastoiditis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000365",
+        "label": "Hearing impairment",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000473",
+        "label": "Torticollis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000737",
+        "label": "Irritability",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000819",
+        "label": "Diabetes mellitus",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000988",
+        "label": "Skin rash",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001009",
+        "label": "Telangiectasia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001249",
+        "label": "Intellectual disability",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001250",
+        "label": "Seizures",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001272",
+        "label": "Cerebellar atrophy",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001433",
+        "label": "Hepatosplenomegaly",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001518",
+        "label": "Small for gestational age",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001622",
+        "label": "Premature birth",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001643",
+        "label": "Patent ductus arteriosus",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001655",
+        "label": "Patent foramen ovale",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001702",
+        "label": "Abnormal tricuspid valve morphology",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001712",
+        "label": "Left ventricular hypertrophy",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001873",
+        "label": "Thrombocytopenia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001903",
+        "label": "Anemia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002020",
+        "label": "Gastroesophageal reflux",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002059",
+        "label": "Cerebral atrophy",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002063",
+        "label": "Rigidity",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002090",
+        "label": "Pneumonia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002092",
+        "label": "Pulmonary arterial hypertension",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002119",
+        "label": "Ventriculomegaly",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002135",
+        "label": "Basal ganglia calcification",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002169",
+        "label": "Clonus",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002179",
+        "label": "Opisthotonus",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002242",
+        "label": "Abnormal intestine morphology",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002315",
+        "label": "Headache",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002333",
+        "label": "Motor deterioration",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002360",
+        "label": "Sleep disturbance",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002486",
+        "label": "Myotonia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002719",
+        "label": "Recurrent infections",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002817",
+        "label": "Abnormality of the upper limb",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0005136",
+        "label": "Mitral annular calcification",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0005562",
+        "label": "Multiple renal cysts",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0005671",
+        "label": "Bilateral intracranial calcifications",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0007229",
+        "label": "Intracerebral periventricular calcifications",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0007352",
+        "label": "Cerebellar calcifications",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0007364",
+        "label": "Aplasia/Hypoplasia of the cerebrum",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0007366",
+        "label": "Atrophy/Degeneration affecting the brainstem",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0008150",
+        "label": "Elevated serum transaminases during infections",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0008850",
+        "label": "Severe postnatal growth retardation",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0010841",
+        "label": "Multifocal epileptiform discharges",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0010881",
+        "label": "Abnormality of the umbilical cord",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0011968",
+        "label": "Feeding difficulties",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0012382",
+        "label": "Left-to-right shunt",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0012735",
+        "label": "Cough",
+        "observed": "yes"
+      }
+    ]
+  },
+  {
+    "patient_id": "P000013",
+    "test": "true",
+    "contact": {
+      "institution": "Peking Union Medical College Hospital",
+      "name": "Lun Wang"
+    },
+    "disorders": [
+      "OMIM:616084"
+    ],
+    "symptoms": [
+      {
+        "id": "HP:0001249",
+        "label": "Intellectual disability",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001633",
+        "label": "Abnormal mitral valve morphology",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001891",
+        "label": "Iron deficiency anemia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001954",
+        "label": "Recurrent fever",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002047",
+        "label": "Malignant hyperthermia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002090",
+        "label": "Pneumonia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002716",
+        "label": "Lymphadenopathy",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0004396",
+        "label": "Poor appetite",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0004840",
+        "label": "Hypochromic microcytic anemia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0008897",
+        "label": "Postnatal growth retardation",
+        "observed": "yes"
+      }
+    ]
+  },
+  {
+    "patient_id": "P000014",
+    "test": "true",
+    "contact": {
+      "institution": "Peking Union Medical College Hospital",
+      "name": "Lun Wang"
+    },
+    "disorders": [
+      "OMIM:612918"
+    ],
+    "symptoms": [
+      {
+        "id": "HP:0001009",
+        "label": "Telangiectasia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001428",
+        "label": "Somatic mutation",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001548",
+        "label": "Overgrowth",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002090",
+        "label": "Pneumonia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002621",
+        "label": "Atherosclerosis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002751",
+        "label": "Kyphoscoliosis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0003077",
+        "label": "Hyperlipidemia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0006162",
+        "label": "Soft tissue swelling of interphalangeal joints",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0009126",
+        "label": "Increased adipose tissue",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0010484",
+        "label": "Hypertrophy of the upper limb",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0010496",
+        "label": "Hypertrophy of the lower limb",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0010869",
+        "label": "Asynergia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0012387",
+        "label": "Bronchitis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0012895",
+        "label": "Scapular muscle hypertrophy",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0100026",
+        "label": "Arteriovenous malformation",
+        "observed": "yes"
+      }
+    ]
+  },
+  {
+    "patient_id": "P000015",
+    "test": "true",
+    "contact": {
+      "institution": "Peking Union Medical College Hospital",
+      "name": "Lun Wang"
+    },
+    "disorders": [
+      "ORPHA:1143",
+      "OMIM:617468",
+      "OMIM:618484",
+      "OMIM:208100"
+    ],
+    "symptoms": [
+      {
+        "id": "HP:0000325",
+        "label": "Triangular face",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000411",
+        "label": "Protruding ear",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000463",
+        "label": "Anteverted nares",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000961",
+        "label": "Cyanosis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001239",
+        "label": "Wrist flexion contracture",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001348",
+        "label": "Brisk reflexes",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001845",
+        "label": "Overlapping toe",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002063",
+        "label": "Rigidity",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002094",
+        "label": "Dyspnea",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002333",
+        "label": "Motor deterioration",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002652",
+        "label": "Skeletal dysplasia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0005656",
+        "label": "Positional foot deformity",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0005684",
+        "label": "Distal arthrogryposis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0006251",
+        "label": "Limited wrist extension",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0006466",
+        "label": "Ankle flexion contracture",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0006895",
+        "label": "Lower limb hypertonia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0007083",
+        "label": "Hyperactive patellar reflex",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0007687",
+        "label": "Unilateral ptosis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0008112",
+        "label": "Plantar flexion contractures",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0008897",
+        "label": "Postnatal growth retardation",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0010500",
+        "label": "Hyperextensibility of the knee",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0011675",
+        "label": "Arrhythmia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0200049",
+        "label": "Upper limb hypertonia",
+        "observed": "yes"
+      }
+    ]
+  },
+  {
+    "patient_id": "P000016",
+    "test": "true",
+    "contact": {
+      "institution": "Peking Union Medical College Hospital",
+      "name": "Lun Wang"
+    },
+    "disorders": [
+      "OMIM:174800",
+      "ORPHA:562",
+      "CCRD:69"
+    ],
+    "symptoms": [
+      {
+        "id": "HP:0000315",
+        "label": "Abnormality of the orbital region",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000365",
+        "label": "Hearing impairment",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000520",
+        "label": "Proptosis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000529",
+        "label": "Progressive visual loss",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000822",
+        "label": "Hypertension",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000886",
+        "label": "Deformed rib cage",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000975",
+        "label": "Hyperhidrosis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001635",
+        "label": "Congestive heart failure",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001653",
+        "label": "Mitral regurgitation",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001659",
+        "label": "Aortic regurgitation",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001742",
+        "label": "Nasal obstruction",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001962",
+        "label": "Palpitations",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001999",
+        "label": "Abnormal facial shape",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002540",
+        "label": "Inability to walk",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002616",
+        "label": "Aortic root aneurysm",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002893",
+        "label": "Pituitary adenoma",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0003324",
+        "label": "Generalized muscle weakness",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0003416",
+        "label": "Spinal canal stenosis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0003419",
+        "label": "Low back pain",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0004619",
+        "label": "Lumbar kyphoscoliosis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0004756",
+        "label": "Ventricular tachycardia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0005120",
+        "label": "Abnormal cardiac atrium morphology",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0005619",
+        "label": "Thoracolumbar kyphosis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0009911",
+        "label": "Abnormal temporal bone morphology",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0010484",
+        "label": "Hypertrophy of the upper limb",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0010496",
+        "label": "Hypertrophy of the lower limb",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0010640",
+        "label": "Abnormality of the nasal cavity",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0010736",
+        "label": "Monostotic fibrous dysplasia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0011699",
+        "label": "Atrial reentry tachycardia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0100749",
+        "label": "Chest pain",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0200026",
+        "label": "Ocular pain",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0430023",
+        "label": "Abnormality of the maxillary sinus",
+        "observed": "yes"
+      }
+    ]
+  },
+  {
+    "patient_id": "P000017",
+    "test": "true",
+    "contact": {
+      "institution": "Peking Union Medical College Hospital",
+      "name": "Lun Wang"
+    },
+    "disorders": [
+      "ORPHA:1501",
+      "OMIM:202300"
+    ],
+    "symptoms": [
+      {
+        "id": "HP:0000311",
+        "label": "Round face",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000822",
+        "label": "Hypertension",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001061",
+        "label": "Acne",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001513",
+        "label": "Obesity",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002013",
+        "label": "Vomiting",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002018",
+        "label": "Nausea",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0010614",
+        "label": "Fibroma",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0011362",
+        "label": "Abnormal hair quantity",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0011742",
+        "label": "Ectopic adrenal gland",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0030445",
+        "label": "Pulmonary carcinoid tumor",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0031284",
+        "label": "Flushing",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0100244",
+        "label": "Fibrosarcoma",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0100631",
+        "label": "Neoplasm of the adrenal gland",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0100785",
+        "label": "Insomnia",
+        "observed": "yes"
+      }
+    ]
+  },
+  {
+    "patient_id": "P000018",
+    "test": "true",
+    "contact": {
+      "institution": "Peking Union Medical College Hospital",
+      "name": "Lun Wang"
+    },
+    "disorders": [
+      "OMIM:301500",
+      "ORPHA:324",
+      "CCRD:27"
+    ],
+    "symptoms": [
+      {
+        "id": "HP:0000012",
+        "label": "Urinary urgency",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000083",
+        "label": "Renal insufficiency",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000093",
+        "label": "Proteinuria",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000365",
+        "label": "Hearing impairment",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000572",
+        "label": "Visual loss",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000819",
+        "label": "Diabetes mellitus",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000822",
+        "label": "Hypertension",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001633",
+        "label": "Abnormal mitral valve morphology",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001639",
+        "label": "Hypertrophic cardiomyopathy",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001646",
+        "label": "Abnormal aortic valve morphology",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001667",
+        "label": "Right ventricular hypertrophy",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001698",
+        "label": "Pericardial effusion",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001712",
+        "label": "Left ventricular hypertrophy",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001945",
+        "label": "Fever",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001962",
+        "label": "Palpitations",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002321",
+        "label": "Vertigo",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002360",
+        "label": "Sleep disturbance",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002960",
+        "label": "Autoimmunity",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0005120",
+        "label": "Abnormal cardiac atrium morphology",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0005162",
+        "label": "Left ventricular dysfunction",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0009763",
+        "label": "Limb pain",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0011024",
+        "label": "Abnormality of the gastrointestinal tract",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0011034",
+        "label": "Amyloidosis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0012587",
+        "label": "Macroscopic hematuria",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0100515",
+        "label": "Pollakisuria",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0100518",
+        "label": "Dysuria",
+        "observed": "yes"
+      }
+    ]
+  },
+  {
+    "patient_id": "P000019",
+    "test": "true",
+    "contact": {
+      "institution": "Peking Union Medical College Hospital",
+      "name": "Lun Wang"
+    },
+    "disorders": [
+      "OMIM:177000",
+      "ORPHA:738",
+      "ORPHA:79278",
+      "CCRD:92"
+    ],
+    "symptoms": [
+      {
+        "id": "HP:0000282",
+        "label": "Facial edema",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000992",
+        "label": "Cutaneous photosensitivity",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001395",
+        "label": "Hepatic fibrosis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001397",
+        "label": "Hepatic steatosis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001409",
+        "label": "Portal hypertension",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001744",
+        "label": "Splenomegaly",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001915",
+        "label": "Aplastic anemia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001923",
+        "label": "Reticulocytosis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002040",
+        "label": "Esophageal varix",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0006562",
+        "label": "Viral hepatitis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0007514",
+        "label": "Edema of the dorsum of hands",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0011355",
+        "label": "Localized skin lesion",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0012187",
+        "label": "Increased erythrocyte protoporphyrin concentration",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0012531",
+        "label": "Pain",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0025155",
+        "label": "Abnormality of hepatobiliary system physiology",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0030169",
+        "label": "Gastric varix",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0100725",
+        "label": "Lichenification",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0200098",
+        "label": "Absent skin pigmentation",
+        "observed": "yes"
+      }
+    ]
+  },
+  {
+    "patient_id": "P000020",
+    "test": "true",
+    "contact": {
+      "institution": "Peking Union Medical College Hospital",
+      "name": "Lun Wang"
+    },
+    "disorders": [
+      "ORPHA:896",
+      "ORPHA:3440",
+      "ORPHA:894",
+      "OMIM:611584",
+      "ORPHA:895",
+      "OMIM:600193",
+      "OMIM:613266",
+      "OMIM:277580",
+      "OMIM:613265",
+      "ORPHA:897",
+      "OMIM:193510",
+      "OMIM:148820",
+      "OMIM:608890",
+      "OMIM:193500"
+    ],
+    "symptoms": [
+      {
+        "id": "HP:0000635",
+        "label": "Blue irides",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000952",
+        "label": "Jaundice",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001249",
+        "label": "Intellectual disability",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001251",
+        "label": "Ataxia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001903",
+        "label": "Anemia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002290",
+        "label": "Poliosis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0003265",
+        "label": "Neonatal hyperbilirubinemia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0008527",
+        "label": "Congenital sensorineural hearing impairment",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0008625",
+        "label": "Severe sensorineural hearing impairment",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0008897",
+        "label": "Postnatal growth retardation",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0009830",
+        "label": "Peripheral neuropathy",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0011100",
+        "label": "Intestinal atresia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0011364",
+        "label": "White hair",
+        "observed": "yes"
+      }
+    ]
+  },
+  {
+    "patient_id": "P000021",
+    "test": "true",
+    "contact": {
+      "institution": "Peking Union Medical College Hospital",
+      "name": "Lun Wang"
+    },
+    "disorders": [
+      "ORPHA:793"
+    ],
+    "symptoms": [
+      {
+        "id": "HP:0000347",
+        "label": "Micrognathia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000889",
+        "label": "Abnormality of the clavicle",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000953",
+        "label": "Hyperpigmentation of the skin",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000988",
+        "label": "Skin rash",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001342",
+        "label": "Cerebral hemorrhage",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001386",
+        "label": "Joint swelling",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001482",
+        "label": "Subcutaneous nodule",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001785",
+        "label": "Ankle swelling",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001909",
+        "label": "Leukemia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001965",
+        "label": "Abnormality of the scalp",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002360",
+        "label": "Sleep disturbance",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002653",
+        "label": "Bone pain",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002754",
+        "label": "Osteomyelitis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002815",
+        "label": "Abnormality of the knee",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002829",
+        "label": "Arthralgia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002955",
+        "label": "Granulomatosis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0005060",
+        "label": "Limited elbow flexion/extension",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0006562",
+        "label": "Viral hepatitis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0007210",
+        "label": "Lower limb amyotrophy",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0010736",
+        "label": "Monostotic fibrous dysplasia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0030839",
+        "label": "Knee pain",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0100749",
+        "label": "Chest pain",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0100769",
+        "label": "Synovitis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0100847",
+        "label": "Palmoplantar pustulosis",
+        "observed": "yes"
+      }
+    ]
+  },
+  {
+    "patient_id": "P000022",
+    "test": "true",
+    "contact": {
+      "institution": "Peking Union Medical College Hospital",
+      "name": "Lun Wang"
+    },
+    "disorders": [
+      "OMIM:613254",
+      "OMIM:191100",
+      "CCRD:114",
+      "ORPHA:805"
+    ],
+    "symptoms": [
+      {
+        "id": "HP:0000479",
+        "label": "Abnormal retinal morphology",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000790",
+        "label": "Hematuria",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002027",
+        "label": "Abdominal pain",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002047",
+        "label": "Malignant hyperthermia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0006772",
+        "label": "Renal angiomyolipoma",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0009718",
+        "label": "Subependymal giant-cell astrocytoma",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0009730",
+        "label": "Rhabdomyoma",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0100804",
+        "label": "Ungual fibroma",
+        "observed": "yes"
+      }
+    ]
+  },
+  {
+    "patient_id": "P000023",
+    "test": "true",
+    "contact": {
+      "institution": "Peking Union Medical College Hospital",
+      "name": "Lun Wang"
+    },
+    "disorders": [
+      "OMIM:167100",
+      "OMIM:614441"
+    ],
+    "symptoms": [
+      {
+        "id": "HP:0001072",
+        "label": "Thickened skin",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001386",
+        "label": "Joint swelling",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001541",
+        "label": "Ascites",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001785",
+        "label": "Ankle swelling",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001891",
+        "label": "Iron deficiency anemia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002028",
+        "label": "Chronic diarrhea",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002573",
+        "label": "Hematochezia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002829",
+        "label": "Arthralgia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0003073",
+        "label": "Hypoalbuminemia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0004394",
+        "label": "Multiple gastric polyps",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0004840",
+        "label": "Hypochromic microcytic anemia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0005214",
+        "label": "Intestinal obstruction",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0005229",
+        "label": "Jejunoileal ulceration",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0010741",
+        "label": "Pedal edema",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0011974",
+        "label": "Myelofibrosis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0012851",
+        "label": "Colonic stenosis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0030839",
+        "label": "Knee pain",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0100039",
+        "label": "Thickened cortex of bones",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0100759",
+        "label": "Clubbing of fingers",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0100760",
+        "label": "Clubbing of toes",
+        "observed": "yes"
+      }
+    ]
+  },
+  {
+    "patient_id": "P000024",
+    "test": "true",
+    "contact": {
+      "institution": "Peking Union Medical College Hospital",
+      "name": "Lun Wang"
+    },
+    "disorders": [
+      "OMIM:158600",
+      "CCRD:110",
+      "ORPHA:363454",
+      "OMIM:253300",
+      "OMIM:615290",
+      "OMIM:253400",
+      "ORPHA:70"
+    ],
+    "symptoms": [
+      {
+        "id": "HP:0001308",
+        "label": "Tongue fasciculations",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002751",
+        "label": "Kyphoscoliosis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0003323",
+        "label": "Progressive muscle weakness",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0003391",
+        "label": "Gowers sign",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0003551",
+        "label": "Difficulty climbing stairs",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0005085",
+        "label": "Limited knee flexion/extension",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0005684",
+        "label": "Distal arthrogryposis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0006380",
+        "label": "Knee flexion contracture",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0006466",
+        "label": "Ankle flexion contracture",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0006957",
+        "label": "Loss of ability to walk",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0007269",
+        "label": "Spinal muscular atrophy",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0007340",
+        "label": "Lower limb muscle weakness",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0009055",
+        "label": "Generalized limb muscle atrophy",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0009130",
+        "label": "Hand muscle atrophy",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0010547",
+        "label": "Muscle flaccidity",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0012389",
+        "label": "Appendicular hypotonia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0012651",
+        "label": "Abasia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0100360",
+        "label": "Contractures of the joints of the upper limbs",
+        "observed": "yes"
+      }
+    ]
+  },
+  {
+    "patient_id": "P000025",
+    "test": "true",
+    "contact": {
+      "institution": "Peking Union Medical College Hospital",
+      "name": "Lun Wang"
+    },
+    "disorders": [
+      "OMIM:254400",
+      "ORPHA:2584"
+    ],
+    "symptoms": [
+      {
+        "id": "HP:0000739",
+        "label": "Anxiety",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000964",
+        "label": "Eczema",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002360",
+        "label": "Sleep disturbance",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002716",
+        "label": "Lymphadenopathy",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0003324",
+        "label": "Generalized muscle weakness",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0004324",
+        "label": "Increased body weight",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0004325",
+        "label": "Decreased body weight",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0004396",
+        "label": "Poor appetite",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0010783",
+        "label": "Erythema",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0012192",
+        "label": "Cutaneous T-cell lymphoma",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0012531",
+        "label": "Pain",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0200035",
+        "label": "Skin plaque",
+        "observed": "yes"
+      }
+    ]
+  },
+  {
+    "patient_id": "P000026",
+    "test": "true",
+    "contact": {
+      "institution": "Peking Union Medical College Hospital",
+      "name": "Lun Wang"
+    },
+    "disorders": [
+      "OMIM:158600",
+      "CCRD:110",
+      "ORPHA:363454",
+      "OMIM:253300",
+      "OMIM:615290",
+      "OMIM:253400",
+      "ORPHA:70"
+    ],
+    "symptoms": [
+      {
+        "id": "HP:0000545",
+        "label": "Myopia",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001308",
+        "label": "Tongue fasciculations",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002020",
+        "label": "Gastroesophageal reflux",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002088",
+        "label": "Abnormal lung morphology",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002094",
+        "label": "Dyspnea",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002333",
+        "label": "Motor deterioration",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002360",
+        "label": "Sleep disturbance",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002719",
+        "label": "Recurrent infections",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002751",
+        "label": "Kyphoscoliosis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0003121",
+        "label": "Limb joint contracture",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0003323",
+        "label": "Progressive muscle weakness",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0003438",
+        "label": "Absent Achilles reflex",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0003700",
+        "label": "Generalized amyotrophy",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0005216",
+        "label": "Impaired mastication",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0005684",
+        "label": "Distal arthrogryposis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0012473",
+        "label": "Tongue atrophy",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0030319",
+        "label": "Weakness of facial musculature",
+        "observed": "yes"
+      }
+    ]
+  },
+  {
+    "patient_id": "P000027",
+    "test": "true",
+    "contact": {
+      "institution": "Peking Union Medical College Hospital",
+      "name": "Lun Wang"
+    },
+    "disorders": [
+      "OMIM:254400",
+      "ORPHA:2584"
+    ],
+    "symptoms": [
+      {
+        "id": "HP:0000365",
+        "label": "Hearing impairment",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000964",
+        "label": "Eczema",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0000989",
+        "label": "Pruritus",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0001000",
+        "label": "Abnormality of skin pigmentation",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002360",
+        "label": "Sleep disturbance",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002716",
+        "label": "Lymphadenopathy",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0002955",
+        "label": "Granulomatosis",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0004324",
+        "label": "Increased body weight",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0004325",
+        "label": "Decreased body weight",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0010783",
+        "label": "Erythema",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0012192",
+        "label": "Cutaneous T-cell lymphoma",
+        "observed": "yes"
+      },
+      {
+        "id": "HP:0200035",
+        "label": "Skin plaque",
+        "observed": "yes"
+      }
+    ]
+  }
+]
