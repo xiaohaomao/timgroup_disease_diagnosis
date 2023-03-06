@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7b2dc9ac-611c-4f09-a509-c5358e4e2eb4" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ProjectId" id="1kOpy6A9tzgqo9h5tFe0rnSbfD6" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RunManager">
+    <configuration name="span_generator" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="bert_syn" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/core" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/core/span_generator.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.span_generator" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7b2dc9ac-611c-4f09-a509-c5358e4e2eb4" name="Default Changelist" comment="" />
+      <created>1605581743041</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1605581743041</updated>
+      <workItem from="1605581747235" duration="1619000" />
+      <workItem from="1605662526412" duration="4084000" />
+      <workItem from="1605684501347" duration="610000" />
+      <workItem from="1605747345633" duration="5413000" />
+      <workItem from="1605767098076" duration="10342000" />
+      <workItem from="1605784244190" duration="4897000" />
+      <workItem from="1605835553786" duration="1329000" />
+      <workItem from="1606185768769" duration="1342000" />
+      <workItem from="1606286940692" duration="11773000" />
+      <workItem from="1606362438920" duration="13792000" />
+      <workItem from="1606396450170" duration="719000" />
+      <workItem from="1606452744453" duration="773000" />
+      <workItem from="1606625630035" duration="608000" />
+      <workItem from="1606650040815" duration="3222000" />
+      <workItem from="1606723602588" duration="1210000" />
+      <workItem from="1606734524021" duration="818000" />
+      <workItem from="1606892199518" duration="3383000" />
+      <workItem from="1607310150852" duration="601000" />
+      <workItem from="1607324797516" duration="1816000" />
+      <workItem from="1607516253909" duration="1374000" />
+      <workItem from="1608966260934" duration="4286000" />
+      <workItem from="1609050435771" duration="1211000" />
+      <workItem from="1609299415661" duration="613000" />
+      <workItem from="1609327775263" duration="1227000" />
+      <workItem from="1609385789486" duration="1192000" />
+      <workItem from="1621352861193" duration="1451000" />
+      <workItem from="1621411978607" duration="3951000" />
+      <workItem from="1622186920537" duration="1192000" />
+      <workItem from="1634112688010" duration="2420000" />
+      <workItem from="1637135471556" duration="945000" />
+      <workItem from="1640591542186" duration="1191000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>
