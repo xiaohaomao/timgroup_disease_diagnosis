@@ -55,118 +55,68 @@ def get_eval_datas():
 	return [TEST_DATA]
 
 def get_data_names():
-
-    # return ['RAMEDIS']
-
-    #
-   # return ['SIM_ORIGIN']
-    #return ['SIM_NOISE']
-    #return ['SIM_IMPRE']
-    #return ['SIM_IMPRE_NOISE']
-
-	# return ['SIM_IMPRE_NOISE']
-	# return ['PUMC']
-	# return ['THAN']
-	# return ['HMS']
-	# return ['SIM_NOISE', 'SIM_NOISE_1.0', 'SIM_NOISE_2.0', 'SIM_NOISE_5.0', 'SIM_NOISE_10.0'] # 'SIM_NOISE_1.0', 'SIM_NOISE_2.0', 'SIM_NOISE_10.0'
-	# return ['RAMEDIS', 'PUMC', 'MME']  # CJFH
-	# return ['RAMEDIS', 'HMS', 'PUMC', 'MME'] # CJFH
-	#return [ 'RAMEDIS', 'CJFH','PUMC', 'MME'] # CJFH
-	#return ['RAMEDIS_SAMPLE_100', 'CJFH_SAMPLE_100', 'PUMC_SAMPLE_100', 'MME_SAMPLE_100']
-	#return ['RAMEDIS_SAMPLE_100','PUMC_SAMPLE_100', 'MME_SAMPLE_100']
-	#return ['PUMC_SAMPLE_100', 'MME_SAMPLE_100']
-	#return ['Multi-country-test-set-100']
-	#return ['Multi-country-test-set-90','RAMEDIS_90']
-	#return ['Multi-country-test-set-100','RAMEDIS_100']
-
-    #return ['RAMEDIS_SAMPLE_30', 'CJFH_SAMPLE_30', 'PUMC_SAMPLE_30', 'MME_SAMPLE_30']
-
-
-
-	#return ['Multi-country-tuning_CCRD','Multi-country-test_CCRD']
-	#return ['Multi-country-tuning_OMIM', 'Multi-country-test_OMIM']
-	#return ['Multi-country-tuning_ORPHA', 'Multi-country-test_ORPHA']
-	#return ['Multi-country-tuning_CCRD_OMIM', 'Multi-country-test_CCRD_OMIM']
-	#return ['Multi-country-tuning_CCRD_ORPHA', 'Multi-country-test_CCRD_ORPHA']
-	#return ['Multi-country-tuning_OMIM_ORPHA', 'Multi-country-test_OMIM_ORPHA']
-	#return ['Multi-country-tuning_CCRD_OMIM_ORPHA', 'Multi-country-test_CCRD_OMIM_ORPHA']
-	#return ['PKU_82_CASES_CCRD']
-
-
-
-
-	#return ['MUT_24_CASES_OMIM']
-	#return ['MUT_24_CASES_ORPHA']
-	#return ['MUT_24_CASES_CCRD']
-	#return ['MUT_24_CASES_CCRD_OMIM']
-	#return ['MUT_24_CASES_CCRD_ORPHA']
-	#return ['MUT_24_CASES_OMIM_ORPHA']
-	#return ['MUT_24_CASES_CCRD_OMIM_ORPHA']
-
-
-
-
-	#return ['HMS']
-
 	return [
-		#'PUMC_CHPO_E',
-		# 'PUMC_CHPO_UMLS(BG)_E',
-		# 'PUMC_DICT_BERT_ALBERT_DDML',
-		# 'PUMC_TOPWORDS_ALBERT_DDML',
+	# validation subset of RAMEDIS
+	'Validation_subsets_of_RAMEDIS',
 
-		# 'PUMC_2000_CHPO_E',
-		# 'PUMC_2000_CHPO_UMLS(BG)_E',
-		# 'PUMC_2000_DICT_BERT_ALBERT_DDML',
-		# 'PUMC_2000_TOPWORDS_ALBERT_DDML',
+	# Multi-country-test set
+	'Multi-country-test',
 
-		# 'PUMC_PK_CHPO_E',
-		# 'PUMC_PK_CHPO_UMLS(BG)_E',
-		# 'PUMC_PK_DICT_BERT_ALBERT_DDML',
-		# 'PUMC_PK_TOPWORDS_ALBERT_DDML',
+	# combined multi-country set
+	'Combined-Multi-Country',
 
+	# PUMCH-L datasest
+	'PUMCH-L-CText2Hpo',
+	#'PUMCH-L-Meta',
+	#'PUMCH-L-CHPO'
 
-		#
-		'PUMC_PK_DICT_BERT_ALBERT_DDML_TUNE',
+	# PUMCH-MDT dataset
+	'PUMCH-MDT',
 
-		# 'PUMC_PK_TOPWORDS_ALBERT_DDML_TUNE',
+	# PUMCH-ADM dataset
+	'PUMCH-ADM',
 
-		# 'PUMC',
+	# Sampled_100 cases
+	'Multi-country-test-set-100',
+	'RAMEDIS_100',
 
-		# 'PUMC_CHPO_E',
-		# # 'PUMC_CHPO_B',
-		# # 'PUMC_CHPO_UMLS_E',
-		# # 'PUMC_CHPO_UMLS_B',
-		# 'PUMC_CHPO_UMLS(BG)_E',
-		# # 'PUMC_CHPO_UMLS(BG)_B',
-		# # 'PUMC_DOC_ALBERT_DDML',
-		# # 'PUMC_DOC_JACCARD',
-		# 'PUMC_DICT_BERT_ALBERT_DDML',
-		# # 'PUMC_DICT_JACCARD',
-		# 'PUMC_TOPWORDS_ALBERT_DDML',
-		# # 'PUMC_TOPWORDS_ALBERT_DDML_NODEL',
-		# # 'PUMC_TOPWORDS_JACCARD',
+	# 24 methylmalonic academia cases  using different knowledge bases
+	# 'MUT_24_CASES_OMIM',
+	# 'MUT_24_CASES_ORPHA',
+	# 'MUT_24_CASES_CCRD',
+	# 'MUT_24_CASES_OMIM_ORPHA',
+	# 'MUT_24_CASES_CCRD_ORPHA',
+	# 'MUT_24_CASES_CCRD_OMIM',
+	# 'MUT_24_CASES_CCRD_OMIM_ORPHA',
 
-		# # 'PUMC_2000_CHPO_E',
-		# 'PUMC_2000_CHPO_B',
-		# 'PUMC_2000_CHPO_UMLS_E',
-		# 'PUMC_2000_CHPO_UMLS_B',
-		# # 'PUMC_2000_CHPO_UMLS(BG)_E',
-		# 'PUMC_2000_CHPO_UMLS(BG)_B',
-		# # 'PUMC_2000_DICT_BERT_ALBERT_DDML',
-		# 'PUMC_2000_DICT_JACCARD',
-		# # 'PUMC_2000_TOPWORDS_ALBERT_DDML',
-		# 'PUMC_2000_TOPWORDS_ALBERT_DDML_NODEL',
-		# 'PUMC_2000_TOPWORDS_JACCARD',
+	# validation subsets of RAMEDIS using different knowledge bases
+	# 'validation_subset_RAMDEIS_CCRD',
+	# 'validation_subset_RAMDEIS_OMIM',
+	# 'validation_subset_RAMDEIS_ORPHA',
+	# 'validation_subset_RAMDEIS_CCRD_OMIM',
+	# 'validation_subset_RAMDEIS_CCRD_ORPHA',
+	# 'validation_subset_RAMDEIS_OMIM_ORPHA',
+	# 'validation_subset_RAMDEIS_CCRD_OMIM_ORPHA',
 
-		# 'PUMC_2000_BALANCE_DICT_BERT_ALBERT_DDML',
+	# multi_country_test using different knowledge bases
+	# 'Multi-country-test_CCRD',
+	# 'Multi-country-test_OMIM',
+	# 'Multi-country-test_ORPHA',
+	# 'Multi-country-test_CCRD_OMIM',
+	# 'Multi-country-test_CCRD_ORPHA',
+	# 'Multi-country-test_OMIM_ORPHA',
+	# 'Multi-country-test_CCRD_OMIM_ORPHA',
 
-		# 'PUMC_DOC_BERT'
-		# 'PUMC_SENT_ALBERT_DDML'
-		# 'PUMC_DICT_BERT_ALBERT_DDML_TUNE',
-		# 'PUMC_2000_DICT_BERT_ALBERT_DDML_TUNE',
-		# 'PUMC_TOPWORDS_ALBERT_DDML_TUNE',
-		# 'PUMC_2000_TOPWORDS_ALBERT_DDML_TUNE'
+	# simulated datasets
+	# 'SIM_ORIGIN',
+	# 'SIM_NOISE',
+	# 'SIM_IMPRE',
+	# 'SIM_IMPRE_NOISE',
+	# 'SIM_NOISE_IMPRE',
+
 	]
+
+
 
 
 
