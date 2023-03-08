@@ -21,6 +21,8 @@
 pip install -r requirements.txt
 ```
 
+then, install TensorFlow-GPU=1.14.0
+
 
 
 ### Step 2: Download saved models' parameters
