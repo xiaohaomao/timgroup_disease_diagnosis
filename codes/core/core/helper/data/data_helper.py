@@ -141,36 +141,35 @@ class DataHelper(BaseDataHelper):
 			'SIM_NOISE',
 			'SIM_IMPRE',
 			'SIM_IMPRE_NOISE',
-			'SIM_NOISE_IMPRE',
 
 		]
 
 		self.test_to_path = {
 
 			# Validation subset of RAMEDIS
-			'Validation_subsets_of_RAMEDIS': os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark,'test',"20221122_RAMDIES_375_reconstructed_1804.json"),
+			'Validation_subsets_of_RAMEDIS': os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark,'test',"Validation_subsets_of_RAMEDIS.json"),
 
 			# Multi-country set dataset
-			'Multi-country-test': os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark,'test', "full_214_MME_HMS_PUMC_34.json"),
+			'Multi-country-test': os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark,'test', "Multi-country-test.json"),
 
 			# Combined Multi-Country dataset
-			'Combined-Multi-Country': os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark,'test',"2022_11_22_concated_multi_country_test_tuning_589.json"),
+			'Combined-Multi-Country': os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark,'test',"Combined-Multi-Country.json"),
 
 			# PUMCH-L dataset
-			'PUMCH-L-CText2Hpo':os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', "PUMC_2000-Topwords-AlbertDDML-['入院情况', '出院诊断', '既往史', '现病史']-del_diag_hpo_False.json"),
+			'PUMCH-L-CText2Hpo':os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', "PUMCH-L.json"),
 
 			# PUMCH-MDT dataset
-			'PUMCH-MDT': os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark,'test',"PUMC_PK-2020_11_29_personal_tagged-['个人史', '主诉', '初步诊断', '家族史', '总结病史', '既往史', '查体', '现病史', '目前诊断', '辅助检查', '题目'].json"),
+			'PUMCH-MDT': os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark,'test',"PUMCH-MDT.json"),
 
 			# PUMCH-ADM dataset
-			'PUMCH-ADM': os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark,'test',"PUMC_PK-2021_04_28_wl_pumc_pk_json-['个人史', '主诉', '初步诊断', '总结病史', '既往史', '查体', '现病史', '目前诊断', '辅助检查'].json"),
+			'PUMCH-ADM': os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark,'test',"PUMCH-ADM.json"),
 
 
 			# PUMCH-L dataset based on Meta Thesaurus phenotype extraction method
-			'PUMCH-L-Meta': os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', "PUMC_2000-CHPO_MANUAL_BG-['入院情况', '出院诊断', '既往史', '现病史']-del_diag_hpo_False.json"),
+			'PUMCH-L-Meta': os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', "PUMCH-L-Meta.json"),
 
 			# PUMCH-L dataset based on CHPO phenotype extraction method
-			'PUMCH-L-CHPO': os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', "PUMC_2000-CHPO-EXACT-['入院情况', '出院诊断', '既往史', '现病史']-del_diag_hpo_False.json"),
+			'PUMCH-L-CHPO': os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', "PUMCH-L-CHPO.json"),
 
 			# sampled 100 cases
 			'Multi-country-test-set-100':os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', 'Multi-country-test-set-SAMPLE_100.json'),
@@ -178,34 +177,34 @@ class DataHelper(BaseDataHelper):
 
 			#
 			# 24 methylmalonic academia cases  using different knowledge bases
-			'MUT_24_CASES_OMIM':os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', '20221204_20-mut_cases_OMIM.json'),
-			'MUT_24_CASES_ORPHA':os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', '20221204_20-mut_cases_ORPHA.json'),
-			'MUT_24_CASES_CCRD':os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', '20221204_20-mut_cases_CCRD.json'),
-			'MUT_24_CASES_OMIM_ORPHA':os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', '20221204_20-mut_cases_OMIM_ORPHA.json'),
-			'MUT_24_CASES_CCRD_ORPHA':os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', '20221204_20-mut_cases_CCRD_ORPHA.json'),
-			'MUT_24_CASES_CCRD_OMIM':os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', '20221204_20-mut_cases_CCRD_OMIM.json'),
-			'MUT_24_CASES_CCRD_OMIM_ORPHA':os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', '20221204_20-mut_cases_CCRD_OMIM_ORPHA.json'),
+			'MUT_24_CASES_OMIM':os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', '24_methylmalonic_academia_cases_OMIM.json'),
+			'MUT_24_CASES_ORPHA':os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', '24_methylmalonic_academia_cases_ORPHA.json'),
+			'MUT_24_CASES_CCRD':os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', '24_methylmalonic_academia_cases_CCRD.json'),
+			'MUT_24_CASES_OMIM_ORPHA':os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', '24_methylmalonic_academia_cases_OMIM_ORPHA.json'),
+			'MUT_24_CASES_CCRD_ORPHA':os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', '24_methylmalonic_academia_cases_CCRD_ORPHA.json'),
+			'MUT_24_CASES_CCRD_OMIM':os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', '24_methylmalonic_academia_cases_CCRD_OMIM.json'),
+			'MUT_24_CASES_CCRD_OMIM_ORPHA':os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', '24_methylmalonic_academia_cases_CCRD_OMIM_ORPHA.json'),
 
 
 
 			# validation subsets of RAMEDIS using different knowledge bases
-			'Multi-country-tuning_CCRD':os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', '20221122_RAMDIES_375_reconstructed_1804_CCRD.json'),
-			'Multi-country-tuning_OMIM':os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', '20221122_RAMDIES_375_reconstructed_1804_OMIM.json'),
-			'Multi-country-tuning_ORPHA':os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', '20221122_RAMDIES_375_reconstructed_1804_ORPHA.json'),
-			'Multi-country-tuning_CCRD_OMIM':os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', '20221122_RAMDIES_375_reconstructed_1804_CCRD_OMIM.json'),
-			'Multi-country-tuning_CCRD_ORPHA':os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', '20221122_RAMDIES_375_reconstructed_1804_CCRD_ORPHA.json'),
-			'Multi-country-tuning_OMIM_ORPHA':os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', '20221122_RAMDIES_375_reconstructed_1804_OMIM_ORPHA.json'),
-			'Multi-country-tuning_CCRD_OMIM_ORPHA':os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', '20221122_RAMDIES_375_reconstructed_1804_CCRD_OMIM_ORPHA.json'),
+			'Multi-country-tuning_CCRD':os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', 'Validation_subsets_of_RAMEDIS_CCRD.json'),
+			'Multi-country-tuning_OMIM':os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', 'Validation_subsets_of_RAMEDIS_OMIM.json'),
+			'Multi-country-tuning_ORPHA':os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', 'Validation_subsets_of_RAMEDIS_ORPHA.json'),
+			'Multi-country-tuning_CCRD_OMIM':os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', 'Validation_subsets_of_RAMEDIS_CCRD_OMIM.json'),
+			'Multi-country-tuning_CCRD_ORPHA':os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', 'Validation_subsets_of_RAMEDIS_CCRD_ORPHA.json'),
+			'Multi-country-tuning_OMIM_ORPHA':os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', 'Validation_subsets_of_RAMEDIS_OMIM_ORPHA.json'),
+			'Multi-country-tuning_CCRD_OMIM_ORPHA':os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', 'Validation_subsets_of_RAMEDIS_CCRD_OMIM_ORPHA.json'),
 
 
 			#multi_country_test  using different knowledge bases
-			'Multi-country-test_CCRD':os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', 'full_214_MME_HMS_PUMC_34_CCRD.json'),
-			'Multi-country-test_OMIM':os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', 'full_214_MME_HMS_PUMC_34_OMIM.json'),
-			'Multi-country-test_ORPHA':os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', 'full_214_MME_HMS_PUMC_34_ORPHA.json'),
-			'Multi-country-test_CCRD_OMIM':os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', 'full_214_MME_HMS_PUMC_34_CCRD_OMIM.json'),
-			'Multi-country-test_CCRD_ORPHA':os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', 'full_214_MME_HMS_PUMC_34_CCRD_ORPHA.json'),
-			'Multi-country-test_OMIM_ORPHA':os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', 'full_214_MME_HMS_PUMC_34_OMIM_ORPHA.json'),
-			'Multi-country-test_CCRD_OMIM_ORPHA':os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', 'full_214_MME_HMS_PUMC_34_CCRD_OMIM_ORPHA.json'),
+			'Multi-country-test_CCRD':os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', 'Multi-country-test_CCRD.json'),
+			'Multi-country-test_OMIM':os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', 'Multi-country-test_OMIM.json'),
+			'Multi-country-test_ORPHA':os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', 'Multi-country-test_ORPHA.json'),
+			'Multi-country-test_CCRD_OMIM':os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', 'Multi-country-test_CCRD_OMIM.json'),
+			'Multi-country-test_CCRD_ORPHA':os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', 'Multi-country-test_CCRD_ORPHA.json'),
+			'Multi-country-test_OMIM_ORPHA':os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', 'Multi-country-test_OMIM_ORPHA.json'),
+			'Multi-country-test_CCRD_OMIM_ORPHA':os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', 'Multi-country-test_CCRD_OMIM_ORPHA.json'),
 
 
 			# simulated datasets
@@ -213,7 +212,6 @@ class DataHelper(BaseDataHelper):
 			'SIM_NOISE': os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', 'SIM_NOISE.json'),
 			'SIM_IMPRE': os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', 'SIM_IMPRE.json'),
 			'SIM_IMPRE_NOISE': os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', 'SIM_IMPRE_NOISE.json'),
-			'SIM_NOISE_IMPRE': os.path.join(DATA_PATH, 'preprocess', 'patient', self.dataset_mark, 'test', 'SIM_NOISE_IMPRE.json'),
 
 
 		}

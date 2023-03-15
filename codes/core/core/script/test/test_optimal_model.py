@@ -67,8 +67,8 @@ def get_data_names():
 
 	# PUMCH-L datasest
 	'PUMCH-L-CText2Hpo',
-	#'PUMCH-L-Meta',
-	#'PUMCH-L-CHPO'
+	'PUMCH-L-Meta',
+	'PUMCH-L-CHPO',
 
 	# PUMCH-MDT dataset
 	'PUMCH-MDT',
@@ -124,9 +124,9 @@ def get_metric_names(levels=None):
 
 	metric_names = [
 		# 'Mic.Recall.20', 'Mac.Recall.20',
-		'Mic.Recall.10', 'Mac.Recall.10',
-		'Mic.Recall.3', 'Mac.Recall.3',
-		'Mic.Recall.1', 'Mac.Recall.1',
+		'Mic.Recall.10', #'Mac.Recall.10',
+		'Mic.Recall.3', #'Mac.Recall.3',
+		'Mic.Recall.1', #'Mac.Recall.1',
 		'Mic.RankMedian'
 	]
 
@@ -510,7 +510,7 @@ def get_base_line_initial_paras(keep_dnames=None):
 def get_paper_sim_model_names():
 	return [
 		'ICTODQAcross-Ave-Random',
-		'ICTODQAcrossModel-Union-Random',
+		#'ICTODQAcrossModel-Union-Random',
 
 	]
 
@@ -798,9 +798,9 @@ def get_spv_clf_initial_paras():
 def get_paper_ensemble_model_names():
 	return [
 
-		'ICTO(A)-HPOProb',
+		#'ICTO(A)-HPOProb',
 
-		'ICTO(A)-HPOProb-CNB',
+		#'ICTO(A)-HPOProb-CNB',
 
 		'ICTO(A)-HPOProb-CNB-MLP',
 	]
