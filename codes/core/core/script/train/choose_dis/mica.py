@@ -1,7 +1,4 @@
-"""
-@Author: Yu Huang
-@Email: yuhuang-cst@foxmail.com
-"""
+
 
 from core.reader.hpo_reader import HPOReader
 import core.predict.sim_model.mica_model as mica

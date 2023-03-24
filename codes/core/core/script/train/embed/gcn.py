@@ -1,7 +1,4 @@
-"""
-@Author: Yu Huang
-@Email: yuhuang-cst@foxmail.com
-"""
+
 
 from core.node_embed.GCNEncoder import GCNDisAsLabelEncoder, GCNDisAsLabelConfig
 from core.node_embed.GCNEncoder import GCNDisAsLabelFeatureEncoder, GCNDisAsLabelFeatureConfig

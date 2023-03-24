@@ -1,7 +1,4 @@
-"""
-@Author: Yu Huang
-@Email: yuhuang-cst@foxmail.com
-"""
+
 
 from core.predict.sim_model.DistanceModel import DistanceModel, generate_model
 from core.utils.constant import SET_SIM_SYMMAX, SET_SIM_ASYMMAX_DQ, SET_SIM_ASYMMAX_QD, PHELIST_REDUCE, PHELIST_ANCESTOR, DIST_SHORTEST, DIST_MEAN_TURN

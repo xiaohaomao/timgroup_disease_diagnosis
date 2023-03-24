@@ -1,7 +1,4 @@
-"""
-@Author: Yu Huang
-@Email: yuhuang-cst@foxmail.com
-"""
+
 
 import os
 import numpy as np

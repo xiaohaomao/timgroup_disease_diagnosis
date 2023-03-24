@@ -1,7 +1,4 @@
-"""
-@Author: Yu Huang
-@Email: yuhuang-cst@foxmail.com
-"""
+
 
 from core.predict.model_testor import ModelTestor
 from core.predict.ml_model.GBDTModel import generate_model, GBDTConfig

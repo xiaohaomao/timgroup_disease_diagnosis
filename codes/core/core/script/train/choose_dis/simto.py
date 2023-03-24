@@ -1,7 +1,4 @@
-"""
-@Author: Yu Huang
-@Email: yuhuang-cst@foxmail.com
-"""
+
 
 from core.reader.hpo_reader import HPOReader
 from core.predict.sim_model.sim_term_overlap_model import generate_ICTO_dq_across_model

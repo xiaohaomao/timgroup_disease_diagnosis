@@ -1,7 +1,4 @@
-"""
-@Author: Yu Huang
-@Email: yuhuang-cst@foxmail.com
-"""
+
 
 from core.predict.model_testor import ModelTestor
 from core.predict.prob_model.NBModel import MNBConfig, CNBConfig, BNBProbConfig, MNBModel, generate_bnb_prob_model, CNBModel

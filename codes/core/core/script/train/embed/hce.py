@@ -1,7 +1,4 @@
-"""
-@Author: Yu Huang
-@Email: yuhuang-cst@foxmail.com
-"""
+
 
 from core.node_embed.encoder import Encoder
 from core.node_embed.HCEEncoder import HCEEncoder, HCEConfig, BatchController1, BatchController2

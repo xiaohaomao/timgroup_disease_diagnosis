@@ -1,7 +1,4 @@
-"""
-@Author: Yu Huang
-@Email: yuhuang-cst@foxmail.com
-"""
+
 
 from mlModel.LRNeuronModel import LRNeuronConfig, generate_model
 from core.utils.constant import TRAIN_MODE

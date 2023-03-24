@@ -1,7 +1,4 @@
-"""
-@Author: Yu Huang
-@Email: yuhuang-cst@foxmail.com
-"""
+
 
 from core.node_embed.DeepwalkEncoder import DeepwalkEncoder, DeepwalkConfig
 from core.reader.hpo_reader import HPOReader

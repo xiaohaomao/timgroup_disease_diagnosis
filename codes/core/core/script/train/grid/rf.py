@@ -1,7 +1,4 @@
-"""
-@Author: Yu Huang
-@Email: yuhuang-cst@foxmail.com
-"""
+
 
 from core.predict.model_testor import ModelTestor
 from core.predict.RFModel import generate_model, RFConfig

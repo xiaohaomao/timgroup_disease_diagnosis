@@ -1,7 +1,3 @@
-"""
-@Author: Yu Huang
-@Email: yuhuang-cst@foxmail.com
-"""
 
 import numpy as np
 from copy import deepcopy

@@ -1,7 +1,3 @@
-"""
-@Author: Yu Huang
-@Email: yuhuang-cst@foxmail.com
-"""
 
 from core.reader import HPOFilterDatasetReader
 from core.predict.sim_model import MICAModel
