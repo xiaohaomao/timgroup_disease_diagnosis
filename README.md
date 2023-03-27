@@ -69,6 +69,12 @@ cd $CORE_PATH
 
 #### Step 2
 
+Second, place the releated patient data in this folder "core/data/".
+
+
+
+#### Step 3
+
 To reproduce all the results discussed in the supplementary file of this study, run the "**core/script/test/test_optimal_model.py**" file.
 
 ```
