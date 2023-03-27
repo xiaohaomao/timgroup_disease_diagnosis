@@ -44,6 +44,8 @@ Download the trained model and parameters from the following address: https://dr
 
 Once downloaded, place the model file of the differential diagnosis module in the path '**/codes/core/**'.
 
+The storage model parameters are considerably large, with a total size of approximately 14GB. Our five methods of a size of around 4GB. If you do not care about reproducing the results of 12 baseline methods. In that case, you are recommended to download our models solely from the following five file folders: **ICTODQAcrossModel, HPOICCalculator, HPOProbMNBNModel, LRNeuronModel, CNBModel**.
+
 
 
 
