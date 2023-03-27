@@ -42,7 +42,7 @@ Download the trained model and parameters from the following address: https://dr
 
 
 
-Once downloaded, place the model file of the differential diagnosis module in the path '**/codes/core/model**'.
+Once downloaded, place the model file of the differential diagnosis module in the path '**/codes/core/**'.
 
 
 
