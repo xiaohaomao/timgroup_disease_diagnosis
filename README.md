@@ -22,7 +22,7 @@ Differential Diagnosis Pipeline in Diagnosing Rare Diseases Using EHRs
 
 
 
-### Module 1: Install requirements
+### Module 1: Installing basic Python libraries
 
 ```
 # install basic packages
@@ -48,11 +48,7 @@ Once downloaded, place the model file of the differential diagnosis module in th
 
 
 
-###  Module 3: run differential diagnosis models to generate results in this study
-
-
-
-
+###  Module 3: Run differential diagnosis models to generate results in this study
 
 #### step 1
 
@@ -73,12 +69,10 @@ cd $CORE_PATH
 
 To reproduce all the results discussed in the supplementary file of this study, run the "**core/script/test/test_optimal_model.py**" file.
 
-
-
 ```
 # Running an Example
 
-python "python core/script/test/test_optimal_model.py"
+python core/script/test/test_optimal_model.py
 ```
 
 
