@@ -69,7 +69,7 @@ cd $CORE_PATH
 
 #### Step 2
 
-Second, place the releated patient data in this folder "core/data/".
+Second, place the releated patient data in this folder "**core/data/**".
 
 
 
