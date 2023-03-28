@@ -101,3 +101,27 @@ The "**core/predict/**" folder comprehensively describes rare disease diagnosis 
 
 
 
+### Module 4: Results Display
+
+The program will generate 7 folders after running the **test_optimal_model.py file:** **CaseResult, csv, delete, DisCategoryResult, Metric-test, RawResults, table**. 
+
+The **CaseResult** folder contains a ranking of predicted diseases for all patients among a total of 9260 diseases for each method used, with examples of the results (PUMCH-ADM, the validation of RAMEDIS) provided below.
+
+![](/Users/maoxiaohao/Desktop/投Nature Medicine 草稿/Submitted_version/送外审版本/NM_manuscript/methods_codes/timgroup_disease_diagnosis/example_result/example_prediction_each_case.png)
+
+
+
+Within the **table** folder, a comparison of multiple statistical metrics is available for each method applied to every dataset, with examples of the results (PUMCH-ADM, the validation of RAMEDIS) provided below.
+
+![example_validation_ramedis-pumcha_adm](/Users/maoxiaohao/Desktop/投Nature Medicine 草稿/Submitted_version/送外审版本/NM_manuscript/methods_codes/timgroup_disease_diagnosis/example_result/example_validation_ramedis-pumcha_adm.png)
+
+
+
+
+
+Within the **RawResults** folder, each method applied to every patient of each dataset has a complete ranked list of predicted diseases, out of a total of 9260. The raw predictions stored for each method range from a few MB to several GB. The user can choose whether or not to store these raw predictions in the **test_optimal_model.py** file
+
+
+
+
+
