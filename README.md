@@ -103,7 +103,7 @@ The "**core/predict/**" folder comprehensively describes rare disease diagnosis 
 
 After running the test_optimal_model.py file, the program will generate seven folders, namely **CaseResult, csv, delete, DisCategoryResult, Metric-test, RawResults and table**.
 
-The CaseResult folder encompasses a comprehensive list of predicted diseases for all patients, out of a total of 9260 diseases, for each of the methods employed. Sample results for PUMCH-ADM and validation of RAMEDIS are included below. 
+The **CaseResult** folder encompasses a comprehensive list of predicted diseases for all patients, out of a total of 9260 diseases, for each of the methods employed. Sample results for PUMCH-ADM and validation of RAMEDIS are included below. 
 
 ![**Example: Each diagnostic method's predicted ranking for each patient's datad**](https://github.com/xiaohaomao/timgroup_disease_diagnosis/blob/main/example_result/example_prediction_each_case.png)
 
