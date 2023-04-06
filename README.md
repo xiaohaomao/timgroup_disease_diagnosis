@@ -135,9 +135,17 @@ Specifically, we prepared three examples in PhenoBrain to verify the effect of t
 
 
 
+
+
+
+
 **Example of Phenotype Extraction in English Text**
 
 !["Example of extracting phenotype in English"](https://github.com/xiaohaomao/timgroup_disease_diagnosis/blob/main/example_result/phenotype_extract_example_english.png)
+
+
+
+
 
 
 
@@ -146,6 +154,24 @@ Specifically, we prepared three examples in PhenoBrain to verify the effect of t
 !["Example of extracting phenotype in Chinese"](https://github.com/xiaohaomao/timgroup_disease_diagnosis/blob/main/example_result/phenotype_extraction_example_chinese.png)
 
 
+
+
+
+**After selecting the phenotype:**
+
+​	 **1，**Go to the Diagnose interface.
+
+ 	**2**，Select the diagnostic method and the number of predicted results to display.
+
+​	 **3，**Finally, press the **“Predict”** button to get the prediction results for each method within a few seconds.
+
+
+
+
+
+**Example of Disease Diagnosis** 
+
+!["Example of disease diagnosis"](https://github.com/xiaohaomao/timgroup_disease_diagnosis/blob/main/example_result/disease%20diagnosis.png)
 
 
 
