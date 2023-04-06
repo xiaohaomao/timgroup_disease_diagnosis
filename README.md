@@ -125,9 +125,29 @@ We upload the trained model code to PhenoBrain, which contains two modules, Phen
 
 
 
+!["Interface of phenotype_extraction"](https://github.com/xiaohaomao/timgroup_disease_diagnosis/blob/main/example_result/phenotype_extraction.png)
+
+
+
 
 
 Specifically, we prepared three examples in PhenoBrain to verify the effect of the phenotype extraction function. The input is Chinese clinical text, English clinical text, and the HPO code list. Then press the **"Extract"** key to demonstrate the effect of extracting phenotype.
+
+
+
+**Example of Phenotype Extraction in English Text**
+
+!["Example of extracting phenotype in English"](https://github.com/xiaohaomao/timgroup_disease_diagnosis/blob/main/example_result/phenotype_extract_example_english.png)
+
+
+
+**Example of Phenotype Extraction in Chinese Text**
+
+!["Example of extracting phenotype in Chinese"](https://github.com/xiaohaomao/timgroup_disease_diagnosis/blob/main/example_result/phenotype_extraction_example_chinese.png)
+
+
+
+
 
 
 
