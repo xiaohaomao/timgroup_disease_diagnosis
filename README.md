@@ -159,11 +159,9 @@ Specifically, we prepared three examples in PhenoBrain to verify the effect of t
 
 **After selecting the phenotype:**
 
-​	 **1，**Go to the Diagnose interface.
-
- 	**2**，Select the diagnostic method and the number of predicted results to display.
-
-​	 **3，**Finally, press the **“Predict”** button to get the prediction results for each method within a few seconds.
+1. Go to the Diagnose interface.
+2. Select the diagnostic method and the number of predicted results to display.
+3. Finally, press the **“Predict”** button to get the prediction results for each method within a few seconds.
 
 
 
