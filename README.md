@@ -99,7 +99,7 @@ The "**core/predict/**" folder comprehensively describes rare disease diagnosis 
 
 
 
-## Module 4: Results Display
+## Module 4: Results illustrate
 
 After running the test_optimal_model.py file, the program will generate seven folders, namely **CaseResult, csv, delete, DisCategoryResult, Metric-test, RawResults and table**.
 
@@ -116,6 +116,30 @@ In the **table** folder, a comparison of multiple statistical metrics is availab
 
 
 The **RawResults** folder comprises complete ranked lists of predicted diseases for each method implemented on every patient of each dataset, covering a total of 9260 diseases. The raw predictions saved in this folder can range from a few MB to several GB in size. The user has the option to choose whether or not to store these raw predictions by altering the settings in the **test_optimal_model.py** file.
+
+
+
+## Module 5: Diagnostic tool illustrate
+
+We upload the trained model code to PhenoBrain, which contains two modules, Phenotype Extraction and Differential Diagnosis/Disease Prediction. Users can select phenotypes in three ways: by phenotype tree for precise phenotype selection, by the phenotype search function, and by the phenotype extraction function. The phenotype extraction module is in the input interface. Users enter clinical text into the phenotype extraction box, select the method of phenotype extraction **(HPO/CHPO, CHPO-UMLS, CText2Hpo)**, and press the **"Extract"** button to extract the phenotypes. The interface's right side presents the extracted phenotype's specific information. 
+
+
+
+
+
+Specifically, we prepared three examples in PhenoBrain to verify the effect of the phenotype extraction function. The input is Chinese clinical text, English clinical text, and the HPO code list. Then press the **"Extract"** key to demonstrate the effect of extracting phenotype.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
