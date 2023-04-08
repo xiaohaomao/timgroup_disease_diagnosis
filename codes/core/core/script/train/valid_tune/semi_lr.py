@@ -1,5 +1,3 @@
-
-
 import numpy as np
 import os
 from copy import deepcopy
@@ -71,7 +69,6 @@ def train_best_sim_semi_lr():
 
 if __name__ == '__main__':
 	os.environ["CUDA_VISIBLE_DEVICES"] = "0"
-
 	train_best_sim_semi_lr()
 
 

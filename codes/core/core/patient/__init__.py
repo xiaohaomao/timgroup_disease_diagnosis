@@ -1,12 +1,3 @@
 # encoding: UTF-8
-
-
-
 from core.patient.patient_generator import PatientGenerator
-from core.patient.cjfh_patient_generator import CJFHPatientGenerator
-from core.patient.mme_patient_generator import MMEPatientGenerator
-from core.patient.ramedis_patient_generator import RamedisPatientGenerator
-from core.patient.pumc_patient_generator import PUMCPatientGenerator
-from core.patient.pumc_2000_patient_generator import PUMC2000PatientGenerator
-from core.patient.than_patient_generator import ThanPatientGenerator
 from core.patient.hms_patient_generator import HmsPatientGenerator

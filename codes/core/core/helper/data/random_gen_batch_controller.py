@@ -20,18 +20,16 @@ from core.helper.data.data_helper import DataHelper
 class RGBCConfig(Config):
 	def __init__(self, d=None):
 		super(RGBCConfig, self).__init__()
-		self.multi = 20    #
+		self.multi = 20
 		self.pool_update_freq = 2
-		# self.pool_size = DISEASE_NUM * self.multi
 
-		# default: 0.2_0.2_0.3_0.1_0.2
 		self.true = 0.5
 		self.reduce = 0.2
 		self.rise = 0.2
 		self.lower = 0.05
 		self.noise = 0.05
 
-		self.max_reduce_prob = 0.5    #
+		self.max_reduce_prob = 0.5
 		self.max_rise_prob = 0.5
 		self.max_lower_prob = 0.5
 		self.max_noise_prob = 0.5
@@ -64,9 +62,9 @@ class RandomGenBatchController(BatchController):
 		self.DIS_CODE_NUM = hpo_reader.get_dis_num()
 		self.HPO_CODE_NUM = hpo_reader.get_hpo_num()
 
-		self.ancestor_dict = {hpo: get_all_ancestors(hpo, self.hpo_int_dict) for hpo in self.hpo_int_dict}   # {hpo: set([ancestor1, ...]), ...}
-		self.rise_dict = {hpo: slice_list_with_rm_set(self.ancestor_dict[hpo], [hpo]) for hpo in self.ancestor_dict}    # {hpo: [rise1, ...], ...}
-		self.lower_dict = {hpo: slice_list_with_rm_set(get_all_descendents(hpo, self.hpo_int_dict), [hpo]) for hpo in self.hpo_int_dict}  # {hpo: [lower1, ...], ...}
+		self.ancestor_dict = {hpo: get_all_ancestors(hpo, self.hpo_int_dict) for hpo in self.hpo_int_dict}
+		self.rise_dict = {hpo: slice_list_with_rm_set(self.ancestor_dict[hpo], [hpo]) for hpo in self.ancestor_dict}
+		self.lower_dict = {hpo: slice_list_with_rm_set(get_all_descendents(hpo, self.hpo_int_dict), [hpo]) for hpo in self.hpo_int_dict}
 
 		self.dh = DataHelper(hpo_reader=self.hpo_reader)
 		self.source_raw_X, self.source_y_ = self.dh.get_train_raw_Xy(PHELIST_REDUCE, self.c.use_rd_mix_code, self.c.multi_label, ret_y_lists=True)
@@ -93,7 +91,7 @@ class RandomGenBatchController(BatchController):
 		self.set_data_size(pool_size)
 
 		raw_X, y_ = [], []
-		# new_raw_X, new_y_ = self.source_raw_X * self.c.true_per_multi, self.source_y_ * self.c.true_per_multi
+
 		new_raw_X, new_y_ = copy_lists(self.source_raw_X, true_multi_nums), copy_lists(self.source_y_, true_multi_nums)
 		raw_X.extend(new_raw_X); y_.extend(new_y_)
 
@@ -124,7 +122,6 @@ class RandomGenBatchController(BatchController):
 			self.y_ = self.dh.label_lists_to_matrix(
 				y_, col_num=self.hpo_reader.get_dis_num(), one_hot=self.c.y_one_hot, dtype=self.c.ydtype
 			)
-			# self.X, self.y_ = np.array(unique(raw_X)), np.array(y_)   #
 
 		self.go_through = 0
 
@@ -273,7 +270,7 @@ class RandomGenBatchController(BatchController):
 			np.ndarray: labels, shape=[batch_size, ]
 		"""
 		sample_rank = self.next_sample_rank(batch_size)
-		return self.X[sample_rank], self.y_[sample_rank]     #, np.ones((batch_size,), dtype=np.float32)
+		return self.X[sample_rank], self.y_[sample_rank]
 
 
 class RandomGenPaddingBatchController(RandomGenBatchController):
@@ -297,5 +294,5 @@ class RandomGenPaddingBatchController(RandomGenBatchController):
 			np.ndarray: labels, shape=[batch_size, ]
 		"""
 		sample_rank = self.next_sample_rank(batch_size)
-		return self.X[sample_rank], self.seq_len[sample_rank], self.y_[sample_rank]     #, np.ones((batch_size,), dtype=np.float32)
+		return self.X[sample_rank], self.seq_len[sample_rank], self.y_[sample_rank]
 

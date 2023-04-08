@@ -1,5 +1,3 @@
-
-
 import os
 import numpy as np
 import scipy.sparse as sp
@@ -71,7 +69,7 @@ class TestCosineModel(object):
 	def test_query(self):
 		query_input = ['HP:0001519', 'HP:0008909', 'HP:0100554']
 		query_extend = get_all_ancestors_for_many(query_input, self.model.hpo_dict)
-		result1_extend = get_all_ancestors_for_many(["HP:0001939", "HP:0004322"], self.model.hpo_dict)    # OMIM:203760
+		result1_extend = get_all_ancestors_for_many(["HP:0001939", "HP:0004322"], self.model.hpo_dict)
 		intersection = query_extend.intersection(result1_extend)
 		print('query_extend =', query_extend)
 		print('result1_extend =', result1_extend)
@@ -84,8 +82,5 @@ class TestCosineModel(object):
 if __name__ == '__main__':
 	from core.predict.pvalue_model import generate_raw_pvalue_model, generate_hist_pvalue_model
 	from core.reader import HPOFilterDatasetReader
-	hpo_reader = HPOFilterDatasetReader(keep_dnames=['OMIM', 'ORPHA', 'CCRD'])  # HPOReader()
-	model = CosineModel(hpo_reader)
-	result = model.query(['HP:0000741', 'HP:0000726', 'HP:0000248', 'HP:0000369', 'HP:0000316', 'HP:0000463'], topk=20)  # OMIM:610253
 
 

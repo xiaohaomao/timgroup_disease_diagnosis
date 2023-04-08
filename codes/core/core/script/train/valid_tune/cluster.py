@@ -1,5 +1,3 @@
-
-
 from tqdm import tqdm
 from copy import deepcopy
 import numpy as np

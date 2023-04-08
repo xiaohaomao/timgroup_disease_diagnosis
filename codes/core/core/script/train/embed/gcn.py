@@ -1,5 +1,3 @@
-
-
 from core.node_embed.GCNEncoder import GCNDisAsLabelEncoder, GCNDisAsLabelConfig
 from core.node_embed.GCNEncoder import GCNDisAsLabelFeatureEncoder, GCNDisAsLabelFeatureConfig
 from core.node_embed.GCNEncoder import GCNDisAsFeatureEncoder, GCNDisAsFeatureConfig

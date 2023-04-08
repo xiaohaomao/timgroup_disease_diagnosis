@@ -1,5 +1,3 @@
-
-
 from core.predict.model_testor import ModelTestor
 from core.predict.ml_model.GBDTModel import generate_model, GBDTConfig
 from core.reader.hpo_reader import HPOReader
@@ -25,8 +23,7 @@ def process(para):
 
 
 def train_script():
-	# tree_num_list = [100, 500, 1000, 5000, 10000]
-	# max_leaves_list = [2**5-1, 2**6-1, 2**7-1]
+
 	tree_num_list = [100, 500, 1000]
 	max_leaves_list = [2**6-1, 2**7-1]    #
 	bagging_frac_list = [0.8]
@@ -191,7 +188,6 @@ def train_model_with_embed(get_embedParas):
 
 
 if __name__ == '__main__':
-
 	train_model_with_embed(get_deepwalk_embed_paras)
 
 

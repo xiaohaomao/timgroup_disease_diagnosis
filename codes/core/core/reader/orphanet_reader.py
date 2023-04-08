@@ -1,5 +1,3 @@
-
-
 import re
 import os
 from bs4 import BeautifulSoup
@@ -505,7 +503,6 @@ class OrphanetReader(object):
 
 if __name__ == '__main__':
 	reader = OrphanetReader()
-
 	reader.statistic()
 
 

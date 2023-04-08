@@ -1,5 +1,3 @@
-
-
 import os
 import numpy as np
 from copy import deepcopy
@@ -249,7 +247,5 @@ def train_best_cnb_web():
 
 if __name__ == '__main__':
 	from core.script.train.valid_tune.tune import resort_history_for_model, combine_history_for_model
-
-
 	tune_mnb_script()
 

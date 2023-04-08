@@ -1,4 +1,3 @@
-
 from core.predict.config import Config
 from core.predict.model import SklearnModel
 from core.reader.hpo_reader import HPOReader
@@ -11,10 +10,10 @@ from sklearn.ensemble import AdaBoostClassifier
 class AdaConfig(Config):
 	def __init__(self):
 		super(AdaConfig, self).__init__()
-		self.base_estimator = None   # None=DecisionTreeClassifier(max_depth=1)
+		self.base_estimator = None
 		self.n_estimators = 50
 		self.lr = 1.0
-		self.algorithm = 'SAMME.R'  # 'SAMME' | 'SAMME.R'
+		self.algorithm = 'SAMME.R'
 
 
 class AdaBoostModel(SklearnModel):

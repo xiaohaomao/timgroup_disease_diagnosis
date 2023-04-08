@@ -1,5 +1,3 @@
-
-
 import numpy as np
 import os
 
@@ -26,7 +24,7 @@ class MICAJCModel(MICAModel):
 
 	def cal_score_mat(self):
 		if os.path.exists(self.JC_SCOREMAT_PATH):
-			self.score_mat = np.load(self.JC_SCOREMAT_PATH)   # or try hdf5
+			self.score_mat = np.load(self.JC_SCOREMAT_PATH)
 			return
 		super(MICAJCModel, self).cal_score_mat()
 		hpo_IC_vec = get_hpo_IC_vec(self.hpo_reader)
@@ -48,12 +46,9 @@ class MICAJCModel(MICAModel):
 
 if __name__ == '__main__':
 	from core.utils.utils import list_find, get_all_ancestors_for_many
-
 	hpo_reader = HPOReader()
 	model = MICAJCModel(hpo_reader, slice_no_anno=True)
-	phe_list = ['HP:0000741', 'HP:0000726', 'HP:0000248', 'HP:0000369', 'HP:0000316', 'HP:0000463']
 
-	result = model.query(phe_list, topk=None)  # OMIM:610253
 
 
 

@@ -1,5 +1,3 @@
-
-
 import itertools
 import numpy as np
 import os
@@ -81,5 +79,5 @@ def tune_hmcn_script():
 if __name__ == '__main__':
 
 	os.environ["CUDA_VISIBLE_DEVICES"] = "1"
-	tune_hmcn_script()  # d01 rareDis
+	tune_hmcn_script()
 

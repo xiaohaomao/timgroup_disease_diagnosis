@@ -1,4 +1,3 @@
-
 import os
 import numpy as np
 
@@ -11,7 +10,7 @@ class HPOICCalculator(object):
 	def __init__(self, hpo_reader=HPOReader()):
 		self.hpo_reader = hpo_reader
 		self.HPO_IC_JSON = os.path.join(MODEL_PATH, hpo_reader.name, 'HPOICCalculator', 'IC.json')
-		self.IC = None  # {HPO_CODE: IC, ...}
+		self.IC = None
 
 
 	@check_load_save('IC', 'HPO_IC_JSON', JSON_FILE_FORMAT)
@@ -19,8 +18,8 @@ class HPOICCalculator(object):
 		self.hpo_dict = self.hpo_reader.get_slice_hpo_dict()
 		self.dis2hpo = self.hpo_reader.get_dis_to_hpo_dict(phe_list_mode=PHELIST_REDUCE)
 		self.hpo2dis = self.hpo_reader.get_hpo_to_dis_dict(phe_list_mode=PHELIST_REDUCE)
-		hpo_to_dis_extend = {} # {HPO_CODE: set([DIS_CODE, ...])}
-		self.extend_hpo_to_dis('HP:0000001', hpo_to_dis_extend)    # Root of all terms in HPO
+		hpo_to_dis_extend = {}
+		self.extend_hpo_to_dis('HP:0000001', hpo_to_dis_extend)
 		dis_count = len(self.dis2hpo)
 		IC = {hpo_code: -np.log(len(dis_set)/dis_count) for hpo_code, dis_set in hpo_to_dis_extend.items()}    #
 		return IC
@@ -58,16 +57,16 @@ def get_hpo_IC_vec(hpo_reader=HPOReader(), default_IC=np.inf):
 	"""
 	hpo_list = HPOReader().get_hpo_list()
 	hpo_to_IC = get_hpo_IC_dict(hpo_reader, default_IC)
-	IC_vec = np.array([hpo_to_IC[hpo_code] for hpo_code in hpo_list])  # np.array; shape = [HPONum,]
+	IC_vec = np.array([hpo_to_IC[hpo_code] for hpo_code in hpo_list])
 	return IC_vec
 
 
 def get_dis_IC_vec(hpo_reader=HPOReader(), phe_list_mode=PHELIST_ANCESTOR):
 	HPO_NUM, DIS_NUM = hpo_reader.get_hpo_num(), hpo_reader.get_dis_num()
 	IC_dict = get_hpo_IC_dict(hpo_reader)  # {HPO_CODE: IC, ...}
-	IC_vec = np.array([IC_dict[hpo_code] for hpo_code in hpo_reader.get_hpo_list()])  # np.array; shape = [HPONum]
+	IC_vec = np.array([IC_dict[hpo_code] for hpo_code in hpo_reader.get_hpo_list()])
 	dis_to_hpo_int_list = hpo_reader.get_dis_int_to_hpo_int(phe_list_mode)
-	dis_IC_vec = data_to_01_matrix([dis_to_hpo_int_list[i] for i in range(DIS_NUM)], HPO_NUM).dot(IC_vec).flatten() # np.ndarray; shape=[DisNum]
+	dis_IC_vec = data_to_01_matrix([dis_to_hpo_int_list[i] for i in range(DIS_NUM)], HPO_NUM).dot(IC_vec).flatten()
 	return dis_IC_vec
 
 

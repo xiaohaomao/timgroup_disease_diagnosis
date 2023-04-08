@@ -14,7 +14,7 @@ from core.reader.hpo_filter_reader import HPOIntegratedDatasetReader
 
 
 def get_match_impre_noise_for_dataset(dataset, hpo_reader=HPOReader()):
-	ave_rate_vec = np.array([0.0, 0.0, 0.0, 0.0])  # matcth, impre, noise_spe, noise_oth
+	ave_rate_vec = np.array([0.0, 0.0, 0.0, 0.0])
 	dis2hpo = hpo_reader.get_dis_to_hpo_dict(PHELIST_REDUCE)
 	hpo_dict = hpo_reader.get_slice_hpo_dict()
 	valid_pa_num = 0
@@ -140,7 +140,6 @@ class LabeledDatasetExplainer(UnLabeledDatasetExplainer):
 		d['DISEASE_SET_COUNT'] = dis_set_count_list
 		d['DISEASE_COUNT_CNS'] = dis_count_list
 
-		# mat, imp, noi_spe, noi_oth = get_match_impre_noise_for_dataset(self.patients, hpo_reader=HPOIntegratedDatasetReader(keep_dnames=['OMIM', 'ORPHA', 'CCRD']))
 		mat, imp, noi_spe, noi_oth = get_match_impre_noise_for_dataset(self.patients, hpo_reader=HPOReader())
 		d['AVE_EXACT_HPO'] = mat
 		d['AVE_GENERAL_HPO'] = imp
@@ -154,5 +153,3 @@ if __name__ == '__main__':
 	from core.utils.constant import VALIDATION_TEST_DATA
 	from core.helper.data.data_helper import DataHelper
 	dh = DataHelper(hpo_reader=HPOIntegratedDatasetReader(keep_dnames=['OMIM', 'ORPHA', 'CCRD']))
-	for data_name in ['RAMEDIS', 'CJFH', 'PUMC', 'MME']:
-		patients = dh.get_dataset(data_name, VALIDATION_TEST_DATA, filter=False)

@@ -1,5 +1,3 @@
-
-
 from core.utils.constant import OPTIMIZER_SGD, OPTIMIZER_ADAM, OPTIMIZER_RMS, RELU, TANH, SIGMOID, ATT_MULTIPLY, ATT_ADD, ATT_DOT, SEED
 
 import tensorflow as tf
@@ -98,9 +96,7 @@ def dot_att_score(Q, K, scaled=True, *args, **kwargs):
 		tf.Tensor: (N, T_q, T_k)
 	"""
 	A = tf.matmul(Q, tf.transpose(K, [0, 2, 1]))
-	# if scaled:
-	# 	dk = K.get_shape().as_list()[-1]
-	# 	A /= dk ** 0.5
+
 	return A
 
 
@@ -115,8 +111,8 @@ def multiply_att_score(Q, K, Wa_name='Wa', *args, **kwargs):
 	dq, dk = Q.shape[-1], K.shape[-1]
 	Wa = tf.get_variable(
 		Wa_name, shape=(dq, dk), dtype=tf.float32,
-		initializer=tf.contrib.layers.xavier_initializer(uniform=True)) # (N, d_q, _dk)
-	return tf.matmul(tf.matmul(Q, Wa), tf.transpose(K, [0, 2, 1]))  # (N, T_q, T_k)
+		initializer=tf.contrib.layers.xavier_initializer(uniform=True))
+	return tf.matmul(tf.matmul(Q, Wa), tf.transpose(K, [0, 2, 1]))
 
 
 def add_att_score(Q, K, dv, Wa_name='Wa', Ua_name='Ua', v_name='v', *args, **kwargs):
@@ -262,11 +258,7 @@ def multi_head_att(h_num, Q, K, V, q_seq_len, k_seq_len, att_type, prob_fn=tf.nn
 		# Restore shape
 		new_V = tf.concat(tf.split(new_V, h_num, axis=0), axis=2) # (N, T_q, d_model)
 
-		# Residual connection
-		# new_V += Q
 
-		# Layer Normalize
-		# new_V = ln(new_V)
 
 	return new_V
 

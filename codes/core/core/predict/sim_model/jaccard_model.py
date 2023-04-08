@@ -1,4 +1,3 @@
-
 import os
 import numpy as np
 import scipy.sparse as sp
@@ -13,7 +12,7 @@ class JaccardModel(SimTOModel):
 		super(JaccardModel, self).__init__(hpo_reader, phe_list_mode, init_para=False)
 		self.name = model_name or 'JaccardModel'
 		self.init_save_path()
-		self.phe_size_vec = None # shape=[dis_num]
+		self.phe_size_vec = None
 		if init_para:
 			if mode == PREDICT_MODE:
 				self.load()
@@ -23,7 +22,7 @@ class JaccardModel(SimTOModel):
 
 	def train(self):
 		super(JaccardModel, self).train()
-		self.phe_size_vec = np.array(self.dis_vec_mat.sum(axis=1)).flatten()    # np.array; shape=[dis_num]
+		self.phe_size_vec = np.array(self.dis_vec_mat.sum(axis=1)).flatten()
 
 
 	def cal_score(self, phe_list):
@@ -32,7 +31,7 @@ class JaccardModel(SimTOModel):
 
 
 	def cal_score_for_phe_matrix(self, phe_matrix):
-		score_vec = super(JaccardModel, self).cal_score_for_phe_matrix(phe_matrix)    # np.array; shape=[dis_num]; Overlap Numbers
+		score_vec = super(JaccardModel, self).cal_score_for_phe_matrix(phe_matrix)
 		return score_vec / (self.phe_size_vec + phe_matrix.count_nonzero() - score_vec)
 
 
@@ -56,8 +55,3 @@ class JaccardModel(SimTOModel):
 if __name__ == '__main__':
 	from core.utils.utils import list_find
 	from core.reader import HPOFilterDatasetReader
-	hpo_reader = HPOFilterDatasetReader(keep_dnames=['OMIM', 'ORPHA', 'CCRD'])  # HPOReader()
-	model = JaccardModel(hpo_reader)
-	result = model.query(['HP:0000741', 'HP:0000726', 'HP:0000248', 'HP:0000369', 'HP:0000316', 'HP:0000463'], topk=None)  # OMIM:610253
-	print(result[:10])
-	print(list_find(result, lambda item: item[0] == 'OMIM:610253'))

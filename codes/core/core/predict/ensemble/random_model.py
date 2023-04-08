@@ -1,5 +1,3 @@
-
-
 import heapq
 import numpy as np
 import os
@@ -61,7 +59,7 @@ class RandomModel(Model):
 		"""
 		if topk == None:
 			return sorted([(self.dis_list[i], score_vec[i]) for i in range(self.DIS_NUM)], key=lambda item:item[1], reverse=True)
-		return heapq.nlargest(topk, [(self.dis_list[i], score_vec[i]) for i in range(self.DIS_NUM)], key=lambda item:item[1])  # [(dis_code, score), ...], shape=(dis_num, )
+		return heapq.nlargest(topk, [(self.dis_list[i], score_vec[i]) for i in range(self.DIS_NUM)], key=lambda item:item[1])
 
 
 if __name__ == '__main__':

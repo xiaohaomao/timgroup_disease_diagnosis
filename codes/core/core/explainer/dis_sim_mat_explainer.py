@@ -17,7 +17,7 @@ class DisSimMatExplainer(Explainer):
 			m (np.ndarray)
 		"""
 		super(DisSimMatExplainer, self).__init__()
-		assert m.shape[0] == m.shape[1] and (m == m.T).all()    # check symmetric
+		assert m.shape[0] == m.shape[1] and (m == m.T).all()
 		self.m = m
 		self.sim_type = sim_type
 		self.SAVE_FOLDER = RESULT_PATH + '/dis_sim'; os.makedirs(self.SAVE_FOLDER, exist_ok=True)

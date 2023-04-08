@@ -1,5 +1,3 @@
-
-
 import requests
 import re
 import os
@@ -103,8 +101,6 @@ def run():
 
 
 if __name__ == '__main__':
-
-
 	run()
 
 

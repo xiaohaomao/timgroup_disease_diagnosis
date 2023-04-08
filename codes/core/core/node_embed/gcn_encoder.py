@@ -1,5 +1,3 @@
-
-
 from core.predict.config import Config
 from core.node_embed.encoder import Encoder
 from core.utils.constant import EMBEDDING_PATH, PHELIST_ANCESTOR, OPTIMIZER_ADAM, OPTIMIZER_SGD, OPTIMIZER_RMS
@@ -29,7 +27,7 @@ class GCNConfig(Config):
 		self.weight_decays = [5e-6, 0.0]
 		self.lr = 0.01
 		self.epoch_num = 100
-		self.embed_idx = 0   # -1: X | >=0: units
+		self.embed_idx = 0
 		self.summary_freq = 10
 
 	def get_func(self, type):
@@ -59,8 +57,8 @@ class GCNEncoder(Encoder):
 		self.LOG_PATH = folder + os.sep + 'log'
 		self.LOSS_FIG_PATH = folder + os.sep + 'loss.jpg'
 		self.SUMMARY_FOLDER = folder + os.sep + 'summary'; os.makedirs(self.SUMMARY_FOLDER, exist_ok=True)
-		self.hpo_embed = None    # np.ndarray; shape=(HPO_CODE_NUM, embed_size)
-		self.vars = {} # {weight_i: tensor, 'bias_i': tensor, ...}
+		self.hpo_embed = None
+		self.vars = {}
 		self.placeholders = {}
 		self.feed_dict = None
 		self.embed_dict = {}

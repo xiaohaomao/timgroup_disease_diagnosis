@@ -1,5 +1,3 @@
-
-
 import os
 import numpy as np
 from core.predict.sim_model.mica_model import MICAModel
@@ -23,7 +21,7 @@ class MICALinModel(MICAModel):
 
 	def cal_score_mat(self):
 		if os.path.exists(self.LIN_SCOREMAT_PATH):
-			self.score_mat = np.load(self.LIN_SCOREMAT_PATH)   # or try hdf5
+			self.score_mat = np.load(self.LIN_SCOREMAT_PATH)
 			return
 		super(MICALinModel, self).cal_score_mat()
 		self.IC = get_hpo_IC_dict(self.hpo_reader)
@@ -49,9 +47,7 @@ if __name__ == '__main__':
 	from core.utils.utils import list_find, get_all_ancestors_for_many
 	hpo_reader = HPOReader()
 	model = MICALinModel(hpo_reader, slice_no_anno=True)
-	phe_list = ['HP:0000741', 'HP:0000726', 'HP:0000248', 'HP:0000369', 'HP:0000316', 'HP:0000463']
 
-	result = model.query(phe_list, topk=None)  # OMIM:610253
 
 
 

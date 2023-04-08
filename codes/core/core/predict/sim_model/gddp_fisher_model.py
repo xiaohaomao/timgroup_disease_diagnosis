@@ -1,4 +1,3 @@
-
 import os
 import numpy as np
 from tqdm import tqdm
@@ -30,7 +29,7 @@ class GDDPFisherModel(DenseVecModel):
 		self.MINIC_SIK_NPY = os.path.join(PREPROCESS_FOLDER, 'gddp_fisher_model_minic_sik.npy')
 		self.MINIC_PIK_NPY = os.path.join(PREPROCESS_FOLDER, 'gddp_fisher_model_minic_pik.npy')
 
-		self.log_pik_mat = None  # shape=(hpo_num, dis_num)
+		self.log_pik_mat = None
 		if init_para:
 			if mode == PREDICT_MODE:
 				self.load()
@@ -109,12 +108,6 @@ class GDDPFisherModel(DenseVecModel):
 if __name__ == '__main__':
 	from core.utils.utils import list_find
 	from core.reader import HPOFilterDatasetReader
-	hpo_reader = HPOFilterDatasetReader(keep_dnames=['OMIM', 'ORPHA', 'CCRD'])  # HPOReader()
-	for gamma in [0.1, 0.5, 1.0, 1.5, 2.0, 3.0, 5.0, 8.0, 10.0]:
-		model = GDDPFisherModel(hpo_reader, phe_sim=PHE_SIM_MINIC, gamma=gamma)
-		raw_result = model.query(['HP:0000741', 'HP:0000726', 'HP:0000248', 'HP:0000369', 'HP:0000316', 'HP:0000463'], topk=None)    # OMIM:610253
-
-
 
 
 

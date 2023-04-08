@@ -1,5 +1,3 @@
-
-
 import numpy as np
 
 from core.reader import HPOFilterDatasetReader
@@ -42,7 +40,7 @@ def tune_prob_noise_model():
 
 
 if __name__ == '__main__':
-	tune_prob_model() # d02 rareDis2
+	tune_prob_model()
 
 
 

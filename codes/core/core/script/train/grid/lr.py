@@ -1,4 +1,3 @@
-
 from core.predict.model_testor import ModelTestor
 from core.predict.ml_model.LogisticModel import generate_model, LogisticConfig
 from core.reader.hpo_reader import HPOReader
@@ -23,7 +22,6 @@ def train_script1():
 	model = generate_model(vec_type, hpo_reader=hpo_reader, phe_list_mode=PHELIST_ANCESTOR, mode=TRAIN_MODE, embed_path=MODEL_PATH+'/DeepwalkModel/numwalks100/EMBEDDING')
 
 	TRAIN_FOLDER = DATA_PATH + '/preprocess/AnnoDataSet10'
-	# raw_X, y_ = read_train(DATA_PATH + '/preprocess/AnnoDataSet/true.txt')
 	raw_X, y_, sw = read_train_from_files([
 		TRAIN_FOLDER + '/true.txt',
 		TRAIN_FOLDER + '/reduce.txt',
@@ -282,7 +280,6 @@ def test_script(model, logger):
 
 
 if __name__ == '__main__':
-
 	train_model_with_embed(get_gcn_embed_paras)
 
 

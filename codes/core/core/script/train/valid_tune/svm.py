@@ -1,5 +1,3 @@
-
-
 import os
 os.environ["MKL_NUM_THREADS"] = "1"
 os.environ["NUMEXPR_NUM_THREADS"] = "1"
@@ -21,13 +19,11 @@ from core.script.train.valid_tune.tune import tune, get_default_phe_list_mode, g
 
 
 def get_hpo_reader():
-	# return HPOFilterDatasetReader(keep_dnames=['OMIM', 'ORPHA', 'CCRD'], rm_no_use_hpo=True)
 	return HPOIntegratedDatasetReader(keep_dnames=['OMIM', 'ORPHA', 'CCRD'], rm_no_use_hpo=True)
 
 
 def get_eval_datas():
 	return [VALIDATION_DATA, TEST_DATA, VALIDATION_TEST_DATA]
-	# return [VALIDATION_DATA]
 
 
 def train_svm_model(d, hpo_reader, save_model=False, model_name=None):

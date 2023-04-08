@@ -1,5 +1,3 @@
-
-
 from core.node_embed.encoder import Encoder
 from core.predict.config import Config
 from core.node_embed.deepwalk import graph
@@ -41,7 +39,7 @@ class DeepwalkEncoder(Encoder):
 		self.CONFIG_JSON = folder + os.sep + self.name + '.json'
 		self.LOG_PATH = folder + os.sep + self.name + '.log'
 		self.WALKS_BASE_PATH = folder + os.sep + self.name + '.walks'
-		self.hpo_embed = None    # np.ndarray; shape=(HPO_CODE_NUM, embed_size)
+		self.hpo_embed = None
 
 
 	def get_embed(self):
@@ -146,9 +144,6 @@ def get_embed(encoder_name):
 
 
 if __name__ == '__main__':
-	hpo_embed = get_embed('DeepwalkEncoder_win1_numwalks30_embed64')
-	print(type(hpo_embed))
-	print(hpo_embed[:3])
 	pass
 
 

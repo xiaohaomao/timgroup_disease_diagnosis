@@ -1,4 +1,3 @@
-
 import os
 import joblib
 from sklearn.linear_model import LogisticRegression
@@ -14,9 +13,9 @@ from core.helper.data.data_helper import DataHelper
 class LogisticConfig(Config):
 	def __init__(self, d=None):
 		super(LogisticConfig, self).__init__()
-		self.C = 0.008    #
+		self.C = 0.008
 		self.penalty = 'l2'
-		self.solver = 'liblinear'   # 'newton-cg', 'lbfgs', 'liblinear'(default), 'sag'; see http://scikit-learn.org/stable/modules/linear_model.html
+		self.solver = 'liblinear'
 		self.max_iter = 300
 		self.n_jobs = 12
 		self.multi_class = 'ovr'
@@ -50,12 +49,9 @@ class LogisticModel(SklearnModel):
 		self.MODEL_SAVE_PATH = os.path.join(self.SAVE_FOLDER, '{}.joblib'.format(self.name))
 		self.CONFIG_JSON = os.path.join(self.SAVE_FOLDER, '{}.json'.format(self.name))
 
-
-	# @timer
 	def train(self, lr_config, save_model=True):
-		# print(lr_config)
 		raw_X, y_ = DataHelper(self.hpo_reader).get_train_raw_Xy(self.phe_list_mode, use_rd_mix_code=self.use_rd_mix_code)
-		X = self.raw_X_to_X_func(raw_X)  # X (array-like, sparse matrix); shape=(sample_num, feature_num)
+		X = self.raw_X_to_X_func(raw_X)
 		self.train_X(X, y_, None, lr_config, save_model)
 
 

@@ -1,5 +1,3 @@
-
-
 from core.reader.hpo_reader import HPOReader
 import core.predict.sim_model.mica_model as mica
 from core.predict.model_testor import ModelTestor
@@ -47,7 +45,6 @@ def cal_metric_and_draw(key='min_hpo'):
 if __name__ == '__main__':
 	pass
 
-	cal_metric_and_draw(key='min_IC')
 
 
 

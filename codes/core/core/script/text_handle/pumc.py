@@ -1,5 +1,3 @@
-
-
 import os
 import json
 
@@ -132,7 +130,6 @@ def process(input_folder, output_folder):
 if __name__ == '__main__':
 	input_folder = os.path.join(DATA_PATH, 'raw', 'PUMC', 'case87-doc-hy-strict-enhance')
 	output_folder = os.path.join(DATA_PATH, 'preprocess', 'patient', 'CCRD_OMIM_ORPHA', 'PUMC', 'case87-doc-hy-strict-enhance')
-
 	process(input_folder, output_folder)
 
 

@@ -1,5 +1,3 @@
-
-
 import os
 import numpy as np
 import scipy.sparse as sp
@@ -21,7 +19,7 @@ class SimGICModel(SimTOModel):
 		super(SimGICModel, self).__init__(hpo_reader, phe_list_mode, init_para=False)
 		self.name = model_name or 'SimGICModel'
 		self.init_save_path()
-		self.IC_vec_T = None  # np.array; shape=[HPONum, 1]
+		self.IC_vec_T = None
 		if init_para:
 			if mode == PREDICT_MODE:
 				self.load()
@@ -32,7 +30,7 @@ class SimGICModel(SimTOModel):
 	def train(self):
 		super(SimGICModel, self).train()
 		self.dis_vec_mat = self.dis_vec_mat.astype(np.bool)
-		self.IC_vec_T = get_hpo_IC_vec(self.hpo_reader, 0).T  # np.array; shape = [HPONum, 1]
+		self.IC_vec_T = get_hpo_IC_vec(self.hpo_reader, 0).T
 
 
 	def cal_score(self, phe_list):
@@ -44,8 +42,8 @@ class SimGICModel(SimTOModel):
 		"""
 		phe_matrix = self.phe_list_to_matrix(phe_list)
 		duprow_phe_matrix = vstack([phe_matrix]*self.dis_vec_mat.shape[0])
-		intersect_sum_IC = self.dis_vec_mat.multiply(duprow_phe_matrix) * self.IC_vec_T # np.array; shape=[dis_num]
-		union_sum_IC = (self.dis_vec_mat + duprow_phe_matrix) * self.IC_vec_T   # np.array; shape=[dis_num]
+		intersect_sum_IC = self.dis_vec_mat.multiply(duprow_phe_matrix) * self.IC_vec_T
+		union_sum_IC = (self.dis_vec_mat + duprow_phe_matrix) * self.IC_vec_T
 		return (intersect_sum_IC / union_sum_IC).flatten()
 
 
@@ -71,5 +69,5 @@ class SimGICModel(SimTOModel):
 
 if __name__ == '__main__':
 	from core.reader import HPOFilterDatasetReader
-	hpo_reader = HPOFilterDatasetReader(keep_dnames=['OMIM', 'ORPHA', 'CCRD'])  # HPOReader()
+	hpo_reader = HPOFilterDatasetReader(keep_dnames=['OMIM', 'ORPHA', 'CCRD'])
 	model = SimGICModel(hpo_reader)

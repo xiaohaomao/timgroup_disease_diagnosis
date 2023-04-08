@@ -1,4 +1,3 @@
-
 from core.predict.model import SklearnModel
 from core.predict.config import Config
 from core.reader.hpo_reader import HPOReader
@@ -35,7 +34,7 @@ class DecisionTreeModel(SklearnModel):
 
 		logger.info('training %s' % (self.name,))
 		logger.info(dt_config)
-		X = self.raw_X_to_X_func(raw_X)  # X (array-like, sparse matrix); shape=(sample_num, feature_num)
+		X = self.raw_X_to_X_func(raw_X)
 		self.clf = DecisionTreeClassifier(max_leaf_nodes=dt_config.max_leaf_nodes)
 
 		begin_time = time.time(); logger.info('Training begin..')

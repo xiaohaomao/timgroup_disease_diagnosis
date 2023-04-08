@@ -1,5 +1,3 @@
-
-
 import json
 import numpy as np
 
@@ -39,7 +37,6 @@ class ModelTestor(object):
 			hpo_reader (HPOReader or HPOFilterDatasetReader)
 			eval_data (str or None): 'test' | 'validation' | 'validation_test' | 'custom'
 		"""
-		# self.log = get_logger('ModelTestor')   # LOG_PATH+os.sep+'ModelTestorLog'
 		print('HPOReader of ModelTestor:', hpo_reader.name)
 		self.hpo_reader = hpo_reader
 		self.rd_reader = None
@@ -72,7 +69,7 @@ class ModelTestor(object):
 		self.dh = DataHelper(hpo_reader)
 		self.data = {}
 		if eval_data == TEST_DATA or eval_data == VALIDATION_TEST_DATA:
-			self.data_names = self.dh.test_names   # [data_name, ...]
+			self.data_names = self.dh.test_names
 		elif eval_data == VALIDATION_DATA:
 			self.data_names = self.dh.valid_names
 		elif eval_data == CUSTOM_DATA:
@@ -228,7 +225,7 @@ class ModelTestor(object):
 			return raw_results
 		if model_name.endswith('INTEGRATE_CCRD_OMIM_ORPHA'):
 			pass
-			# model_name = model_name[0: model_name.find('-INTEGRATE_CCRD_OMIM_ORPHA')]
+
 		elif model_name.endswith('CCRD_OMIM_ORPHA'):
 			model_name = model_name[0: model_name.find('-CCRD_OMIM_ORPHA')]
 
@@ -290,7 +287,7 @@ class ModelTestor(object):
 	def cal_all_metric_multi_run_func(self, paras):
 		model, data_item = paras
 		patient, dis_codes = data_item
-		raw_result = model.query(patient, topk=None)   # [(dis1, score1), ...], scores decreasing
+		raw_result = model.query(patient, topk=None)
 		return raw_result
 
 
@@ -339,7 +336,7 @@ class ModelTestor(object):
 			keep_dnames = ['OMIM', 'ORPHA', 'CCRD']
 			dis_num = HPOIntegratedDatasetReader(keep_dnames=keep_dnames).get_dis_num() if self.use_rd_code or not rd_decompose else HPOFilterDatasetReader(keep_dnames=keep_dnames)
 			rank = int((dis_num - 1) / 2)
-		top_n_hit = [0]*len(self.top_n_list) if rank < 0 else [1 if rank < top_n else 0 for top_n in self.top_n_list]    # 0-1 vec, shape=[len(top_n_list), ]
+		top_n_hit = [0]*len(self.top_n_list) if rank < 0 else [1 if rank < top_n else 0 for top_n in self.top_n_list]
 		predict = raw_result[0] # (dis_codes, score)
 		return rank+1, top_n_hit, predict
 
@@ -456,7 +453,7 @@ class ModelTestor(object):
 
 		if 'Mic.RankMedian' in metric_set:
 			ret_dict['Mic.RankMedian'] = rank_quatile[2]
-		mic_recall_n = top_n_hit_matrix.mean(axis=0)    # shape=[len(top_n_list)]
+		mic_recall_n = top_n_hit_matrix.mean(axis=0)
 		for i in range(len(self.top_n_list)):
 			k = 'Mic.Recall.%d' % (self.top_n_list[i])
 			if k in metric_set:
@@ -473,7 +470,7 @@ class ModelTestor(object):
 				ret_dict[k] = mac_recall_n[i]
 
 		y_pred = [dis_code for dis_code, score in pred_dis_and_score_list]
-		y_true = [self.get_ytrue(y_pred[i], test_data[i][1]) for i in range(len(y_pred))] # old: y_true = [dis_code for patient, dis_code in self.data[data_name]]
+		y_true = [self.get_ytrue(y_pred[i], test_data[i][1]) for i in range(len(y_pred))]
 		if 'MicroF1' in metric_set:
 			ret_dict['MicroF1'] = f1_score(y_true, y_pred, average='micro')
 		if 'MacroF1' in metric_set:
@@ -755,7 +752,7 @@ class ModelTestor(object):
 			fig_path = self.get_default_pa_num_with_hpo_num_fig_path(data_name, target=target)
 		dataset = self.get_dataset(data_name)
 		if target == 'patient':
-			counter = Counter([len(hpo_list) for hpo_list, dis_list in dataset])  # {hpo_num: patient_num}
+			counter = Counter([len(hpo_list) for hpo_list, dis_list in dataset])
 		elif target == 'disease':
 			dis2hpo = self.get_hpo_reader().get_dis_to_hpo_dict(PHELIST_REDUCE)
 			dis_len_list = [np.median([len(dis2hpo[dis_code]) for dis_code in pa_item[1]]) for pa_item in dataset]
@@ -808,7 +805,7 @@ class ModelTestor(object):
 		dis_codes_id_to_dis_list = {dis_codes_id_list[i]: dataset[i][1] for i in range(len(dis_codes_id_list))}
 		dis_codes_id_set = set(dis_codes_id_list)
 		dis_order = list(dis_codes_id_set)
-		metric_to_df_dict = {metric: {} for metric in metric_set} # {metric: df_dict}
+		metric_to_df_dict = {metric: {} for metric in metric_set}
 		with Pool(cpu_use) as pool:
 			para_list = [(data_name, model_name, metric_set, dis_codes_id_set) for model_name in model_names]
 			for model_name, metric_to_dis_to_score in tqdm(pool.imap_unordered(self.cal_dis_category_result_wrapper, para_list), total=len(para_list), leave=False):
@@ -944,7 +941,7 @@ class ModelTestor(object):
 
 		columns = ['Dataset', 'Model'] + metric_names
 		df = pd.DataFrame(columns=columns)
-		conf_int_dict = {}  # {(data_name, model_name, metric_name): (low, high)}
+		conf_int_dict = {}
 		empty_line_dict = dict({'Dataset': '', 'Model': ''}, **{metric_name: None for metric_name in metric_names})
 		for data_name in data_names:
 			for model_name in model_names:
@@ -955,7 +952,6 @@ class ModelTestor(object):
 						result_dict = json.load(open(file_path))
 
 						line_dict[metric_name] = result_dict[metric_name]
-						#line_dict[metric_name] = result_dict[f'CONF_INT_{conf_level}']
 						conf_int_dict[(data_name, model_name, metric_name)] = result_dict.get(f'CONF_INT_{conf_level}', '')
 					else:
 						line_dict[metric_name] = None
@@ -1119,9 +1115,9 @@ class ModelTestor(object):
 			old_file_name=None, new_file_name=None, old_key=None, old_key_value=None, new_key=None, new_key_value=None, exclude=set()):
 		if path in exclude:
 			return
-		if os.path.isfile(path):    # path = '/xixi/lala/hehe.json'
-			folder, file_name = os.path.split(path)  # folder='/xixi/lala'; file_name='hehe.json'
-			fprefix, fpostfix = os.path.splitext(file_name)  # fprefix='hehe'; fpostfix='.json'
+		if os.path.isfile(path):
+			folder, file_name = os.path.split(path)
+			fprefix, fpostfix = os.path.splitext(file_name)
 			if change_key_value and fpostfix == '.json':
 				result_dict = json.load(open(path))
 				if old_key != new_key and old_key in result_dict:
@@ -1146,7 +1142,7 @@ class ModelTestor(object):
 				assert old_folder_name != new_folder_name
 				print('Change File Folder: {0}'.format(path))
 				new_path = os.path.join(upPath, new_folder_name)
-				shutil.rmtree(new_path, ignore_errors=True)    # delete new_path
+				shutil.rmtree(new_path, ignore_errors=True)
 				shutil.move(path, new_path)
 
 
@@ -1156,8 +1152,7 @@ class ModelTestor(object):
 		model = RankScoreModel(hpo_reader=hpo_reader or self.get_hpo_reader())
 		for data_name in data_names:
 			models_raw_results = [self.load_raw_results(model_name, data_name) for model_name in model_names]
-			# print(data_name, model_names, [len(r) for r in models_raw_results])
-			# assert False
+
 			if logger is not None:
 				logger.info(
 					'\n------------------------------\n{}, {} (SIZE={}), calculating Metrics:'.format(
@@ -1165,7 +1160,7 @@ class ModelTestor(object):
 			raw_results = model.combine_many_raw_results(models_raw_results, model_weight, cpu_use=cpu_use, combine_method=combine_method)
 			if save:
 				self.save_raw_results(raw_results, ensemble_name, data_name)
-			# quit()
+
 			metric_dict = self.get_performance(raw_results, self.data[data_name], metric_set, logger, cpu_use=cpu_use, rd_decompose=rd_decompose)
 			self.save_metric_dict(ensemble_name, data_name, metric_dict)
 
@@ -1190,7 +1185,7 @@ class ModelTestor(object):
 
 	def get_p_value(self, pred_ranks1, pred_ranks2, alternative, metric, r_object):
 		if metric == 'Mic.RankMedian':
-			return py_wilcox(pred_ranks1, pred_ranks2, alternative=alternative, paired=False, robjects=r_object)['p_value'] # Mann-Whitney rank test with correction
+			return py_wilcox(pred_ranks1, pred_ranks2, alternative=alternative, paired=False, robjects=r_object)['p_value']
 
 		elif metric.startswith('Mic.Recall'):
 			top_n = int(metric.split('.').pop())
@@ -1719,7 +1714,6 @@ class ModelTestor(object):
 			# return cal_hodges_lehmann_median_conf_int(x, conf_level=conf_level)
 		elif metric_type == 'mean':
 			return cal_boot_conf_int(x, lambda a: np.mean(a), conf_level=conf_level)
-			# return cal_portion_conf_int_R(int(x.sum()), len(x), conf_level=conf_level) # Wilson score interval with continuity correction
 		elif metric_type == 'mac_mean':
 			assert id_lists is not None
 			return cal_boot_conf_int(x, cal_mac_mean, conf_level=conf_level, stat_kwargs={'id_lists': id_lists})
@@ -1824,13 +1818,8 @@ class ModelTestor(object):
 
 if __name__ == '__main__':
 	from core.reader import HPOIntegratedDatasetReader
-
 	keep_dnames = ['OMIM', 'ORPHA', 'CCRD']
-
-
 	mt = ModelTestor(hpo_reader=HPOIntegratedDatasetReader(keep_dnames=keep_dnames), keep_general_dis_map=False)
 
-
-	mt.load_test_data('MME')
 
 

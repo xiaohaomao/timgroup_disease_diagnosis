@@ -25,18 +25,18 @@ def get_match_impre_noise_with_dist(true_hpo_set, input_hpo_it, hpo_dict):
 	hpo_to_ances_with_dis = {}
 	mat, imp, noi_spe, noi_oth = [], [], [], []
 	for hpo in input_hpo_it:
-		if hpo in true_hpo_set:  # match
+		if hpo in true_hpo_set:
 			mat.append(hpo)
 			continue
 		impre_tuple = ('', np.inf)
-		for t_hpo in true_hpo_set:  # imprecision
+		for t_hpo in true_hpo_set:
 			ances_with_dis_dict = get_ances_with_dis_dict(t_hpo, hpo_dict)
 			if hpo in ances_with_dis_dict and ances_with_dis_dict[hpo] < impre_tuple[1]:
 				impre_tuple = (t_hpo, ances_with_dis_dict[hpo])
 		if impre_tuple[1] != np.inf:
 			imp.append((hpo, impre_tuple))
 			continue
-		ances_with_dis_dict = get_ances_with_dis_dict(hpo, hpo_dict)  # noise Specified
+		ances_with_dis_dict = get_ances_with_dis_dict(hpo, hpo_dict)
 		noi_spe_tuple = ('', np.inf)
 		for t_hpo in true_hpo_set:
 			if t_hpo in ances_with_dis_dict and ances_with_dis_dict[t_hpo] < noi_spe_tuple[1]:
@@ -69,11 +69,11 @@ def get_match_impre_noise_with_dist_detail(true_hpo_set, input_hpo_it, hpo_dict)
 	hpo_to_ances_with_dis = {}
 	mat, imp, noi_spe, noi_oth = [], [], [], []
 	for hpo in input_hpo_it:
-		if hpo in true_hpo_set:  # match
+		if hpo in true_hpo_set:
 			mat.append(hpo)
 			continue
 		impre_tuples = []
-		for t_hpo in true_hpo_set:  # imprecision
+		for t_hpo in true_hpo_set:
 			ances_with_dis_dict = get_ances_with_dis_dict(t_hpo, hpo_dict)
 			if hpo in ances_with_dis_dict:
 				impre_tuples.append((t_hpo, ances_with_dis_dict[hpo]))

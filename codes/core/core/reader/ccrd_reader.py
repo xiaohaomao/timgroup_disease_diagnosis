@@ -1,5 +1,3 @@
-
-
 import os
 import json
 
@@ -111,8 +109,6 @@ class CCRDReader(object):
 if __name__ == '__main__':
 	ccrd_reader = CCRDReader()
 	ccrd_dict = ccrd_reader.get_ccrd_dict()
-	for ccrd_code, info in ccrd_dict.items():
-		print("\t'{}': [('ORPHA:'), ''], # {}'".format(ccrd_code, info['CNS_NAME']))
 
 
 

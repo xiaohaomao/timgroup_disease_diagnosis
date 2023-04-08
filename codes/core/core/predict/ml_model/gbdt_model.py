@@ -1,5 +1,3 @@
-
-
 from core.predict.config import Config
 from core.predict.config import Config
 from core.predict.model import SklearnModel

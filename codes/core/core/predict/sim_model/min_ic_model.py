@@ -1,5 +1,3 @@
-
-
 import os
 import numpy as np
 from tqdm import tqdm
@@ -29,8 +27,5 @@ class MinICModel(ScoreMatModel):
 if __name__ == '__main__':
 	from core.utils.utils import list_find
 	from core.reader import HPOFilterDatasetReader
-	hpo_reader = HPOFilterDatasetReader(keep_dnames=['OMIM', 'ORPHA', 'CCRD']) # HPOReader()
+	hpo_reader = HPOFilterDatasetReader(keep_dnames=['OMIM', 'ORPHA', 'CCRD'])
 	model = MinICModel()
-	raw_result = model.query(['HP:0000741', 'HP:0000726', 'HP:0000248', 'HP:0000369', 'HP:0000316', 'HP:0000463'], topk=None)  # OMIM:610253
-	print(list_find(raw_result, lambda item:item[0] == 'OMIM:610253'))
-	print(model.query_many([['HP:0000741', 'HP:0000726', 'HP:0000248', 'HP:0000369', 'HP:0000316', 'HP:0000463']]))    # OMIM:610253

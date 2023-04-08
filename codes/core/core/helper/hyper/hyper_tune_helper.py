@@ -24,9 +24,9 @@ class HyperTuneHelper(object):
 		"""
 		self.KEY_SEP = '-'
 		self.init_save_path(name, save_folder)
-		self.init_history(mode)  # [{'SCORE': score_item, 'PARAMETER': para_dict, 'FLT_SCORE_DICT': score_dict}, ...]
-		self.flt_score_weights = self.cal_flt_score_weights(score_keys, score_weights)  # {flt_score_name: score}
-		self.flt_score_order = self.cal_flt_score_order(score_keys, self.flt_score_weights) # [(DATASET1-METRIC1, DATASET2-METRIC1, ...), (DATASET1-METRIC2, DATASET2-METRIC2, ...), ...] for HYPER_TUNE_AVE_SCORE and HYPER_TUNE_IN_TURN_Z_SCORE
+		self.init_history(mode)
+		self.flt_score_weights = self.cal_flt_score_weights(score_keys, score_weights)
+		self.flt_score_order = self.cal_flt_score_order(score_keys, self.flt_score_weights)
 		self.flt_score_order_w = self.cal_flt_score_order_weight_sums(self.flt_score_order, self.flt_score_weights)
 
 
@@ -164,7 +164,7 @@ class HyperTuneHelper(object):
 
 	def get_enrich_history(self, sort_type):
 		history = deepcopy(self.history)
-		sort_score_list = self.cal_history_sort_score(sort_type)  # [{'SCORE': float, ...}]
+		sort_score_list = self.cal_history_sort_score(sort_type)
 		for h, d in zip(history, sort_score_list):
 			h.update(d)
 		return history
@@ -367,11 +367,6 @@ def combine_history(old_save_folders, new_save_folder, score_keys=None, score_we
 
 
 if __name__ == '__main__':
-	hp = HyperTuneHelper(
-		'hehe',
-		[['MME', 'PC'], ['TopAcc.10', 'TopAcc.5', 'RankMedian']],
-		[{'MME': 0.8, 'PC': 0.2}, {'TopAcc.10': 0.5, 'TopAcc.5': 0.3, 'RankMedian': 0.2}]
-	)
-
+	pass
 
 

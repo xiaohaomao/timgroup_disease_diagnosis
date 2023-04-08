@@ -1,5 +1,3 @@
-
-
 import numpy as np
 from core.utils.constant import VEC_COMBINE_MEAN, SET_SIM_SYMMAX, PHELIST_ANCESTOR
 from core.utils.utils import vec_combine, item_list_to_rank_list, mat_l2_norm
@@ -81,14 +79,14 @@ class HPOVecCosineScoreMatModel(ScoreMatModel):
 	def __init__(self, hpo_vec_mat, hpo_reader, phe_list_mode, model_name=None, set_sim_method=SET_SIM_SYMMAX):
 		super(HPOVecCosineScoreMatModel, self).__init__(hpo_reader, phe_list_mode, set_sim_method)
 		self.name = 'HPOVecCosineScoreMatModel' if model_name is None else model_name
-		self.hpo_vec_mat = hpo_vec_mat  # np.ndarray; shape=(hpo_num, vec_size)
+		self.hpo_vec_mat = hpo_vec_mat
 		self.vec_size = self.hpo_vec_mat.shape[1]
 		super(HPOVecCosineScoreMatModel, self).train()
 
 
 	def cal_score_mat(self):
-		self.hpo_norm_mat = mat_l2_norm(self.hpo_vec_mat)  # important to EuModel
-		self.score_mat = np.dot(self.hpo_norm_mat, self.hpo_norm_mat.T)  # [vocab_size, vocab_size]
+		self.hpo_norm_mat = mat_l2_norm(self.hpo_vec_mat)
+		self.score_mat = np.dot(self.hpo_norm_mat, self.hpo_norm_mat.T)
 
 
 

@@ -1,5 +1,3 @@
-
-
 from core.predict.model import Model
 from core.reader.hpo_reader import HPOReader
 from core.utils.utils import list_add_tail, item_list_to_rank_list, get_csr_matrix_from_dict, get_all_ancestors_for_many, delete_redundacy
@@ -48,8 +46,7 @@ class TransferProbModel(Model):
 		data = np.log(1 - np.array(data))
 		data[np.isneginf(data)] = np.log(1-0.99)
 		self.missing_rate_mat = csr_matrix((data, (row, col)), shape=(self.DIS_NUM, self.HPO_NUM))
-		# assert np.sum(np.isnan(self.missing_rate_mat.toarray())) == 0
-		# assert np.sum(np.isinf(self.missing_rate_mat.toarray())) == 0
+
 
 
 	def cal_noise_rate_mat(self):
@@ -60,9 +57,6 @@ class TransferProbModel(Model):
 		M = np.log(M / self.DIS_NUM)
 		M[np.isneginf(M)] = np.log(1/self.DIS_NUM)
 		self.noise_rate_mat = M
-		# assert np.sum(np.isnan(self.noise_rate_mat)) == 0
-		# assert np.sum(np.isinf(self.noise_rate_mat)) == 0
-
 
 	def cal_dis_hpo_mat(self):
 		self.dis_hpo_mat = get_csr_matrix_from_dict(self.hpo_reader.get_dis_int_to_hpo_int(PHELIST_REDUCE),
@@ -85,7 +79,7 @@ class TransferProbModel(Model):
 
 		noise_log_prob = (vstack([q_hpo_mat] * self.DIS_NUM) - self.dis_hpo_ances_mat.multiply(q_hpo_mat)).multiply(self.noise_rate_mat).sum(axis=1).getA1()  # np.matrix; shape=(dis_num, 1)
 
-		score_vec = self.alpha * miss_log_prob + (1 - self.alpha) * noise_log_prob  # np.array; shape=[dis_num]
+		score_vec = self.alpha * miss_log_prob + (1 - self.alpha) * noise_log_prob
 
 		return score_vec
 
@@ -95,7 +89,7 @@ class TransferProbModel(Model):
 		Returns:
 			np.ndarray: shape=(dis_num,)
 		"""
-		score_vec = self.cal_score(phe_list)  # shape=[dis_num]
+		score_vec = self.cal_score(phe_list)
 		assert np.sum(np.isnan(score_vec)) == 0
 		return score_vec
 
@@ -151,4 +145,3 @@ class TransferProbMissPunishModel(TransferProbModel):
 
 if __name__ == '__main__':
 	model = TransferProbMissPunishModel()
-	print(model.query(['HP:0000741', 'HP:0000726', 'HP:0000248', 'HP:0000369', 'HP:0000316', 'HP:0000463'], topk=50))    # OMIM:610253

@@ -1,5 +1,3 @@
-
-
 import numpy as np
 import os
 from copy import deepcopy
@@ -86,12 +84,12 @@ def get_grid():
 		'multi_label':[False],
 		'mixup':[True],
 		'seed':[2211],
-		'hyper_score_type': [HYPER_TUNE_RANK_SCORE], # HYPER_TUNE_Z_SCORE
-		# 'mix_alpha': list(np.linspace(0.1, 1.0, 10)) + list(np.linspace(1.0, 10.0, 10)),
-		'mix_alpha': [10.0], # [0.1, 0.5, 1.0, 2.0, 10.0],
+		'hyper_score_type': [HYPER_TUNE_RANK_SCORE],
+
+		'mix_alpha': [10.0],
 		'mt_test_freq': [100],
 		'early_stop_patience': [10],
-		# 'vec_type':[VEC_TYPE_0_1, VEC_TYPE_TF_IDF, VEC_TYPE_TF, VEC_TYPE_IDF],
+
 	}
 
 

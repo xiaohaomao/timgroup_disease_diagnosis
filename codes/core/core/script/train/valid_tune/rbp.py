@@ -1,5 +1,3 @@
-
-
 import numpy as np
 
 from core.reader import HPOFilterDatasetReader, HPOReader, HPOIntegratedDatasetReader
@@ -44,8 +42,6 @@ def tune_rbp(keep_dnames=None):
 
 
 if __name__ == '__main__':
-
-
 	tune_rbp()
 
 

@@ -1,5 +1,3 @@
-
-
 import numpy as np
 
 from core.reader import HPOFilterDatasetReader, HPOReader, HPOIntegratedDatasetReader
@@ -27,7 +25,7 @@ def train_boqa_model(d, hpo_reader):
 def tune_boqa(keep_dnames=None):
 	hpo_reader = get_hpo_reader(keep_dnames=keep_dnames)
 	grid = {
-		'dp': [None], # list(np.linspace(0.001, 0.009, 9)), # [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0] + [0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09],
+		'dp': [None],
 		'use_freq': [True],
 	}
 	tune(grid, train_boqa_model, BOQAModel.__name__, hpo_reader=hpo_reader, search_type='grid', cpu_use=8, eval_datas=get_eval_datas())

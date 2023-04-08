@@ -1,4 +1,3 @@
-
 import re
 from core.utils.utils import merge_pos_list, unique_list
 

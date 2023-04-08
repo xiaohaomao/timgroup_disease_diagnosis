@@ -1,5 +1,3 @@
-
-
 from core.reader.hpo_reader import HPOReader
 from core.predict.model import SparseVecModel
 from core.utils.constant import PHELIST_ANCESTOR, ADJ_MAT_AROUND, ADJ_MAT_BROTHER, PHELIST_REDUCE, VEC_TYPE_0_1
@@ -18,12 +16,12 @@ class SimpleGCNModel(SparseVecModel):
 		self.phe_list_mode = phe_list_mode
 		self.adj_mat_mode = adj_mat_mode
 		self.adj_order_num = adj_order_num
-		self.adj_mat = None  # csr_matrix; shape=(hpo_num, hpo_num)
+		self.adj_mat = None
 		self.hpo_dis_mat = None
 
 
 	def train(self):
-		self.adj_mat = self.get_adj_mat(self.adj_mat_mode, self.adj_order_num)  # csr_matrix; shape=(hpo_num, hpo_num)
+		self.adj_mat = self.get_adj_mat(self.adj_mat_mode, self.adj_order_num)
 		self.hpo_dis_mat = DataHelper().get_train_X(PHELIST_ANCESTOR, VEC_TYPE_0_1, sparse=True, dtype=np.float32).transpose()
 
 

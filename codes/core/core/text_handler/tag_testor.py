@@ -1,5 +1,3 @@
-
-
 import os
 import numpy as np
 import json
@@ -68,7 +66,7 @@ def set_pair_precision(true_hpo_set, pred_hpo_set, hpo_dict, hpo2ancestors=None)
 	for i in range(m.shape[0]):
 		for j in range(m.shape[1]):
 			m[i, j] = set_precision(hpo2ancestors[true_hpo_list[i]], hpo2ancestors[pred_hpo_list[j]], ances_expand=False, hpo_dict=hpo_dict)
-	return float(np.mean(np.max(m, axis=0)))   # mean of max value of each column
+	return float(np.mean(np.max(m, axis=0)))
 
 
 def set_pair_recall(true_hpo_set, pred_hpo_set, hpo_dict, hpo2ancestors=None):
@@ -78,7 +76,7 @@ def set_pair_recall(true_hpo_set, pred_hpo_set, hpo_dict, hpo2ancestors=None):
 	for i in range(m.shape[0]):
 		for j in range(m.shape[1]):
 			m[i, j] = set_recall(hpo2ancestors[true_hpo_list[i]], hpo2ancestors[pred_hpo_list[j]], ances_expand=False, hpo_dict=hpo_dict)
-	return float(np.mean(np.max(m, axis=1)))   # mean of max value of each row
+	return float(np.mean(np.max(m, axis=1)))
 
 
 def set_pair_f1(true_hpo_set, pred_hpo_set, hpo_dict, hpo2ancestors=None):
@@ -249,16 +247,4 @@ def test():
 
 if __name__ == '__main__':
 	from core.utils.constant import DATA_PATH
-	tt = TagTestor()
 
-	true_folder = os.path.join(DATA_PATH, 'raw', 'PUMC', 'case87-doc-hy-strict-enhance')
-	pids = json.load(open(os.path.join(DATA_PATH, 'raw', 'PUMC', 'val_test_split', 'test_pids.json')))
-	json_names = [f'{pid}.json' for pid in pids]
-
-	base_folder = '/home/yhuang/RareDisease/bert_syn_project/data/preprocess/pumc_87'
-
-
-	pred_folder = os.path.join(base_folder, 'dict_bert-albertTinyDDMLSim')
-
-
-	tt.cal_metrics_and_save(true_folder, pred_folder, json_names)

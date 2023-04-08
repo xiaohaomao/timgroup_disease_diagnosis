@@ -1,7 +1,4 @@
-
-
 import re
-
 from core.utils.utils import dict_list_add
 
 
@@ -59,9 +56,9 @@ class OBOReader(object):
 
 
 	def get_handle_func(self):
-		def hsv(k, v, info_dict, key_map):    # handle single value
+		def hsv(k, v, info_dict, key_map):
 			info_dict[key_map[k]] = v
-		def hlv(k, v, info_dict, key_map):    # handle list value
+		def hlv(k, v, info_dict, key_map):
 			dict_list_add(key_map[k], v, info_dict)
 		def handle_isa_value(k, v, info_dict, key_map):
 			v = v.split('!')[0].strip()

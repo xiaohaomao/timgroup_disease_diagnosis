@@ -1,5 +1,3 @@
-
-
 import re
 import requests
 from requests_toolbelt import MultipartEncoder  # multipart/form-data

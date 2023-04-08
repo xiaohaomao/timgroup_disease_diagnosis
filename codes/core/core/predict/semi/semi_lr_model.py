@@ -1,5 +1,3 @@
-
-
 import tensorflow as tf
 import os
 import numpy as np
@@ -18,7 +16,7 @@ from core.predict.ml_model.lr_neuron_model import LRNeuronModel, LRNeuronConfig
 class SemiLRNeuronConfig(LRNeuronConfig):
 	def __init__(self, d=None):
 		super(SemiLRNeuronConfig, self).__init__()
-		self.u_lambda = 0.5  # unlabel loss weight
+		self.u_lambda = 0.5
 		self.u_data_names = ('U_DEC',)
 		self.min_hpo = 3
 		self.del_dup = True
@@ -72,14 +70,14 @@ class SemiLRModel(LRNeuronModel):
 
 	def gen_feed_dict(self, c, bc):
 		ldata, udata = bc.next_batch(c.batch_size)
-		lX, ly_ = ldata   # sparseX and sparseY
-		u_X = udata[0]  # sparseX
+		lX, ly_ = ldata
+		u_X = udata[0]
 		X = vstack([lX, u_X])
 		label_mask = np.zeros(shape=(X.shape[0],), dtype=np.bool); label_mask[:lX.shape[0]] = True
 		X, x_val_shape = self.sparse_X_to_input(X)
 		ret_dict = {
 			self.placeholders['X']: X,
-			self.placeholders['x_val_shape']: x_val_shape,  # int or None
+			self.placeholders['x_val_shape']: x_val_shape,
 			self.placeholders['y_']: sparse_to_tuple(ly_),
 			self.placeholders['keep_prob']: c.keep_prob,
 			self.placeholders['label_mask']: label_mask,
@@ -112,9 +110,5 @@ def generate_model(vec_type=VEC_TYPE_0_1, hpo_reader=HPOReader(), phe_list_mode=
 
 if __name__ == '__main__':
 	model = generate_model(model_name='LRNeuTestModel')
-	print(model.query(
-		['HP:0000741', 'HP:0000726', 'HP:0000248', 'HP:0000369', 'HP:0000316', 'HP:0000463']))  # OMIM:610253
-
-
 
 

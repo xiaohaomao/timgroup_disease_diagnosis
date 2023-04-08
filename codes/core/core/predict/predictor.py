@@ -1,10 +1,5 @@
-
-
 import os
-
 from core.explainer.predict_explainer import SingleResultExplainer, MultiModelExplainer
-
-
 class Predictor(object):
 	def __init__(self):
 		pass
@@ -13,7 +8,7 @@ class Predictor(object):
 class MultiModelPredictor(Predictor):
 	def __init__(self):
 		super(MultiModelPredictor, self).__init__()
-		self.model_dict = {} # {model_key: model}
+		self.model_dict = {}
 		self.pa_hpo_list = None
 		self.text_searcher = None
 		self.TOP_N = 20

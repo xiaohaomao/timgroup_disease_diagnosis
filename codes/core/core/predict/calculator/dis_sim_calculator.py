@@ -1,5 +1,3 @@
-
-
 from multiprocessing import Pool
 from tqdm import tqdm
 import numpy as np
@@ -108,7 +106,7 @@ class DisSimCalculator(object):
 
 	def cal_euclidean_mat_multi_wrap(self, paras):
 		model, i = paras
-		return -model.cal_euclid_dist(model.dis_vec_mat[i]), i  # negative distance
+		return -model.cal_euclid_dist(model.dis_vec_mat[i]), i
 
 
 	def get_euclidean_mat(self, phe_list_mode=PHELIST_ANCESTOR, vec_type=VEC_TYPE_0_1, cpu_use=12):
@@ -313,9 +311,7 @@ class DisSimCalculator(object):
 
 
 if __name__ == '__main__':
-
 	dsc = DisSimCalculator()
-
 	m = dsc.sim_mat_to_dist_mat(dsc.get_jaccard_mat(), SIM_TO_DIST_MAX)
 	explainer = DisSimMatExplainer(m, DIS_SIM_JACCARD+'-'+SIM_TO_DIST_MAX, topk=100000)
 	explainer.explain_and_save(); explainer.draw_dist()

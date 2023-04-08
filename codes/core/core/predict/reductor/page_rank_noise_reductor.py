@@ -1,4 +1,3 @@
-
 import os
 import pickle
 import json
@@ -20,8 +19,8 @@ class PageRankNoiseReductor(object):
 		self.SMOOTH_VALUE = SM
 		self.DISEASE_PTM_NPY = DATA_PATH + '/preprocess/DiseaseJaccardPTM_SM{0}.npy'.format(self.SMOOTH_VALUE)
 		self.GENE_PTM_NPY = DATA_PATH + '/preprocess/GeneJaccardPTM_SM{0}.npy'.format(self.SMOOTH_VALUE)
-		self.disease_ptm_mat = None # probability transfer matrix; np.array; shape=[hpo_num, hpo_num]
-		self.gene_ptm_mat = None  # probability transfer matrix; np.array; shape=[hpo_num, hpo_num]
+		self.disease_ptm_mat = None
+		self.gene_ptm_mat = None
 
 		self.DISTOHPO_JSON_PATH = DATA_PATH + '/preprocess/DisToHPOPGReduct_SM{0}.json'.format(self.SMOOTH_VALUE)
 		self.DISTOHPO_DIS_ANNO_JSON_PATH = DATA_PATH + '/preprocess/DisToHPOPGReduct_DisAnno_SM{0}.json'.format(self.SMOOTH_VALUE)
@@ -39,10 +38,10 @@ class PageRankNoiseReductor(object):
 			row.extend([i]*len(rank_list))
 			col.extend(rank_list)
 			data.extend([1]*len(rank_list))
-		anno_vec_mat = csr_matrix((data, (row, col)), shape=(ANNO_ITEM_NUM, HPO_CODE_NUMBER))    # shape=(annoNum, hpo_num)
-		intersect_mat = anno_vec_mat.transpose() * anno_vec_mat  # shape=(hpo_num, hpo_num)
-		anno_num_mat = anno_vec_mat.sum(axis=0)  # np.matrix; shape=(1, hpo_num)
-		ptm = np.array(intersect_mat / (-intersect_mat + anno_num_mat + anno_num_mat.T))   # np.matrix; shape=(hpo_num, hpo_num)
+		anno_vec_mat = csr_matrix((data, (row, col)), shape=(ANNO_ITEM_NUM, HPO_CODE_NUMBER))
+		intersect_mat = anno_vec_mat.transpose() * anno_vec_mat
+		anno_num_mat = anno_vec_mat.sum(axis=0)
+		ptm = np.array(intersect_mat / (-intersect_mat + anno_num_mat + anno_num_mat.T))
 		ptm[ptm==0] = self.SMOOTH_VALUE #
 		ptm[np.isnan(ptm)] = self.SMOOTH_VALUE  #
 		ptm[range(ptm.shape[0]), range(ptm.shape[0])] = 1.0
@@ -82,8 +81,8 @@ class PageRankNoiseReductor(object):
 			M = self.get_jaccard_ptm_using_dis_anno()[rank_list, :][:, rank_list]
 		M = M / M.sum(axis=0)
 		v = pagerank(M); assert np.sum(np.isnan(v)) == 0
-		result = heapq.nlargest(keep_k, [(v[i], rank_list[i]) for i in range(len(rank_list))])  # [(probability, hpo_rank), ...]
-		# print([(hpo_list[result[i][1]],result[i][0]) for i in range(len(result))])
+		result = heapq.nlargest(keep_k, [(v[i], rank_list[i]) for i in range(len(rank_list))])
+
 		return [hpo_list[hpo_rank] for _, hpo_rank in result], [prob for prob, hpo_rank in result]
 
 
@@ -197,24 +196,24 @@ if __name__ == '__main__':
 	hpo_reader = HPOReader()
 	nr = PageRankNoiseReductor(HPOReader(), SM=0.02)
 
-	from core.predict.model_testor import ModelTestor
-	from core.utils.constant import RESULT_PATH
-	mt = ModelTestor()
-	data_names = ['MME_43', 'PC_174', 'DEC_SNV_DIS_155', 'SIM_NOISE']
-	mt.load_test_data(data_names)
-	output_str = 'DiffRankRatio: \n'
-	drr_str = ''
-	for sm in tqdm([0.0001, 0.001, 0.005, 0.01, 0.02, 0.03, 0.05, 0.1]):
-		nr = PageRankNoiseReductor(HPOReader(), SM=sm)
-		output_str += 'SM={sm}\t'.format(sm=sm)
-		for data_name in data_names:
-			diffRankRatio, sub_drr_str = cal_diff_rank_ratio(mt.data[data_name], nr, hpo_reader)
-
-			output_str += '{data_name} {drr}; '.format(sm=sm, data_name=data_name, drr=diffRankRatio)
-			drr_str += '' \
-				'==========================================\n' \
-				'SM={sm} {data_name} {drr} \n' \
-				'{sub_drr_str} \n'.format(sm=sm, data_name=data_name, drr=diffRankRatio, sub_drr_str=sub_drr_str)
-		output_str += '\n'
-	folder = RESULT_PATH + '/PageRank'; os.makedirs(folder, exist_ok=True)
-	print(drr_str, output_str, file=open(folder+'/DiffRankRatio_DISEASE_ANNOTATION', 'w'))
+	# from core.predict.model_testor import ModelTestor
+	# from core.utils.constant import RESULT_PATH
+	# mt = ModelTestor()
+	# data_names = ['MME_43', 'PC_174', 'DEC_SNV_DIS_155', 'SIM_NOISE']
+	# mt.load_test_data(data_names)
+	# output_str = 'DiffRankRatio: \n'
+	# drr_str = ''
+	# for sm in tqdm([0.0001, 0.001, 0.005, 0.01, 0.02, 0.03, 0.05, 0.1]):
+	# 	nr = PageRankNoiseReductor(HPOReader(), SM=sm)
+	# 	output_str += 'SM={sm}\t'.format(sm=sm)
+	# 	for data_name in data_names:
+	# 		diffRankRatio, sub_drr_str = cal_diff_rank_ratio(mt.data[data_name], nr, hpo_reader)
+	#
+	# 		output_str += '{data_name} {drr}; '.format(sm=sm, data_name=data_name, drr=diffRankRatio)
+	# 		drr_str += '' \
+	# 			'==========================================\n' \
+	# 			'SM={sm} {data_name} {drr} \n' \
+	# 			'{sub_drr_str} \n'.format(sm=sm, data_name=data_name, drr=diffRankRatio, sub_drr_str=sub_drr_str)
+	# 	output_str += '\n'
+	# folder = RESULT_PATH + '/PageRank'; os.makedirs(folder, exist_ok=True)
+	# print(drr_str, output_str, file=open(folder+'/DiffRankRatio_DISEASE_ANNOTATION', 'w'))

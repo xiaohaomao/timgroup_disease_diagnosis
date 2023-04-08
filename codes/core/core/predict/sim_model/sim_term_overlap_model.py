@@ -1,5 +1,3 @@
-
-
 import os
 import numpy as np
 from tqdm import tqdm
@@ -38,7 +36,7 @@ class SimTOModel(SparseVecModel):
 
 	def cal_dis_vec_mat(self):
 		row, col, data = [], [], []
-		for i in range(self.DIS_CODE_NUMBER):  # ith disease
+		for i in range(self.DIS_CODE_NUMBER):
 			hpo_list = self.dis2hpo[self.dis_list[i]]
 			rank_list = list(map(lambda hpo_code: self.hpo_map_rank[hpo_code], hpo_list))
 			row.extend([i]*len(rank_list))
@@ -811,10 +809,8 @@ class SimTODominantReverseDReduceModel(SimTODominantReverseModel):
 
 
 if __name__ == '__main__':
-	# from core.predict.PageRankNoiseReductor import PageRankNoiseReductor
+
 	from core.reader import HPOFilterDatasetReader
-	hpo_reader = HPOFilterDatasetReader(keep_dnames=['OMIM', 'ORPHA', 'CCRD'])  # HPOReader()
-
-
+	hpo_reader = HPOFilterDatasetReader(keep_dnames=['OMIM', 'ORPHA', 'CCRD'])  #
 
 	model = ICTODQAcrossModel(hpo_reader)

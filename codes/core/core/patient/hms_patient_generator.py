@@ -1,5 +1,3 @@
-
-
 import os
 import pandas as pd
 import re
@@ -212,7 +210,7 @@ class HmsPatientGenerator(PatientGenerator):
 		"""
 		str_mat = pd.read_csv(self.RAW_CSV, header=None).fillna('').values.tolist()
 		str_mat.append(['94', '', '', '', '', '', '', ''])
-		pid_to_patient_mat = {} # {pid: patient_mat}
+		pid_to_patient_mat = {}
 
 		last_idx, last_pid = 0, '1'
 		for i in range(1, len(str_mat)):
@@ -253,7 +251,7 @@ class HmsPatientGenerator(PatientGenerator):
 				return 'TF_VISIT'
 			return None
 
-		visit_key_idx = [] # [(key, idx), ...]
+		visit_key_idx = []
 		for i, row in enumerate(patient_mat):
 			k = get_visit_key(row[0])
 			if k:
@@ -311,7 +309,6 @@ class HmsPatientGenerator(PatientGenerator):
 
 
 if __name__ == '__main__':
-	hpo_reader = HPOFilterDatasetReader(keep_dnames=['OMIM', 'ORPHA', 'CCRD'])  # HPOReader()
+	hpo_reader = HPOFilterDatasetReader(keep_dnames=['OMIM', 'ORPHA', 'CCRD'])
 	pg = HmsPatientGenerator(hpo_reader=hpo_reader)
-
 	pg.get_patients()

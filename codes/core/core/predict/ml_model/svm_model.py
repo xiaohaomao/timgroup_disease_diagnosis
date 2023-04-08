@@ -1,5 +1,3 @@
-
-
 import numpy as np
 import joblib
 import os
@@ -22,7 +20,7 @@ class LSVMConfig(Config):
 
 
 class LSVMModel(SklearnModel):
-	# NOTE: has no attribute 'predict_proba'
+
 	def __init__(self, hpo_reader=HPOReader(), vec_type=VEC_TYPE_0_1, phe_list_mode=PHELIST_ANCESTOR, embed_mat=None,
 			combine_modes=(VEC_COMBINE_MEAN,), dim_reductor=None, mode=PREDICT_MODE, model_name=None, save_folder=None,
 			init_para=True, use_rd_mix_code=False):
@@ -47,7 +45,7 @@ class LSVMModel(SklearnModel):
 		os.makedirs(os.path.dirname(self.MODEL_SAVE_PATH), exist_ok=True)
 
 
-	# @timer
+
 	def train(self, lsvm_config, save_model=True):
 		# print(rf_config)
 		raw_X, y_ = DataHelper(self.hpo_reader).get_train_raw_Xy(self.phe_list_mode, use_rd_mix_code=self.use_rd_mix_code)

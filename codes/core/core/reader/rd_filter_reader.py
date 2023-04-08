@@ -1,4 +1,3 @@
-
 from copy import deepcopy
 
 from core.reader.rd_reader import RDReader
@@ -132,9 +131,9 @@ class RDFilterReader(object):
 	def statistic(self):
 		from collections import Counter
 		filtered_rd_dict = self.get_rd_dict()
-		print('All filtered disease number: {}/{}'.format(len(filtered_rd_dict), len(all_source_codes)))  # 9216/11538
+		print('All filtered disease number: {}/{}'.format(len(filtered_rd_dict), len(all_source_codes)))
 		print('Filtered disease level:', Counter([info['LEVEL'] for rd_code, info in
-			filtered_rd_dict.items()]).most_common())  # [('DISORDER', 6306), ('DISORDER_SUBTYPE', 2619), ('DISORDER_GROUP', 291)]
+			filtered_rd_dict.items()]).most_common())
 		print('Filtered Isolated codes:', len([rd_code for rd_code, info in filtered_rd_dict.items() if
 			len(info.get('IS_A', [])) == 0 and len(info.get('CHILD', [])) == 0]))
 

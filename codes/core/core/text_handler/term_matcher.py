@@ -1,4 +1,3 @@
-
 import re
 from copy import deepcopy
 
@@ -42,7 +41,7 @@ class TermMatcher(object):
 		hpo_to_gold_ps = {} if hpo_to_gold_ps is None else hpo_to_gold_ps
 
 
-		self.hpo_to_gold_cp = {hpo: re.compile('^'+'$|^'.join(p_list)+'$') for hpo, p_list in hpo_to_gold_ps.items()} # cp: compile pattern; p: pattern str
+		self.hpo_to_gold_cp = {hpo: re.compile('^'+'$|^'.join(p_list)+'$') for hpo, p_list in hpo_to_gold_ps.items()}
 
 	def match_gold(self, term):
 		"""
@@ -139,7 +138,7 @@ class BagTermMatcher(TermMatcher):
 	def cal_max_term_length(self):
 		len1 = max([len(term) for term in self.std_term_to_hpos]) if self.std_term_to_hpos else 0
 		len2 = max([len(term) for term in self.term_to_hpos]) if self.term_to_hpos else 0
-		return max(len1, len2) + 2  # allow 2 empty char
+		return max(len1, len2) + 2
 
 
 	def get_max_term_length(self):
@@ -172,7 +171,7 @@ class BagTermMatcher(TermMatcher):
 
 
 if __name__ == '__main__':
-	print(BagTermMatcher({}, '').std_term_to_hpos[''])
+	pass
 
 
 

@@ -1,5 +1,3 @@
-
-
 from mlModel.LRNeuronModel import LRNeuronConfig, generate_model
 from core.utils.constant import TRAIN_MODE
 from core.predict.model_testor import ModelTestor
@@ -73,7 +71,6 @@ def train_mixup():
 if __name__ == '__main__':
 	pass
 	os.environ["CUDA_VISIBLE_DEVICES"] = "0"
-
 	train_wdecay()
 
 

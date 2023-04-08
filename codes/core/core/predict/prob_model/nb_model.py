@@ -1,5 +1,3 @@
-
-
 import heapq
 from sklearn.naive_bayes import MultinomialNB, ComplementNB
 from sklearn.utils.fixes import logsumexp
@@ -17,11 +15,11 @@ from core.utils.utils import cal_max_child_prob_array, scale_by_min_max, get_all
 from core.utils.utils import get_csr_matrix_from_dict
 from core.helper.data.data_helper import DataHelper
 
-# =====================================================================
+
 class MNBConfig(Config):
 	def __init__(self, d=None):
 		super(MNBConfig, self).__init__()
-		self.alpha = 1.0    # smoothing (0 for no smoothing; 1 for Laplace)
+		self.alpha = 1.0
 		self.class_prior = None
 		if d is not None:
 			self.assign(d)
@@ -256,7 +254,7 @@ class TreeMNBModel(MNBModel):
 class CNBConfig(Config):
 	def __init__(self, d=None):
 		super(CNBConfig, self).__init__()
-		self.alpha = 1.0    # smoothing (0 for no smoothing; 1 for Laplace)
+		self.alpha = 1.0
 		self.class_prior = None
 		if d is not None:
 			self.assign(d)
@@ -311,7 +309,7 @@ class CNBModel(SklearnModel):
 class BNBConfig(Config):
 	def __init__(self, d=None):
 		super(BNBConfig, self).__init__()
-		self.alpha = 1.0    # smoothing (0 for no smoothing; 1 for Laplace)
+		self.alpha = 1.0
 		self.class_prior = None
 		if d is not None:
 			self.assign(d)
@@ -362,9 +360,9 @@ class BNBModel(ClassificationModel):
 class BNBProbConfig(Config):
 	def __init__(self):
 		super(BNBProbConfig, self).__init__()
-		self.anno_dp = 1.0 # default probability for annotation
-		self.not_have_dp = 0.0    # default probability for hpo that the disease haven't
-		self.min_prob = 0.1  # min-max scale
+		self.anno_dp = 1.0
+		self.not_have_dp = 0.0
+		self.min_prob = 0.1
 		self.max_prob = 0.9
 
 
@@ -378,7 +376,7 @@ class BNBProbModel(SklearnModel):
 		self.FEATURE_LOG_PROB_PATH = folder + os.sep + self.name + '.npz'
 		self.CONFIG_JSON = folder + os.sep + self.name + '.json'
 
-		self.feature_log_prob = None  # np.ndarray; shape=(nClasses, nFeatures); P(x_i|y)
+		self.feature_log_prob = None
 		if init_para and mode == PREDICT_MODE:
 			self.load()
 
@@ -387,11 +385,11 @@ class BNBProbModel(SklearnModel):
 			assert np.sum(np.isnan(self.feature_log_prob)) == 0
 			assert np.sum(np.isneginf(self.feature_log_prob)) == 0
 		dis_int_to_hpo_int_prob = self.hpo_reader.get_dis_int_to_hpo_int_prob(default_prob=bnb_config.anno_dp)
-		hpo_int_dict = self.hpo_reader.get_hpo_int_dict() # {hpo_rank: {'IS_A': [hpoRank1, ...], 'CHILD': [hpoRank2, ...], ..}}
+		hpo_int_dict = self.hpo_reader.get_hpo_int_dict()
 		self.feature_log_prob = np.zeros(shape=(self.DIS_CODE_NUMBER, self.HPO_CODE_NUMBER), dtype=np.float64)
 		for i in range(self.DIS_CODE_NUMBER):
 			self.feature_log_prob[i, :] = cal_max_child_prob_array(dis_int_to_hpo_int_prob[i], hpo_int_dict, bnb_config.not_have_dp, dtype=np.float64)
-		self.feature_log_prob = scale_by_min_max(self.feature_log_prob, bnb_config.min_prob, bnb_config.max_prob, 0.0, 1.0)    # scale to [min, max]
+		self.feature_log_prob = scale_by_min_max(self.feature_log_prob, bnb_config.min_prob, bnb_config.max_prob, 0.0, 1.0)
 		self.feature_log_prob = np.log(self.feature_log_prob)
 		check()
 
@@ -412,9 +410,8 @@ class BNBProbModel(SklearnModel):
 		"""ref: https://github.com/scikit-learn/scikit-learn/blob/55bf5d9/sklearn/naive_bayes.py#L89
 		"""
 		neg_prob = np.log(1 - np.exp(self.feature_log_prob))
-		jll = X * (self.feature_log_prob - neg_prob).T + neg_prob.sum(axis=1)   # shape=(sample_num, class_num)
-		# make sure the sum of prob is 1.0
-		log_prob_X = logsumexp(jll, axis=1) # np.log(np.sum(np.exp(jll), axis=1))
+		jll = X * (self.feature_log_prob - neg_prob).T + neg_prob.sum(axis=1)
+		log_prob_X = logsumexp(jll, axis=1)
 		return jll - np.atleast_2d(log_prob_X).T
 
 
@@ -430,7 +427,7 @@ class BNBProbModel(SklearnModel):
 
 if __name__ == '__main__':
 	from core.reader import HPOFilterDatasetReader
-	hpo_reader = HPOFilterDatasetReader(keep_dnames=['OMIM', 'ORPHA', 'CCRD'])  # HPOReader()
+	hpo_reader = HPOFilterDatasetReader(keep_dnames=['OMIM', 'ORPHA', 'CCRD'])
 	model = HPOProbMNBModel(hpo_reader)
 
 

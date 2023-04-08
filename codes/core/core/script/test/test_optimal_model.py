@@ -1,15 +1,10 @@
-
-
 import os
 os.environ["MKL_NUM_THREADS"] = "1"
 os.environ["NUMEXPR_NUM_THREADS"] = "1"
 os.environ["OMP_NUM_THREADS"] = "1"
-
 import itertools
 import gc
-
 import codecs
-
 import json
 
 from core.predict.sim_model import MICAModel, MICALinModel, MinICModel, MICAJCModel, SimGICModel
@@ -42,45 +37,46 @@ from core.helper.hyper.hyper_tune_helper import HyperTuneHelper
 from core.script.train.valid_tune.tune import get_embed_mat
 from core.utils.utils import get_logger, delete_logger
 
-TEST_SEED = 777
-print('TEST_SEED = {}'.format(TEST_SEED))
 
+
+
+TEST_SEED = 777
 
 def get_real_data_names(eval_data):
 	return get_tune_data_names(eval_data)
-
-
 def get_eval_datas():
-
 	return [TEST_DATA]
 
+
+##### select datasets to evaluate #####
 def get_data_names():
 	return [
-	# validation subset of RAMEDIS
-	'Validation_subsets_of_RAMEDIS',
+	## validation subset of RAMEDIS ##
+	#'Validation_subsets_of_RAMEDIS',
 
-	# Multi-country-test set
-	'Multi-country-test',
+	## Multi-country-test set ##
+	#'Multi-country-test',
 
-	# combined multi-country set
-	'Combined-Multi-Country',
+	## combined multi-country set ##
+	#'Combined-Multi-Country',
 
-	# PUMCH-L datasest
-	'PUMCH-L-CText2Hpo',
-	'PUMCH-L-Meta',
-	'PUMCH-L-CHPO',
+	## PUMCH-L datasets ##
+	#'PUMCH-L-CText2Hpo',
+	#'PUMCH-L-Meta',
+	#'PUMCH-L-CHPO',
 
-	# PUMCH-MDT dataset
-	'PUMCH-MDT',
+	## PUMCH-MDT dataset ##
+	#'PUMCH-MDT',
 
-	# PUMCH-ADM dataset
+	## PUMCH-ADM dataset ##
 	'PUMCH-ADM',
 
-	# Sampled_100 cases
-	'Multi-country-test-set-100',
-	'RAMEDIS_100',
+	## Sampled_100 cases ##
+	#'Multi-country-test-set-100',
+	#'RAMEDIS_100',
 
-	# 24 methylmalonic academia cases  using different knowledge bases
+
+	## 24 methylmalonic academia cases  using different knowledge bases ##
 	# 'MUT_24_CASES_OMIM',
 	# 'MUT_24_CASES_ORPHA',
 	# 'MUT_24_CASES_CCRD',
@@ -89,7 +85,8 @@ def get_data_names():
 	# 'MUT_24_CASES_CCRD_OMIM',
 	# 'MUT_24_CASES_CCRD_OMIM_ORPHA',
 
-	# validation subsets of RAMEDIS using different knowledge bases
+
+	## validation subsets of RAMEDIS using different knowledge bases ##
 	# 'validation_subset_RAMDEIS_CCRD',
 	# 'validation_subset_RAMDEIS_OMIM',
 	# 'validation_subset_RAMDEIS_ORPHA',
@@ -98,7 +95,8 @@ def get_data_names():
 	# 'validation_subset_RAMDEIS_OMIM_ORPHA',
 	# 'validation_subset_RAMDEIS_CCRD_OMIM_ORPHA',
 
-	# multi_country_test using different knowledge bases
+
+	## multi_country_test using different knowledge bases ##
 	# 'Multi-country-test_CCRD',
 	# 'Multi-country-test_OMIM',
 	# 'Multi-country-test_ORPHA',
@@ -107,7 +105,8 @@ def get_data_names():
 	# 'Multi-country-test_OMIM_ORPHA',
 	# 'Multi-country-test_CCRD_OMIM_ORPHA',
 
-	# simulated datasets
+
+	## simulated datasets ##
 	# 'SIM_ORIGIN',
 	# 'SIM_NOISE',
 	# 'SIM_IMPRE',
@@ -118,36 +117,26 @@ def get_data_names():
 
 
 
-
-
 def get_metric_names(levels=None):
-
 	metric_names = [
-		# 'Mic.Recall.20', 'Mac.Recall.20',
-		'Mic.Recall.10', #'Mac.Recall.10',
-		'Mic.Recall.3', #'Mac.Recall.3',
-		'Mic.Recall.1', #'Mac.Recall.1',
+		'Mic.Recall.10',
+		'Mic.Recall.3',
+		'Mic.Recall.1',
 		'Mic.RankMedian'
 	]
 
 	if levels is not None:
 		mark = '_'.join(sorted(levels))
 		metric_names = [f'{metric_name}_{mark}' for metric_name in metric_names]
-
-
 	return metric_names
 
 
 def get_hpo_reader(keep_dnames=None, rm_no_use_hpo=False):
-
 	keep_dnames = keep_dnames or ['OMIM', 'ORPHA', 'CCRD']
-
 	return HPOIntegratedDatasetReader(keep_dnames=keep_dnames, rm_no_use_hpo=rm_no_use_hpo)
 
 
 def get_mt_hpo_reader(keep_dnames=None):
-
-
 	return get_hpo_reader(keep_dnames=keep_dnames)
 
 def get_model_name_mark():
@@ -797,11 +786,8 @@ def get_spv_clf_initial_paras():
 
 def get_paper_ensemble_model_names():
 	return [
-
 		#'ICTO(A)-HPOProb',
-
 		#'ICTO(A)-HPOProb-CNB',
-
 		'ICTO(A)-HPOProb-CNB-MLP',
 	]
 
@@ -820,7 +806,6 @@ def ensemble_name_to_model_names(ensemble_name):
 def get_semi_initial_paras():
 	hpo_reader = get_hpo_reader()
 	model_initial_paras = [
-
 		(SemiLRModel, (hpo_reader, VEC_TYPE_TF), {'model_name': 'SemiLR', 'phe_list_mode': PHELIST_ANCESTOR_DUP})
 	]
 	return model_initial_paras
@@ -830,7 +815,6 @@ def get_semi_model_names():
 	return [
 		'MixMN1',
 		'MixMN2',
-
 		'SemiLR'
 	]
 
@@ -838,7 +822,6 @@ def get_semi_model_names():
 def get_clt_clf_initial_paras():
 	hpo_reader = get_hpo_reader()
 	model_initial_paras = [
-
 		(ClusterClassifyModel, (hpo_reader,), {
 			'clt_generator':KMedoidCluster, 'clt_kwargs':{'c':KMedoidClusterConfig({
 				"dis_sim_type": "DIS_SIM_MICA",
@@ -887,7 +870,6 @@ def get_draw_model_names():
 	return [
 		'SimTOModel',
 		'SimTOQReduceModel',
-
 		'ICTODQAcrossModel',
 		'LogisticModel_01_Ances_Bias0_C0.05',
 		'LSVMModel_01_Ances_C0.001',
@@ -904,23 +886,16 @@ def get_draw_model_names():
 
 def cal_metric(model_initial_paras, save_raw_results=True, cpu_use=8, use_query_many=True,
 		keep_general_dis_map=True, rd_decompose=False):
-
 	logger = get_logger('testOptimalModel')
-	model = None
 
 
 	for initializer, args, kwargs in model_initial_paras:
-		del model; gc.collect()
+		#del model; gc.collect()
 		model = initializer(*args, **kwargs)
 		save_model_name = get_model_name_with_mark(model.name)
-
 		for eval_data in get_eval_datas():
 			mt = ModelTestor(eval_data, hpo_reader=get_mt_hpo_reader(), seed=TEST_SEED, keep_general_dis_map=keep_general_dis_map)
-
 			mt.load_test_data(get_data_names())
-
-
-
 			mt.cal_metric_and_save(
 				model, data_names=get_data_names(), metric_set=set(get_metric_names()), cpu_use=cpu_use,
 				use_query_many=use_query_many, save_raw_results=save_raw_results, logger=logger, save_model_name=save_model_name,
@@ -1170,57 +1145,35 @@ def consistency_ensemble(tgt_model_name, all_model_names, ensemble_name, topk, t
 
 
 if __name__ == '__main__':
-
 	os.environ["CUDA_VISIBLE_DEVICES"] = "0"
-
-	print('============ the data path ==============',RESULT_PATH)
-
-
 	raw_data_path = RESULT_PATH
-
-
-
-
 	keep_general_dis_map = True
-	conf_level = 0.95 #  0.95 # 0.95
+	conf_level = 0.95
 	save_raw_results = True
 
-	# # Calculate metric ===================================
-	#cal_metric(get_base_line_initial_paras(), cpu_use=12, save_raw_results=save_raw_results, keep_general_dis_map=keep_general_dis_map)
+	##### whether added 12 diagnostic methods #####
+	benckmark_methods = True # False
+
+
+	##### diagnostic methods #####
+	our_methods = get_paper_sim_model_names() + get_paper_prob_model_names() + get_paper_random_spv_clf() + get_paper_ensemble_model_names()
+	baseline_methods = get_paper_random_baseline()
+
+	#####  added 12 benchmark methods ####
+	if benckmark_methods:
+		cal_metric(get_base_line_initial_paras(), cpu_use=12, save_raw_results=save_raw_results,keep_general_dis_map=keep_general_dis_map)
+		diagnostic_methods = baseline_methods + our_methods
+	else:
+		diagnostic_methods = our_methods
+
 	cal_metric(get_sim_model_initial_paras(), cpu_use=12, save_raw_results=save_raw_results, keep_general_dis_map=keep_general_dis_map)
 	cal_metric(get_prob_model_initial_paras(), cpu_use=12, save_raw_results=save_raw_results, keep_general_dis_map=keep_general_dis_map)
 	cal_metric(get_spv_clf_initial_paras(), cpu_use=12, save_raw_results=save_raw_results, keep_general_dis_map=keep_general_dis_map)
 	rank_ensemble(get_paper_ensemble_model_names(), cpu_use=8, save_raw_results=save_raw_results, combine_method='ave', keep_general_dis_map=keep_general_dis_map)
-	#
-	#
 
-	# # General ===================================
-	# #our_methods = get_paper_sim_model_names()
-	# #our_methods = get_paper_sim_model_names() + get_paper_prob_model_names() + get_paper_random_spv_clf()
-	our_methods = get_paper_sim_model_names() + get_paper_prob_model_names() + get_paper_random_spv_clf() + get_paper_ensemble_model_names()
-	# #our_methods = get_paper_sim_model_names() + get_paper_prob_model_names()  + get_paper_ensemble_model_names()
-	# #our_methods = get_paper_prob_model_names() + get_paper_ensemble_model_names()
-	# #our_methods = get_paper_prob_model_names()
-	# #our_methods = get_paper_random_spv_clf()
-	# #our_methods = get_paper_ensemble_model_names()
-	#
-
-	baseline_methods = get_paper_random_baseline()
-
-	#cal_conf_int(baseline_methods+our_methods, cpu_use=12, conf_level=conf_level, cal_single=True, keep_general_dis_map=keep_general_dis_map)
-	cal_conf_int(our_methods, cpu_use=12, conf_level=conf_level, cal_single=True, keep_general_dis_map=keep_general_dis_map)
-	#
-
-	#cal_metric_from_raw(model_names=baseline_methods+our_methods, keep_general_dis_map=keep_general_dis_map)
-	cal_metric_from_raw(model_names=our_methods, keep_general_dis_map=keep_general_dis_map)
-
-	#gen_excel(baseline_methods+our_methods, cal_model_rank=True, cal_dataset_mean=True, conf_level=conf_level, keep_general_dis_map=keep_general_dis_map)
-	gen_excel(our_methods, cal_model_rank=True, cal_dataset_mean=True, conf_level=conf_level,keep_general_dis_map=keep_general_dis_map)
-	#gen_dis_category_result(baseline_methods+our_methods)
-	gen_dis_category_result(our_methods)
-	# #gen_dis_category_result(['JaccardModel-Random', 'CosineModel-Random', 'SimGICModel-Random'] + our_methods)
-	#
-	#
-	#gen_case_result(baseline_methods+our_methods)
-	gen_case_result(our_methods)
-
+	##### generate all results #####
+	cal_conf_int(diagnostic_methods, cpu_use=12, conf_level=conf_level, cal_single=True, keep_general_dis_map=keep_general_dis_map)
+	cal_metric_from_raw(model_names=diagnostic_methods, keep_general_dis_map=keep_general_dis_map)
+	gen_excel(diagnostic_methods, cal_model_rank=True, cal_dataset_mean=True, conf_level=conf_level, keep_general_dis_map=keep_general_dis_map)
+	gen_dis_category_result(diagnostic_methods)
+	gen_case_result(diagnostic_methods)

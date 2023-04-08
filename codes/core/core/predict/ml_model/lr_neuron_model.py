@@ -1,4 +1,3 @@
-
 import tensorflow as tf
 import os
 import numpy as np
@@ -32,20 +31,20 @@ class LRNeuronConfig(Config):
 		self.w_decay = 0.0
 		self.optimizer = OPTIMIZER_ADAM
 		self.lr = 0.001
-		self.max_epoch_num = 600    # total_step = c.epoch_num * DIS_CODE_NUMBER // c.batch_size
+		self.max_epoch_num = 600
 		self.min_epoch_num = 150
 
 		self.early_stop_patience = 10
-		self.mt_draw_save_freq = 500    # >= mt_test_freq
+		self.mt_draw_save_freq = 500
 		self.perturbation = False
-		self.pertur_weight = [0.5, 0.2, 0.2, 0.05, 0.05]  # true : reduce : rise : lower : noise
+		self.pertur_weight = [0.5, 0.2, 0.2, 0.05, 0.05]
 		self.mixup = False
 		self.mix_alpha = 1.0
 		self.dis_expand_ances = False
 		self.multi_label = False
 		self.desc_dp = None
 
-		self.eval_data = VALIDATION_DATA # VALIDATION_TEST_DATA # FIXME: VALIDATION_DATA
+		self.eval_data = VALIDATION_DATA
 		self.print_freq = 10
 		self.summary = False
 		self.summary_freq = 200
@@ -56,19 +55,18 @@ class LRNeuronConfig(Config):
 		self.mt_val_data_names = get_tune_data_names(self.eval_data)
 		self.mt_val_metrics = get_tune_metric_names()
 		self.val_rank_weights = [get_tune_data_weights(self.eval_data), get_tune_metric_weights()]
-		self.hyper_score_type = HYPER_TUNE_RANK_SCORE # HYPER_TUNE_Z_SCORE
-		self.mt_draw_data_names = self.mt_val_data_names  # subset of mt_test_data_names
+		self.hyper_score_type = HYPER_TUNE_RANK_SCORE
+		self.mt_draw_data_names = self.mt_val_data_names
 
 		self.mt_test_data_names = get_tune_data_names(TEST_DATA)
 		self.mt_test_metrics = get_tune_metric_names()
 		self.test_rank_weights = [get_tune_data_weights(TEST_DATA), get_tune_metric_weights()]
 
-		self.mt_draw_metrics = [] # ['Mic.RankMedian']      # subset of mt_test_metrics
+		self.mt_draw_metrics = []
 		self.seed = SEED
 
-		self.n_init = 0  # debug
+		self.n_init = 0
 
-		# Need to set before training
 		self.n_features = None
 		self.class_num = None
 
@@ -89,7 +87,7 @@ class LRNeuronModel(TensorflowModel):
 		self.init_save_folder(save_folder)
 
 		self.placeholders = {}
-		self.vars = {}  # use to summary
+		self.vars = {}
 		self.summary_dict = {}
 		self.metric_dict = {}
 		self.history_helper = None
@@ -128,7 +126,7 @@ class LRNeuronModel(TensorflowModel):
 		self.placeholders = {
 			'y_': tf.sparse_placeholder(tf.float32, shape=(None, c.class_num)),
 			'keep_prob': tf.placeholder(tf.float32),
-			'seqy_': tf.placeholder(tf.int64, shape=(None, 1))  # calculate recall@k
+			'seqy_': tf.placeholder(tf.int64, shape=(None, 1))
 		}
 		if self.vec_type == VEC_TYPE_EMBEDDING:
 			self.placeholders['X'] = tf.placeholder(tf.float32, shape=(None, c.n_features))
@@ -138,11 +136,11 @@ class LRNeuronModel(TensorflowModel):
 
 
 	def gen_feed_dict(self, c, bc):
-		X, y_ = bc.next_batch(c.batch_size)   # sparseX and sparseY
+		X, y_ = bc.next_batch(c.batch_size)
 		X, x_val_shape = self.sparse_X_to_input(X)
 		ret_dict = {
 			self.placeholders['X']: X,
-			self.placeholders['x_val_shape']: x_val_shape,  # int or None
+			self.placeholders['x_val_shape']: x_val_shape,
 			self.placeholders['y_']: sparse_to_tuple(y_),
 			self.placeholders['keep_prob']: c.keep_prob,
 		}
@@ -161,9 +159,9 @@ class LRNeuronModel(TensorflowModel):
 			})
 			return RandomGenBatchController(bc_config, self.hpo_reader, seed=c.seed)
 		dh = DataHelper(self.hpo_reader)
-		X = dh.get_train_X(self.phe_list_mode, self.vec_type, sparse=x_sparse, dtype=np.float32)  # shape=(dis_num, hpo_num)
+		X = dh.get_train_X(self.phe_list_mode, self.vec_type, sparse=x_sparse, dtype=np.float32)
 		y_, y_col_names = dh.get_train_y(one_hot=True, dtype=np.float32, use_rd_mix_code=self.use_rd_mix_code,
-			multi_label=c.multi_label, expand_ances=c.dis_expand_ances, desc_dp=c.desc_dp)  # csr_matrix, shape=(dis_num, dis_num)
+			multi_label=c.multi_label, expand_ances=c.dis_expand_ances, desc_dp=c.desc_dp)
 		assert y_col_names == self.dis_list
 		return BatchControllerMat([X, y_], seed=c.seed)
 
@@ -205,7 +203,7 @@ class LRNeuronModel(TensorflowModel):
 			X, x_val_shape = self.sparse_X_to_input(X)
 			ret_dict[data_name] = {
 				self.placeholders['X']:X,
-				self.placeholders['x_val_shape']:x_val_shape,  # int or None
+				self.placeholders['x_val_shape']:x_val_shape,
 				self.placeholders['y_']:sparse_to_tuple(y_),
 				self.placeholders['keep_prob']:1.0,
 				self.placeholders['seqy_']:y_.argmax(axis=1).A.astype(np.int64)
@@ -223,8 +221,7 @@ class LRNeuronModel(TensorflowModel):
 
 
 	def get_l2_loss(self, c):
-		# for var in self.vars.values():    # bug: global step is not trainable
-		# 	loss += c.w_decay * tf.nn.l2_loss(var)
+
 		return tf.contrib.layers.apply_regularization(
 			tf.contrib.layers.l2_regularizer(c.w_decay), tf.trainable_variables())
 
@@ -247,7 +244,7 @@ class LRNeuronModel(TensorflowModel):
 
 	def gen_metric(self, c):
 		for k in c.test_acc_ats:
-			_, self.metric_dict['recall@{}'.format(k)] = tf.metrics.recall_at_k(self.placeholders['seqy_'], self.prob, k)  # Acc@k
+			_, self.metric_dict['recall@{}'.format(k)] = tf.metrics.recall_at_k(self.placeholders['seqy_'], self.prob, k)
 
 
 	@timer
@@ -281,7 +278,7 @@ class LRNeuronModel(TensorflowModel):
 		logger.info(c)
 		bc = self.get_batch_controller(c)
 		self.build(c)
-		val_feed_dict = self.gen_val_test_feed_dict(self.gen_val_test_data_dict(c.val_data_names, c.eval_data, c))   # {data_name: feed_dict}
+		val_feed_dict = self.gen_val_test_feed_dict(self.gen_val_test_data_dict(c.val_data_names, c.eval_data, c))
 
 		# FIXME
 		mt_val = ModelTestor(c.eval_data, hpo_reader=self.hpo_reader)
@@ -353,7 +350,7 @@ class LRNeuronModel(TensorflowModel):
 				if cur_score > best_score:
 					self.save(c, sess, saver, logger)
 					best_his_rank = self.history_helper.get_history_length() - 1; best_gs = gs
-					best_score = cur_score  # only used to print log
+					best_score = cur_score
 					no_improve_num = 0
 				else:
 					no_improve_num += 1
@@ -489,7 +486,7 @@ class LRNeuronModel(TensorflowModel):
 		self.name = model_name or self.name
 		self.init_save_folder(save_folder)
 		shutil.rmtree(self.SAVE_FOLDER, ignore_errors=True)
-		os.system('cp -r {} {}'.format(old_save_folder, self.SAVE_FOLDER))    # bug occurs when call copystat: shutil.copytree(old_save_folder, self.SAVE_FOLDER)
+		os.system('cp -r {} {}'.format(old_save_folder, self.SAVE_FOLDER))
 		checkpoint = self.SAVE_FOLDER + '/checkpoint'
 		content = open(checkpoint).read()
 		open(checkpoint, 'w').write(content.replace(old_model_path, self.MODEL_PATH))
@@ -512,12 +509,11 @@ class LRNeuronModel(TensorflowModel):
 			feed_dict[self.placeholders['x_val_shape']] = X[1].shape
 		feed_dict[self.placeholders['X']] = X
 		return self.sess.run(self.output_logits, feed_dict=feed_dict)
-		# return self.sess.run(self.prob, feed_dict=feed_dict)
 
 
 if __name__ == '__main__':
 	model = LRNeuronModel(model_name='LRNeuTestModel')
-	print(model.query(['HP:0000741', 'HP:0000726', 'HP:0000248', 'HP:0000369', 'HP:0000316', 'HP:0000463']))    # OMIM:610253
+	print(model.query(['HP:0000741', 'HP:0000726', 'HP:0000248', 'HP:0000369', 'HP:0000316', 'HP:0000463']))
 
 
 

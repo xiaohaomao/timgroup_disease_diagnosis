@@ -1,5 +1,3 @@
-
-
 from core.predict.model_testor import ModelTestor
 from core.predict.ml_model.AdaBoostModel import generate_model, AdaConfig
 from core.utils.constant import VEC_TYPE_0_1, TRAIN_MODE
@@ -100,16 +98,10 @@ def train_script3():
 
 
 if __name__ == '__main__':
-	# train_script()
-	# train_script2()
-	# train_script3()
-
-
 	cls_num_list = [100, 500, 1000, 2000] #
 	lr_list = [1.0]
 	algorithms = ['SAMME.R']
 	max_leaf_node_list = [2**5-1, 2**6-1, 2**7-1]
-	print(['AdaBoostModel_01_Ances_clsNum{}_lr{}_alg{}_mln{}'.format(clsNum, lr, alg, mln) for clsNum, lr, alg, mln in itertools.product(cls_num_list, lr_list, algorithms, max_leaf_node_list)])
 
 
 

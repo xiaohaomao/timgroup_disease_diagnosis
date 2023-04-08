@@ -14,9 +14,9 @@ class SingleResultExplainer(Explainer):
 	def __init__(self, model, pa_hpo_list, result, diag_list=None, top_n=None):
 		super(SingleResultExplainer, self).__init__()
 		self.model = model
-		self.pa_hpo_list = pa_hpo_list  # [hpo_code1, hpo_code2]
-		self.result = result    # [(disCode1, score1), ...], scores decreasing
-		self.diag_list = [] if diag_list is None else diag_list    # [disCode1, disCode2, ...]
+		self.pa_hpo_list = pa_hpo_list
+		self.result = result
+		self.diag_list = [] if diag_list is None else diag_list
 		self.top_n = len(result) if top_n is None else top_n
 		self.tab = '\t'
 

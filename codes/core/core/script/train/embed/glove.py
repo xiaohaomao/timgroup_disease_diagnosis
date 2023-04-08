@@ -1,5 +1,3 @@
-
-
 from core.reader.hpo_reader import HPOReader
 from core.utils.constant import PHELIST_ANCESTOR_DUP, PHELIST_ANCESTOR, DATA_PATH
 

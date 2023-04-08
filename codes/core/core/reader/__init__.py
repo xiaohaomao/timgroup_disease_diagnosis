@@ -1,6 +1,4 @@
 # encoding: UTF-8
-
-
 from core.reader.hpo_reader import HPOReader
 from core.reader.hpo_filter_reader import HPOFilterReader, HPOFilterDatasetReader, HPOIntegratedDatasetReader
 from core.reader.omim_reader import OMIMReader

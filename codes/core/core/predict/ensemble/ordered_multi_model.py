@@ -1,17 +1,9 @@
-
-
 import heapq
 import numpy as np
 from copy import deepcopy
 
 from core.predict.model import Model
 from core.reader.hpo_reader import HPOReader
-
-
-#import pyximport
-#pyximport.install()
-#import pyximport
-#pyximport.install()
 
 from core.utils.cycommon import to_rank_score
 
@@ -43,7 +35,7 @@ class OrderedMultiModel(Model):
 		if len(phe_list) == 0:
 			return self.query_empty_score_vec()
 		raw_score_vecs = [model.query_score_vec(phe_list) for model in self.model_list]
-		self.raw_score_mats = [np.reshape(score_vec, (1, -1)) for score_vec in raw_score_vecs]    # (model_num, pa_num, pheNum)
+		self.raw_score_mats = [np.reshape(score_vec, (1, -1)) for score_vec in raw_score_vecs]
 		return self.combine_score_vecs(raw_score_vecs)
 
 
@@ -63,7 +55,7 @@ class OrderedMultiModel(Model):
 
 
 	def query_score_mat(self, phe_lists, chunk_size=200, cpu_use=12):
-		raw_score_mats = [model.query_score_mat(phe_lists, chunk_size=chunk_size, cpu_use=cpu_use) for model in self.model_list] # (model_num, pa_num, pheNum)
+		raw_score_mats = [model.query_score_mat(phe_lists, chunk_size=chunk_size, cpu_use=cpu_use) for model in self.model_list]
 		if self.keep_raw_score:
 			self.raw_score_mats = deepcopy(raw_score_mats)
 		print('OrderedMultiModel: combining scores...')
@@ -85,12 +77,12 @@ class OrderedMultiModel(Model):
 			if topk == None:
 				dis_int_scores = sorted([(i, score_vec[i]) for i in range(self.DIS_NUM)], key=lambda item:item[1], reverse=True)
 			else:
-				dis_int_scores = heapq.nlargest(topk, [(i, score_vec[i]) for i in range(self.DIS_NUM)], key=lambda item:item[1])  # [(dis_code, score), ...], shape=(dis_num, )
+				dis_int_scores = heapq.nlargest(topk, [(i, score_vec[i]) for i in range(self.DIS_NUM)], key=lambda item:item[1])
 			return [(self.dis_list[i], self.raw_score_mats[0][pa_idx][i]) for i, _ in dis_int_scores]
 		else:
 			if topk == None:
 				return sorted([(self.dis_list[i], score_vec[i]) for i in range(self.DIS_NUM)], key=lambda item:item[1], reverse=True)
-			return heapq.nlargest(topk, [(self.dis_list[i], score_vec[i]) for i in range(self.DIS_NUM)], key=lambda item:item[1])  # [(dis_code, score), ...], shape=(dis_num, )
+			return heapq.nlargest(topk, [(self.dis_list[i], score_vec[i]) for i in range(self.DIS_NUM)], key=lambda item:item[1])
 
 
 	def score_mat_to_results(self, phe_lists, score_mat, topk):
@@ -103,9 +95,7 @@ class OrderedMultiModel(Model):
 
 if __name__ == '__main__':
 
-
 	from core.predict.sim_model.sim_term_overlap_model import generate_sim_TO_q_reduce_model
 	from core.predict.ensemble.random_model import RandomModel
-
 	model = OrderedMultiModel([generate_sim_TO_q_reduce_model, RandomModel])
 

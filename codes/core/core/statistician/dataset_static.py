@@ -1,4 +1,3 @@
-
 import numpy as np
 import os
 from tqdm import tqdm
@@ -32,7 +31,7 @@ def dataset_static(dataset, out_file=RESULT_PATH+'/dataset_statistic/static.txt'
 
 	dis_info = dict(OMIMReader().get_cns_omim(), **OrphanetReader().get_cns_orpha_dict())
 	output_str = ''
-	ave_rate_vec = np.array([0.0, 0.0, 0.0, 0.0]) # matcth, impre, noise_spe, noise_oth
+	ave_rate_vec = np.array([0.0, 0.0, 0.0, 0.0])
 	for i in tqdm(range(len(dataset))):
 		hpo_list, dis_list = dataset[i]
 		rate_tuple = (-np.inf, -np.inf, -np.inf, -np.inf)
@@ -41,7 +40,7 @@ def dataset_static(dataset, out_file=RESULT_PATH+'/dataset_statistic/static.txt'
 			hpo_len = len(hpo_list)
 			true_hpos = list(dis2hpo[dis_code])
 			matr, impr, noi_sper, noi_othr =len(mat)/hpo_len, len(imp)/hpo_len, len(noi_spe)/hpo_len, len(noi_oth)/hpo_len
-			mat, imp, noi_spe, noi_oth, true_hpos = explainer.add_hpo_info( (mat, imp, noi_spe, noi_oth, true_hpos) ) # add Chinese
+			mat, imp, noi_spe, noi_oth, true_hpos = explainer.add_hpo_info( (mat, imp, noi_spe, noi_oth, true_hpos) )
 			output_str += '' \
 				'Patient {pa_index}: {dis_code} | {dis_eng} | {dis_cns} \n' \
 				'dis_hpos: {true_hpos} \n' \
@@ -141,8 +140,7 @@ def show_predict_result(dataset, raw_results, out_file, index_to_show_set=None, 
 			for n in top_n_cal_usr_array
 		]) / top_n_cal_usr_array
 		ave_usr_array += usr_array
-		# usr = count_unique_item([tuple(score_item) if isinstance(score_item, np.ndarray) else score_item for dis_code, score_item in result]) / len(result)
-		# ave_usr += usr
+
 		if i not in index_to_show_set:   #
 			continue
 		output_str += '' \
@@ -239,8 +237,6 @@ def patient_num_static(dataset):
 
 if __name__ == '__main__':
 	pass
-
-	dataset_static()
 
 
 

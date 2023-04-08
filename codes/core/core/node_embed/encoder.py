@@ -1,8 +1,5 @@
-
 import numpy as np
-
 from core.draw.simpledraw import simple_line_plot, simple_dist_plot
-
 class Encoder(object):
 	def __init__(self):
 		self.name = 'Encoder'

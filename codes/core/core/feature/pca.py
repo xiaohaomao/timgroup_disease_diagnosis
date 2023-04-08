@@ -10,7 +10,7 @@ import os
 class PCAConfig(Config):
 	def __init__(self):
 		super(PCAConfig, self).__init__()
-		self.n_component = 'mle' # n_components='mle' is only supported if n_samples >= n_features...
+		self.n_component = 'mle'
 		self.svd_solver = 'auto'
 
 

@@ -17,7 +17,7 @@ class BatchController(object):
 		self.seed = seed
 		self.random = random.Random(seed)
 
-		# debug
+
 		self.fuck = 0
 
 	def set_data_size(self, data_size):

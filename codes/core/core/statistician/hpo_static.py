@@ -1,5 +1,3 @@
-
-
 import os
 import numpy as np
 from collections import Counter
@@ -22,7 +20,7 @@ def statitic1():
 	dis2hpo = reader.get_dis_to_hpo_dict()
 	logger = get_logger('HPO_STATITIC', log_path=LOG_PATH + '/HPO_STATITIC')
 
-	logger.info('HPO Num (All): %d' % (len(hpo_dict),))   # 13032
+	logger.info('HPO Num (All): %d' % (len(hpo_dict),))
 	phe_set = get_all_descendents('HP:0000118', hpo_dict)
 	logger.info('HPO Num (HP:0000118, Phenotypic abnormality): %d' % (len(phe_set),))
 	logger.info('HPO Num (HP:0012823, Clinical modifier): %d' % (len(get_all_descendents('HP:0012823', hpo_dict)),))
@@ -38,9 +36,9 @@ def statitic1():
 		hpo_ana_set.update(hpo_list)
 	logger.info('HPO Num (In Anatation): %d' % (len(hpo_ana_set),))
 
-	hpo_ana_set = get_all_ancestors_for_many(hpo_ana_set, hpo_dict)   # ancestor extend
+	hpo_ana_set = get_all_ancestors_for_many(hpo_ana_set, hpo_dict)
 	inter_sect_set = phe_set & hpo_ana_set
-	logger.info('HPO Num (In Anatation_Exten): %d' % (len(hpo_ana_set),))   # 9019
+	logger.info('HPO Num (In Anatation_Exten): %d' % (len(hpo_ana_set),))
 	logger.info('HPO Num (In Anatation_Exten & In Phenotypic abnormality): %d' % (len(inter_sect_set),))
 	logger.info('HPO Num (In Anatation_Exten & NOT In Phenotypic abnormality): %d, %s' % (len(hpo_ana_set) - len(inter_sect_set), hpo_ana_set-inter_sect_set))
 	logger.info('HPO Num (NOT In Anatation_Exten & In Phenotypic abnormality): %d' % (len(phe_set) - len(inter_sect_set),))
@@ -67,8 +65,8 @@ def statitic1():
 				ances_count += 1
 		if ances_count != 0:
 			counter[dis] += ances_count
-	logger.info('Ancestor Detect: Redundancy Disease = %d/%d' % (len(counter), len(dis2hpo)))   # 651/10298
-	logger.info('Ancestor Detect: %s' % (str(counter,)))    #
+	logger.info('Ancestor Detect: Redundancy Disease = %d/%d' % (len(counter), len(dis2hpo)))
+	logger.info('Ancestor Detect: %s' % (str(counter,)))
 
 
 	dis_hpo_count, dis_hpo_leaf_count = 0, 0
@@ -77,7 +75,7 @@ def statitic1():
 		for hpo in phe_list:
 			if len(hpo_dict[hpo].get('CHILD', [])) == 0:
 				dis_hpo_leaf_count += 1
-	logger.info('dis_hpo_leaf_count/dis_hpo_count=%d/%d=%f; ' % (dis_hpo_leaf_count, dis_hpo_count, dis_hpo_leaf_count/dis_hpo_count)) # 52888/145704=0.362982
+	logger.info('dis_hpo_leaf_count/dis_hpo_count=%d/%d=%f; ' % (dis_hpo_leaf_count, dis_hpo_count, dis_hpo_leaf_count/dis_hpo_count))
 
 
 def show_dis_with_khpos(k=10):
@@ -129,8 +127,8 @@ def show_dis_with_hpo_IC():
 	explainer = Explainer()
 	reader = HPOReader()
 
-	hpo_IC_dict = get_hpo_IC_dict(reader)  # {HPO_CODE: IC, ...}
-	dis_IC_dict = get_dis_IC_dict(reader, PHELIST_ANCESTOR)  # {DIS_CODE: IC}
+	hpo_IC_dict = get_hpo_IC_dict(reader)
+	dis_IC_dict = get_dis_IC_dict(reader, PHELIST_ANCESTOR)
 	dis_to_hpo_list = reader.get_dis_to_hpo_dict(PHELIST_ANCESTOR)
 	dis_IC_list = sorted(dis_IC_dict.items(), key=lambda item: item[1])
 
@@ -197,7 +195,7 @@ def draw_hpo_num_per_disease():
 			title=title,
 			figsize=figsize
 		)
-	run(PHELIST_REDUCE, '{}.jpeg'.format('hpoNumPerDisease.reduce'), 'HPO Number(reduce) of Disease', 175)   # average hpo num = 14.07
+	run(PHELIST_REDUCE, '{}.jpeg'.format('hpoNumPerDisease.reduce'), 'HPO Number(reduce) of Disease', 175)
 
 
 def show_dis_cns_list():
@@ -209,13 +207,11 @@ def show_dis_cns_list():
 def statistic5():
 	hpo_dict = HPOReader().get_slice_hpo_dict()
 	counter = Counter([len(info.get('IS_A', [])) for hpo, info in hpo_dict.items()])
-	print(counter)  # {1: 9941, 2: 2432, 3: 605, 4: 50, 5: 3, 0: 1}
+	print(counter)
 
 
 if __name__ == '__main__':
 	pass
-
-	show_dis_with_hpos()
 
 
 

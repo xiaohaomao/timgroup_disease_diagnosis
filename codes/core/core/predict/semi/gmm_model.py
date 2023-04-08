@@ -1,5 +1,3 @@
-
-
 import os
 import numpy as np
 from core.predict.model import SklearnModel
@@ -16,7 +14,7 @@ from core.reader.hpo_reader import HPOReader
 class GMMConfig(Config):
 	def __init__(self, d=None):
 		super(GMMConfig, self).__init__()
-		self.cov_type = 'full'   # 'full' | 'tied' | 'diag' | 'spherical'
+		self.cov_type = 'full'
 		self.n_init = 1
 		self.max_iter = 20
 		if d is not None:

@@ -1,5 +1,3 @@
-
-
 from core.utils.utils import data_to_01_dense_matrix
 from core.predict.model import Model
 from core.reader.hpo_reader import HPOReader
@@ -15,8 +13,8 @@ class WeightMatrixModel(Model):
 		super(WeightMatrixModel, self).__init__()
 		self.name = 'WeightMatrixModel' if model_name is None else model_name
 		self.w = w
-		self.row_names = row_names    # Disease Codes
-		self.col_names = col_names    # HPO Codes
+		self.row_names = row_names
+		self.col_names = col_names
 		self.row_name_to_idx = {name: i for i, name in enumerate(row_names)}
 		self.col_name_to_idx = {name: i for i, name in enumerate(col_names)}
 		self.row_num, self.col_num = self.w.shape
@@ -42,12 +40,12 @@ class SimpleWMModel(WeightMatrixModel):
 		assert np.sum(np.isnan(score_vec)) == 0  #
 		if topk == None:
 			return sorted([(self.row_names[i], score_vec[i]) for i in range(self.row_num)], key=lambda item: item[1], reverse=True)
-		return heapq.nlargest(topk, [(self.row_names[i], score_vec[i]) for i in range(self.row_num)], key=lambda item: item[1])   # [(dis_code, score), ...], shape=(dis_num, )
+		return heapq.nlargest(topk, [(self.row_names[i], score_vec[i]) for i in range(self.row_num)], key=lambda item: item[1])
 
 
 	def query_many(self, phe_lists, topk=10, chunk_size=None, cpu_use=None):
 		phe_lists = [self.process_query_phe_list(phe_list, self.phe_list_mode, self.hpo_dict) for phe_list in phe_lists]
-		X = data_to_01_dense_matrix([self.phe_list_to_idx_list(phe_list) for phe_list in phe_lists], self.col_num)   # shape=(sample_num, col_num)
+		X = data_to_01_dense_matrix([self.phe_list_to_idx_list(phe_list) for phe_list in phe_lists], self.col_num)
 		score_matrix = X.dot(self.w.T)    # shape=(sample_num, row_num)
 		score_vecs = []
 		if topk == None:
@@ -73,7 +71,7 @@ if __name__ == '__main__':
 	hpo_reader = HPOReader()
 	w, row_names, col_names = LRFeatureSelector(hpo_reader, 'LRFeatureSelector_Bias0_C0.001').get_W()
 	model = generate_simple_wm_model(w, row_names, col_names, hpo_reader)
-	print(model.query(['HP:0000741', 'HP:0000726', 'HP:0000248', 'HP:0000369', 'HP:0000316', 'HP:0000463'], topk=20))   # 610253
+	print(model.query(['HP:0000741', 'HP:0000726', 'HP:0000248', 'HP:0000369', 'HP:0000316', 'HP:0000463'], topk=20))
 	pass
 
 

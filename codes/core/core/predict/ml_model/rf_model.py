@@ -1,5 +1,3 @@
-
-
 from core.predict.config import Config
 from core.predict.model import SklearnModel
 from core.reader.hpo_reader import HPOReader
@@ -11,10 +9,10 @@ from sklearn.ensemble import RandomForestClassifier
 class RFConfig(Config):
 	def __init__(self):
 		super(RFConfig, self).__init__()
-		self.n_estimators = 10   #
-		self.criterion = 'gini' # 'gini'| 'entropy'
+		self.n_estimators = 10
+		self.criterion = 'gini'
 		self.max_leaf_nodes = None
-		self.max_features = 'auto'   # int | float | 'auto' = 'sqrt' | 'log2'
+		self.max_features = 'auto'
 		self.n_jobs = 16
 
 

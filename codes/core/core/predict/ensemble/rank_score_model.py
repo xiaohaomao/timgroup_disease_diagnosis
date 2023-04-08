@@ -1,5 +1,3 @@
-
-
 import numpy as np
 from multiprocessing import Pool
 from tqdm import tqdm
@@ -19,7 +17,7 @@ class RankScoreModel(object):
 
 
 
-	def raw_result_to_rank_score_vec(self, raw_result): # PUMC=3.0
+	def raw_result_to_rank_score_vec(self, raw_result):
 		rank_score_vec = np.zeros(self.DIS_NUM, dtype=np.float64)
 		for i, (dis_code, score) in enumerate(raw_result):
 			rank_score_vec[ self.dis_map_rank[dis_code] ] = (self.DIS_NUM - i)/self.DIS_NUM

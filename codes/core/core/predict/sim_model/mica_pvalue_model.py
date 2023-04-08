@@ -1,5 +1,3 @@
-
-
 import os
 import numpy as np
 import random
@@ -23,12 +21,12 @@ class MICAPValueModel(MICAModel):
 		self.MAX_QUERY_TERM = 30
 		self.MC_NUM = 10000
 		self.MC_SCORE_PATH = DATA_PATH + '/preprocess/model/MICAPValueModel/MC-{}-{}.npy'.format(phe_list_mode, set_sim_method)
-		self.mc_score_mat = None  # shape=(self.MAX_QUERY_TERM, self.DIS_NUM, self.MC_NUM);
-		self.p_value_array = None # shape=[self.MC_NUM]
+		self.mc_score_mat = None
+		self.p_value_array = None
 
 
 	def gen_random_patients(self, phe_len, hpo_list, hpo_dict):
-		while True:  # phe_len = 40; Average while = 2.03
+		while True:
 			p = random.sample(hpo_list, phe_len)
 			p = delete_redundacy(p, hpo_dict)
 			if len(p) == phe_len:

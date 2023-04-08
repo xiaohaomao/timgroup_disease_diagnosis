@@ -1,6 +1,3 @@
-
-
-
 from core.reader.hpo_reader import HPOReader
 from core.utils.utils import check_load_save, dict_list_add, unique_list, split_path, delete_redundacy, slice_list_with_keep_set
 
@@ -103,27 +100,5 @@ class PatientGenerator(object):
 
 if __name__ == '__main__':
 	pg = PatientGenerator()
-	print(pg.hpo_list_old_to_new([
-		"HP:0006997",
-		"HP:0002417",
-		"HP:0001303",
-		"HP:0002432",
-		"HP:0002348",
-		"HP:0010520",
-		"HP:0002437",
-		"HP:0002430",
-		"HP:0002431",
-		"HP:0002466",
-		"HP:0002306",
-		"HP:0002794",
-		"HP:0002479",
-		"HP:0002279",
-		"HP:0002434",
-		"HP:0001250",
-		"HP:0001275",
-		"HP:0002182",
-		"HP:0002391",
-		"HP:0002125"
-	]))
 	pass
 

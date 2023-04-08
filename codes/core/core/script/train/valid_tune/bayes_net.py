@@ -1,5 +1,3 @@
-
-
 import numpy as np
 
 from core.helper.hyper.hyper_tune_helper import HyperTuneHelper
@@ -53,6 +51,6 @@ def train_best_bayes_net2():
 
 
 if __name__ == '__main__':
-	tune_bayes_net_script()    # d01 rareDis3
+	tune_bayes_net_script()
 
 

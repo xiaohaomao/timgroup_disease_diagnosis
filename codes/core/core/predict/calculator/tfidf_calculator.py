@@ -1,4 +1,3 @@
-
 import os
 import numpy as np
 from sklearn.feature_extraction.text import TfidfTransformer
@@ -24,7 +23,7 @@ class TFIDFCalculator(object):
 		"""ref: # http://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfTransformer.html#sklearn.feature_extraction.text.TfidfTransformer
 		"""
 		dis_hpo_tf_mat = self.get_dis_hpo_tf_mat()
-		transformer = TfidfTransformer()  # norm='l2', idf(d, t) = log [ (1 + n) / (1 + df(d, t)) ] + 1
+		transformer = TfidfTransformer()
 		transformer.fit(dis_hpo_tf_mat)
 		return transformer
 
@@ -44,7 +43,7 @@ class TFIDFCalculator(object):
 		Returns:
 			scipy.sparse.csr.csr_matrix: shape=(dis_num, hpo_num)
 		"""
-		return dhelper.DataHelper().get_train_X(PHELIST_ANCESTOR_DUP, VEC_TYPE_TF, sparse=True, dtype=np.int32)    # shape=(dis_num, hpo_num)
+		return dhelper.DataHelper().get_train_X(PHELIST_ANCESTOR_DUP, VEC_TYPE_TF, sparse=True, dtype=np.int32)
 
 
 if __name__ == '__main__':

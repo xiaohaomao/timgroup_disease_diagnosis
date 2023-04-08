@@ -1,4 +1,3 @@
-
 from core.utils.constant import PHELIST_REDUCE
 from core.utils.constant import DATASET_TYPE_M, DATASET_TYPE_I, DATASET_TYPE_S, DATASET_TYPE_O
 from core.utils.utils import get_all_ancestors_with_dist
@@ -15,7 +14,7 @@ def get_no_noise_patient(pa_hpo_list, padis_list, dis_to_hpo_set, hpo_dict, keep
 		list: new [hpo_code1, hpo_code2]
 		list: new [disCode1, disCode2, ...]
 	"""
-	rate_tuple = (-np.inf, -np.inf, -np.inf, -np.inf)    # match, impre, noise_spe, noi_oth
+	rate_tuple = (-np.inf, -np.inf, -np.inf, -np.inf)
 	type_to_rank = {DATASET_TYPE_M: 0, DATASET_TYPE_I: 1, DATASET_TYPE_S: 2, DATASET_TYPE_O: 3}
 	temp = None
 	for dis_code in padis_list:
@@ -65,6 +64,3 @@ if __name__ == '__main__':
 	from core.predict.model_testor import ModelTestor
 	mt = ModelTestor()
 	mt.load_test_data()
-	for data_name, dataset in mt.data.items():
-		get_no_noise_dataset(dataset, keep_types=[DATASET_TYPE_M, DATASET_TYPE_I, DATASET_TYPE_S])
-

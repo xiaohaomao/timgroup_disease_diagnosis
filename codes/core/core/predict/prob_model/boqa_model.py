@@ -1,5 +1,3 @@
-
-
 import scipy.sparse as sp
 import numpy as np
 import os
@@ -197,13 +195,8 @@ class BOQAModel(object):
 if __name__ == '__main__':
 	from core.reader import HPOFilterDatasetReader
 	from core.utils.utils import list_find, get_all_ancestors_for_many
-	hpo_reader = HPOFilterDatasetReader(keep_dnames=['OMIM', 'ORPHA', 'CCRD']) #  HPOReader()
+	hpo_reader = HPOFilterDatasetReader(keep_dnames=['OMIM', 'ORPHA', 'CCRD'])
 	hpo_dict = hpo_reader.get_slice_hpo_dict()
 	model = BOQAModel(hpo_reader, use_freq=True)
-	phe_list = ['HP:0000741', 'HP:0000726', 'HP:0000248', 'HP:0000369', 'HP:0000316', 'HP:0000463']
-
-
-	result = model.query_many([phe_list, phe_list], topk=50)  # OMIM:610253
-
 
 

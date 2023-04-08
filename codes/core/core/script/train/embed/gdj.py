@@ -1,4 +1,3 @@
-
 import os
 import numpy as np
 
@@ -76,9 +75,9 @@ def draw(encoder, c):
 
 def get_show_tree_roots():
 	return [
-		'HP:0000079',   # 泌尿系统异常
-		'HP:0000924',   # 骨骼系统异常
-		'HP:0001939',   # 代谢紊乱/稳态失衡
+		'HP:0000079',
+		'HP:0000924',
+		'HP:0001939',
 	]
 
 

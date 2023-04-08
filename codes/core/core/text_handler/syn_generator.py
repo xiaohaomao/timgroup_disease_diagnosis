@@ -1,4 +1,3 @@
-
 import os
 import json
 from tqdm import tqdm
@@ -35,8 +34,8 @@ class SynGenerator(object):
 	def get_stop_hpo_set(self):
 		if self.stop_hpo_set is None:
 			self.stop_hpo_set = get_all_descendents_for_many([
-			'HP:0040279',   # Frequency
-			'HP:0003679', 'HP:0003812', 'HP:0011008', 'HP:0012824', 'HP:0012830', 'HP:0025254', 'HP:0025280', 'HP:0025285', 'HP:0031375',  # 临床调节因素
+			'HP:0040279',
+			'HP:0003679', 'HP:0003812', 'HP:0011008', 'HP:0012824', 'HP:0012830', 'HP:0025254', 'HP:0025280', 'HP:0025285', 'HP:0031375',
 		], self.hpo_reader.get_slice_hpo_dict())
 		return self.stop_hpo_set
 
@@ -75,7 +74,7 @@ class UMLSSynGenerator(SynGenerator):
 			'诊断', '障碍', '紊乱', '无效', '关键词', '\s*\w\s*', '生物功能', '寻找',
 		]
 		pattern = '[%s]{1}(%s){1}[%s]{1}' % (''.join(lb), '|'.join(bracket_terms), ''.join(rb))
-		return re.compile(pattern, flags=re.A)  # use re.A so that \w won't match Chinese
+		return re.compile(pattern, flags=re.A)
 
 
 	def remove_no_use_bracket(self, term):

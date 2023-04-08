@@ -1,5 +1,3 @@
-
-
 from core.node_embed.encoder import Encoder
 from core.predict.config import Config
 import tensorflow as tf
@@ -22,11 +20,11 @@ class HCEConfig(Config):
 		super(HCEConfig, self).__init__()
 		self.batch_size = 128
 		self.embed_size = 256
-		self.vocab_size = None   # remember to set before training
-		self.epoch_num = 540000  # 34739568 / 128 = 271402
+		self.vocab_size = None
+		self.epoch_num = 540000
 		self.lr = 0.001
 		self.optimizer = OPTIMIZER_ADAM
-		self.lambda_ = 0.0  # l2-regular
+		self.lambda_ = 0.0
 
 
 class HCEEncoder(Encoder):
@@ -38,7 +36,7 @@ class HCEEncoder(Encoder):
 		self.CONFIG_JSON = folder + os.sep + self.name + '.json'
 		self.LOG_PATH = folder + os.sep + self.name + '.log'
 		self.LOSS_FIG_PATH = folder + os.sep + self.name + '.jpg'
-		self.hpo_embed = None    # np.ndarray; shape=(HPO_CODE_NUM, embed_size)
+		self.hpo_embed = None
 
 
 	def get_embed(self, setzero=False):
@@ -57,22 +55,22 @@ class HCEEncoder(Encoder):
 
 
 	def build(self, c):
-		self.inputs = tf.placeholder(tf.int32, shape=(None,))    # [batch_size]
-		self.labels = tf.placeholder(tf.int32, shape=(None,))    # [batch_size]
-		self.weights = tf.placeholder(tf.float32, shape=(None,))  # [batch_size]
+		self.inputs = tf.placeholder(tf.int32, shape=(None,))
+		self.labels = tf.placeholder(tf.int32, shape=(None,))
+		self.weights = tf.placeholder(tf.float32, shape=(None,))
 		self.lr = tf.placeholder(tf.float32, name='lr')
 
-		self.embedding = tf.get_variable(   # [vocab_size, embed_size]
+		self.embedding = tf.get_variable(
 			'embedding',
 			shape=[c.vocab_size, c.embed_size],
 			dtype=tf.float32,
 			initializer=tf.contrib.layers.xavier_initializer(uniform=True)
 		)
 
-		embed = tf.nn.embedding_lookup(self.embedding, self.inputs) # [batch_size, embed_size]
-		self.logits = tf.matmul(embed, self.embedding, transpose_b=True) # [batch_size, vocab_size]
+		embed = tf.nn.embedding_lookup(self.embedding, self.inputs)
+		self.logits = tf.matmul(embed, self.embedding, transpose_b=True)
 		labels_one_hot = tf.one_hot(self.labels, c.vocab_size)
-		CE = tf.nn.softmax_cross_entropy_with_logits(labels=labels_one_hot, logits=self.logits) # [batch_size]
+		CE = tf.nn.softmax_cross_entropy_with_logits(labels=labels_one_hot, logits=self.logits)
 		self.loss = tf.reduce_mean(tf.multiply(CE, self.weights))
 		self.loss += c.lambda_ * tf.nn.l2_loss(self.embedding)
 
@@ -85,7 +83,7 @@ class HCEEncoder(Encoder):
 		logger.info(self.name)
 		logger.info(c)
 
-		with tf.variable_scope(self.name):  #
+		with tf.variable_scope(self.name):
 			self.build(c)
 
 		init_op = tf.global_variables_initializer()
@@ -138,7 +136,7 @@ class BatchController1(BaseBatchController):
 	def __init__(self, hpo_reader):
 		super(BatchController1, self).__init__()
 		self.hpo_reader = hpo_reader
-		self.data = self.gen_data()  # np.array([(etRank, ec_rank, w), ...])
+		self.data = self.gen_data()
 		self.rank_list = list(range(len(self.data)))
 		self.current_rank = 0
 
@@ -154,7 +152,7 @@ class BatchController1(BaseBatchController):
 					if et == ec:
 						continue
 					ret.extend(self.gen_data_for_pair(et, ec, et_ancestor_dict))
-		print('(et, ec) pair number = {}'.format(len(ret))) # 34739568
+		print('(et, ec) pair number = {}'.format(len(ret)))
 		return np.array(ret)
 
 
@@ -180,7 +178,7 @@ class BatchController2(BaseBatchController):
 	def __init__(self, hpo_reader):
 		super(BatchController2, self).__init__()
 		self.hpo_reader = hpo_reader
-		self.data = self.gen_data()  # np.array([[(etRank, ec_rank, w), ...], ...])
+		self.data = self.gen_data()
 		self.DATA_SIZE = len(self.data)
 		self.rank_list = list(range(self.DATA_SIZE))
 		self.current_rank = 0
@@ -196,7 +194,7 @@ class BatchController2(BaseBatchController):
 				for ec in hpoCorpus:
 					if et == ec:
 						continue
-					ret.append(self.gen_data_for_pair(et, ec, et_ancestor_dict)) # different from BC1
+					ret.append(self.gen_data_for_pair(et, ec, et_ancestor_dict))
 		return np.array(ret)
 
 

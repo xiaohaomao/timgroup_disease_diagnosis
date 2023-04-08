@@ -1,4 +1,3 @@
-
 from core.utils.constant import EMBEDDING_PATH
 from core.reader.hpo_reader import HPOReader
 from core.utils.constant import PHELIST_ANCESTOR, PHELIST_ANCESTOR_DUP
@@ -12,7 +11,7 @@ def get_embed(encoder_name, phe_list_mode=PHELIST_ANCESTOR_DUP, hpo_reader=HPORe
 		np.ndarray: shape=[hpo_num, vec_size]
 	"""
 	embedfile = EMBEDDING_PATH+os.sep+'GloveEncoder'+os.sep+phe_list_mode+os.sep+encoder_name+os.sep+'vectors.txt'
-	lines = [lineStr.split(' ') for lineStr in open(embedfile).read().splitlines()] # [['HP:0000001', 0.498999, ...], ['<unk>', -0.216727], ...]
+	lines = [lineStr.split(' ') for lineStr in open(embedfile).read().splitlines()]
 	hpo_map_vec = {line[0]: line[1:] for line in lines}
 	hpo_list = hpo_reader.get_hpo_list()
 
@@ -25,13 +24,7 @@ def get_embed(encoder_name, phe_list_mode=PHELIST_ANCESTOR_DUP, hpo_reader=HPORe
 
 
 if __name__ == '__main__':
-	hpo_reader = HPOReader()
-	hpo_embed = get_embed('GloveEncoder_vec32_xMax10_max_iter200', PHELIST_ANCESTOR_DUP, hpo_reader)
-	print(type(hpo_embed))
-	hpo_map_rank = hpo_reader.get_hpo_map_rank()
-
-	print('HP:3000074', hpo_embed[hpo_map_rank['HP:3000074']]) # unk
-
+	pass
 
 
 

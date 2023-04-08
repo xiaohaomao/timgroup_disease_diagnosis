@@ -1,4 +1,3 @@
-
 from core.reader import HPOFilterDatasetReader
 from core.predict.sim_model import MICAModel
 from core.utils.constant import SET_SIM_SYMMAX, SET_SIM_ASYMMAX_DQ, SET_SIM_ASYMMAX_QD, VALIDATION_DATA
@@ -23,7 +22,7 @@ def tune_MICA():
 
 
 if __name__ == '__main__':
-	tune_MICA()  # d03 rareDis
+	tune_MICA()
 
 
 

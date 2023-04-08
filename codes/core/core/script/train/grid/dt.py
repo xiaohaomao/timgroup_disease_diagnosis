@@ -1,5 +1,3 @@
-
-
 from core.reader.hpo_reader import HPOReader
 from core.utils.constant import MODEL_PATH, DATA_PATH, VEC_TYPE_0_1, VEC_TYPE_EMBEDDING, LOG_PATH, PREDICT_MODE, TRAIN_MODE
 from core.utils.constant import PHELIST_ANCESTOR
@@ -16,7 +14,7 @@ def train_script1():
 	model = generate_model(vec_type, phe_list_mode=PHELIST_ANCESTOR, embed_path=embed_path)
 
 	TRAIN_FOLDER = DATA_PATH + '/preprocess/AnnoDataSet10'
-	# raw_X, y_ = read_train(DATA_PATH + '/preprocess/AnnoDataSet/true.txt')
+
 	raw_X, y_, sw = read_train_from_files([
 		TRAIN_FOLDER + '/true.txt',
 		TRAIN_FOLDER + '/reduce.txt',

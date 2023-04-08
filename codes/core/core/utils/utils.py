@@ -1,5 +1,3 @@
-
-
 import random
 from copy import deepcopy
 import pandas as pd
@@ -1744,15 +1742,3 @@ def combine_key_to_list(d1, d2):
 
 if __name__ == '__main__':
 	pass
-
-
-
-	x = np.random.normal(0.0, 1.0, 100)
-	y = np.random.normal(0.1, 1.0, 100)
-
-	print('wilcox:', py_wilcox(x, y))
-	print('boot_pvalue:', cal_boot_pvalue(x, y, statistic='median'))
-	print('boot_pvalue_less:', cal_boot_pvalue(x, y, statistic='median', alternative='less'))
-	print('dabest_permutation_pvalue: {}'.format(dabest_cal_permutation_pvalue(x, y, statistic='median')))
-	print('my_permutation:', cal_permutation_pvalue(x, y, statistic='median'))
-	print('my_permutation_less:', cal_permutation_pvalue(x, y, statistic='median', alternative='less'))

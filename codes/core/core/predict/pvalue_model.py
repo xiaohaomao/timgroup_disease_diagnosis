@@ -1,5 +1,3 @@
-
-
 import heapq
 from tqdm import tqdm
 import os
@@ -47,7 +45,7 @@ class PValueModel(object):
 
 
 	def gen_random_patients(self, phe_len, hpo_list, hpo_dict):
-		while True:  # phe_len = 40; Average while = 2.03
+		while True:
 			p = random.sample(hpo_list, phe_len)
 			p = delete_redundacy(p, hpo_dict)
 			if len(p) == phe_len:
@@ -86,7 +84,7 @@ class PValueModel(object):
 		"""
 		if method is None:
 			return pvals
-		reject, pvals_correct, _, _ =  multipletests(pvals, alpha=0.05, method=method)   # when method = fdr_bh, alpha will be ignored
+		reject, pvals_correct, _, _ =  multipletests(pvals, alpha=0.05, method=method)
 		return pvals_correct
 
 
@@ -197,7 +195,7 @@ class RawPValueModel(PValueModel):
 		self.name = model_name if model_name is not None else self.get_default_model_name()
 		self.MC_SCORE_MAT_FOLDER = self.SAVE_FOLDER + '/mc_score_mat'
 		os.makedirs(self.MC_SCORE_MAT_FOLDER, exist_ok=True)
-		self.mc_score_mat = None  # shape=(q_lenCategory, DIS_NUM, MC_SAMPLE_NUM);
+		self.mc_score_mat = None
 
 		self.dis_list = self.hpo_reader.get_dis_list()
 		self.dis_num = self.hpo_reader.get_dis_num()
@@ -279,10 +277,10 @@ class HistPValueModel(RawPValueModel):
 		self.HIST_MAT_FOLDER = self.SAVE_FOLDER + '/HistMat'
 		os.makedirs(self.HIST_MAT_FOLDER, exist_ok=True)
 
-		self.bins_width_mat = None # shape=(q_lenCategory, dis_num)
-		self.mc_bins_mat = None # shape=(q_lenCategory, dis_num, binNum+1)
-		self.mc_hist_mat = None # shape=(q_lenCategory, dis_num, binNum+2)
-		self.mc_accu_hist_mat = None # shape=(q_lenCategory, dis_num, binNum+2)
+		self.bins_width_mat = None
+		self.mc_bins_mat = None
+		self.mc_hist_mat = None
+		self.mc_accu_hist_mat = None
 
 
 	def get_default_model_name(self):
@@ -363,5 +361,4 @@ def generate_hist_pvalue_model(model, model_name=None, mc=10000, sort_type=SORT_
 
 if __name__ == '__main__':
 	rpm = RawPValueModel(None, None)
-	print(rpm.q_len_to_rank(1))
 

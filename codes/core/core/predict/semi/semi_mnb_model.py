@@ -1,5 +1,3 @@
-
-
 import os
 import numpy as np
 from tqdm import tqdm
@@ -15,14 +13,14 @@ from core.helper.data.data_helper import DataHelper
 class SemiMixMNConfig(Config):
 	def __init__(self, d=None):
 		super(SemiMixMNConfig, self).__init__()
-		# self.alpha = 1.0    # smoothing (0 for no smoothing; 1 for Laplace)
-		self.beta = 1.0 # weight of unlabeled data
-		self.pi_init = 'same' # 'same' | 'random'
-		self.UInit = 'TF' # 'TF' | 'random' | 'same'
+
+		self.beta = 1.0
+		self.pi_init = 'same'
+		self.UInit = 'TF'
 		self.UAlpha = 0.01
 		self.max_iter = 30
 		self.tol = 100.0
-		self.n_init = 1  # The number of initializations to perform. The best results are kept.
+		self.n_init = 1
 		if d is not None:
 			self.assign(d)
 
@@ -154,9 +152,9 @@ class SemiMixMNModel(ClassificationModel):
 		labels = y_[lrows].flatten()
 		urows = np.where(y_ == -1)[0]
 
-		G = self.init_G(lrows, labels, D)    # D * W
-		U = self.init_U(c.UInit, c.UAlpha)   # W * K
-		pi = self.init_pi(c.pi_init)          # K * 1
+		G = self.init_G(lrows, labels, D)
+		U = self.init_U(c.UInit, c.UAlpha)
+		pi = self.init_pi(c.pi_init)
 		log_nd_fac_T = self.cal_log_nd_fac_T(T)
 		log_td_fac_T = self.cal_log_td_fac_T(T)
 		beta = np.ones((D,1), dtype=np.float32); beta[urows] = c.beta

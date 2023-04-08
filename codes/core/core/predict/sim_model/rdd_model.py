@@ -1,6 +1,3 @@
-
-
-
 import numpy as np
 from tqdm import tqdm
 from scipy.sparse import vstack
@@ -27,7 +24,7 @@ class RDDModel(SparseVecModel):
 
 	def train(self):
 		self.dis_vec_mat = DataHelper(self.hpo_reader).get_train_X(phe_list_mode=self.phe_list_mode, vec_type=VEC_TYPE_0_1, sparse=True, dtype=np.bool)    # [dis_num, hpo_num]
-		self.Si = self.dis_vec_mat.sum(axis=1)    # np.matrix; [dis_num, hpo_num]
+		self.Si = self.dis_vec_mat.sum(axis=1)
 
 
 	def cal_score(self, phe_list):
@@ -39,18 +36,17 @@ class RDDModel(SparseVecModel):
 		"""
 		phe_mat = data_to_01_matrix([item_list_to_rank_list(phe_list, self.hpo_map_rank)], self.HPO_CODE_NUMBER, dtype=np.bool)   # [1, hpo_num]
 		intersect_mat = self.dis_vec_mat.multiply(phe_mat)
-		n1 = (self.dis_vec_mat - intersect_mat).sum(axis=1) # np.matrix; [dis_num, 1]
-		n2 = (vstack([phe_mat] * self.DIS_CODE_NUMBER) - intersect_mat).sum(axis=1)   # np.matrix; [dis_num, 1]
+		n1 = (self.dis_vec_mat - intersect_mat).sum(axis=1)
+		n2 = (vstack([phe_mat] * self.DIS_CODE_NUMBER) - intersect_mat).sum(axis=1)
 		n = n1 + n2 # np.matrix; [dis_num, 1]
 		Su = len(phe_list)
-		max_S = np.hstack([self.Si, np.array([[Su]] * self.DIS_CODE_NUMBER)]).max(axis=1)    # np.matrix; [dis_num, 1]
+		max_S = np.hstack([self.Si, np.array([[Su]] * self.DIS_CODE_NUMBER)]).max(axis=1)
 		return (1 - n / max_S).A.flatten()
 
 
 if __name__ == '__main__':
 	from core.utils.utils import list_find
 	from core.reader import HPOFilterDatasetReader
-	hpo_reader = HPOFilterDatasetReader(keep_dnames=['OMIM', 'ORPHA', 'CCRD'])  # HPOReader()
+	hpo_reader = HPOFilterDatasetReader(keep_dnames=['OMIM', 'ORPHA', 'CCRD'])
 	model = RDDModel(hpo_reader, phe_list_mode=PHELIST_REDUCE)
-	result = model.query(['HP:0000741', 'HP:0000726', 'HP:0000248', 'HP:0000369', 'HP:0000316', 'HP:0000463'], topk=None)  # OMIM:610253
 

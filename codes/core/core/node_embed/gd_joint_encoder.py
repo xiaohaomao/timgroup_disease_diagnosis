@@ -1,5 +1,3 @@
-
-
 import json
 from time import time
 from copy import deepcopy
@@ -37,7 +35,6 @@ class GDJointConfig(Config):
 		self.optimizer = OPTIMIZER_ADAM
 		self.lr = 0.001
 		self.total_epoch = 10000
-		# self.max_grad_norm = 5.0
 		self.w_decay = 0.0
 
 		self.n_features = 256
@@ -46,17 +43,17 @@ class GDJointConfig(Config):
 
 		self.use_W = True
 		self.w_type = W_SIGMOID
-		self.beta = 0.5 # use when w_type == DEPTH_W_SIGMOID
-		self.gamma = 6   # use when w_type == DEPTH_W_LINEAR
+		self.beta = 0.5
+		self.gamma = 6
 
 		self.alpha1 = 1.0
-		self.use_dis_dist = True  # True will ignore dis_sim_type, sim_to_dist, dis_dist_min
+		self.use_dis_dist = True
 		self.dis_sim_type = DIS_SIM_MICA
 		self.sim_to_dist = SIM_TO_DIST_E
-		self.dis_dist_min = 0.1   # 0.1 for MICA; 0.5 for Jaccard
-		self.embed_dist = EUCLIDIAN_DIST2  # EUCLIDIAN_DIST | COSINE_DIST
+		self.dis_dist_min = 0.1
+		self.embed_dist = EUCLIDIAN_DIST2
 
-		self.d_combine_hpo = COMBINE_HPO_AVG   # conbine HPO Embedding to generate Dis Embedding
+		self.d_combine_hpo = COMBINE_HPO_AVG
 		self.phe_list_mode = PHELIST_REDUCE
 
 		self.alpha2 = 1.0
@@ -76,9 +73,9 @@ class GDJointEncoder(Encoder):
 		self.hpo_reader = hpo_reader
 		self.HPO_NUM, self.DIS_NUM = hpo_reader.get_hpo_num(), hpo_reader.get_dis_num()
 		self.x_id_array_to_hid_array = np.vectorize(lambda a, xIdMapHId: xIdMapHId[a])
-		self.hpo_IC_vec = None    # (hpo_num,)
-		self.hpo_embed = None    # (hpo_num, embed_size)
-		self.dis_embed = None    # (dis_num, embed_size)
+		self.hpo_IC_vec = None
+		self.hpo_embed = None
+		self.dis_embed = None
 
 		self.SAVE_FOLDER = EMBEDDING_PATH + os.sep + 'GDJointEncoder' + os.sep + self.name; os.makedirs(self.SAVE_FOLDER, exist_ok=True)
 		self.EMBED_NPY_PATH = self.SAVE_FOLDER + os.sep + 'embedding.npy'
@@ -102,39 +99,34 @@ class GDJointEncoder(Encoder):
 	def build(self, c):
 		self.gen_placeholders(c)
 		x_mat = tf.get_variable('x_mat', shape=(self.HPO_NUM, c.n_features), dtype=tf.float32, initializer=tf.contrib.layers.xavier_initializer(uniform=True))
-		x_id_seq = self.placeholders['x_id_seq']  # (None, )
-		X = tf.nn.embedding_lookup(x_mat, x_id_seq)    # (None, n_features)
-		H = self.f(X, c)    # (None, embed_size)
+		x_id_seq = self.placeholders['x_id_seq']
+		X = tf.nn.embedding_lookup(x_mat, x_id_seq)
+		H = self.f(X, c)
 		self.embed_mat = H
 
-		hIdSeq1, hIdSeq2, w = self.placeholders['hIdSeq1'], self.placeholders['hIdSeq2'], self.placeholders['w']    # (batch_size,)
-		h1, h2 = tf.nn.embedding_lookup(H, hIdSeq1), tf.nn.embedding_lookup(H, hIdSeq2)   # (batch_size, embed_size)
+		hIdSeq1, hIdSeq2, w = self.placeholders['hIdSeq1'], self.placeholders['hIdSeq2'], self.placeholders['w']
+		h1, h2 = tf.nn.embedding_lookup(H, hIdSeq1), tf.nn.embedding_lookup(H, hIdSeq2)
 		loss1 = self.get_loss1(h1, h2, w, c)
 
-		dHIdSeqs1, d_hid_seqs2 = self.placeholders['dHIdSeqs1'], self.placeholders['d_hid_seqs2']   # (batch_size, max_len)
-		dHIdLen1, d_hid_len2 = self.placeholders['dHIdLen1'], self.placeholders['d_hid_len2']   # (batch_size,)
+		dHIdSeqs1, d_hid_seqs2 = self.placeholders['dHIdSeqs1'], self.placeholders['d_hid_seqs2']
+		dHIdLen1, d_hid_len2 = self.placeholders['dHIdLen1'], self.placeholders['d_hid_len2']
 		d_dist = self.placeholders['d_dist']  # (batch_size,)
 		loss2 = self.get_loss2(H, dHIdSeqs1, dHIdLen1, d_hid_seqs2, d_hid_len2, d_dist, c)
 
 		coHIdSeq1, coHIdSeq2, co_W = self.placeholders['coHIdSeq1'], self.placeholders['coHIdSeq2'], self.placeholders['co_W']
-		coH1, co_H2 = tf.nn.embedding_lookup(H, coHIdSeq1), tf.nn.embedding_lookup(H, coHIdSeq2)   # (batch_size, embed_size)
+		coH1, co_H2 = tf.nn.embedding_lookup(H, coHIdSeq1), tf.nn.embedding_lookup(H, coHIdSeq2)
 		loss3 = self.get_loss3(coH1, co_H2, co_W, c)
-
 		reg_loss = tf.nn.l2_loss(x_mat)
-
 		self.loss = loss1 + c.alpha1 * loss2 + c.alpha2 * loss3 + c.w_decay * reg_loss
 		self.global_step = tf.Variable(0, trainable=False)
 		optimizer = get_optimizer(c.optimizer, c.lr)
 		self.train_op = optimizer.minimize(self.loss, global_step=self.global_step)
-		# self.train_op = self.clip_grad(optimizer, self.loss, c.max_grad_norm, self.global_step)
 		self.init_op = tf.global_variables_initializer()
 
 		self.loss1 = loss1
 		self.loss2 = loss2
 		self.loss3 = loss3
 		self.reg_loss = reg_loss
-
-		# self.gradients = tf.gradients(self.loss, [x_mat])[0]
 
 
 	def clip_grad(self, optimizer, loss, max_norm, gs):
@@ -189,8 +181,8 @@ class GDJointEncoder(Encoder):
 		Args:
 			distMat (tf.Tensor,): (batch_size)
 		"""
-		d1 = self.get_dis_embed(embed_mat, dHPOIdSeqs1, d_X_id_len1, c.d_combine_hpo)  # (batch_size, embed_size)
-		d2 = self.get_dis_embed(embed_mat, dHPOIdSeqs2, d_X_id_len2, c.d_combine_hpo)  # (batch_size, embed_size)
+		d1 = self.get_dis_embed(embed_mat, dHPOIdSeqs1, d_X_id_len1, c.d_combine_hpo)
+		d2 = self.get_dis_embed(embed_mat, dHPOIdSeqs2, d_X_id_len2, c.d_combine_hpo)
 
 		return tf.reduce_mean( tf.abs(self.vec_dist(d1, d2, c) - tf.square(d_dist)) )
 
@@ -208,15 +200,15 @@ class GDJointEncoder(Encoder):
 		Returns:
 			tf.Tensor: shape=(batch_size, embed_size)
 		"""
-		mask = tf.sequence_mask(dHPONum, tf.shape(dHPOIdSeqs)[1], dtype=tf.float32)   # (batch_size, max_len)
-		m = tf.nn.embedding_lookup(embed_mat, dHPOIdSeqs)  # [batch_size, max_len, embed_size]
+		mask = tf.sequence_mask(dHPONum, tf.shape(dHPOIdSeqs)[1], dtype=tf.float32)
+		m = tf.nn.embedding_lookup(embed_mat, dHPOIdSeqs)
 		if d_combine_hpo == COMBINE_HPO_AVG:
-			wgt = tf.cast(1 / tf.reshape(dHPONum, (-1, 1)), tf.float32) #
-			return tf.reduce_sum(m * tf.expand_dims(mask, -1) * tf.expand_dims(wgt, -1), axis=1)  # [batch_size, embed_size]
+			wgt = tf.cast(1 / tf.reshape(dHPONum, (-1, 1)), tf.float32)
+			return tf.reduce_sum(m * tf.expand_dims(mask, -1) * tf.expand_dims(wgt, -1), axis=1)
 		elif d_combine_hpo == COMBINE_HPO_IC_WEIGHT:
-			wgt = tf.nn.embedding_lookup(self.placeholders['IC_vec'], dHPOIdSeqs) * mask   # (batch_size, max_len)
-			wgt = wgt / tf.reshape(tf.reduce_sum(wgt, axis=-1), (-1, 1))    # batch_size, max_len
-			return tf.reduce_sum(m * tf.expand_dims(wgt, -1), axis=1)  # [batch_size, embed_size]
+			wgt = tf.nn.embedding_lookup(self.placeholders['IC_vec'], dHPOIdSeqs) * mask
+			wgt = wgt / tf.reshape(tf.reduce_sum(wgt, axis=-1), (-1, 1))
+			return tf.reduce_sum(m * tf.expand_dims(wgt, -1), axis=1)
 		assert False
 
 
@@ -248,7 +240,7 @@ class GDJointEncoder(Encoder):
 			'dHIdLen1': tf.placeholder(tf.int32, shape=(c.batch_size,)),
 			'd_hid_len2': tf.placeholder(tf.int32, shape=(c.batch_size,)),
 			'd_dist': tf.placeholder(tf.float32, shape=(c.batch_size,)),
-			'IC_vec': tf.placeholder(tf.float32, shape=(None,)),  # shape=idSeqs.shape
+			'IC_vec': tf.placeholder(tf.float32, shape=(None,)),
 
 			'coHIdSeq1': tf.placeholder(tf.int32, shape=(c.batch_size,)),
 			'coHIdSeq2':tf.placeholder(tf.int32, shape=(c.batch_size,)),
@@ -390,7 +382,7 @@ class HPOBatchController(BatchControllerObjList):
 		self.hpo_reader = hpo_reader
 		HPO_NUM = self.hpo_reader.get_hpo_num()
 
-		hpo2depth = get_all_descendents_with_dist('HP:0000001', self.hpo_reader.get_slice_hpo_dict())  # {hpo_code: depth}
+		hpo2depth = get_all_descendents_with_dist('HP:0000001', self.hpo_reader.get_slice_hpo_dict())
 		hpo_list = self.hpo_reader.get_hpo_list()
 		self.hpo_depth = np.array([hpo2depth[hpo] for hpo in hpo_list], dtype=np.int32)
 
@@ -412,8 +404,7 @@ class HPOBatchController(BatchControllerObjList):
 			np.ndarray: depth of parent + 1; shape=(batch_size,)
 		"""
 		chd_id_seq = np.array(super(HPOBatchController, self).next_batch(batch_size), dtype=np.int32)
-		pat_id_seq = self.parent_id_mat[chd_id_seq, (np.random.sample((batch_size,)) * self.parent_num[chd_id_seq]).astype(np.int32)] # speedup
-		# pat_id_seq = np.array([random.sample(self.hpo_int_dict[chdId]['IS_A'], 1)[0] for chdId in chd_id_seq], np.int32)
+		pat_id_seq = self.parent_id_mat[chd_id_seq, (np.random.sample((batch_size,)) * self.parent_num[chd_id_seq]).astype(np.int32)]
 		chd_depth = self.hpo_depth[pat_id_seq] + 1
 		return chd_id_seq, pat_id_seq, chd_depth
 
@@ -445,7 +436,7 @@ class DisBatchController(BatchController):
 		self.hpo_reader = hpo_reader
 		self.padding_id = padding_id
 		self.dh = DataHelper(self.hpo_reader)
-		raw_X, _ = self.dh.get_train_raw_Xy(phe_list_mode)    # [[hpo_int1, hpo_int2, ...], ...]
+		raw_X, _ = self.dh.get_train_raw_Xy(phe_list_mode)
 		self.dX_id_seqs, self.d_X_id_len = padding(raw_X, padwith=self.padding_id)
 		super(DisBatchController, self).__init__(self.dX_id_seqs.shape[0])
 
@@ -494,7 +485,6 @@ def phe_lists_to_embed_mat(embed_mat, hpo_int_lists, d_combine_hpo):
 		# FIXME: get_hpo_IC_vec should use correct HPOReader; assert False here
 		assert False
 		return combine_embed(embed_mat, hpo_int_lists, combine_mode='weight', id_weights=get_hpo_IC_vec(default_IC=0.0))
-
 
 if __name__ == '__main__':
 	pass

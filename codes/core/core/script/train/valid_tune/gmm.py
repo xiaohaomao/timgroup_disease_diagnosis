@@ -1,4 +1,3 @@
-
 import numpy as np
 from copy import deepcopy
 from scipy.sparse import vstack
@@ -33,7 +32,7 @@ def tune_gmm_script():
 	grid = {
 		'min_hpo': [3],
 		'del_dup': [True, False],
-		'u_data_names': [('U_DEC', )],   # ('U_DEC', 'U_CLINVAR_SCV')
+		'u_data_names': [('U_DEC', )],
 		'cov_type': ['diag', 'spherical', 'tied'],
 		'vec_type': [VEC_TYPE_0_1, VEC_TYPE_TF, VEC_TYPE_TF_IDF],
 	}

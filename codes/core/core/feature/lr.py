@@ -27,9 +27,9 @@ class LRFeatureSelector(object):
 		self.name = 'LRFeatureSelector' if name is None else name
 		self.hpo_reader = hpo_reader
 
-		self.w = None   # np.ndarray; shape=(dis_num, hpo_num);
-		self.b = None   # np.ndarray; shape=(dis_num, );
-		self.row_names, self.col_names = None, None    # [], []
+		self.w = None
+		self.b = None
+		self.row_names, self.col_names = None, None
 		self.folder = MODEL_PATH + os.sep + 'LRFeatureSelector' + os.sep + self.name; os.makedirs(self.folder, exist_ok=True)
 		self.w_npz = self.folder + os.sep + 'w.npz'
 		self.config_json = self.folder + os.sep + 'config.json'
@@ -64,7 +64,8 @@ class LRFeatureSelector(object):
 
 
 	def train_single(self, paras):
-		# about class_weight='balanced', see https://stackoverflow.com/questions/30972029/how-does-the-class-weight-parameter-in-scikit-learn-work
+
+
 		X, row_id = paras
 		y_ = np.zeros(shape=(X.shape[0], ), dtype=np.int32); y_[row_id] = 1
 

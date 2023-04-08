@@ -1,5 +1,3 @@
-
-
 import numpy as np
 import joblib
 import os
@@ -18,7 +16,7 @@ class SVCConfig(Config):
 		super(SVCConfig, self).__init__()
 		self.kernel = 'rbf'
 		self.C = 1.0
-		self.gamma = 'auto' # 'scale' | float
+		self.gamma = 'auto'
 		self.max_iter = 500
 		if d is not None:
 			self.assign(d)
@@ -43,7 +41,7 @@ class SVCModel(SklearnModel):
 		os.makedirs(os.path.dirname(self.MODEL_SAVE_PATH), exist_ok=True)
 
 
-	# @timer
+
 	def train(self, c, save_model=True):
 		# print(rf_config)
 		raw_X, y_ = DataHelper(self.hpo_reader).get_train_raw_Xy(self.phe_list_mode)

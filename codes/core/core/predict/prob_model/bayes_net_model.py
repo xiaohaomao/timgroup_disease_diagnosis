@@ -1,4 +1,3 @@
-
 import os
 import numpy as np
 import heapq
@@ -34,8 +33,8 @@ class BayesNetModel(Model):
 
 		self.alpha = alpha
 		self.cond_type = cond_type
-		self.unbias = None  # {phpo: {hpo: logprob}}
-		self.dis_bias = None  # {dis_int: {phpo: {hpo: logprob}}}
+		self.unbias = None
+		self.dis_bias = None
 		self.init_cpu = init_cpu
 		self.EPS = 1e-9
 
@@ -146,7 +145,7 @@ class BayesNetModel(Model):
 			return condprobs[0]
 		if cond_type == 'max':
 			return max(condprobs)
-		if cond_type == 'ind':   # independent
+		if cond_type == 'ind':
 			logp = np.array(condprobs)
 			tmp = 1 - np.exp(logp); tmp[tmp <= 0] = self.EPS
 			tmp = 1 - np.exp(np.log(tmp).sum()); tmp = self.EPS if tmp <= 0 else tmp
@@ -169,8 +168,8 @@ class BayesNetModel(Model):
 		Returns:
 			np.ndarray: shape=(dis_num,)
 		"""
-		score_vec = self.cal_score(phe_list)  # shape=[dis_num]
-		assert np.sum(np.isnan(score_vec)) == 0  #
+		score_vec = self.cal_score(phe_list)
+		assert np.sum(np.isnan(score_vec)) == 0
 		return score_vec
 
 
@@ -183,7 +182,4 @@ class BayesNetModel(Model):
 if __name__ == '__main__':
 	model = BayesNetModel(alpha=0.0001, cond_type='ind', mode=TRAIN_MODE)
 	model.train()
-
-
-	result = model.query(['HP:0001270', 'HP:0001290', 'HP:0001522', 'HP:0002305', 'HP:0003150', 'HP:0045045', 'HP:0100660'], topk=None)  # OMIM:610253
 

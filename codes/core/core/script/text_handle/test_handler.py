@@ -1,5 +1,3 @@
-
-
 import os
 from tqdm import tqdm
 import json
@@ -37,11 +35,11 @@ def handle_text_list(text_list, folder_path, gold_match=None):
 		SearchExplainer(text_list, results).explain_save_txt(output_txt)
 
 
-def jym():
-	patient_json = DATA_PATH + '/raw/MER/PUMC/贾耀敏/贾耀敏.json'
-	p_text = '\n'.join(json.load(open(patient_json)).values())
-	folder_path = RESULT_PATH + '/text_handle/贾耀敏'
-	handle_text_list([p_text], folder_path)
+# def jym():
+# 	patient_json = DATA_PATH + '/raw/MER/PUMC/贾耀敏/贾耀敏.json'
+# 	p_text = '\n'.join(json.load(open(patient_json)).values())
+# 	folder_path = RESULT_PATH + '/text_handle/贾耀敏'
+# 	handle_text_list([p_text], folder_path)
 
 
 if __name__ == '__main__':

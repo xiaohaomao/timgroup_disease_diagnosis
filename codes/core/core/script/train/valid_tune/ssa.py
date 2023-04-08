@@ -1,4 +1,3 @@
-
 import numpy as np
 import os
 from copy import deepcopy
@@ -57,7 +56,7 @@ def tune_script():
 
 
 if __name__ == '__main__':
-	os.environ["CUDA_VISIBLE_DEVICES"] = "1"    # d03 rareDis4
+	os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 	tune_script()
 
 

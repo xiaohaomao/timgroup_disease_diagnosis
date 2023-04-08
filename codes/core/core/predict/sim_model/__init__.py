@@ -1,4 +1,3 @@
-
 from core.predict.sim_model.mica_model import MICAModel
 from core.predict.sim_model.mica_lin_model import MICALinModel
 from core.predict.sim_model.mica_jc_model import MICAJCModel

@@ -1,5 +1,3 @@
-
-
 import os
 import numpy as np
 import scipy
@@ -198,5 +196,5 @@ def get_tune_metric_weights():
 
 
 if __name__ == '__main__':
-	print(PROJECT_PATH)
+	pass
 

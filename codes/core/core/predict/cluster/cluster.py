@@ -1,5 +1,3 @@
-
-
 from copy import deepcopy
 import os
 import numpy as np
@@ -21,7 +19,7 @@ class ClusterConfig(Config):
 		self.dis_sim_type = DIS_SIM_MICA
 		self.sim_kwargs = {}
 		self.predict_method = CLUSTER_PREDICT_MEAN_MAX_TOPK
-		self.topk = 20  # calculate average similarity between phe_list and topk point of each cluster
+		self.topk = 20
 
 
 class Cluster(object):
@@ -33,8 +31,8 @@ class Cluster(object):
 		self.SAVE_FOLDER = save_folder
 		self.dis_list = hpo_reader.get_dis_list()
 
-		self.labels = None  # np.ndarray: shape=(sample_num,)
-		self.unq_labels = None   # [lb1, lb2]
+		self.labels = None
+		self.unq_labels = None
 		self.sim_model = None
 		self.label_to_size = None
 		self.label_to_dis_int_list = None

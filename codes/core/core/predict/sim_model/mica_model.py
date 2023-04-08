@@ -1,4 +1,3 @@
-
 from collections import Counter
 import numpy as np
 import os
@@ -35,9 +34,7 @@ class MICAModel(ScoreMatModel):
 
 
 if __name__ == '__main__':
-
 	from core.reader import HPOFilterDatasetReader
-
-	hpo_reader = HPOFilterDatasetReader(keep_dnames=['OMIM', 'ORPHA', 'CCRD']) # HPOReader()
+	hpo_reader = HPOFilterDatasetReader(keep_dnames=['OMIM', 'ORPHA', 'CCRD'])
 	model = MICAModel(hpo_reader=hpo_reader)
 

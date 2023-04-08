@@ -1,5 +1,3 @@
-
-
 import json
 from core.utils.utils import get_file_list
 from core.utils.constant import RESULT_PATH

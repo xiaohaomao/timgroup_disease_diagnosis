@@ -1,7 +1,5 @@
-
-
 import requests
-from requests_toolbelt import MultipartEncoder  # multipart/form-data
+from requests_toolbelt import MultipartEncoder
 from bs4 import BeautifulSoup
 import json
 import os

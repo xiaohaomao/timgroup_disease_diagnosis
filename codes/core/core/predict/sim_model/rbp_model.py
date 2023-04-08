@@ -1,5 +1,3 @@
-
-
 import os
 import numpy as np
 import scipy.sparse as sp
@@ -30,7 +28,7 @@ class RBPModel(SparseVecModel):
 
 
 	def train(self):
-		dis_vec_mat = DataHelper(self.hpo_reader).get_train_X(PHELIST_ANCESTOR, dtype=np.float32)  # (dis_num, hpo_num)
+		dis_vec_mat = DataHelper(self.hpo_reader).get_train_X(PHELIST_ANCESTOR, dtype=np.float32)
 		dis_vec_mat = dis_vec_mat.multiply(1 / dis_vec_mat.sum(axis=0)).tocsr()
 		dis_vec_mat[dis_vec_mat > self.alpha] = self.alpha
 		self.dis_vec_mat = dis_vec_mat
@@ -106,11 +104,11 @@ class RBPDominantRandomModel(RBPModel):
 		if topk == None:
 			ret = sorted([(self.dis_list[i], score_vec[i]) for i in range(self.DIS_CODE_NUMBER)], key=lambda item:tuple(item[1]), reverse=True)
 		else:
-			ret = heapq.nlargest(topk, [(self.dis_list[i], score_vec[i]) for i in range(self.DIS_CODE_NUMBER)], key=lambda item:tuple(item[1]))  # [(dis_code, score), ...], shape=(dis_num, )
+			ret = heapq.nlargest(topk, [(self.dis_list[i], score_vec[i]) for i in range(self.DIS_CODE_NUMBER)], key=lambda item:tuple(item[1]))
 		return [(dis_code, self.score_item_to_score(score_item)) for dis_code, score_item in ret]
 
 
 if __name__ == '__main__':
 	from core.reader import HPOFilterDatasetReader
-	hpo_reader = HPOFilterDatasetReader(keep_dnames=['OMIM', 'ORPHA', 'CCRD'])  # HPOReader()
+	hpo_reader = HPOFilterDatasetReader(keep_dnames=['OMIM', 'ORPHA', 'CCRD'])
 	model = RBPModel(hpo_reader)

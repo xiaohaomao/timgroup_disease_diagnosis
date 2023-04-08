@@ -1,5 +1,3 @@
-
-
 import numpy as np
 from scipy import stats
 import heapq
@@ -38,17 +36,17 @@ class GDDPWeightTOModel(Model):
 		dis_int_to_hpo_int = self.hpo_reader.get_dis_int_to_hpo_int(PHELIST_ANCESTOR)
 		self.dis_hpo_ances_mat = data_to_01_dense_matrix([dis_int_to_hpo_int[i] for i in range(self.DIS_NUM)], self.HPO_NUM, dtype=np.bool)
 		self.not_dis_hpo_ances_mat = ~self.dis_hpo_ances_mat
-		IC_dict = get_hpo_IC_dict(self.hpo_reader, default_IC=0)  # {HPO_CODE: IC, ...}
-		self.IC_vec = np.array([IC_dict[hpo_code] for hpo_code in self.hpo_list]).T  # np.array; shape = [HPONum, 1]
+		IC_dict = get_hpo_IC_dict(self.hpo_reader, default_IC=0)
+		self.IC_vec = np.array([IC_dict[hpo_code] for hpo_code in self.hpo_list]).T
 
 
 	def cal_score(self, phe_int_list):
 		phe_ances_int_list = get_all_ancestors_for_many(phe_int_list, self.hpo_int_dict)
 		q_hpo_ances_mat = data_to_01_dense_matrix([phe_ances_int_list], self.HPO_NUM, dtype=np.bool)
-		a = (self.dis_hpo_ances_mat*q_hpo_ances_mat).dot(self.IC_vec).flatten()   # shape=[dis_num,]
-		b = (self.not_dis_hpo_ances_mat*q_hpo_ances_mat).dot(self.IC_vec).flatten()  # shape=[dis_num,]
-		c = (self.dis_hpo_ances_mat*(~q_hpo_ances_mat)).dot(self.IC_vec).flatten()   # shape=[dis_num,]
-		d = (self.not_dis_hpo_ances_mat*(~q_hpo_ances_mat)).dot(self.IC_vec).flatten()   # shape=[dis_num,]
+		a = (self.dis_hpo_ances_mat*q_hpo_ances_mat).dot(self.IC_vec).flatten()
+		b = (self.not_dis_hpo_ances_mat*q_hpo_ances_mat).dot(self.IC_vec).flatten()
+		c = (self.dis_hpo_ances_mat*(~q_hpo_ances_mat)).dot(self.IC_vec).flatten()
+		d = (self.not_dis_hpo_ances_mat*(~q_hpo_ances_mat)).dot(self.IC_vec).flatten()
 		score_vec = np.zeros(shape=[self.DIS_NUM], dtype=np.float32)
 		for i in range(self.DIS_NUM):
 			_, p = stats.fisher_exact([[a[i], b[i]], [c[i], d[i]]], alternative=self.fisher_method)
@@ -61,7 +59,7 @@ class GDDPWeightTOModel(Model):
 		Returns:
 			np.ndarray: shape=(dis_num,)
 		"""
-		score_vec = self.cal_score(item_list_to_rank_list(phe_list, self.hpo_map_rank))  # shape=[dis_num]
+		score_vec = self.cal_score(item_list_to_rank_list(phe_list, self.hpo_map_rank))
 		assert np.sum(np.isnan(score_vec)) == 0  #
 		return score_vec
 
@@ -83,9 +81,5 @@ class GDDPWeightTOModel(Model):
 if __name__ == '__main__':
 	from core.utils.utils import list_find
 	from core.reader import HPOFilterDatasetReader
-	hpo_reader = HPOFilterDatasetReader(keep_dnames=['OMIM', 'ORPHA', 'CCRD'])  # HPOReader()
-	for fisher in ['two-sided', 'less', 'greater']:
-		model = GDDPWeightTOModel(hpo_reader, fisher=fisher)
-		raw_result = model.query(['HP:0000741', 'HP:0000726', 'HP:0000248', 'HP:0000369', 'HP:0000316', 'HP:0000463'], topk=None)    # OMIM:610253
 
 

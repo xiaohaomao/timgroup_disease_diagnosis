@@ -1,5 +1,3 @@
-
-
 import numpy as np
 from sklearn.cluster import SpectralClustering
 import os
@@ -17,7 +15,7 @@ class SpeClusterConfig(ClusterConfig):
 	def __init__(self, d=None):
 		super(SpeClusterConfig, self).__init__()
 		self.n_clusters = 8
-		self.affinity = 'precomputed'   # 'precomputed' | 'rbf' | 'nearest_neighbors'
+		self.affinity = 'precomputed'
 		self.gamma = 1.0
 		self.n_neighbors = 10
 		if d is not None:

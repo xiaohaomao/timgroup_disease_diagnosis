@@ -1,7 +1,6 @@
 library(ggplot2)
 library(rjson)
 
-# usage: Rscript line.R paraJsonPath
 
 jsonToDataFrame <- function(fileName){
     lst <- fromJSON(file=fileName)
@@ -18,7 +17,7 @@ draw_quartile <- function(para_list){
     yLim <- boxplot.stats(df[, pl[['yCol']]])$stats[c(1, 5)]
     fig <- fig + coord_cartesian(ylim = yLim*4)
     cat('yLim:', yLim)
-#    fig <- fig + ylim(1, 1000) #
+
     ggsave(pl[['figPath']], fig, width=40, height=20, units="cm")
 }
 

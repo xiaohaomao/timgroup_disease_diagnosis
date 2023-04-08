@@ -1,5 +1,3 @@
-
-
 import shutil
 import os
 import numpy as np
@@ -120,7 +118,7 @@ class ClusterClassifyModel(Model):
 			list of tuple: [(dis1, score1), ...], scores decreasing
 		"""
 		ret_list = []
-		lb_score_list = self.clt.predict(phe_list) # [(label, score), ...]
+		lb_score_list = self.clt.predict(phe_list)
 		for lb, lbscore in lb_score_list:
 			if lb in self.lb_to_clf:
 				dis_score_list = self.lb_to_clf[lb].query(phe_list, topk=None)

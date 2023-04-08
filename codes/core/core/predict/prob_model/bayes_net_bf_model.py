@@ -1,5 +1,3 @@
-
-
 import numpy as np
 import heapq
 from tqdm import tqdm
@@ -13,7 +11,6 @@ from core.reader.hpo_reader import HPOReader
 
 
 class BayesNetBFModel(Model):
-	# equals to BayesNetModel, but slower
 	def __init__(self, hpo_reader, alpha, cond_type='max', model_name=None):
 		super(BayesNetBFModel, self).__init__()
 		self.name = 'BayesNetBFModel' if model_name is None else model_name
@@ -27,7 +24,7 @@ class BayesNetBFModel(Model):
 
 		self.alpha = alpha
 		self.cond_type = cond_type
-		self.EPS = 0.0001    # log(1/(1+self.EPS)) = -0.000999
+		self.EPS = 0.0001
 
 
 	def train(self):
@@ -69,10 +66,10 @@ class BayesNetBFModel(Model):
 		Returns:
 			csr_matrix: shape=(hpo_num, hpo_num); row=parent, col=child
 		"""
-		D = self.get_L(dis_maskv)  # limited G of Disease
+		D = self.get_L(dis_maskv)
 		logdc = np.log(D.sum(axis=1) + gc * self.alpha)
-		D1 = D.multiply(np.log(1 + self.alpha) - logdc) # coo_matrix
-		D2 = (dis_maskv.multiply(G) - D).multiply(np.log(0 + self.alpha) - logdc)    # coo_matrix
+		D1 = D.multiply(np.log(1 + self.alpha) - logdc)
+		D2 = (dis_maskv.multiply(G) - D).multiply(np.log(0 + self.alpha) - logdc)
 		return D1 + D2  # csr_matrix
 
 
@@ -121,7 +118,7 @@ class BayesNetBFModel(Model):
 		"""
 		phpo_int_list = item_list_to_rank_list(phe_list, self.hpo_reader.get_hpo_map_rank())
 		qmaskv = self.get_maskv(phpo_int_list)
-		Q = self.get_L(qmaskv)  # limited G of Query
+		Q = self.get_L(qmaskv)
 		return [self.p_to_log_prob(self.cal_P(Q, self.U, self.dis_B[i], self.dis_maskvs[i], qmaskv)) for i in tqdm(range(self.DIS_CODE_NUMBER))]
 
 
@@ -129,11 +126,11 @@ class BayesNetBFModel(Model):
 		if len(phe_list) == 0:
 			return self.query_empty(topk)
 		phe_list = self.process_query_phe_list(phe_list, PHELIST_ANCESTOR, self.hpo_dict)
-		score_vec = self.cal_score(phe_list)  # shape=[dis_num]
-		assert np.sum(np.isnan(score_vec)) == 0  #
+		score_vec = self.cal_score(phe_list)
+		assert np.sum(np.isnan(score_vec)) == 0
 		if topk == None:
 			return sorted([(self.dis_list[i], score_vec[i]) for i in range(self.DIS_CODE_NUMBER)], key=lambda item:item[1], reverse=True)
-		return heapq.nlargest(topk, [(self.dis_list[i], score_vec[i]) for i in range(self.DIS_CODE_NUMBER)], key=lambda item:item[1])  # [(dis_code, score), ...], shape=(dis_num, )
+		return heapq.nlargest(topk, [(self.dis_list[i], score_vec[i]) for i in range(self.DIS_CODE_NUMBER)], key=lambda item:item[1])
 
 
 def generate_model(hpo_reader=HPOReader(), alpha=0.5, cond_type='max', model_name=None):
@@ -148,9 +145,6 @@ def generate_model(hpo_reader=HPOReader(), alpha=0.5, cond_type='max', model_nam
 
 if __name__ == '__main__':
 	model = generate_model()
-	result = model.query(['HP:0000741', 'HP:0000726', 'HP:0000248', 'HP:0000369', 'HP:0000316', 'HP:0000463'], topk=None)
-	print(result[:20])  # OMIM:610253
-	print(list_find(result, lambda item: item[0] == "OMIM:610253"))
 
 
 

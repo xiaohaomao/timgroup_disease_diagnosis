@@ -1,5 +1,3 @@
-
-
 from core.predict.model import ScoreMatModel
 from core.utils.utils import cal_shortest_dist, cal_mean_shortest_turn_dist
 from core.utils.constant import DIST_MEAN_TURN, DIST_SHORTEST, DATA_PATH
@@ -27,7 +25,7 @@ class DistanceModel(ScoreMatModel):
 
 		if dist_type == DIST_MEAN_TURN:
 			self.dist_func = cal_mean_shortest_turn_dist
-		else:   # dist_type == DIST_SHORTEST
+		else:
 			self.dist_func = cal_shortest_dist
 		if init_para:
 			self.train()

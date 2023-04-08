@@ -1,5 +1,3 @@
-
-
 import json
 from core.utils.utils import is_jsonable
 
@@ -36,5 +34,5 @@ class Config(object):
 
 
 if __name__ == '__main__':
-	print(Config({'a': 1, 'b': 2}))
+	pass
 

@@ -1,5 +1,3 @@
-
-
 import numpy as np
 import os
 from tqdm import tqdm
@@ -64,7 +62,6 @@ class PheMICASimCalculator(PheSimCalculator):
 	def get_phe_sim(self, hpo_code1, hpo_code2):
 		i, j = self.hpo_map_rank[hpo_code1], self.hpo_map_rank[hpo_code2]
 		return self.score_mat[i, j]
-		# return self.hpoSimList[int(i*self.HPO_CODE_NUMBER+j-i*(i+1)/2)]
 
 
 	def cal_phe_sim2(self, code1, code2):
@@ -125,7 +122,7 @@ class PheMINICSimCalculator(PheSimCalculator):
 		self.HPO_CODE_NUMBER = hpo_reader.get_hpo_num()
 		self.hpo_int_dict = hpo_reader.get_hpo_int_dict()
 		self.hpo_list = hpo_reader.get_hpo_list()
-		self.IC_vec = get_hpo_IC_vec(self.hpo_reader, default_IC=0.0) # np.array; shape = [HPONum]
+		self.IC_vec = get_hpo_IC_vec(self.hpo_reader, default_IC=0.0)
 
 
 	def cal_row_phe_sim_multi_func(self, hpo_rank):
