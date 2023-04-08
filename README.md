@@ -69,7 +69,7 @@ cd $CORE_PATH
 
 ### Step 2
 
-Second, place the releated patient data in this folder "**core/data/**".
+Second, put the releated patient data in this folder "**core/data/**".
 
 
 
@@ -93,7 +93,7 @@ In "**core/helper/data/data_helper.py**", you can find all the addresses of the 
 
 
 
-The "**core/predict/**" folder comprehensively describes rare disease diagnosis models. In addition to the 17 methods (12 state-of-the-art baselines and our 5 developed or used methods), it contains more deep learning models, GCN, and Bayesian network.
+The "**core/predict/**" folder comprehensively describes rare disease diagnosis models. In addition to the 17 methods (12 state-of-the-art baselines "**core/predict/sim_model/**" and our 5 developed or used methods), it contains more deep learning models, GCN, and Bayesian network.
 
 
 
