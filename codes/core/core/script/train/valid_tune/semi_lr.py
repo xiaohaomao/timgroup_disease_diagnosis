@@ -1,7 +1,6 @@
 import numpy as np
 import os
 from copy import deepcopy
-
 from core.predict.semi import SemiLRModel, SemiLRNeuronConfig
 from core.helper.hyper.hyper_tune_helper import HyperTuneHelper
 from core.utils.constant import VEC_TYPE_0_1, VEC_TYPE_TF_IDF, VEC_TYPE_TF, VEC_TYPE_IDF, TRAIN_MODE
@@ -68,8 +67,7 @@ def train_best_sim_semi_lr():
 
 
 if __name__ == '__main__':
-	os.environ["CUDA_VISIBLE_DEVICES"] = "0"
-	train_best_sim_semi_lr()
 
+	pass
 
 

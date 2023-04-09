@@ -153,5 +153,5 @@ class OMIMReader(object):
 
 
 if __name__ == '__main__':
-	reader = OMIMReader()
-	reader.get_gene_match_disease()
+
+	pass

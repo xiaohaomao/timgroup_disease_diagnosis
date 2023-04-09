@@ -139,11 +139,8 @@ class RDFilterReader(object):
 
 
 if __name__ == '__main__':
-	from core.reader.hpo_filter_reader import HPOFilterDatasetReader
-	all_source_codes = set(HPOFilterDatasetReader(keep_dnames=['OMIM', 'ORPHA', 'CCRD']).get_dis_list())
-	reader = RDFilterReader(keep_source_codes=all_source_codes, keep_ances=False)
-	reader.statistic()
 
+	pass
 
 
 

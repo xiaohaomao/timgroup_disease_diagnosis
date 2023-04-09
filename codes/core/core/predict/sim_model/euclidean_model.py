@@ -1,6 +1,5 @@
 import numpy as np
 import heapq
-
 from core.predict.model import SparseVecModel
 from core.utils.utils import data_to_01_matrix, item_list_to_rank_list
 from core.utils.constant import PHELIST_ANCESTOR, VEC_TYPE_0_1
@@ -51,5 +50,5 @@ class EuclideanModel(SparseVecModel):
 
 
 if __name__ == '__main__':
-	model = EuclideanModel()
 
+	pass

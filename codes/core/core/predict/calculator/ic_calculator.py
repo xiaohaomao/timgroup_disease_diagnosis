@@ -1,6 +1,5 @@
 import os
 import numpy as np
-
 from core.utils.constant import DATA_PATH, PHELIST_REDUCE, PHELIST_ANCESTOR, JSON_FILE_FORMAT, MODEL_PATH
 from core.utils.utils import check_load_save, data_to_01_matrix
 from core.reader.hpo_reader import HPOReader

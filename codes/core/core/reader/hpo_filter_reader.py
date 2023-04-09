@@ -472,40 +472,5 @@ class HPOIntegratedDatasetReader(HPOFilterDatasetReader):
 
 if __name__ == '__main__':
 
-	import numpy as np
-	from core.explainer import Explainer
-	explainer = Explainer()
-	#
-	def cal_statistics(dis_num, hpo_num, dis_to_hpo, dis_to_hpo_prob, dp, mark):
 
-		# other info
-		k = 10
-		hpo_num_dis_list = sorted([(len(hpo_list), dis) for dis, hpo_list in dis_to_hpo.items()])
-
-		hpo_num_list = [len(hpo_list) for hpo_list in dis_to_hpo.values()]
-		print('HPO_PER_DIS (MIN/MEDIAN/MAX): {}/{}/{}'.format(np.min(hpo_num_list), np.median(hpo_num_list),
-			np.max(hpo_num_list)))
-		hpo_anno_set = set()
-		for hpo_list in dis_to_hpo.values():
-			hpo_anno_set.update(hpo_list)
-		print('ANNO_HPO_NUM: {}'.format(len(hpo_anno_set)))
-		anno_total, anno_prob = 0, 0
-		for dis, hpo_prob_list in dis_to_hpo_prob.items():
-			anno_total += len(hpo_prob_list)
-			anno_prob += len([hpo for hpo, prob in hpo_prob_list if prob != dp])
-		print('ANNO_WITH_PROB/ANNO_TOTAL_NUM: {}/{}'.format(anno_prob, anno_total))
-
-	def cal_statistics_from_hpo_reader(hpo_reader):
-		"""
-		Args:
-			hpo_reader (HPOFilterReader)
-		"""
-		dp = -100
-		cal_statistics(hpo_reader.get_dis_num(), hpo_reader.get_hpo_num(),
-			hpo_reader.get_dis_to_hpo_dict(PHELIST_REDUCE),
-			hpo_reader.get_dis_to_hpo_prob(phe_list_mode=PHELIST_REDUCE, default_prob=dp),
-			dp, hpo_reader.name)
-
-
-	cal_statistics_from_hpo_reader(HPOFilterDatasetReader(keep_dnames={'OMIM', 'ORPHA', 'CCRD', 'DECIPHER'}))
-
+	pass

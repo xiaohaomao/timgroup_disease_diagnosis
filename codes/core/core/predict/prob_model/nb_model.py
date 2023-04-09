@@ -5,7 +5,6 @@ import joblib
 import os
 import numpy as np
 from scipy.sparse import csr_matrix, vstack, load_npz, save_npz
-
 from core.predict.config import Config
 from core.predict.model import SklearnModel, ClassificationModel, Model
 from core.reader.hpo_reader import HPOReader
@@ -426,9 +425,6 @@ class BNBProbModel(SklearnModel):
 
 
 if __name__ == '__main__':
-	from core.reader import HPOFilterDatasetReader
-	hpo_reader = HPOFilterDatasetReader(keep_dnames=['OMIM', 'ORPHA', 'CCRD'])
-	model = HPOProbMNBModel(hpo_reader)
-
+	pass
 
 

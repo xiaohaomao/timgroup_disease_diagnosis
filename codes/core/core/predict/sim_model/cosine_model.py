@@ -1,7 +1,6 @@
 import os
 import numpy as np
 import scipy.sparse as sp
-
 from core.predict.sim_model.sim_term_overlap_model import SimTOModel
 from core.utils.utils import get_all_ancestors_for_many
 from core.utils.constant import PHELIST_ANCESTOR, MODEL_PATH, TRAIN_MODE, PREDICT_MODE
@@ -80,7 +79,4 @@ class TestCosineModel(object):
 
 
 if __name__ == '__main__':
-	from core.predict.pvalue_model import generate_raw_pvalue_model, generate_hist_pvalue_model
-	from core.reader import HPOFilterDatasetReader
-
-
+	pass

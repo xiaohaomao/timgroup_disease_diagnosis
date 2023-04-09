@@ -3,7 +3,6 @@ import numpy as np
 import scipy.sparse as sp
 import heapq
 import random
-
 from core.reader.hpo_reader import HPOReader
 from core.predict.model import SparseVecModel
 from core.utils.constant import PHELIST_ANCESTOR, MODEL_PATH, TRAIN_MODE, PREDICT_MODE
@@ -109,6 +108,5 @@ class RBPDominantRandomModel(RBPModel):
 
 
 if __name__ == '__main__':
-	from core.reader import HPOFilterDatasetReader
-	hpo_reader = HPOFilterDatasetReader(keep_dnames=['OMIM', 'ORPHA', 'CCRD'])
-	model = RBPModel(hpo_reader)
+
+	pass

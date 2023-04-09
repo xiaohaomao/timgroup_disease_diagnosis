@@ -57,6 +57,5 @@ def tune_fc_script():
 
 
 if __name__ == '__main__':
-	os.environ["CUDA_VISIBLE_DEVICES"] = "3"
-	tune_fc_script()
 
+	pass

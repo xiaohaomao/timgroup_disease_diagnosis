@@ -1,5 +1,4 @@
 import numpy as np
-
 from core.reader import HPOFilterDatasetReader, HPOReader
 from core.helper.hyper.hyper_tune_helper import HyperTuneHelper
 from core.utils.constant import PHELIST_ANCESTOR, PHELIST_REDUCE
@@ -24,8 +23,8 @@ def tune_rdd():
 
 
 if __name__ == '__main__':
-	tune_rdd()
 
+	pass
 
 
 

@@ -28,7 +28,7 @@ class HPOReader(object):
 		self.chpo_dict = None    # {CODE: {'CNS_NAME': .., 'ENG_NAME': ..}}
 
 		self.CCRD_JSON_PATH = os.path.join(DATA_PATH, 'raw', 'CCRD', 'conpendium_hpo_process.json')
-		self.HPO_OBO_PATH = os.path.join(DATA_PATH, 'raw', 'HPO', '2019', 'Ontology', 'hp.obo')
+		self.HPO_OBO_PATH = os.path.join(DATA_PATH, 'raw', 'HPO', '2022', 'Ontology', 'hp.obo')
 		self.HPO_JSON_PATH = os.path.join(self.PREPROCESS_FOLDER, 'hpo_dict.json')
 		self.hpo_dict = None # {CODE: {'NAME': .., 'IS_A': [], 'CHILD': [], ...}}
 		self.HPO_SLICE_JSON = os.path.join(self.PREPROCESS_FOLDER, 'hpo_slice_dict.json')
@@ -46,8 +46,8 @@ class HPOReader(object):
 		self.old_map_new_hpo = None # {OLD_HPO_CODE: NEW_HPO_CODE}
 
 
-		self.ANNOTATION_TAB_PATH = os.path.join(DATA_PATH, 'raw', 'HPO', '2019', 'Annotations', 'phenotype_annotation.tab')
-		self.ANNOTATION_HPOA_PATH = os.path.join(DATA_PATH, 'raw', 'HPO', '2019', 'Annotations', 'phenotype.hpoa')
+		self.ANNOTATION_TAB_PATH = os.path.join(DATA_PATH, 'raw', 'HPO', '2022', 'Annotations', 'phenotype_annotation.tab')
+		self.ANNOTATION_HPOA_PATH = os.path.join(DATA_PATH, 'raw', 'HPO', '2022', 'Annotations', 'phenotype.hpoa')
 		self.DISTOHPO_TAB_JSON_PATH = os.path.join(self.PREPROCESS_FOLDER, 'dis2hpo_tab.json')
 		self.DISTOHPO_HPOA_JSON_PATH = os.path.join(self.PREPROCESS_FOLDER, 'dis2hpo_hpoa.json')
 		self.dis2hpo = None    # {dis_code: [hpo_code, ...]}
@@ -74,13 +74,13 @@ class HPOReader(object):
 
 
 
-		self.HPO_GENES_TO_DISEASES_TXT = os.path.join(DATA_PATH, 'raw', 'HPO', '2019', 'Genes', 'genes_to_diseases.txt')
+		self.HPO_GENES_TO_DISEASES_TXT = os.path.join(DATA_PATH, 'raw', 'HPO', '2022', 'Genes', 'genes_to_diseases.txt')
 		self.GENE_TO_SYMBOL_JSON = os.path.join(self.PREPROCESS_FOLDER, 'gene2symbol.json')
 		self.gene2symbol = None
 		self.GENE_TO_DIS_JSON = os.path.join(self.PREPROCESS_FOLDER, 'gene2dis.json')
 		self.gene2dis = None # {gene_code: [dis1, dis2, ...]}
 
-		self.GENE_TO_PHENOTYPE_TXT = os.path.join(DATA_PATH, 'raw', 'HPO', '2019', 'Annotations', 'ALL_SOURCES_ALL_FREQUENCIES_genes_to_phenotype.txt')
+		self.GENE_TO_PHENOTYPE_TXT = os.path.join(DATA_PATH, 'raw', 'HPO', '2022', 'Annotations', 'ALL_SOURCES_ALL_FREQUENCIES_genes_to_phenotype.txt')
 		self.GENETOHPO_JSON = os.path.join(self.PREPROCESS_FOLDER, 'gene2hpo.json')
 		self.gene2hpo = None   # {gene_code: [hpo_code, ...]}
 		self.GENETOHPO_REDUCE_JSON = os.path.join(self.PREPROCESS_FOLDER, 'gene2hpo_reduce.json')
@@ -1015,8 +1015,5 @@ class HPOReader(object):
 
 
 if __name__ == '__main__':
-	from core.explainer import Explainer
-	reader = HPOReader()
 
-
-	reader.get_chpo_dict()
+	pass

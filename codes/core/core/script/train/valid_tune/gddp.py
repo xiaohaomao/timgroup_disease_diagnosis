@@ -50,9 +50,8 @@ def tune_fisher(keep_dnames=None):
 
 
 if __name__ == '__main__':
-	from core.script.train.valid_tune.tune import resort_history_for_model, combine_history_for_model
-	tune_fisher()
 
+	pass
 
 
 

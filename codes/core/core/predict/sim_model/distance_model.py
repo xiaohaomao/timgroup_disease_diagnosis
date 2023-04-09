@@ -53,6 +53,5 @@ class DistanceModel(ScoreMatModel):
 
 
 if __name__ == '__main__':
-	model = DistanceModel()
 
-
+	pass

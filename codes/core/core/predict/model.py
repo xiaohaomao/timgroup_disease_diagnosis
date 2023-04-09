@@ -11,7 +11,6 @@ import scipy
 import random
 import pyemd
 from copy import deepcopy
-
 from core.utils.constant import SET_SIM_ASYMMAX_QD, SET_SIM_ASYMMAX_DQ, SET_SIM_SYMMAX, SET_SIM_EMD, SEED
 from core.utils.constant import VEC_TYPE_0_1, VEC_TYPE_EMBEDDING, VEC_TYPE_0_1_DIM_REDUCT, VEC_TYPE_TF, VEC_TYPE_TF_IDF, VEC_TYPE_IDF
 from core.utils.constant import PHELIST_ANCESTOR, PHELIST_ORIGIN, PHELIST_REDUCE, PHELIST_ANCESTOR_DUP, VEC_COMBINE_MAX, VEC_COMBINE_MEAN, VEC_COMBINE_SUM

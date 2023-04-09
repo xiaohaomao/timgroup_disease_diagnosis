@@ -1,5 +1,3 @@
-
-
 import numpy as np
 import os
 import heapq
@@ -11,7 +9,6 @@ import itertools
 from core.utils.utils import flatten_dict, to_rank_scores, to_zscores, is_zero
 from core.utils.constant import RESULT_PATH, HYPER_TUNE_RANK_SCORE, HYPER_TUNE_Z_SCORE, HYPER_TUNE_USER_SCORE
 from core.utils.constant import HYPER_TUNE_AVE_SCORE, HYPER_TUNE_SUCC_Z_SCORE
-from core.draw.simpledraw import simple_dot_plot
 
 
 class HyperTuneHelper(object):

@@ -19,7 +19,6 @@ from core.utils.utils import get_logger, sparse_to_tuple, dict_list_add, delete_
 from core.reader import HPOReader, HPOFilterDatasetReader
 from core.helper.data import BatchControllerMat, BatchControllerMixupMat, RandomGenBatchController, RGBCConfig
 from core.predict.model_testor import ModelTestor
-from core.draw.simpledraw import simple_multi_line_plot
 from core.helper.data.data_helper import DataHelper
 from core.helper.hyper.hyper_tune_helper import HyperTuneHelper
 
@@ -512,8 +511,7 @@ class LRNeuronModel(TensorflowModel):
 
 
 if __name__ == '__main__':
-	model = LRNeuronModel(model_name='LRNeuTestModel')
-	print(model.query(['HP:0000741', 'HP:0000726', 'HP:0000248', 'HP:0000369', 'HP:0000316', 'HP:0000463']))
+	pass
 
 
 

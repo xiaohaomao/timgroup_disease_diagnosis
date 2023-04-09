@@ -1,8 +1,6 @@
 import json
 import numpy as np
-
 import codecs
-
 import os, shutil
 from tqdm import tqdm
 from multiprocessing import Pool
@@ -14,15 +12,12 @@ from copy import deepcopy
 from time import time
 from collections import Counter
 from scipy.stats import wilcoxon, ranksums, mannwhitneyu, shapiro, binom_test
-
 from core.utils.constant import TEST_DATA, VALIDATION_DATA, CUSTOM_DATA, VALIDATION_TEST_DATA, SEED
 from core.utils.constant import RESULT_PATH, PHELIST_REDUCE, SORT_P, SORT_P_S, SORT_S_P, DATA_PATH
 from core.utils.constant import DISORDER_GROUP_LEVEL, DISORDER_LEVEL, DISORDER_SUBTYPE_LEVEL, DISORDER_GROUP_LEAF_LEVEL
 from core.utils.utils import list_find, timer, dict_list_add, unique_list, py_wilcox, import_R, get_all_ancestors, equal, to_rank_scores
 from core.utils.utils import cal_boot_conf_int, cal_hodges_lehmann_median_conf_int, cal_portion_conf_int_R, cal_boot_conf_int_for_multi_x
 from core.utils.utils import cal_mcnemar_p_value, pvalue_correct, cal_boot_pvalue, dabest_cal_permutation_pvalue, cal_permutation_pvalue
-from core.draw.draw import draw_quartile_fig, draw_multi_line_from_df, draw_dodge_bar
-from core.draw.simpledraw import simple_line_plot
 from core.reader import HPOReader, RDReader, HPOFilterDatasetReader, HPOIntegratedDatasetReader
 from core.explainer.explainer import Explainer
 from core.helper.data.data_helper import DataHelper
@@ -1817,9 +1812,6 @@ class ModelTestor(object):
 
 
 if __name__ == '__main__':
-	from core.reader import HPOIntegratedDatasetReader
-	keep_dnames = ['OMIM', 'ORPHA', 'CCRD']
-	mt = ModelTestor(hpo_reader=HPOIntegratedDatasetReader(keep_dnames=keep_dnames), keep_general_dis_map=False)
 
-
+	pass
 

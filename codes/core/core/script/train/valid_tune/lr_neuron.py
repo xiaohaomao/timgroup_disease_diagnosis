@@ -382,11 +382,6 @@ def train_best_pertur_lr1(keep_dnames=None):
 
 
 if __name__ == '__main__':
-	from core.script.train.valid_tune.tune import resort_history_for_model, combine_history_for_model
 
-
-
-	tune_lr_script()
-
-
+	pass
 

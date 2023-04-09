@@ -1,10 +1,6 @@
-
-
 import os
 import numpy as np
-
 from core.explainer.explainer import Explainer
-from core.draw.simpledraw import simple_dist_plot
 
 class ClusterExplainer(Explainer):
 	def __init__(self, clt):

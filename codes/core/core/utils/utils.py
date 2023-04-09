@@ -23,7 +23,6 @@ from collections import Counter, Iterable
 
 from core.utils.constant import JSON_FILE_FORMAT, PKL_FILE_FORMAT, NPY_FILE_FORMAT, NPZ_FILE_FORMAT, JOBLIB_FILE_FORMAT
 from core.utils.constant import VEC_COMBINE_MEAN, VEC_COMBINE_SUM, VEC_COMBINE_MAX, SPARSE_NPZ_FILE_FORMAT, SEED
-from core.draw.simpledraw import simple_dist_plot
 from statsmodels.stats.proportion import proportion_confint
 from statsmodels.stats.contingency_tables import mcnemar
 from statsmodels.stats.multitest import multipletests

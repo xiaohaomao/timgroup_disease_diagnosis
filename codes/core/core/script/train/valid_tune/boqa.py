@@ -32,14 +32,8 @@ def tune_boqa(keep_dnames=None):
 
 
 if __name__ == '__main__':
-	from core.script.train.valid_tune.tune import resort_history_for_model, combine_history_for_model
 
-
-
-	for keep_dnames in [['OMIM', 'ORPHA', 'CCRD']]:
-		tune_boqa(keep_dnames)
-
-
+	pass
 
 
 

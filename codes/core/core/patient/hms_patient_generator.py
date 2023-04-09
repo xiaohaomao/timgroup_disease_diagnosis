@@ -309,6 +309,4 @@ class HmsPatientGenerator(PatientGenerator):
 
 
 if __name__ == '__main__':
-	hpo_reader = HPOFilterDatasetReader(keep_dnames=['OMIM', 'ORPHA', 'CCRD'])
-	pg = HmsPatientGenerator(hpo_reader=hpo_reader)
-	pg.get_patients()
+	pass

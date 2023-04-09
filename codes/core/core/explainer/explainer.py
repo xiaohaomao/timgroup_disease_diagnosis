@@ -1,8 +1,5 @@
-
-
 import json
 from copy import deepcopy
-
 from core.reader import HPOReader, OMIMReader, OrphanetReader, CCRDReader, DOReader, RDReader
 from core.explainer.utils import add_info
 
@@ -151,10 +148,7 @@ class Explainer(object):
 
 
 if __name__ == '__main__':
-	import os
-	from core.utils.constant import PHELIST_REDUCE, DATA_PATH
-	hpo_reader = HPOReader()
-	explainer = Explainer()
+	pass
 
 
 

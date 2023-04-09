@@ -1,7 +1,6 @@
 import os
 import numpy as np
 from copy import deepcopy
-
 from core.reader import HPOReader, HPOFilterDatasetReader, HPOIntegratedDatasetReader
 from core.helper.hyper.hyper_tune_helper import HyperTuneHelper
 from core.predict.prob_model import MNBConfig, CNBConfig
@@ -246,6 +245,5 @@ def train_best_cnb_web():
 
 
 if __name__ == '__main__':
-	from core.script.train.valid_tune.tune import resort_history_for_model, combine_history_for_model
-	tune_mnb_script()
 
+	pass

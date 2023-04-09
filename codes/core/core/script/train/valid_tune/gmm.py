@@ -46,7 +46,7 @@ def tune_gmm_script():
 
 
 if __name__ == '__main__':
-	tune_gmm_script()
 
+	pass
 
 

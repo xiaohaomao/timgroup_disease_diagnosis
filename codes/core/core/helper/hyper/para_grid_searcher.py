@@ -1,7 +1,4 @@
-
-
 import itertools
-
 from core.helper.hyper.para_searcher import ParaSearcher
 
 
@@ -27,10 +24,7 @@ class ParaGridSearcher(ParaSearcher):
 
 
 if __name__ == '__main__':
-	pgs = ParaGridSearcher({
-		'phe_sim': [0, 1],
-		'gamma': [11, 22, 33, 44, 55]
-	})
+	pass
 
 
 

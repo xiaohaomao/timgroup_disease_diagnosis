@@ -25,7 +25,5 @@ class MinICModel(ScoreMatModel):
 
 
 if __name__ == '__main__':
-	from core.utils.utils import list_find
-	from core.reader import HPOFilterDatasetReader
-	hpo_reader = HPOFilterDatasetReader(keep_dnames=['OMIM', 'ORPHA', 'CCRD'])
-	model = MinICModel()
+
+	pass

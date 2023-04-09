@@ -1,10 +1,8 @@
 import heapq
 import numpy as np
 from copy import deepcopy
-
 from core.predict.model import Model
 from core.reader.hpo_reader import HPOReader
-
 from core.utils.cycommon import to_rank_score
 
 class OrderedMultiModel(Model):
@@ -94,8 +92,5 @@ class OrderedMultiModel(Model):
 
 
 if __name__ == '__main__':
-
-	from core.predict.sim_model.sim_term_overlap_model import generate_sim_TO_q_reduce_model
-	from core.predict.ensemble.random_model import RandomModel
-	model = OrderedMultiModel([generate_sim_TO_q_reduce_model, RandomModel])
+	pass
 

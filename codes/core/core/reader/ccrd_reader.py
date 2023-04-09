@@ -107,8 +107,6 @@ class CCRDReader(object):
 
 
 if __name__ == '__main__':
-	ccrd_reader = CCRDReader()
-	ccrd_dict = ccrd_reader.get_ccrd_dict()
 
 
-
+	pass

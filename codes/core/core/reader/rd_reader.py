@@ -497,9 +497,5 @@ def source_codes_to_rd_codes(source_codes, rd_reader=None):
 
 
 if __name__ == '__main__':
-	reader = RDReader()
-	reader.statistics()
-	reader.check()
-	reader.get_rd_dict_with_name()
 
-
+	pass

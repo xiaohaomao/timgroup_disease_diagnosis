@@ -66,21 +66,28 @@ class DataHelper(BaseDataHelper):
 		self.test_names = [
 			## validation subset of RAMEDIS ##
 			'Validation_subsets_of_RAMEDIS',
+
 			## Multi-country-test set ##
 			'Multi-country-test',
+
 			## combined multi-country set ##
 			'Combined-Multi-Country',
+
 			## PUMCH-L datasest ##
 			'PUMCH-L-CText2Hpo',
 			'PUMCH-L-Meta',
 			'PUMCH-L-CHPO',
+
 			## PUMCH-MDT dataset ##
 			'PUMCH-MDT',
+
 			## PUMCH-ADM dataset ##
 			'PUMCH-ADM',
+
 			## Sampled_100 cases ##
 			'Multi-country-test-set-100',
 			'RAMEDIS_100',
+
 			## 24 methylmalonic academia cases  using different knowledge bases ##
 			'MUT_24_CASES_OMIM',
 			'MUT_24_CASES_ORPHA',
@@ -89,6 +96,7 @@ class DataHelper(BaseDataHelper):
 			'MUT_24_CASES_CCRD_ORPHA',
 			'MUT_24_CASES_CCRD_OMIM',
 			'MUT_24_CASES_CCRD_OMIM_ORPHA',
+
 			## validation subsets of RAMEDIS using different knowledge bases ##
 			'validation_subset_RAMDEIS_CCRD',
 			'validation_subset_RAMDEIS_OMIM',
@@ -97,6 +105,7 @@ class DataHelper(BaseDataHelper):
 			'validation_subset_RAMDEIS_CCRD_ORPHA',
 			'validation_subset_RAMDEIS_OMIM_ORPHA',
 			'validation_subset_RAMDEIS_CCRD_OMIM_ORPHA',
+
 			## multi_country_test using different knowledge bases ##
 			'Multi-country-test_CCRD',
 			'Multi-country-test_OMIM',
@@ -105,6 +114,7 @@ class DataHelper(BaseDataHelper):
 			'Multi-country-test_CCRD_ORPHA',
 			'Multi-country-test_OMIM_ORPHA',
 			'Multi-country-test_CCRD_OMIM_ORPHA',
+
 			## simulated datasets ##
 			'SIM_ORIGIN',
 			'SIM_NOISE',

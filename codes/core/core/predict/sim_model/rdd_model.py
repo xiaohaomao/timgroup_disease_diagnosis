@@ -1,7 +1,6 @@
 import numpy as np
 from tqdm import tqdm
 from scipy.sparse import vstack
-
 from core.predict.model import SparseVecModel
 from core.predict.calculator.phe_sim_calculator import PheMICASimCalculator, PheMINICSimCalculator
 from core.utils.constant import DATA_PATH, PHELIST_REDUCE, NPY_FILE_FORMAT, VEC_TYPE_0_1, PHELIST_ANCESTOR
@@ -45,8 +44,5 @@ class RDDModel(SparseVecModel):
 
 
 if __name__ == '__main__':
-	from core.utils.utils import list_find
-	from core.reader import HPOFilterDatasetReader
-	hpo_reader = HPOFilterDatasetReader(keep_dnames=['OMIM', 'ORPHA', 'CCRD'])
-	model = RDDModel(hpo_reader, phe_list_mode=PHELIST_REDUCE)
 
+	pass

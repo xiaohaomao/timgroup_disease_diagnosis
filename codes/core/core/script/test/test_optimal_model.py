@@ -6,7 +6,6 @@ import itertools
 import gc
 import codecs
 import json
-
 from core.predict.sim_model import MICAModel, MICALinModel, MinICModel, MICAJCModel, SimGICModel
 from core.predict.sim_model import GDDPFisherModel, GDDPWeightTOModel, RDDModel, RBPModel
 from core.predict.sim_model import EuclideanModel, JaccardModel, CosineModel, DistanceModel
@@ -15,14 +14,9 @@ from core.predict.sim_model import SimTOQReduceDominantICModel, ICTODQAcrossMode
 from core.predict.prob_model import CNBModel, MNBModel, HPOProbMNBModel
 from core.predict.prob_model import BOQAModel
 from core.predict.prob_model import TransferProbModel, TransferProbNoisePunishModel
-from core.predict.prob_model import BayesNetModel
 from core.predict.ml_model import LogisticModel
 from core.predict.ml_model import LSVMModel
 from core.predict.ml_model import LRNeuronModel
-from core.predict.semi import SemiLRModel
-from core.predict.cluster import ClusterClassifyModel
-from core.predict.cluster import KMedoidCluster, KMedoidClusterConfig
-from core.predict.pvalue_model import RawPValueModel, HistPValueModel
 from core.predict.ensemble import OrderedMultiModel
 from core.predict.ensemble import RandomModel
 
@@ -48,8 +42,13 @@ def get_eval_datas():
 	return [TEST_DATA]
 
 
+#######################################
 ##### select datasets to evaluate #####
+#######################################
+# Validating all datasets at once is slow, so you can choose to validate them one by one instead
 def get_data_names():
+
+
 	return [
 	## validation subset of RAMEDIS ##
 	#'Validation_subsets_of_RAMEDIS',
@@ -107,11 +106,10 @@ def get_data_names():
 
 
 	## simulated datasets ##
-	# 'SIM_ORIGIN',
-	# 'SIM_NOISE',
-	# 'SIM_IMPRE',
-	# 'SIM_IMPRE_NOISE',
-	# 'SIM_NOISE_IMPRE',
+	#'SIM_ORIGIN',
+	#'SIM_NOISE',
+	#'SIM_IMPRE',
+	 #'SIM_IMPRE_NOISE',
 
 	]
 
@@ -1149,9 +1147,11 @@ if __name__ == '__main__':
 	raw_data_path = RESULT_PATH
 	keep_general_dis_map = True
 	conf_level = 0.95
+
 	save_raw_results = True
 
 	##### whether added 12 diagnostic methods #####
+	##### Running 12 benchmark models is slow, so you can choose to run only our model instead of using False  ######
 	benckmark_methods = True # False
 
 

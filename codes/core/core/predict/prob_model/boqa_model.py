@@ -5,7 +5,6 @@ from multiprocessing import Pool
 from tqdm import tqdm
 from copy import deepcopy
 import random
-
 from core.utils.constant import TEMP_PATH, PROJECT_PATH, DATA_PATH, MODEL_PATH
 from core.utils.utils import random_string, list_add_tail, item_list_to_rank_list, delete_redundacy
 from core.reader.hpo_reader import HPOReader
@@ -193,10 +192,6 @@ class BOQAModel(object):
 
 
 if __name__ == '__main__':
-	from core.reader import HPOFilterDatasetReader
-	from core.utils.utils import list_find, get_all_ancestors_for_many
-	hpo_reader = HPOFilterDatasetReader(keep_dnames=['OMIM', 'ORPHA', 'CCRD'])
-	hpo_dict = hpo_reader.get_slice_hpo_dict()
-	model = BOQAModel(hpo_reader, use_freq=True)
+	pass
 
 

@@ -810,7 +810,4 @@ class SimTODominantReverseDReduceModel(SimTODominantReverseModel):
 
 if __name__ == '__main__':
 
-	from core.reader import HPOFilterDatasetReader
-	hpo_reader = HPOFilterDatasetReader(keep_dnames=['OMIM', 'ORPHA', 'CCRD'])  #
-
-	model = ICTODQAcrossModel(hpo_reader)
+	pass

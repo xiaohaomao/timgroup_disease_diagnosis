@@ -1,10 +1,8 @@
 import numpy as np
 from copy import deepcopy
 from scipy.sparse import vstack
-
 from core.helper.hyper.hyper_tune_helper import HyperTuneHelper
 from core.predict.semi import SemiMixMNConfig, SemiMixMNModel
-
 from core.utils.constant import VEC_TYPE_0_1, VEC_TYPE_TF_IDF, VEC_TYPE_TF, TRAIN_MODE
 from core.helper.data.data_helper import DataHelper
 from core.script.train.valid_tune.tune import tune, get_default_phe_list_mode, multi_tune
@@ -107,5 +105,5 @@ def train_best_mix_mn2():
 
 
 if __name__ == '__main__':
-	tune_mix_mn_script()
 
+	pass

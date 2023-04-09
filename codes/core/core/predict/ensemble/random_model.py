@@ -1,7 +1,6 @@
 import heapq
 import numpy as np
 import os
-
 from core.predict.model import Model
 from core.reader.hpo_reader import HPOReader
 from core.utils.utils import check_load_save
@@ -63,7 +62,4 @@ class RandomModel(Model):
 
 
 if __name__ == '__main__':
-	from core.reader import HPOFilterDatasetReader
-	hpo_reader = HPOFilterDatasetReader(keep_dnames=['OMIM'])
-	model = RandomModel(hpo_reader=hpo_reader, seed=777)
-
+	pass

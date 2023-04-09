@@ -104,11 +104,8 @@ class DOReader(object):
 
 
 if __name__ == '__main__':
-	reader = DOReader()
 
-	reader.statistic()
-
-
+	pass
 
 
 

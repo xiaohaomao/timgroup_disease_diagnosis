@@ -5,7 +5,6 @@ from core.reader.omim_reader import OMIMReader
 from core.reader.orphanet_reader import OrphanetReader
 from core.reader.ccrd_reader import CCRDReader
 from core.reader.do_reader import DOReader
-from core.reader.decipher_reader import DecipherReader
 from core.reader.umls_reader import UMLSReader
 from core.reader.rd_reader import RDReader, source_codes_to_rd_codes
 from core.reader.rd_filter_reader import RDFilterReader

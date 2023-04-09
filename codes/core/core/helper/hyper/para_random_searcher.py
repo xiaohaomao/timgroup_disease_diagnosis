@@ -1,5 +1,3 @@
-
-
 import random
 from core.helper.hyper.para_grid_searcher import ParaSearcher
 
@@ -55,7 +53,4 @@ class ParaRandomSearcher(ParaSearcher):
 
 
 if __name__ == '__main__':
-	prs = ParaRandomSearcher({
-		'phe_sim': [0, 1],
-		'gamma': [11, 22, 33, 44, 55]
-	})
+	pass

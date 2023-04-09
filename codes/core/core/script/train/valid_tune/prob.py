@@ -1,5 +1,4 @@
 import numpy as np
-
 from core.reader import HPOFilterDatasetReader
 from core.predict.prob_model import TransferProbModel
 from core.predict.prob_model import TransferProbNoisePunishModel
@@ -40,9 +39,8 @@ def tune_prob_noise_model():
 
 
 if __name__ == '__main__':
-	tune_prob_model()
 
-
+	pass
 
 
 

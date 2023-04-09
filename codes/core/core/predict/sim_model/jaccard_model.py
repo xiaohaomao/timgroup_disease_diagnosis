@@ -53,5 +53,5 @@ class JaccardModel(SimTOModel):
 
 
 if __name__ == '__main__':
-	from core.utils.utils import list_find
-	from core.reader import HPOFilterDatasetReader
+
+	pass

@@ -1,7 +1,6 @@
 import os
 import joblib
 from sklearn.linear_model import LogisticRegression
-
 from core.predict.model import SklearnModel
 from core.predict.config import Config
 from core.reader.hpo_reader import HPOReader

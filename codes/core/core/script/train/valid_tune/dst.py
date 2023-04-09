@@ -23,8 +23,8 @@ def tune_model():
 
 
 if __name__ == '__main__':
-	tune_model()
 
+	pass
 
 
 

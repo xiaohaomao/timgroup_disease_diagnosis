@@ -22,7 +22,7 @@ def tune_MICA():
 
 
 if __name__ == '__main__':
-	tune_MICA()
+	pass
 
 
 

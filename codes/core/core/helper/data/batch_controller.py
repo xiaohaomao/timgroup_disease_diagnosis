@@ -1,5 +1,3 @@
-
-
 import random
 import numpy as np
 
@@ -132,10 +130,4 @@ class MultiBatchController(object):
 
 if __name__ == '__main__':
 	from tqdm import tqdm
-	seed = 2211
-	np.random.seed(seed); scipy.random.seed(seed); random.seed(seed)
-	rank_list = list(range(11538))
-	for i in tqdm(range(30)):
-		random.shuffle(rank_list)
-		print(i, rank_list[:10])
 	pass

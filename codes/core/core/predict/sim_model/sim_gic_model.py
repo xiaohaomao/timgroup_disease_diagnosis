@@ -2,7 +2,6 @@ import os
 import numpy as np
 import scipy.sparse as sp
 from scipy.sparse import vstack
-
 from core.predict.sim_model.sim_term_overlap_model import SimTOModel
 from core.predict.calculator.ic_calculator import get_hpo_IC_dict, get_hpo_IC_vec
 from core.reader.hpo_reader import HPOReader
@@ -68,6 +67,5 @@ class SimGICModel(SimTOModel):
 
 
 if __name__ == '__main__':
-	from core.reader import HPOFilterDatasetReader
-	hpo_reader = HPOFilterDatasetReader(keep_dnames=['OMIM', 'ORPHA', 'CCRD'])
-	model = SimGICModel(hpo_reader)
+
+	pass

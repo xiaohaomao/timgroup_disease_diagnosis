@@ -144,4 +144,4 @@ class TransferProbMissPunishModel(TransferProbModel):
 
 
 if __name__ == '__main__':
-	model = TransferProbMissPunishModel()
+	pass

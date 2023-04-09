@@ -14,12 +14,6 @@ from core.utils.constant import VALIDATION_DATA, TEST_DATA, VALIDATION_TEST_DATA
 from core.utils.constant import PHELIST_ANCESTOR, PHELIST_ANCESTOR_DUP, TEMP_PATH, RESULT_PATH, SEED
 from core.utils.constant import CHOOSE_DIS_GEQ_HPO, CHOOSE_DIS_GEQ_IC, get_tune_data_names, get_tune_data_weights, get_tune_metric_names, get_tune_metric_weights
 from core.utils.utils import random_string
-import core.node_embed.deepwalk_encoder as deepwalk
-import core.node_embed.glove_encoder as glove
-import core.node_embed.open_ne_encoder as openne
-import core.node_embed.gcn_encoder as gcn
-import core.node_embed.hce_encoder as hce
-
 
 def resort_history_for_model(hpo_reader_name, save_name):
 	for eval_data in [TEST_DATA, VALIDATION_DATA, VALIDATION_TEST_DATA]:

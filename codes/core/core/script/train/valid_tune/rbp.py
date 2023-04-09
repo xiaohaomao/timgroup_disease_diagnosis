@@ -1,5 +1,4 @@
 import numpy as np
-
 from core.reader import HPOFilterDatasetReader, HPOReader, HPOIntegratedDatasetReader
 from core.predict.ensemble.ordered_multi_model import OrderedMultiModel
 from core.predict.ensemble.random_model import RandomModel
@@ -42,8 +41,7 @@ def tune_rbp(keep_dnames=None):
 
 
 if __name__ == '__main__':
-	tune_rbp()
-
+	pass
 
 
 

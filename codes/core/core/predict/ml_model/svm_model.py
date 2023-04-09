@@ -2,7 +2,6 @@ import numpy as np
 import joblib
 import os
 from sklearn.svm import LinearSVC
-
 from core.predict.config import Config
 from core.predict.model import SklearnModel
 from core.reader.hpo_reader import HPOReader

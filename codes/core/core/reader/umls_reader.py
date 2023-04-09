@@ -196,9 +196,8 @@ class UMLSReader(object):
 
 
 if __name__ == '__main__':
-	umls_reader = UMLSReader()
-	umls_reader.get_tui_to_sty()
 
+	pass
 
 
 

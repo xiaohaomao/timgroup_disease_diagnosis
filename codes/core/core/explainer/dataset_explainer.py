@@ -1,5 +1,3 @@
-
-
 from collections import Counter
 import numpy as np
 from copy import deepcopy
@@ -131,7 +129,7 @@ class LabeledDatasetExplainer(UnLabeledDatasetExplainer):
 		d['DISEASE_FREQ_MAX'], d['DISEASE_FREQ_MIN'] = dis_count_list[0][1], dis_count_list[-1][1]
 		d['DISEASE_FREQ_MEDIAN'] = np.median([count for dis, count in dis_count_list])
 
-		dis_set_count_list = Counter([self.dis_list_to_key(dis_list) for _, dis_list in self.patients]).most_common()  # [(dis_code, count), ...]
+		dis_set_count_list = Counter([self.dis_list_to_key(dis_list) for _, dis_list in self.patients]).most_common()
 		d['DISEASE_SET_CATEGORY'] = len(dis_set_count_list)
 		d['DISEASE_SET_FREQ_MAX'], d['DISEASE_SET_FREQ_MIN'] = dis_set_count_list[0][1], dis_set_count_list[-1][1]
 		d['DISEASE_SET_FREQ_MEDIAN'] = np.median([count for dis, count in dis_set_count_list])
@@ -150,6 +148,4 @@ class LabeledDatasetExplainer(UnLabeledDatasetExplainer):
 
 
 if __name__ == '__main__':
-	from core.utils.constant import VALIDATION_TEST_DATA
-	from core.helper.data.data_helper import DataHelper
-	dh = DataHelper(hpo_reader=HPOIntegratedDatasetReader(keep_dnames=['OMIM', 'ORPHA', 'CCRD']))
+	pass

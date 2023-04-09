@@ -1,6 +1,5 @@
 import numpy as np
 import os
-
 from core.reader.hpo_reader import HPOReader
 from core.predict.sim_model.mica_model import MICAModel
 from core.utils.constant import SET_SIM_SYMMAX, PHELIST_REDUCE, DATA_PATH, MODEL_PATH
@@ -45,11 +44,8 @@ class MICAJCModel(MICAModel):
 
 
 if __name__ == '__main__':
-	from core.utils.utils import list_find, get_all_ancestors_for_many
-	hpo_reader = HPOReader()
-	model = MICAJCModel(hpo_reader, slice_no_anno=True)
 
 
-
+	pass
 
 

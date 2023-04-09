@@ -4,7 +4,6 @@ import os
 from tqdm import tqdm
 import json
 from multiprocessing import Pool
-
 from core.predict.model import ScoreMatModel
 from core.reader.hpo_reader import HPOReader
 from core.utils.utils import get_all_ancestors, delete_redundacy, get_all_ancestors_for_many, ret_same, item_list_to_rank_list
@@ -34,7 +33,5 @@ class MICAModel(ScoreMatModel):
 
 
 if __name__ == '__main__':
-	from core.reader import HPOFilterDatasetReader
-	hpo_reader = HPOFilterDatasetReader(keep_dnames=['OMIM', 'ORPHA', 'CCRD'])
-	model = MICAModel(hpo_reader=hpo_reader)
 
+	pass

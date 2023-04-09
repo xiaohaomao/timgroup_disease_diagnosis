@@ -1,7 +1,6 @@
 import numpy as np
 from scipy import stats
 import heapq
-
 from core.predict.model import Model
 from core.utils.constant import PHELIST_ANCESTOR
 from core.utils.utils import item_list_to_rank_list, get_all_ancestors_for_many, timer
@@ -79,7 +78,5 @@ class GDDPWeightTOModel(Model):
 
 
 if __name__ == '__main__':
-	from core.utils.utils import list_find
-	from core.reader import HPOFilterDatasetReader
 
-
+	pass

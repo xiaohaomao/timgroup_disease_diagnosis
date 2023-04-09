@@ -2,7 +2,6 @@ import numpy as np
 from multiprocessing import Pool
 from tqdm import tqdm
 from collections import Counter
-
 from core.reader.hpo_reader import HPOReader
 
 class ConsistencyRateModel(object):

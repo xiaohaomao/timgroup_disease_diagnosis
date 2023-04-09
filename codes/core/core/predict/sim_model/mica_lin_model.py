@@ -44,10 +44,5 @@ class MICALinModel(MICAModel):
 
 
 if __name__ == '__main__':
-	from core.utils.utils import list_find, get_all_ancestors_for_many
-	hpo_reader = HPOReader()
-	model = MICALinModel(hpo_reader, slice_no_anno=True)
 
-
-
-
+	pass

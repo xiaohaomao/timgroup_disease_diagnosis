@@ -502,9 +502,7 @@ class OrphanetReader(object):
 
 
 if __name__ == '__main__':
-	reader = OrphanetReader()
-	reader.statistic()
 
-
+	pass
 
 

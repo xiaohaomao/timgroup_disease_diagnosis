@@ -1,6 +1,3 @@
-
-
-
 class ParaSearcher(object):
 	def __init__(self, key_to_values, history_list=None):
 		"""

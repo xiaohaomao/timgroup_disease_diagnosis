@@ -1,7 +1,6 @@
 import os
 import numpy as np
 from tqdm import tqdm
-
 from core.predict.model import DenseVecModel
 from core.predict.calculator.phe_sim_calculator import PheMICASimCalculator, PheMINICSimCalculator
 from core.utils.constant import PHE_SIM_MINIC, PHE_SIM_MICA, PHELIST_REDUCE, NPY_FILE_FORMAT, MODEL_PATH, TRAIN_MODE, PREDICT_MODE
@@ -106,10 +105,7 @@ class GDDPFisherModel(DenseVecModel):
 
 
 if __name__ == '__main__':
-	from core.utils.utils import list_find
-	from core.reader import HPOFilterDatasetReader
 
-
-
+	pass
 
 
