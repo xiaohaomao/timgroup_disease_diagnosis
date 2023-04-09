@@ -69,7 +69,7 @@ cd $CORE_PATH
 
 ### Step 2
 
-Second, put the releated patient data in this folder "**core/data/**".
+Second, put the releated patient data in this folder "**codes/core/data/preprocess/patient/**".
 
 
 
