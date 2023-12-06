@@ -1,0 +1,480 @@
+NAME,SPECIMEN,QUALITY,HPO,ENG_NAME
+(7-Dehyodrocholesterol + 8-Dehydrocholesterol)/Cholesterol,serum/plasma,Increased,HP:0010569,Elevated 7-dehydrocholesterol
+(7-Dehyodrocholesterol + 8-Dehydrocholesterol)/Cholesterol,serum/plasma,Increased,HP:0003462,Elevated 8-dehydrocholesterol
+"1,25-Dihydroxyvitamin D",serum/plasma,Increased,HP:0003152,"Increased serum 1,25-dihydroxyvitamin D3"
+17-Hydroxyprogesterone,serum/plasma,Increased,HP:0031213,Elevated circulating 17-hydroxyprogesterone
+2-Hydroxyglutaric acid (D),urine,Increased,HP:0012321,D-2-hydroxyglutaric aciduria
+2-Hydroxyglutaric acid (L),urine,Increased,HP:0040144,L-2-hydroxyglutaric aciduria
+2-Hydroxyglutaric acid (L),blood,Increased,HP:0040147,L-2-hydroxyglutaric acidemia
+2-Hydroxyglutaric acid (L),spinal fluid,Increased,HP:0010995,Abnormality of dicarboxylic acid metabolism
+2-Hydroxyglutaric acid (L),serum/plasma,Increased,HP:0040147,L-2-hydroxyglutaric acidemia
+2-Hydroxyisocaproic acid,urine,Increased,HP:0003215,Dicarboxylic aciduria
+2-Hydroxyisovaleric acid,urine,Increased,HP:0040156,Elevated urinary carboxylic acid
+2-Hydroxyphenylacetic acid,urine,Increased,HP:0040156,Elevated urinary carboxylic acid
+2-Methyl-3-hydroxybutyric acid,urine,Increased,HP:0040156,Elevated urinary carboxylic acid
+2-Methyl-3-hydroxyvaleric acid,urine,Increased,HP:0040156,Elevated urinary carboxylic acid
+2-Methylacetoacetic acid,urine,Increased,HP:0040156,Elevated urinary carboxylic acid
+2-Methylbutyrylglycine,urine,Increased,HP:0010895,Abnormality of glycine metabolism
+2-Oxo-3-methylvaleric acid,urine,Increased,HP:0040156,Elevated urinary carboxylic acid
+2-Oxoglutaric acid,urine,Increased,HP:0003215,Dicarboxylic aciduria
+2-Oxoisocaproic acid,urine,Increased,HP:0040156,Elevated urinary carboxylic acid
+2-Oxoisocaproic acid,urine,Abnormal,HP:0040156,Elevated urinary carboxylic acid
+2-Oxoisovaleric acid,urine,Abnormal,HP:0040156,Elevated urinary carboxylic acid
+2-Oxoisovaleric acid,urine,Increased,HP:0040156,Elevated urinary carboxylic acid
+3-Hydroxy-2-methylbutyric acid,urine,Increased,HP:0040156,Elevated urinary carboxylic acid
+3-Hydroxy-3-methylglutaric acid,urine,Increased,HP:0003215,Dicarboxylic aciduria
+3-Hydroxy-3-methylglutaryl-CoA lyase,fibroblasts,Decreased,,
+3-Hydroxy-3-methylglutaryl-CoA lyase,leucocytes,Decreased,,
+3-Hydroxy-Hexydecenoylcarnitine (C16:1-OH),serum/plasma,Increased,HP:0010967,Abnormality of carnitine metabolism
+3-Hydroxy-Tetradecanoylcarnitine (C14-OH),serum/plasma,Increased,HP:0010967,Abnormality of carnitine metabolism
+3-Hydroxy-Tetradecanoylcarnitine (C14-OH),blood,Increased,HP:0010967,Abnormality of carnitine metabolism
+3-Hydroxy-Tetradecenoylcarnitine (C14:1-OH),serum/plasma,Increased,HP:0010967,Abnormality of carnitine metabolism
+3-Hydroxy-Tetradecenoylcarnitine (C14:1-OH),blood,Increased,HP:0010967,Abnormality of carnitine metabolism
+3-Hydroxyacyl-CoA dehydrogenase,fibroblasts,Decreased,HP:0100950,Decreased activity of 3-hydroxyacyl-CoA dehydrogenase
+3-Hydroxyacyl-CoA dehydrogenase,leucocytes,Decreased,HP:0100950,Decreased activity of 3-hydroxyacyl-CoA dehydrogenase
+3-Hydroxybutyrate,urine,Increased,HP:0040155,Elevated urinary 3-hydroxybutyric acid
+3-Hydroxybutyrate,serum/plasma,Increased,HP:0010996,Abnormality of monocarboxylic acid metabolism
+3-Hydroxybutyric acid,serum/plasma,Increased,HP:0010996,Abnormality of monocarboxylic acid metabolism
+3-Hydroxybutyric acid,spinal fluid,Increased,HP:0010996,Abnormality of monocarboxylic acid metabolism
+3-Hydroxydicarboxylic acid,urine,Increased,HP:0008160,3-hydroxydicarboxylic aciduria
+3-Hydroxyglutaric acid,urine,Increased,HP:0003215,Dicarboxylic aciduria
+3-Hydroxyisobutyric acid,urine,Increased,HP:0040156,Elevated urinary carboxylic acid
+3-Hydroxyisobutyric acid,serum/plasma,Increased,HP:0010996,Abnormality of monocarboxylic acid metabolism
+3-Hydroxyisovaleric acid,urine,Increased,HP:0040156,Elevated urinary carboxylic acid
+3-Hydroxyisovaleric acid,serum/plasma,Increased,HP:0010996,Abnormality of monocarboxylic acid metabolism
+3-Hydroxyisovaleric acid,spinal fluid,Increased,HP:0010996,Abnormality of monocarboxylic acid metabolism
+3-Hydroxyisovaleric acid,urine,Abnormal,HP:0010996,Abnormality of monocarboxylic acid metabolism
+3-Hydroxyisovalerylcarnitine (C5-OH),blood,Increased,HP:0010967,Abnormality of carnitine metabolism
+3-Hydroxyisovalerylcarnitine (C5-OH),serum/plasma,Increased,HP:0010967,Abnormality of carnitine metabolism
+3-Hydroxylinoleoylcarnitine (C18:2-OH),blood,Increased,HP:0010967,Abnormality of carnitine metabolism
+3-Hydroxyoleoylcarnitine (C18:1-OH),serum/plasma,Increased,HP:0010967,Abnormality of carnitine metabolism
+3-Hydroxyoleoylcarnitine (C18:1-OH),blood,Increased,HP:0010967,Abnormality of carnitine metabolism
+3-Hydroxypalmitoylcarnitine (C16-OH),blood,Increased,HP:0010967,Abnormality of carnitine metabolism
+3-Hydroxyphenylacetic acid,urine,Increased,HP:0040156,Elevated urinary carboxylic acid
+3-Hydroxypropionic acid,urine,Increased,HP:0040156,Elevated urinary carboxylic acid
+3-Hydroxypropionic acid,urine,Decreased,HP:0010996,Abnormality of monocarboxylic acid metabolism
+3-Hydroxysebacic acid,urine,Increased,HP:0003215,Dicarboxylic aciduria
+3-Hydroxystearoylcarnitine (C18-OH),blood,Increased,HP:0010967,Abnormality of carnitine metabolism
+3-Hydroxyvaleric acid,urine,Increased,HP:0040156,Elevated urinary carboxylic acid
+3-Methylcrotonyl-CoA carboxylase,fibroblasts,Decreased,,
+3-Methylcrotonyl-CoA carboxylase,leucocytes,Decreased,,
+3-Methylcrotonylglycine,urine,Increased,HP:0010895,Abnormality of glycine metabolism
+3-Methylcrotonylglycine,urine,Increased,HP:0003355,Aminoaciduria
+3-Methylcrotonylglycine,blood,Increased,HP:0003112,Abnormality of serum amino acid levels
+3-Methylglutaconic acid,urine,Increased,HP:0003535,3-Methylglutaconic aciduria
+3-Methylglutaconyl-CoA hydratase,fibroblasts,Decreased,,
+3-Methylglutaric acid,urine,Increased,HP:0003344,3-Methylglutaric aciduria
+3-Phenylpropionylglycine,urine,Increased,HP:0010895,Abnormality of glycine metabolism
+3-Phenylpropionylglycine,urine,Increased,HP:0003355,Aminoaciduria
+"3,4-Dihydroxybutyric acid",serum/plasma,Increased,HP:0010996,Abnormality of monocarboxylic acid metabolism
+"3,4-Dihydroxybutyric acid",urine,Increased,HP:0040156,Elevated urinary carboxylic acid
+4-Hydroxybutyric acid,urine,Increased,HP:0040156,Elevated urinary carboxylic acid
+4-Hydroxybutyric acid,serum/plasma,Increased,HP:0010996,Abnormality of monocarboxylic acid metabolism
+4-Hydroxybutyric acid,spinal fluid,Increased,HP:0010996,Abnormality of monocarboxylic acid metabolism
+4-Hydroxycyclohexylacetic acid,urine,Increased,HP:0040156,Elevated urinary carboxylic acid
+4-Hydroxyisovaleric acid,urine,Increased,HP:0040156,Elevated urinary carboxylic acid
+4-Hydroxyphenylacetic acid,urine,Increased,HP:0003607,4-Hydroxyphenylacetic aciduria
+4-Hydroxyphenyllactic acid,urine,Increased,HP:0040156,Elevated urinary carboxylic acid
+4-Hydroxyphenylpropionic acid,urine,Increased,HP:0040156,Elevated urinary carboxylic acid
+4-Hydroxyphenylpyruvic acid,urine,Increased,HP:0003161,4-Hydroxyphenylpyruvic aciduria
+4-Hydroxyphenylpyruvic acid,urine,Abnormal,HP:0003161,4-Hydroxyphenylpyruvic aciduria
+5-Hydroxyhexanoic acid,urine,Increased,HP:0040156,Elevated urinary carboxylic acid
+5-Hydroxymethyluracil,urine,Increased,HP:0012127,Uraciluria
+5-Oxoproline,urine,Increased,HP:0010907,Abnormality of proline metabolism
+5-Oxoproline,urine,Increased,HP:0003355,Aminoaciduria
+5-Oxoproline,serum/plasma,Increased,HP:0010907,Abnormality of proline metabolism
+"5,10-Methylenetetrahydrofolate reductase",fibroblasts,Decreased,,
+"5,10-Methylenetetrahydrofolate reductase",leucocytes,Decreased,,
+7-Dehydrocholesterol,serum/plasma,Increased,HP:0010569,Elevated 7-dehydrocholesterol
+8-Dehydrocholesterol,serum/plasma,Increased,HP:0003462,Elevated 8-dehydrocholesterol
+Acetoacetic acid,urine,Increased,HP:0040156,Elevated urinary carboxylic acid
+Acetoacetic acid,serum/plasma,Increased,HP:0010996,Abnormality of monocarboxylic acid metabolism
+Acetoacetic acid,blood,Increased,HP:0010996,Abnormality of monocarboxylic acid metabolism
+Acetylcarnitine (C2),blood,Decreased,HP:0012071,Abnormality of acetylcarnitine metabolism
+Acrylylcarnitine (C3:1),blood,Increased,HP:0045045,Elevated plasma acylcarnitine levels
+Acylcarnitine,serum/plasma,Decreased,HP:0012071,Abnormality of acetylcarnitine metabolism
+Acylcarnitine,serum/plasma,Increased,HP:0045045,Elevated plasma acylcarnitine levels
+Acylcarnitine,blood,Decreased,HP:0012071,Abnormality of acetylcarnitine metabolism
+Acylcarnitine,blood,Abnormal,HP:0012071,Abnormality of acetylcarnitine metabolism
+Acylcarnitine,urine,Increased,HP:0012071,Abnormality of acetylcarnitine metabolism
+Adipic acid,urine,Increased,HP:0003215,Dicarboxylic aciduria
+Adipic acid,serum/plasma,Increased,HP:0040145,Dicarboxylic acidemia
+Alanine,serum/plasma,Increased,HP:0003348,Hyperalaninemia
+Alanine,urine,Increased,HP:0010916,Abnormality of alanine metabolism
+Alanine,urine,Increased,HP:0003355,Aminoaciduria
+Alanine,liver,Increased,HP:0010916,Abnormality of alanine metabolism
+ALAT (GPT),serum/plasma,Increased,HP:0010916,Abnormality of alanine metabolism
+Albumin,serum/plasma,Decreased,HP:0003073,Hypoalbuminemia
+Albumin,serum/plasma,Increased,HP:0012117,Hyperalbuminemia
+allo-Isoleucine,serum/plasma,Increased,HP:0010913,Hyperisoleucinemia
+allo-Isoleucine,serum/plasma,Decreased,HP:0010912,Abnormality of isoleucine metabolism
+alpha-1-Antitrypsin,serum/plasma,Decreased,,
+alpha-Fetoprotein,serum/plasma,Increased,HP:0006254,Elevated alpha-fetoprotein
+Ammonia,serum/plasma,Increased,HP:0001987,Hyperammonemia
+Ammonia,serum/plasma,Decreased,HP:0100493,Hypoammonemia
+Amylase,serum/plasma,Increased,,
+"Amylo-1,6-glucosidase",liver,Decreased,,
+Antithrombin III (AT III),serum/plasma,Decreased,HP:0001976,Reduced antithrombin III activity
+Arginase,erythrocytes,Decreased,HP:0010909,Abnormality of arginine metabolism
+Arginine,serum/plasma,Increased,HP:0010909,Abnormality of arginine metabolism
+Arginine,urine,Increased,HP:0003268,Argininuria
+Arginine,serum/plasma,Decreased,HP:0005961,Hypoargininemia
+Arginine,blood,Increased,HP:0010909,Abnormality of arginine metabolism
+Arginine,blood,Decreased,HP:0005961,Hypoargininemia
+Argininosuccinase,fibroblasts,Decreased,,
+Argininosuccinase,erythrocytes,Decreased,,
+Argininosuccinate,serum/plasma,Increased,,
+Argininosuccinate,urine,Increased,,
+Argininosuccinate Lyase,erythrocytes,Decreased,,
+Argininosuccinate synthetase,liver,Decreased,,
+Argininosuccinate synthetase,fibroblasts,Decreased,,
+Arylsulfatase A,fibroblasts,Decreased,,
+Arylsulfatase B,fibroblasts,Decreased,,
+ASAT (GOT),serum/plasma,Increased,HP:0010899,Abnormality of aspartate family amino acid metabolism
+Asparagine,urine,Increased,,
+Asparagine,serum/plasma,Increased,,
+Aspartate aminotransferase (SGOT),serum/plasma,Increased,HP:0010899,Abnormality of aspartate family amino acid metabolism
+Aspartate aminotransferase (SGOT),serum/plasma,Abnormal,HP:0010899,Abnormality of aspartate family amino acid metabolism
+Aspartoacylase,fibroblasts,Decreased,,
+beta-Alanine,urine,Decreased,HP:0010916,Abnormality of alanine metabolism
+beta-Galactosidase,fibroblasts,Decreased,HP:0008166,Decreased beta-galactosidase activity
+beta-Galactosidase,leucocytes,Decreased,HP:0008166,Decreased beta-galactosidase activity
+beta-Hexosaminidase,fibroblasts,Decreased,HP:0004345,Abnormality of ganglioside metabolism
+beta-Hexosaminidase,fibroblasts,Decreased,HP:0003333,Increased serum beta-hexosaminidase
+Bicarbonate,serum/plasma,Abnormal,,
+"Bile acids, total",serum/plasma,Increased,HP:0012202,Increased serum bile acid concentration
+"Bilirubin, direct",serum/plasma,Increased,HP:0002908,Conjugated hyperbilirubinemia
+"Bilirubin, total",serum/plasma,Increased,HP:0003573,Increased total bilirubin
+Biotinidase,leucocytes,Decreased,,
+Biotinidase,serum/plasma,Decreased,,
+bleeding time,blood,Increased,HP:0003010,Prolonged bleeding time
+Butyrylcarnitine (C4),serum/plasma,Increased,HP:0010967,Abnormality of carnitine metabolism
+Butyrylcarnitine (C4),blood,Increased,HP:0010967,Abnormality of carnitine metabolism
+Calcitonin,serum/plasma,Increased,HP:0003528,Elevated calcitonin
+Calcium,serum/plasma,Decreased,HP:0002901,Hypocalcemia
+Calcium,serum/plasma,Increased,HP:0003072,Hypercalcemia
+Carbamylphosphate synthetase,liver,Decreased,,
+Carnitine uptake,fibroblasts,Decreased,,
+"Carnitine, free",serum/plasma,Decreased,HP:0008315,Decreased plasma free carnitine
+"Carnitine, free",blood,Increased,HP:0010967,Abnormality of carnitine metabolism
+"Carnitine, free",blood,Decreased,HP:0008315,Decreased plasma free carnitine
+"Carnitine, free",serum/plasma,Increased,HP:0010967,Abnormality of carnitine metabolism
+"Carnitine, free",blood,Abnormal,HP:0010967,Abnormality of carnitine metabolism
+Ceruloplasmin,serum/plasma,Decreased,HP:0010837, Decreased serum ceruloplasmin
+Chloride,serum/plasma,Decreased,HP:0003113,Hypochloremia
+Cholestanol,serum/plasma,Increased,,
+Cholesterol,serum/plasma,Decreased,HP:0003146,Hypocholesterolemia
+Cholesterol,serum/plasma,Increased,HP:0003124,Hypercholesterolemia
+Citrulline,serum/plasma,Increased,HP:0011966,Elevated plasma citrulline
+Citrulline,urine,Increased,HP:0011965,Abnormality of citrulline metabolism
+Citrulline,serum/plasma,Decreased,HP:0003572,Low plasma citrulline
+Coagulation factors,serum/plasma,Decreased,HP:0003256,Abnormality of the coagulation cascade
+Complex I,muscle,Decreased,,
+Complex II,muscle,Decreased,,
+Complex III,muscle,Decreased,,
+Copper,serum/plasma,Decreased,HP:0011967,Hypocupremia
+Copper,urine,Increased,HP:0010839, Increased urinary copper concentration
+Copper,liver,Increased,HP:0025321,Copper accumulation in liver
+copper elimination,urine,Decreased,HP:0010839, Increased urinary copper concentration
+Cortisol,serum/plasma,Decreased,HP:0008163,Decreased circulating cortisol level
+Creatine,urine,Increased,HP:0012113,Abnormality of creatine metabolism
+Creatine,urine,Decreased,HP:0012113,Abnormality of creatine metabolism
+Creatine,serum/plasma,Decreased,HP:0012113,Abnormality of creatine metabolism
+Creatine,serum/plasma,Increased,HP:0012113,Abnormality of creatine metabolism
+Creatinine,serum/plasma,Increased,HP:0003259,Elevated serum creatinine
+Creatinine,urine,Decreased,HP:0012100,Abnormal circulating creatinine level
+Creatinine,serum/plasma,Decreased,HP:0012101,Decreased serum creatinine
+Creatinine clearence,urine,Decreased,HP:0012100,Abnormal circulating creatinine level
+Creatinine kinase,serum/plasma,Increased,HP:0040081,Abnormal levels of creatine kinase in blood
+Creatinine kinase,serum/plasma,Decreased,HP:0040081,Abnormal levels of creatine kinase in blood
+CRP,serum/plasma,Increased,HP:0011227,Elevated C-reactive protein level
+Cystine,urine,Increased,HP:0003131,Cystinuria
+Cystine,serum/plasma,Decreased,HP:0010918,Abnormality of cysteine metabolism
+Cystine,serum/plasma,Increased,HP:0010918,Abnormality of cysteine metabolism
+Cytochrome c oxidase,liver,Decreased,,
+Cytochrome c oxidase,muscle,Decreased,HP:0003688,Cytochrome C oxidase-negative muscle fibers
+Decadienoylcarnitine (C10:2),blood,Increased,HP:0010967,Abnormality of carnitine metabolism
+Decanoylcarnitine (C10),blood,Increased,HP:0010967,Abnormality of carnitine metabolism
+Decenoylcarnitine (C10:1),blood,Increased,HP:0010967,Abnormality of carnitine metabolism
+Decenoylcarnitine (C10:1),serum/plasma,Increased,HP:0010967,Abnormality of carnitine metabolism
+Delta-aminolevulinic acid,urine,Abnormal,HP:0003163,Elevated urinary delta-aminolevulinic acid
+Delta-aminolevulinic acid,urine,Increased,HP:0003163,Elevated urinary delta-aminolevulinic acid
+Dicarboxylic acids,urine,Increased,HP:0003215,Dicarboxylic aciduria
+Dihydrothymine,urine,Increased,HP:0004353,Abnormality of pyrimidine metabolism
+Dihydrouracil,urine,Increased,HP:0012127,Uraciluria
+Dodecanoylcarnitine (C12),blood,Increased,HP:0010967,Abnormality of carnitine metabolism
+Dodecenoylcarnitine (C12:1),serum/plasma,Increased,HP:0010967,Abnormality of carnitine metabolism
+Erythrocytes,urine,Increased,HP:0000790,Hematuria
+Erythrocytes,blood,Decreased,HP:0001877,Abnormality of erythrocytes
+Ethylmalonic acid,urine,Increased,HP:0003219,Ethylmalonic aciduria
+Ferritin,serum/plasma,Decreased,HP:0012343,Decreased serum ferritin
+Ferritin,serum/plasma,Increased,HP:0003281,Increased serum ferritin
+Folate,serum/plasma,Increased,HP:0012335,Abnormality of folate metabolism
+Folate,serum/plasma,Decreased,HP:0040087,Abnormality of folate in blood
+Fructose,urine,Increased,HP:0011033,Impairment of fructose metabolism
+Fumaric acid,urine,Increased,HP:0003215,Dicarboxylic aciduria
+Galactitol,urine,Increased,HP:0004342,Abnormality of galactoside metabolism
+Galactitol,urine,Abnormal,HP:0004342,Abnormality of galactoside metabolism
+Galactose,serum/plasma,Increased,HP:0012024,Hypergalactosemia
+Galactose,urine,Increased,HP:0012023,Galactosuria
+Galactose-1-phosphate,erythrocytes,Increased,,
+Galactose-1-phosphate,erythrocytes,Abnormal,,
+Galactose-1-phosphate uridyltransferase,erythrocytes,Decreased,,
+gamma-Glutamyl transpeptidase,serum/plasma,Increased,,
+Glucose,serum/plasma,Decreased,HP:0001943,Hypoglycemia
+Glucose,urine,Increased,HP:0003076,Glycosuria
+Glucose,blood,Decreased,HP:0001943,Hypoglycemia
+Glucose,serum/plasma,Increased,HP:0003076,Glycosuria
+Glucose 6-phosphatase,liver,Decreased,,
+Glutaconic acid,urine,Increased,HP:0003215,Dicarboxylic aciduria
+"Glutamic acid, Glutamate",blood,Increased,HP:0010903,Abnormality of glutamine metabolism
+"Glutamic acid, Glutamate",serum/plasma,Increased,HP:0010903,Abnormality of glutamine metabolism
+Glutamine,blood,Increased,HP:0003217,Hyperglutaminemia
+Glutamine,blood,Decreased,HP:0010903,Abnormality of glutamine metabolism
+Glutamine,serum/plasma,Increased,HP:0003217,Hyperglutaminemia
+Glutamine,urine,Increased,HP:0010903,Abnormality of glutamine metabolism
+Glutamine,spinal fluid,Increased,HP:0010903,Abnormality of glutamine metabolism
+Glutamine,serum/plasma,Decreased,HP:0010903,Abnormality of glutamine metabolism
+Glutaric acid,urine,Increased,HP:0003150,Glutaric aciduria
+Glutaric acid,serum/plasma,Increased,HP:0003530,Glutaric acidemia
+Glutaric acid,spinal fluid,Increased,HP:0010995,Abnormality of dicarboxylic acid metabolism
+Glutaryl CoA dehydrogenase,fibroblasts,Decreased,,
+Glutaryl CoA dehydrogenase,leucocytes,Decreased,,
+Glutarylcarnitine (C5DC),blood,Increased,HP:0010967,Abnormality of carnitine metabolism
+Glutarylcarnitine (C5DC),urine,Increased,HP:0010967,Abnormality of carnitine metabolism
+Glutarylcarnitine (C5DC),serum/plasma,Increased,HP:0010967,Abnormality of carnitine metabolism
+Glutathione,blood,Decreased,,
+Glyceric acid,urine,Increased,,
+Glycerol,urine,Increased,HP:0040301,Increased urinary glycerol
+Glycine,urine,Increased,HP:0003108,Hyperglycinuria
+Glycine,serum/plasma,Increased,HP:0002154,Hyperglycinemia
+Glycine,spinal fluid,Increased,HP:0010895,Abnormality of glycine metabolism
+Glycine,blood,Increased,HP:0002154,Hyperglycinemia
+Glycine,serum/plasma,Decreased,HP:0012277,Hypoglycinemia
+Glycine,spinal fluid,Unknown,,
+Glycine,blood,Unknown,,
+Glycine,serum/plasma,Abnormal,HP:0010895,Abnormality of glycine metabolism
+Glycine cleavage enzyme system,liver,Decreased,HP:0010895,Abnormality of glycine metabolism
+Guanidinoacetate,urine,Increased,,
+Guanidinoacetate,serum/plasma,Increased,,
+Hawkinsin,urine,Increased,HP:0010917,Abnormality of tyrosine metabolism
+HbA1C,blood,Increased,HP:0040217,Elevated hemoglobin A1c
+HbA1C,blood,Decreased,HP:0011902,Abnormal hemoglobin
+Hemoglobine,blood,Decreased,HP:0010472,Abnormality of the heme biosynthetic pathway
+Hemoglobine,blood,Increased,HP:0010472,Abnormality of the heme biosynthetic pathway
+Hexadecenoylcarnitine (C16:1),serum/plasma,Increased,HP:0010967,Abnormality of carnitine metabolism
+Hexadecenoylcarnitine (C16:1),blood,Increased,HP:0010967,Abnormality of carnitine metabolism
+Hexanoylcarnitine (C6),blood,Increased,HP:0010967,Abnormality of carnitine metabolism
+Hexanoylcarnitine (C6),serum/plasma,Increased,HP:0010967,Abnormality of carnitine metabolism
+Hexanoylglycine,urine,Increased,HP:0010895,Abnormality of glycine metabolism
+Hippuric acid,urine,Increased,HP:0010895,Abnormality of glycine metabolism
+Histidine,serum/plasma,Increased,HP:0010906,Hyperhistidinemia
+Homocysteine,serum/plasma,Increased,HP:0002160,Hyperhomocystinemia
+Homocysteine,serum/plasma,Decreased,HP:0010919,Abnormality of homocysteine metabolism
+Homocystine,urine,Increased,HP:0010919,Abnormality of homocysteine metabolism
+Homocystine,serum/plasma,Increased,HP:0002160,Hyperhomocystinemia
+Homocystine,serum/plasma,Decreased,HP:0010919,Abnormality of homocysteine metabolism
+Homogentisic acid,urine,Increased,HP:0040319,Dark urine
+Immunoglobulines,serum/plasma,Increased,HP:0010701,Abnormal immunoglobulin level
+Insulin,serum/plasma,Increased,HP:0000842,Hyperinsulinemia
+Insulin-like growth factor I(IGF-I),serum/plasma,Unknown,,
+Insulin/Glucose,serum/plasma,Increased,HP:0000842,Hyperinsulinemia
+Iron,serum/plasma,Decreased,HP:0040303,Decreased serum iron
+Iron,serum/plasma,Increased,HP:0003452,Increased serum iron
+Isobutyrylglycine,urine,Increased,HP:0010895,Abnormality of glycine metabolism
+Isoleucine,serum/plasma,Decreased,HP:0010912,Abnormality of isoleucine metabolism
+Isoleucine,serum/plasma,Increased,HP:0010913,Hyperisoleucinemia
+Isoleucine,urine,Increased,HP:0010912,Abnormality of isoleucine metabolism
+Isoleucine,urine,Increased,HP:0003355,Aminoaciduria
+Isoleucine,spinal fluid,Increased,HP:0010912,Abnormality of isoleucine metabolism
+Isoleucine,serum/plasma,Abnormal,HP:0010912,Abnormality of isoleucine metabolism
+Isovalerylcarnitine (C5),urine,Increased,HP:0010967,Abnormality of carnitine metabolism
+Isovalerylcarnitine (C5),serum/plasma,Increased,HP:0010967,Abnormality of carnitine metabolism
+Isovalerylcarnitine (C5),blood,Increased,HP:0010967,Abnormality of carnitine metabolism
+Isovalerylglycine,urine,Increased,HP:0010895,Abnormality of glycine metabolism
+Isovalerylglycine,urine,Unknown,,
+Ketone bodies,urine,Detectable,HP:0002919,Ketonuria
+Lactate,blood,Increased,HP:0002151,Increased serum lactate
+Lactate,urine,Increased,HP:0003110,Abnormality of urine homeostasis
+Lactate,spinal fluid,Increased,HP:0002490,Increased CSF lactate
+Lactate,blood,Decreased,HP:0004360,Abnormality of acid-base homeostasis
+Lactate dehydrogenase (LDH),serum/plasma,Increased,HP:0025435,Increased lactate dehydrogenase activity
+Leucine,serum/plasma,Increased,HP:0010911,Hyperleucinemia
+Leucine,serum/plasma,Abnormal,HP:0004357,Abnormality of leucine metabolism
+Leucine,urine,Increased,HP:0004357,Abnormality of leucine metabolism
+Leucine,blood,Increased,HP:0010911,Hyperleucinemia
+Leucine,spinal fluid,Increased,HP:0004357,Abnormality of leucine metabolism
+Leucine,serum/plasma,Decreased,HP:0004357,Abnormality of leucine metabolism
+Leucocytes,blood,Increased,HP:0001974,Leukocytosis
+Leucocytes,blood,Decreased,HP:0001882,Leukopenia
+Linoleoylcarnitine (C18:2),serum/plasma,Increased,HP:0010967,Abnormality of carnitine metabolism
+Lipase,serum/plasma,Increased,,
+Long chain acyl carnitines,blood,Increased,HP:0010967,Abnormality of carnitine metabolism
+Long-chain 3-hydroxyacyl-CoA dehydrogenase,fibroblasts,Decreased,HP:0100950,Decreased activity of 3-hydroxyacyl-CoA dehydrogenase
+Long-chain 3-hydroxyacyl-CoA dehydrogenase,leucocytes,Decreased,HP:0100950,Decreased activity of 3-hydroxyacyl-CoA dehydrogenase
+Lysine,spinal fluid,Increased,HP:0010908,Abnormality of lysine metabolism
+Lysine,urine,Increased,HP:0003297,Hyperlysinuria
+Lysine,serum/plasma,Increased,HP:0002161,Hyperlysinemia
+Lysine,serum/plasma,Decreased,HP:0010908,Abnormality of lysine metabolism
+Lysine,urine,Decreased,HP:0010908,Abnormality of lysine metabolism
+Magnesium,serum/plasma,Decreased,HP:0002917,Hypomagnesemia
+Magnesium,serum/plasma,Increased,HP:0002918,Hypermagnesemia
+Medium-chain Acyl-CoA dehydrogenase,lymphocytes,Decreased,HP:0100950,Decreased activity of 3-hydroxyacyl-CoA dehydrogenase
+Methionine,serum/plasma,Decreased,HP:0003658,Hypomethioninemia
+Methionine,serum/plasma,Increased,HP:0003235,Hypermethioninemia
+Methionine,urine,Increased,HP:0010901,Abnormality of methionine metabolism
+Methionine,urine,Increased,HP:0003355,Aminoaciduria
+Methylcitric acid,urine,Increased,,
+Methylcitric acid,urine,Decreased,,
+Methylglutarylcarnitine (C6DC),blood,Increased,HP:0010967,Abnormality of carnitine metabolism
+Methylmalonic acid,serum/plasma,Increased,HP:0002912,Methylmalonic acidemia
+Methylmalonic acid,urine,Increased,HP:0012120,Methylmalonic aciduria
+Methylmalonic acid,urine,Abnormal,HP:0012120,Methylmalonic aciduria
+Methylmalonic acid,urine,Decreased,HP:0010995,Abnormality of dicarboxylic acid metabolism
+Methylmalonyl CoA mutase,fibroblasts,Decreased,HP:0003210,Decreased methylmalonyl-CoA mutase activity
+Methylmalonylcarnitine (C4DC),blood,Increased,HP:0010967,Abnormality of carnitine metabolism
+Mevalonate kinase,fibroblasts,Decreased,,
+Mevalonic acid,urine,Increased,HP:0040156,Elevated urinary carboxylic acid
+Mevalonic acid,serum/plasma,Increased,HP:0010996,Abnormality of monocarboxylic acid metabolism
+Myoglobin,urine,Increased,HP:0002913,Myoglobinuria
+N-Acetylaspartic acid,urine,Increased,HP:0010899,Abnormality of aspartate family amino acid metabolism
+N-Acetylaspartic acid,spinal fluid,Increased,HP:0010899,Abnormality of aspartate family amino acid metabolism
+N-Acetyltyrosine,urine,Increased,HP:0010899,Abnormality of aspartate family amino acid metabolism
+non esterified fatty acids,serum/plasma,Increased,,
+Octanoyl-/Decanoylcarnitine (C8/C10),blood,Increased,HP:0010967,Abnormality of carnitine metabolism
+Octanoyl-/Decanoylcarnitine (C8/C10),serum/plasma,Increased,HP:0010967,Abnormality of carnitine metabolism
+Octanoylcarnitine (C8),blood,Increased,HP:0010967,Abnormality of carnitine metabolism
+Octanoylcarnitine (C8),serum/plasma,Increased,HP:0010967,Abnormality of carnitine metabolism
+Octenoylcarnitine (C8:1),blood,Increased,HP:0010967,Abnormality of carnitine metabolism
+Oleoylcarnitine (C18:1),serum/plasma,Increased,HP:0010967,Abnormality of carnitine metabolism
+"Organic acids, urine",urine,Increased,HP:0001992,Organic aciduria
+Ornithine,urine,Increased,HP:0003532,Ornithinuria
+Ornithine,serum/plasma,Decreased,HP:0012025,Abnormality of ornithine metabolism
+Ornithine,serum/plasma,Increased,HP:0012026,Hyperornithinemia
+Ornithine-transcarbamylase,liver,Decreased,HP:0012025,Abnormality of ornithine metabolism
+Orotic acid,urine,Increased,HP:0003218,Oroticaciduria
+Orotic acid,urine,Decreased,HP:0010928,Abnormality of orotic acid metabolism
+Orotic acid,serum/plasma,Increased,HP:0010928,Abnormality of orotic acid metabolism
+Palmitoylcarnitine (C16),serum/plasma,Increased,HP:0010967,Abnormality of carnitine metabolism
+Parathyroid hormone (PTH),serum/plasma,Decreased,HP:0003117,Abnormality of circulating hormone level
+Parathyroid hormone (PTH),serum/plasma,Increased,HP:0003165,Elevated circulating parathyroid hormone level
+pCO2,blood,Decreased,,
+pCO2,blood,Increased,,
+pCO2,blood,Abnormal,,
+pH,blood,Increased,HP:0004360,Abnormality of acid-base homeostasis
+pH,blood,Decreased,HP:0004360,Abnormality of acid-base homeostasis
+pH,blood,Abnormal,HP:0004360,Abnormality of acid-base homeostasis
+Phenylacetic acid,urine,Increased,HP:0040156,Elevated urinary carboxylic acid
+Phenylalanine,blood,Increased,HP:0004923,Hyperphenylalaninemia
+Phenylalanine,serum/plasma,Increased,HP:0004923,Hyperphenylalaninemia
+Phenylalanine,blood,Decreased,HP:0010893,Abnormality of phenylalanine metabolism
+Phenylalanine,blood,Abnormal,HP:0010893,Abnormality of phenylalanine metabolism
+Phenylalanine,serum/plasma,Decreased,HP:0010893,Abnormality of phenylalanine metabolism
+Phenylalanine/Tyrosine,blood,Increased,HP:0003231,Hypertyrosinemia
+Phenylalanine/Tyrosine,blood,Increased,HP:0004923,Hyperphenylalaninemia
+Phenylalanine/Tyrosine,serum/plasma,Increased,HP:0003231,Hypertyrosinemia
+Phenylalanine/Tyrosine,serum/plasma,Increased,HP:0004923,Hyperphenylalaninemia
+Phenyllactic acid,urine,Increased,,
+Phenylpyruvic acid,urine,Increased,HP:0040156,Elevated urinary carboxylic acid
+"Phosphatase, alkaline",serum/plasma,Increased,HP:0003155,Elevated alkaline phosphatase
+Phosphate,serum/plasma,Decreased,HP:0002148,Hypophosphatemia
+Phosphate,serum/plasma,Increased,HP:0002905,Hyperphosphatemia
+Phosphomannomutase,leucocytes,Decreased,,
+Phosphomannomutase,fibroblasts,Decreased,,
+"Phosphorus, inorganic",serum/plasma,Increased,,
+"Phosphorus, inorganic",serum/plasma,Decreased,,
+Phosphorylase a,leucocytes,Decreased,,
+Phosphorylase a,muscle,Decreased,,
+Phosphorylase kinase,erythrocytes,Decreased,,
+Phytanic acid,serum/plasma,Increased,HP:0010571,Elevated levels of phytanic acid
+Potassium,serum/plasma,Decreased,HP:0002900,Hypokalemia
+Potassium,serum/plasma,Increased,HP:0002153,Hyperkalemia
+Proline,urine,Increased,HP:0003137,Prolinuria
+Proline,blood,Increased,HP:0008358,Hyperprolinemia
+Proline,serum/plasma,Increased,HP:0008358,Hyperprolinemia
+Propionic acid,serum/plasma,Increased,HP:0003571,Propionicacidemia
+Propionyl CoA carboxylase,fibroblasts,Decreased,HP:0003353,Propionyl-CoA carboxylase deficiency
+Propionyl CoA carboxylase,leucocytes,Decreased,HP:0003353,Propionyl-CoA carboxylase deficiency
+Propionylcarnitine (C3),blood,Increased,HP:0010967,Abnormality of carnitine metabolism
+Propionylcarnitine (C3),serum/plasma,Increased,HP:0010967,Abnormality of carnitine metabolism
+Propionylcarnitine (C3),blood,Abnormal,HP:0010967,Abnormality of carnitine metabolism
+Propionylcarnitine/Palmitoylcarnitine (C3/C16),blood,Increased,HP:0010967,Abnormality of carnitine metabolism
+Propionylcarnitine/Palmitoylcarnitine (C3/C16),blood,Abnormal,HP:0010967,Abnormality of carnitine metabolism
+Propionylglycine,urine,Increased,HP:0010895,Abnormality of glycine metabolism
+"Protein, total",urine,Increased,HP:0000093,Proteinuria
+"Protein, total",serum/plasma,Decreased,HP:0003075,Hypoproteinemia
+"Protein, total",serum/plasma,Increased,HP:0002152,Hyperproteinemia
+"Protein, total",spinal fluid,Increased,HP:0002922,Increased CSF protein
+PTT,serum/plasma,Increased,HP:0003645,Prolonged partial thromboplastin time
+Pyruvate carboxylase,fibroblasts,Decreased,HP:0003209,Decreased pyruvate carboxylase activity
+Pyruvate carboxylase,leucocytes,Decreased,HP:0003209,Decreased pyruvate carboxylase activity
+"Pyruvate, Pyruvic acid",serum/plasma,Increased,HP:0003542,Increased serum pyruvate
+"Pyruvate, Pyruvic acid",blood,Increased,HP:0003542,Increased serum pyruvate
+"Pyruvate, Pyruvic acid",urine,Increased,HP:0040156,Elevated urinary carboxylic acid
+"Pyruvate, Pyruvic acid",serum/plasma,Decreased,HP:0004366,Abnormality of glycolysis
+Quick,serum/plasma,Decreased,,
+Renin,serum/plasma,Decreased,HP:0003351,Decreased circulating renin level
+Renin,serum/plasma,Increased,HP:0000848,Increased circulating renin level
+Retikulocytes,blood,Decreased,,
+S-Adenosylhomocysteine,serum/plasma,Increased,HP:0010919,Abnormality of homocysteine metabolism
+S-Adenosylmethionine,serum/plasma,Increased,,
+S-Adenosylmethionine,serum/plasma,Decreased,,
+S-Adenosylmethionine,leucocytes,Decreased,,
+Sebacic acid,urine,Increased,HP:0003215,Dicarboxylic aciduria
+Serine,serum/plasma,Increased,HP:0012278,Abnormality of serine metabolism
+Short-chain 3-hydroxyacyl-CoA dehydrogenase,fibroblasts,Decreased,HP:0100950,Decreased activity of 3-hydroxyacyl-CoA dehydrogenase
+Short-chain 3-hydroxyacyl-CoA dehydrogenase,muscle,Decreased,HP:0100950,Decreased activity of 3-hydroxyacyl-CoA dehydrogenase
+Sodium,serum/plasma,Decreased,HP:0002902,Hyponatremia
+Sodium,serum/plasma,Increased,HP:0003228,Hypernatremia
+Suberic acid,urine,Increased,,
+Suberylglycine,urine,Increased,HP:0010895,Abnormality of glycine metabolism
+Succinate,urine,Increased,,
+Succinic semialdehyde dehydrogenase,leucocytes,Decreased,,
+Succinylacetone,urine,Increased,,
+Succinylacetone,serum/plasma,Increased,,
+Testosterone,serum/plasma,Increased,HP:0030088,Increased serum testosterone level
+Tetradecadienoylcarnitine (C14:2),blood,Increased,HP:0010967,Abnormality of carnitine metabolism
+Tetradecanoylcarnitine (C14),blood,Increased,HP:0010967,Abnormality of carnitine metabolism
+Tetradecenoylcarnitine (C14:1),blood,Increased,HP:0010967,Abnormality of carnitine metabolism
+Threonine,blood,Decreased,HP:0010900,Abnormality of threonine metabolism
+Threonine,blood,Increased,HP:0003354,Hyperthreoninemia
+Threonine,serum/plasma,Increased,HP:0003354,Hyperthreoninemia
+Threonine,urine,Increased,HP:0003296,Hyperthreoninuria
+"Thrombocytes, Platelets",blood,Decreased,HP:0001873,Thrombocytopenia
+"Thrombocytes, Platelets",blood,Increased,HP:0001894,Thrombocytosis
+Thymine,urine,Increased,HP:0004353,Abnormality of pyrimidine metabolism
+Thyroid-stimulating hormone (TSH),serum/plasma,Increased,HP:0002925,Increased thyroid-stimulating hormone level
+Tiglylcarnitine (C5:1),blood,Increased,HP:0010967,Abnormality of carnitine metabolism
+Tiglylglycine,urine,Increased,HP:0010895,Abnormality of glycine metabolism
+Transaminases,serum/plasma,Increased,,
+Transferrin,serum/plasma,Decreased,HP:0012239,Atransferrinemia
+Triglycerides,serum/plasma,Increased,HP:0002155,Hypertriglyceridemia
+Troponin I,serum/plasma,Increased,,
+Tyrosine,blood,Increased,HP:0003231,Hypertyrosinemia
+Tyrosine,blood,Decreased,HP:0010917,Abnormality of tyrosine metabolism
+Tyrosine,blood,Abnormal,HP:0010917,Abnormality of tyrosine metabolism
+Tyrosine,urine,Increased,HP:0010917,Abnormality of tyrosine metabolism
+Tyrosine,urine,Increased,HP:0003355,Aminoaciduria
+Tyrosine,serum/plasma,Increased,HP:0003231,Hypertyrosinemia
+Tyrosine,serum/plasma,Decreased,HP:0010917,Abnormality of tyrosine metabolism
+Uracil,urine,Increased,HP:0012127,Uraciluria
+Uracil,urine,Decreased,HP:0004353,Abnormality of pyrimidine metabolism
+Urea nitrogen,serum/plasma,Increased,HP:0003138,Increased blood urea nitrogen
+Urea nitrogen,serum/plasma,Decreased,HP:0004364,Abnormality of nitrogen compound homeostasis
+Uric acid,serum/plasma,Increased,HP:0002149,Hyperuricemia
+Uric acid,serum/plasma,Decreased,HP:0003537,Hypouricemia
+Valine,serum/plasma,Increased,HP:0010910,Hypervalinemia
+Valine,serum/plasma,Decreased,HP:0010914,Abnormality of valine metabolism
+Valine,urine,Increased,HP:0010914,Abnormality of valine metabolism
+Valine,urine,Increased,HP:0003355,Aminoaciduria
+Valine,blood,Increased,HP:0010910,Hypervalinemia
+Valine,spinal fluid,Increased,HP:0010914,Abnormality of valine metabolism
+Valine,blood,Decreased,HP:0010914,Abnormality of valine metabolism
+Valine,serum/plasma,Abnormal,HP:0010914,Abnormality of valine metabolism
+Very-long-chain acyl-CoA dehydrogenase,leucocytes,Decreased,,
+Vitamin B12,serum/plasma,Increased,HP:0040126,Abnormal vitamin B12 level
+Vitamin B12,serum/plasma,Decreased,HP:0040126,Abnormal vitamin B12 level
+"Vitamin D2, 25-Hydroxyvitamin D",serum/plasma,Decreased,HP:0100511,Abnormality of vitamin D metabolism
+Vitamin D3,serum/plasma,Decreased,HP:0100511,Abnormality of vitamin D metabolism
+Vitamin E,serum/plasma,Increased,HP:0100514,Abnormality of vitamin E metabolism
+Vitamin E,serum/plasma,Decreased,HP:0100514,Abnormality of vitamin E metabolism
