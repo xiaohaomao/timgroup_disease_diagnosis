@@ -1,0 +1,361 @@
+SYMPTOM,RANGE,HPO,ENG_NAME
+Consanguinity,,,
+Fanconi syndrome,,HP:0001994,Renal Fanconi syndrome
+HELLP-syndrome,,HP:0002686,Prenatal maternal abnormality
+Hospitalization,,,
+"MRI, brain, abnormalities",,HP:0002060,Abnormality of the cerebrum
+"MRI, brain, gray matter abnormalities",,HP:0002538,Abnormality of the cerebral cortex
+"MRI, brain, white matter abnormalities",,HP:0002500,Abnormality of the cerebral white matter
+"VEP [visual evoked potentials], abnormal",,HP:0000649,Abnormality of visual evoked potentials
+abdominal fullness,,HP:0031500,Abdominal mass
+abnormal in neonatal screening,,HP:0001197,Abnormality of prenatal development or birth
+anteverted nostril,,HP:0000463, Anteverted nares
+"aorta, coarction",,HP:0001680,Coarctation of aorta
+apathia,,HP:0000741,Apathy
+"basal ganglia, changes",,HP:0002134,Abnormality of the basal ganglia
+"behavior, abnormal or bizarre",,HP:0000708,Behavioral abnormality
+"behaviour, autism or autistic-like",,HP:0000729,Autistic behavior
+"behaviour, hyperactive, restless",,HP:0000752,Hyperactivity
+"behaviour, self-mutilating or destructive",,HP:0000742,Self-mutilation
+birthweight,low [small for gestational age],HP:0001518,Small for gestational age
+"bleeding tendencies, hemorrhage",,HP:0001892,Abnormal bleeding
+"blindness, visual loss, visual impairment",,HP:0000618,Blindness
+"blood pressure, diastolic",increased,HP:0005117,Elevated diastolic blood pressure
+"blood pressure, systolic",increased,HP:0004421,Elevated systolic blood pressure
+bone fractures,,HP:0002659,Increased susceptibility to fractures
+bone marrow abnormality,,HP:0005561,Abnormality of bone marrow cell morphology
+"brain, cortical or paraventricular cysts",,HP:0007109,Periventricular cysts
+"cardiac arrhythmia, dysrhythmia",,HP:0011675,Arrhythmia
+cardiac involvement,,,
+cerebellar atrophy or hypoplasia,,HP:0001272,Cerebellar atrophy
+cerebellar atrophy or hypoplasia,,HP:0012642,Cerebellar agenesis
+cerebral calcifications,,HP:0002514,Cerebral calcification
+chin,small,HP:0000307,Pointed chin
+chin,small,HP:0000331,Short chin
+cirrhosis or fibrosis of liver,,HP:0001394,Cirrhosis
+cirrhosis or fibrosis of liver,,HP:0001395,Hepatic fibrosis
+"clumsiness, coordination defect or unsteadiness",,HP:0002312,Clumsiness
+"clumsiness, coordination defect or unsteadiness",,HP:0002370,Poor coordination
+"contractures, joints",,HP:0005781,Contractures of the large joints
+coronary heart disease,,HP:0001677,Coronary artery disease
+"corpus callosum, agnesis/hypoplasia",,HP:0007370,Aplasia/Hypoplasia of the corpus callosum
+cortical or cerebral atrophy,,HP:0002120,Cerebral cortical atrophy
+death,,,
+"decreased muscle volume, atrophy or hypoplasia",,HP:0003202,Skeletal muscle atrophy
+"decreased muscle volume, atrophy or hypoplasia",,HP:0009128,Aplasia/Hypoplasia involving the musculature of the extremities
+defect of deep tendon reflexes,,HP:0001315,Reduced tendon reflexes
+"defect of trunk muscle, diaphragma or hiatus hernia",,HP:0002036,Hiatus hernia
+"defect of trunk muscle, diaphragma or hiatus hernia",,HP:0000776,Congenital diaphragmatic hernia
+"defect of trunk muscle, diaphragma or hiatus hernia",,HP:0011804,Abnormality of muscle physiology
+"defect of walking, running, rising or climbing",,HP:0003551,Difficulty climbing stairs
+"defect of walking, running, rising or climbing",,HP:0009046,Difficulty running
+"defect of walking, running, rising or climbing",,HP:0002355,Difficulty walking
+demyelinisation,,HP:0011096,Peripheral demyelination
+dislocated lens [ectopia lentis],,HP:0001083,Ectopia lentis
+dysmorphism,,HP:0001999,Abnormal facial shape
+dysmorphism,,HP:0002648,Abnormality of calvarial morphology
+"ear anomalies [pits, creases]",,HP:0000598,Abnormality of the ear
+early death,,,
+eczematoid skin rush,,HP:0000976,Eczematoid dermatitis
+eczematoid skin rush,,HP:0000988,Skin rash
+epicanthus or medial eyelid fold,,HP:0000286,Epicanthus
+erythematous skin rash,,HP:0000988,Skin rash
+erythematous skin rash,,HP:0030350,Erythematous papule
+erythematous skin rash,,HP:0025475,Erythematous macule
+erythematous skin rash,,HP:0025474,Erythematous plaque
+excessive screaming,,,
+exposure to insulin during gestation,,HP:0031437,Pregnancy exposure
+exposure to phenylalanine during gestation,,HP:0031437,Pregnancy exposure
+eye defect,,HP:0000478,Abnormality of the eye
+"eye movements, abnormal",,HP:0000570,Abnormality of saccadic eye movements
+facies,asymmetric,HP:0000324,Facial asymmetry
+fainting [syncope],,HP:0001279,Syncope
+fair [white] hair,,HP:0011364,White hair
+fair [white] hair,,HP:0002286,Fair hair
+"fatigue, severe or unusual",,HP:0012378,Fatigue
+"feeding difficulties, poor feeding",,HP:0011968,Feeding difficulties
+"femora, shortened",,HP:0003097,Short femur
+flatulence,,HP:0003270,Abdominal distention
+forehead,prominent,HP:0011220,Prominent forehead
+gallbladder abnormalities,,HP:0005264,Abnormality of the gallbladder
+"gallstones, cholelithiasis",,HP:0001081,Cholelithiasis
+gastroenteritis,,HP:0004386,Gastrointestinal inflammation
+gastrointestinal hemorrhage [bleeding],,HP:0002239,Gastrointestinal hemorrhage
+generalized muscle defect,,HP:0011804,Abnormality of muscle physiology
+generalized muscle defect,,HP:0003324,Generalized muscle weakness
+generalized muscle defect,,HP:0003700,Generalized amyotrophy
+"genitalia, ambigous",,HP:0000811,Abnormal external genitalia
+"glucose tolerance, impaired",,HP:0040270,Decreased glucose tolerance
+growth velocity,decreased [or absent],HP:0001510,Growth delay
+growth velocity,increased,HP:0001548,Overgrowth
+hair abnormal [thin brittle],,HP:0002299,Brittle hair
+"hand movements, abnormal, stereotyped",,HP:0100022,Abnormality of movement
+"hearing defect, deafness",,HP:0012714,Severe hearing impairment
+hemolysis,,HP:0001878,Hemolytic anemia
+hygroma,,HP:0000476,Cystic hygroma
+hyperlacrimation,,HP:0009926,Increased lacrimation
+"hyperparathyreoidism, secondary",,HP:0000867,Secondary hyperparathyroidism
+"hypertonia, spasticity",,HP:0001276,Hypertonia
+"hypertonia, spasticity",,HP:0001257,Spasticity
+hypoplasia of optic nerve or disk,,HP:0000609,Optic nerve hypoplasia
+hypoplasia of optic nerve or disk,,HP:0007766,Optic disc hypoplasia
+hypotrophia,,,
+impaired visual acuity,,HP:0001141,Severe visual impairment
+"infections [local, abscesses]",,HP:0200039,Pustule
+infections [severe or recurrent],,HP:0002719,Recurrent infections
+infections [severe or recurrent],,HP:0005364,Severe viral infections
+infections [urinary tract],,HP:0011277,Abnormality of the urinary system physiology
+infections [urinary tract],,HP:0000010,Recurrent urinary tract infections
+intermittant neurologic defect,,HP:0012638,Abnormality of nervous system physiology
+intermittent muscle defect [episodic],,HP:0011804,Abnormality of muscle physiology
+intermittent muscle defect [episodic],,HP:0200072,Episodic quadriplegia
+intermittent muscle defect [episodic],,HP:0003752,pisodic flaccid weakness
+jitterness,,HP:0012638,Abnormality of nervous system physiology
+joint,"hypermobility, dislocation",HP:0001382,Joint hypermobility
+joint,"hypermobility, dislocation",HP:0001373,Joint dislocation
+kyphoskoliosis,,HP:0002751,Kyphoscoliosis
+large hands/feet,,HP:0001176,Large hands
+large hands/feet,,HP:0001833,Long foot
+large liver,,HP:0002240,Hepatomegaly
+large spleen,,HP:0001744,Splenomegaly
+"lethargy, drowsiness, malaise or sleep disorder",,HP:0001254,Lethargy
+"lethargy, drowsiness, malaise or sleep disorder",,HP:0002329,Drowsiness
+"lethargy, drowsiness, malaise or sleep disorder",,HP:0002360,Sleep disturbance
+"limb abnormalities, limb deformities",,HP:0002813,Abnormality of limb bone morphology
+lipodystrophia,,HP:0009125,Lipodystrophy
+liver carcinoma,,HP:0002896,Neoplasm of the liver
+"liver involvement [acute, chronic, hepatitis]",,HP:0200119,Acute hepatitis
+"liver involvement [acute, chronic, hepatitis]",,HP:0200123,Chronic hepatitis
+"liver, fatty",,HP:0001397,Hepatic steatosis
+"long, broad, prominent philtrum",,HP:0000289,Broad philtrum
+"long, broad, prominent philtrum",,HP:0000343,Long philtrum
+"long, broad, prominent philtrum",,HP:0002002,Deep philtrum
+"macrocephaly [large calvaria, >2SD for age]",,HP:0000256,Macrocephaly
+"macroglossia, [large/protruding tongue]",,HP:0000158,Macroglossia
+metabolic decompensation,,HP:0001939,Abnormality of metabolism/homeostasis
+microcephaly [< 2SD for age],,HP:0000252,Microcephaly
+mouth,large,HP:0000154,Wide mouth
+muscle,weakness,HP:0001324,Muscle weakness
+"myelination, incomplete",,HP:0012447,Abnormal myelination
+myocarditits,,HP:0012819,Myocarditis
+"myopathy, ragged red fibers",,HP:0003200,Ragged-red muscle fibers
+nasal bridge,broad,HP:0000431,Wide nasal bridge
+neprhrotic syndrome,,HP:0000100,Nephrotic syndrome
+neurologic defect,,HP:0012638,Abnormality of nervous system physiology
+no clinical signs or symptoms,,,
+non-progressive hearing defect,,HP:0000365,Hearing impairment
+normal at birth,,,
+nose bleed,,HP:0000421,Epistaxis
+obstructive airway disease,,obstructive airway disease,Obstructive lung disease
+obstructive airway disease,,HP:0002781,Upper airway obstruction
+obstructive airway disease,,HP:0006541,Chronic obstructive airway disease from birth
+odor unusual,,HP:0500001,Body odor
+oesophageal atresia,,HP:0002032,Esophageal atresia
+"oral infections, gangrene",,HP:0010280,Stomatitis
+"oral infections, gangrene",,HP:0100758,Gangrene
+"osteodystrophy, renal",,HP:0002652,Skeletal dysplasia
+"osteodystrophy, renal",,HP:0000077,Abnormality of the kidney
+oxygen therapy as neonate,,HP:0012418,Hypoxemia
+pain abdominal,,HP:0002027,Abdominal pain
+pain bones,,HP:0002653,Bone pain
+pain muscle,,HP:0003326,Myalgia
+paraparesis/paraplegia,,HP:0010551,Paraplegia/paraparesis
+peritoneal effusions,,HP:0030995,Peritoneal effusion
+photophobia or photosensitive defect in light-exposed area,,HP:0000613,Photophobia
+"pigmentation, skin and sclera",,HP:0001000,Abnormality of skin pigmentation
+"pigmentation, skin and sclera",,HP:0007832,Pigmentation of the sclera
+pleural effusions,,HP:0002202,Pleural effusion
+polydipsia [increased drinking],,HP:0001959,Polydipsia
+poor crying,,HP:0030215,Inappropriate crying
+"preeclampsia, maternal",,HP:0100602,Preeclampsia
+pregnancy,,,
+prematurity,,HP:0001622,Premature birth
+previous deaths,,,
+progressive eye defect,,HP:0000529,Progressive visual loss
+progressive neurologic defect,,HP:0002344,Progressive neurologic deterioration
+ptosis [dropping eyelid],,HP:0000508,Ptosis
+"pulmonary valve, stenosis",,HP:0001642,Pulmonic stenosis
+reflux,,HP:0002020,Gastroesophageal reflux
+"renal failure, acute/chronic",,HP:0001919,Acute kidney injury
+"renal failure, acute/chronic",,HP:0012622,Chronic kidney disease
+retinal or macular degeneration,,HP:0000608,Macular degeneration
+retinal or macular degeneration,,HP:0000546,Retinal degeneration
+seborrhoic skin rash,,HP:0001051,Seborrheic dermatitis
+semian crease,,HP:0000954,Single transverse palmar crease
+sepsis [E.coli],,HP:0100806,Sepsis
+skeletal changes,,HP:0011842,Abnormality of skeletal morphology
+skin,defect on face or ear [not forehead],HP:0011356,Regional abnormality of skin
+solitary or localized skin defect,,HP:0011355,Localized skin lesion
+sparse or absent scalp hair [focal or general],,HP:0002209,Sparse scalp hair
+spastic diplegia/quadriplegia,,HP:0001264,Spastic diplegia
+spastic diplegia/quadriplegia,,HP:0002510,Spastic tetraplegia
+"speech development, delayed, abnormal",,HP:0000750,Delayed speech and language development
+stature,short,HP:0004322,Short stature
+stomatitits,,HP:0010280,Stomatitis
+stool color,,HP:0012719,Functional abnormality of the gastrointestinal tract
+"tachycardia, paroxysmal",,HP:0006688,Paroxysmal tachycardia
+tetrahydrobiopterin-sensitivity,,,
+transaminases,yes,HP:0002910,Elevated hepatic transaminases
+tremor or twitching,,HP:0001337,Tremor
+tubulopathy,,HP:0000091,Abnormality of the renal tubule
+urine,brown or black,HP:0040319,Dark urine
+vertebral changes,,HP:0003468,Abnormal vertebral morphology
+"vertigo, dizziness",,HP:0002321,Vertigo
+"weight for age, height and sex [> or < 2SD]",decreased [or absent],HP:0001824,Weight loss
+cryptorchism,,HP:0000028,Cryptorchidism
+hypospadia,,HP:0000047,Hypospadias
+micropenis,,HP:0000054,Micropenis
+polyuria,,HP:0000103,Polyuria
+large kidneys,,HP:0000105,Enlarged kidney
+renal cysts,,HP:0000107,Renal cyst
+nephrocalcinosis,,HP:0000121,Nephrocalcinosis
+nephritis,,HP:0000123,Nephritis
+hydronephrosis,,HP:0000126,Hydronephrosis
+polycystic ovaries,,HP:0000147,Polycystic ovaries
+cleft palate,,HP:0000175,Cleft palate
+hydrocephalus,,HP:0000238,Hydrocephalus
+retrognathia,,HP:0000278,Retrognathia
+coarse facial features,,HP:0000280,Coarse facial features
+hypertelorism,,HP:0000316,Hypertelorism
+high forehead,,HP:0000348,High forehead
+low set ears,,HP:0000369,Low-set ears
+torticollis,,HP:0000473,Torticollis
+strabismus,,HP:0000486,Strabismus
+retinopathy,,HP:0000488,Retinopathy
+keratitis,,HP:0000491,Keratitis
+glaucoma,,HP:0000501,Glaucoma
+conjunctivitis,,HP:0000509,Conjunctivitis
+retinitis pigmentosa,,HP:0000510,Rod-cone dystrophy
+cataract,,HP:0000518,Cataract
+lens opacities,,HP:0000518,Cataract
+hyperopia,,HP:0000540,Hypermetropia
+myopia,,HP:0000545,Myopia
+ophthalmoplegia,,HP:0000602,Ophthalmoplegia
+blue eyes,,HP:0000635,Blue irides
+nystagmus,,HP:0000639,Nystagmus
+optic atrophy,,HP:0000648,Optic atrophy
+night blindness,,HP:0000662,Nyctalopia
+dental caries,,HP:0000670,Carious teeth
+psychosis,,HP:0000709,Psychosis
+dementia,,HP:0000726,Dementia
+irritability,,HP:0000737,Irritability
+hematuria,,HP:0000790,Hematuria
+diabetes mellitus,,HP:0000819,Diabetes mellitus
+hypothyroidism,,HP:0000821,Hypothyroidism
+hypertension,,HP:0000822,Hypertension
+osteoporosis,,HP:0000939,Osteoporosis
+dysostosis multiplex,,HP:0000943,Dysostosis multiplex
+jaundice,,HP:0000952,Jaundice
+cyanosis,,HP:0000961,Cyanosis
+hyperkeratosis,,HP:0000962,Hyperkeratosis
+hypohidrosis,,HP:0000966,Hypohidrosis
+petechiae,,HP:0000967,Petechiae
+edema,,HP:0000969,Edema
+sweating,,HP:0000975,Hyperhidrosis
+pallor,,HP:0000980,Pallor
+hypertrichosis,,HP:0000998,Hypertrichosis
+hypotrichosis,,HP:0001006,Hypotrichosis
+nevus flammeus,,HP:0001052,Nevus flammeus
+acne,,HP:0001061,Acne
+syndactyly,,HP:0001159,Syndactyly
+arachnodactyly,,HP:0001166,Arachnodactyly
+mental retardation,,HP:0001249,Intellectual disability
+seizures,,HP:0001250,Seizures
+ataxia,,HP:0001251,Ataxia
+coma,,HP:0001259,Coma
+dysarthria,,HP:0001260,Dysarthria
+hyporeflexia,,HP:0001265,Hyporeflexia
+motor retardation,,HP:0001270,Motor delay
+tetany,,HP:0001281,Tetany
+areflexia,,HP:0001284,Areflexia
+hypotonia,,HP:0001290,Generalized hypotonia
+encephalopathy,,HP:0001298,Encephalopathy
+cerebellar signs,,HP:0001317,Abnormality of the cerebellum
+dystonia,,HP:0001332,Dystonia
+kernicterus,,HP:0001343,Kernicterus
+hyperreflexia,,HP:0001347,Hyperreflexia
+hip dysplasia,,HP:0001385,Hip dysplasia
+cholestasis,,HP:0001396,Cholestasis
+liver failure,,HP:0001399,Hepatic failure
+failure to thrive,,HP:0001508,Failure to thrive
+growth retardation,,HP:0001510,Growth delay
+obesity,,HP:0001513,Obesity
+macrosomia,,HP:0001520,Large for gestational age
+ascites,,HP:0001541,Ascites
+alopecia,,HP:0001596,Alopecia
+hair loss,,HP:0001596,Alopecia
+shortened gestation time,,HP:0001622,Premature birth
+congenital heart defect,,HP:0001627,Abnormal heart morphology
+ventricular septal defect,,HP:0001629,Ventricular septal defect
+atrial septal defect,,HP:0001631,Atrial septal defect
+heart failure,,HP:0001635,Congestive heart failure
+cardiomyopathy,,HP:0001638,Cardiomyopathy
+cardiomegaly,,HP:0001640,Cardiomegaly
+tachycardia,,HP:0001649,Tachycardia
+valvular heart disease,,HP:0001654,Abnormality of the heart valves
+myocardial infarction,,HP:0001658,Myocardial infarction
+bradycardia,,HP:0001662,Bradycardia
+cardiac arrest,,HP:0001695,Cardiac arrest
+pericardial effusion,,HP:0001698,Pericardial effusion
+sudden death,,HP:0001699,Sudden death
+pancreatitis,,HP:0001733,Pancreatitis
+pancreatic insufficiency,,HP:0001738,Exocrine pancreatic insufficiency
+foot deformities,,HP:0001760,Abnormality of the foot
+weight loss,,HP:0001824,Weight loss
+neutropenia,,HP:0001875,Neutropenia
+anemia,,HP:0001903,Anemia
+thromboembolism,,HP:0001907,Thromboembolism
+metabolic acidosis,,HP:0001942,Metabolic acidosis
+hypoglycemia,,HP:0001943,Hypoglycemia
+dehydration,,HP:0001944,Dehydration
+Fever,,HP:0001945,Fever
+hyperthermia,,HP:0001945,Fever
+respiratory alkalosis,,HP:0001950,Respiratory alkalosis
+gout,,HP:0001997,Gout
+vomiting,,HP:0002013,Vomiting
+diarrhea,,HP:0002014,Diarrhea
+constipation,,HP:0002019,Constipation
+pyloric stenosis,,HP:0002021,Pyloric stenosis
+intestinal malabsorption,,HP:0002024,Malabsorption
+anorexia,,HP:0002039,Anorexia
+hypothermia,,HP:0002045,Hypothermia
+cerebral atrophy,,HP:0002059,Cerebral atrophy
+extrapyramidal signs,,HP:0002071,Abnormality of extrapyramidal motor function
+pneumonia,,HP:0002090,Pneumonia
+respiratory insufficiency,,HP:0002093,Respiratory insufficiency
+dyspnea,,HP:0002094,Dyspnea
+respiratory distress,,HP:0002098,Respiratory distress
+apnea,,HP:0002104,Apnea
+opisthotonus,,HP:0002179,Opisthotonus
+cerebral edema,,HP:0002181,Cerebral edema
+hematemesis,,HP:0002248,Hematemesis
+athetosis,,HP:0002305,Athetosis
+Headache,,HP:0002315,Headache
+Headache,migraine,HP:0002076,Migraine
+Headache,recurrent or occipital,HP:0012318,Occipital neuralgia
+neurologic deterioration,,HP:0002344,Progressive neurologic deterioration
+fasciculations,,HP:0002380,Fasciculations
+strokelike episodes,,HP:0002401,Stroke-like episode
+ileus,,HP:0002595,Ileus
+hypotension,,HP:0002615,Hypotension
+high arched palate,,HP:0002705,"High, narrow palate"
+tachypnea,,HP:0002789,Tachypnea
+arthralgia,,HP:0002829,Arthralgia
+myopathy,,HP:0003198,Myopathy
+rhabdomyolysis,,HP:0003201,Rhabdomyolysis
+abdominal distension,,HP:0003270,Abdominal distention
+paresthesia,,HP:0003401,Paresthesia
+dwarfism,,HP:0003510,Severe short stature
+hypersalivation,,HP:0003781,Excessive salivation
+peripheral vascular disease,,HP:0004950,Peripheral arterial stenosis
+respiratory acidosis,,HP:0005972,Respiratory acidosis
+ichthyosis,,HP:0008064,Ichthyosis
+peripheral neuropathy,,HP:0009830,Peripheral neuropathy
+stridor,,HP:0010307,Stridor
+polydactyly,,HP:0010442,Polydactyly
+facial nerve palsy,,HP:0010628,Facial palsy
+infantile spasms,,HP:0012469,Infantile spasms
+dyskinesia,,HP:0100660,Dyskinesia
+hernia,,HP:0100790,Hernia
+sepsis,,HP:0100806,Sepsis
+metabolic alkalosis,,HP:0200114,Metabolic alkalosis
