@@ -1,53 +1,59 @@
-# 说明
-- 接口请求域名：http://www.phenobrain.cs.tsinghua.edu.cn
-- Phenobrain网站，仅供参考：[http://www.phenobrain.cs.tsinghua.edu.cn/pc](http://www.phenobrain.cs.tsinghua.edu.cn/pc)
+# Description of PhenoBrain's API
 
-# API概览
-- [hpo-tree-init](#hpo-tree-init)：初始化表型树
-- [hpo-child](#hpo-child)：获取单个表型的子节点列表
-- [hpo-child-many](#hpo-child-many)：获取多个表型的子节点
-- [hpo-detail](#hpo-detail)：获取表型的详细信息
-- [disease-detail](#disease-detail)：获取疾病的详细信息
-- [disease-list-detail](#disease-list-detail)：获取疾病列表中每个疾病的详细信息
-- [predict](#predict)：输入表型集合和模型选择，输出罕见病列表；后台返回任务ID
-- [query-predict-result](#query-predict-result)：根据任务ID，获取罕见病预测结果
-- [extract-hpo](#extract-hpo)：输入自由文本，输出抽取的表型；后台返回任务ID
-- [query-extract-hpo-result](#query-extract-hpo-result)：根据任务ID，获取表型的抽取结果
-- [search-hpo](#search-hpo)：表型搜索
-- [search-dis](#search-dis)：疾病搜索
-- [数据结构](#DataStructure)
+- API request domain: http://www.phenobrain.cs.tsinghua.edu.cn
+- Phenobrain website, [http://www.phenobrain.cs.tsinghua.edu.cn/pc](http://www.phenobrain.cs.tsinghua.edu.cn/pc)
 
-## API修改说明
-原来为了nginx规则匹配的方便，随便给API取了暂时的名字，现将以下API更名：
+# API Overview
 
-| 原API | 新API |
-|------|----|----|
+- [hpo-tree-init](#hpo-tree-init): Initialize phenotype tree
+- [hpo-child](#hpo-child): Get the list of child nodes for a single phenotype
+- [hpo-child-many](#hpo-child-many): Get the child nodes for multiple phenotypes
+- [hpo-detail](#hpo-detail)：Get detailed information of a phenotype
+- [disease-detail](#disease-detail): Get detailed information of a disease
+- [disease-list-detail](#disease-list-detail):  Get detailed information of each disease in the list
+- [predict](#predict): Input phenotype set and model selection, output list of rare diseases; backend returns task ID
+- [query-predict-result](#query-predict-result): Get the rare disease prediction results based on the task ID
+- [extract-hpo](#extract-hpo): Input free text, output extracted phenotypes; backend returns task ID
+- [query-extract-hpo-result](#query-extract-hpo-result):  Get the phenotype extraction results based on the task ID
+- [search-hpo](#search-hpo): Phenotype search
+- [search-dis](#search-dis): Disease search
+- [Data Structures](#DataStructure)
+
+# API Revision Notes
+
+the APIs renaming
+
+| Original API | New API |
+|------|----|
 | predict2 | extract-hpo |
 | query-predict-result2 | query-extract-hpo-result |
 | search-hpo2 | search-dis |
 
-请在代码中搜索相应的ajax调用，将API更名。
+
+
+
 
 <h1 id="hpo-tree-init"> hpo-tree-init </h1>
 
-## 接口描述
-- 获取初始的表型树信息
-- 请求方法：GET
+## Interface Description
+- Retrieve the initial phenotype tree information
+- Request method: GET
 
-## 输入参数
-- 无
+## Input Parameters
 
-## 输出参数
+- None
+
+## Output Parameters
 - Array of [HpoTreeNode](#HpoTreeNode)
 
-## 示例
-输入示例：
+## Example
+Input Example:
 
 ```
 http://www.phenobrain.cs.tsinghua.edu.cn/hpo-tree-init
 ```
 
-输出示例：
+Output Example:
 
 ```
 [
@@ -105,26 +111,28 @@ http://www.phenobrain.cs.tsinghua.edu.cn/hpo-tree-init
 
 <h1 id="hpo-child"> hpo-child </h1>
 
-## 接口描述
-- 获取单个表型的子节点列表
-- 请求方法：GET
+## Interface Description
 
-## 输入参数
-| 参数名称 | 类型 | 描述 |
+- Retrieve the list of child nodes for a single phenotype
+- Request method: GET
+
+## Input Parameters
+
+| Parameter Name | Type   | Description                 |
 |------|----|----|
-| hpo | String | 父节点的HPO编码 |
+| hpo | String | HPO code of the parent node |
 
-## 输出参数
+## Output Parameters
 - Array of [HpoChildNode](#HpoChildNode)
 
-## 示例
-输入示例：
+## Example
+Input Example:
 
 ```
 http://www.phenobrain.cs.tsinghua.edu.cn/hpo-child?hpo=HP:0000478
 ```
 
-输出示例：
+Output Example:
 
 ```
 [
@@ -176,21 +184,22 @@ http://www.phenobrain.cs.tsinghua.edu.cn/hpo-child?hpo=HP:0000478
 
 <h1 id="hpo-child-many"> hpo-child-many </h1>
 
-## 接口描述
-- 获取多个表型的子节点
-- 请求方法：GET
+## Interface Description
 
-## 输入参数
-| 参数名称 | 类型 | 描述 |
+- Retrieve the child nodes for multiple phenotypes
+- Request method: GET
+
+## Input Parameters
+| Parameter Name | Type            | Description                             |
 |------|----|----|
-| hpoList | Array of String | 需要查询子节点的表型列表 |
+| hpoList | Array of String | List of phenotypes to query child nodes |
 
-## 输出参数
+## Output Parameters
 - {HPO_CODE: Array of [SearchHpoInfo](#SearchHpoInfo)} 
-- HPO_CODE 在输入的表型列表的子节点的并集中
+- HPO_CODE: represents the union of child nodes for the phenotypes in the input list
 
-## 示例
-输入示例：
+## Example
+Input Example:
 
 ```
 http://www.phenobrain.cs.tsinghua.edu.cn/hpo-child-many?
@@ -198,7 +207,7 @@ hpoList[]=HP:0000256
 &hpoList[]=HP:0002679
 ```
 
-输出示例
+Output Example:
 
 ```
 {
@@ -241,21 +250,21 @@ hpoList[]=HP:0000256
 
 <h1 id="hpo-detail"> hpo-detail </h1>
 
-## 接口描述
-- 获取表型的详细信息
-- 请求方法：GET
+## Interface Description
+- Retrieve detailed information of a phenotype
+- Request method: GET
 
-## 输入参数
-| 参数名称 | 类型 | 描述 |
+## Input Parameters
+| Parameter Name | Type            | Description                                                  |
 |------|----|----|
-| hpo | String | 表型的HPO编码 |
-| projection | Array of String | 从[CODE, CNS\_NAME, ENG\_NAME, CNS\_DEF, ENG\_DEF, SYNONYM, REL\_DIS, ALL\_PATH, TOTAL\_DIS\_NUM]中任选，输出将包含所选的字段的信息 |
+| hpo | String | HPO code of the phenotype |
+| projection | Array of String | Choose from [CODE, CNS\_NAME, ENG\_NAME, CNS\_DEF, ENG\_DEF, SYNONYM, REL\_DIS, ALL\_PATH, TOTAL\_DIS\_NUM], output will include information of the selected fields |
 
-## 输出参数
+## Output Parameters
 - [HpoInfo](#HpoInfo)
 
-## 示例
-输入示例：
+## Example
+Input Example:
 
 ```
 http://www.phenobrain.cs.tsinghua.edu.cn/hpo-detail?
@@ -271,7 +280,7 @@ hpo=HP:0000256
 &projection[]=TOTAL_DIS_NUM
 ```
 
-输出示例
+Output Example:
 
 ```
 {
@@ -382,31 +391,34 @@ hpo=HP:0000256
 
 <h1 id="disease-detail"> disease-detail </h1>
 
-## 接口描述
-- 获取疾病的详细信息
-- 请求方法：GET
+## Interface Description
 
-## 输入参数
-| 参数名称 | 类型 | 描述 |
+- Retrieve detailed information of a disease
+- Request method: GET
+
+## Input Parameters
+
+| Parameter Name | Type            | Description                                                  |
 |------|----|----|
-| disCode | String | 疾病的OMIM、ORPHANET、CCRD或RD编码 |
-| paHpoList | Array of String | 所选择的病人表型，用于计算“表型注释”模块中，病人表型与疾病表型的关系 |
+| disCode | String | OMIM, ORPHANET, CCRD, or RD code of the disease |
+| paHpoList | Array of String | Selected patient phenotypes, used for calculating the relationship between patient phenotypes and disease phenotypes in the "phenotype annotation" module |
 
-## 输出参数
-| 参数名称 | 类型 | 描述 |
+## Output Parameters
+
+| Parameter Name  | Type            | Description                                                  |
 |------|----|----|
-| CODE | String | 疾病编码 |
-| CNS\_NAME | String | 疾病的中文名称 |
-| ENG\_NAME | String | 疾病的英文名称 |
-| GENE | String | 疾病对应的基因信息 |
-| ANNO\_HPO\_PROB | Array | 疾病的表型概率信息 |
-| ANNO\_HPO\_DIFF | Object | 疾病表型集合与病人表型集合的精确匹配、泛化匹配、细化匹配等信息 |
-| ANNO\_HPO | Array of String | 疾病的表型列表 |
-| HPO_INFO | Object | 涉及的表型的信息 |
-| SOURCE\_CODES | Array of String | 疾病的其他等价编码 |
+| CODE | String | Disease code |
+| CNS\_NAME | String | Chinese name of the disease |
+| ENG\_NAME | String | English name of the disease |
+| GENE | String | Gene information associated with the disease |
+| ANNO\_HPO\_PROB | Array | Phenotype probability information of the disease |
+| ANNO\_HPO\_DIFF | Object | Exact match, generalization match, refinement match, etc., between disease phenotype set and patient phenotype set |
+| ANNO\_HPO | Array of String | List of disease phenotypes |
+| HPO_INFO | Object | Information about the involved phenotypes |
+| SOURCE\_CODES | Array of String | Other equivalent codes of the disease |
 
-## 示例
-输入示例：
+## Example
+Input Example:
 
 ```
 http://www.phenobrain.cs.tsinghua.edu.cn/disease-detail?
@@ -419,7 +431,7 @@ disCode=RD:3502
 &paHpoList[]=HP:0001744
 ```
 
-输出示例
+Output Example:
 
 ```
 {
@@ -827,20 +839,23 @@ disCode=RD:3502
 
 <h1 id="disease-list-detail"> disease-list-detail </h1>
 
-## 接口描述
-- 获取疾病列表中每个疾病的详细信息
-- 请求方法：POST
+## Interface Description
 
-## 输入参数
-| 参数名称 | 类型 | 描述 |
+- Retrieve detailed information of each disease in the disease list
+- Request method: POST
+
+## Input Parameters
+
+| Parameter Name | Type            | Description      |
 |------|----|----|
-| diseaseList | Array of String | 疾病列表 |
+| diseaseList | Array of String | List of diseases |
 
-## 输出参数
+## Output Parameters
+
 - {DIS_CODE: [SearchDisInfo](#SearchDisInfo)}
 
-## 示例
-输入示例：
+## Example
+Input Example:
 
 ```
 http://www.phenobrain.cs.tsinghua.edu.cn/disease-list-detail
@@ -849,7 +864,7 @@ Request Payload:
 {"diseaseList":["RD:454","RD:8366"]}
 ```
 
-输出示例
+Output Example:
 
 ```
 {
@@ -877,24 +892,27 @@ Request Payload:
 
 <h1 id="predict"> predict </h1>
 
-## 接口描述
-- 输入表型集合和模型选择，输出罕见病列表；返回任务ID，用于之后查询预测结果
-- 请求方法：GET
+## Interface Description
 
-## 输入参数
-| 参数名称 | 类型 | 描述 |
+- Input a set of phenotypes and a model selection to output a list of rare diseases; returns a task ID for querying prediction results later
+- Request method: GET
+
+## Input Parameters
+
+| Parameter Name | Type            | Description                                                  |
 |------|----|----|
-| model | String | 从['Ensemble', 'ICTO (A)', 'ICTO (U)', 'PPO', 'CNB', 'MLP (M)', 'MinIC', 'Res', 'BOQA', 'GDDP', 'RBP', 'Lin', 'JC', 'SimUI', 'TO', 'Cosine', 'RDD'] 中任选|
-| hpoList | Array of String | 输入的病人表型集合 |
-| topk | Integer | 返回可能患有的疾病列表的大小，最大值为200，高于200将被自动设为200 |
+| model | String | Choose from ['Ensemble', 'ICTO (A)', 'ICTO (U)', 'PPO', 'CNB', 'MLP (M)', 'MinIC', 'Res', 'BOQA', 'GDDP', 'RBP', 'Lin', 'JC', 'SimUI', 'TO', 'Cosine', 'RDD'] |
+| hpoList | Array of String | Input set of patient phenotypes |
+| topk | Integer | Size of the returned list of possible diseases, maximum value is 200; values above 200 will be automatically set to 200 |
 
-## 输出参数
-| 参数名称 | 类型 | 描述 |
+## Output Parameters
+
+| Parameter Name | Type   | Description                                          |
 |------|----|----|
-| TASK\_ID | String | 预测任务的ID，用于之后查询预测结果 |
+| TASK\_ID | String | ID of the prediction task for querying results later |
 
-## 示例
-输入示例：
+## Example
+Input Example:
 
 ```
 http://www.phenobrain.cs.tsinghua.edu.cn/predict?
@@ -908,7 +926,7 @@ model=Ensemble
 &topk=5
 ```
 
-输出示例
+Output Example;
 
 ```
 {"TASK_ID":"a4fecf25-9eb6-4ac6-a02a-0eae329c9615"}
@@ -916,30 +934,32 @@ model=Ensemble
 
 <h1 id="query-predict-result"> query-predict-result </h1>
 
-## 接口描述
-- 根据任务ID，获取罕见病预测结果
-- 请求方法：GET
+## Interface Description
+- Retrieve rare disease prediction results based on the task ID
+- Request method: GET
 
-## 输入参数
-| 参数名称 | 类型 | 描述 |
+## Input Parameters
+
+| Parameter Name | Type   | Description |
 |------|----|----|
-| taskId | String | 任务ID |
+| taskId | String | Task ID |
 
-## 输出参数
-| 参数名称 | 类型 | 描述 |
+## Output Parameters
+
+| Parameter Name | Type   | Description                                                  |
 |------|----|----|
-| result | Array | 根据匹配得分由高到低排序的疾病列表 |
-| state | String | 当前任务的执行状态：'SUCCESS'表示预测算法执行完毕；'MODEL\_INIT'表示正在初始化模型；'MODEL\_PREDICT'表示预测算法正在运行 |
+| result | Array | List of diseases sorted by matching score in descending order |
+| state | String | Current task execution state: 'SUCCESS' means the prediction algorithm is complete; 'MODEL_INIT' means the model is initializing; 'MODEL_PREDICT' means the prediction algorithm is running |
 
-## 示例
-输入示例：
+## Example
+Input Example:
 
 ```
 http://www.phenobrain.cs.tsinghua.edu.cn/query-predict-result?
 taskId=a4fecf25-9eb6-4ac6-a02a-0eae329c9615
 ```
 
-输出示例
+Output Example:
 
 ```
 {
@@ -971,25 +991,27 @@ taskId=a4fecf25-9eb6-4ac6-a02a-0eae329c9615
 
 <h1 id="extract-hpo"> extract-hpo </h1>
 
-## 接口描述
-- 输入自由文本，输出抽取的表型；后台返回任务ID
-- 请求方法：POST
-- 注：原来的API为`predict2`
+## Interface Description
+- Input free text and output extracted phenotypes; backend returns a task ID
+- Request method: POST
+- Note: The original API was `predict2`
 
-## 输入参数
-| 参数名称 | 类型 | 描述 |
+## Input Parameters
+
+| Parameter Name | Type   | Description                                                  |
 |------|----|----|
-| text | String | 病人的描述文本 |
-| method | String | 从['HPO/CHPO', 'CHPO-UMLS', 'CText2Hpo（S）']中任选 |
-| threshold | String | 得分阈值，低于该得分的匹配结果将被过滤掉，当method=='CText2Hpo（S）'时才有用 |
+| text | String | Description text of the patient |
+| method | String | Choose from ['Dict-HPO-CN/EN', 'Dict-UMLS-CN/EN', 'PBTagger-CN', 'PhenoTagger-EN',‘PhenoBERT-EN‘] |
+| threshold | String | Score threshold; matching results below this score will be filtered out, applicable only when method is 'PBTagger-CN' |
 
-## 输出参数
-| 参数名称 | 类型 | 描述 |
+## Output Parameters
+
+| Parameter Name | Type   | Description |
 |------|----|----|
-| TASK\_ID | String | 任务ID |
+| TASK\_ID | String | Task ID |
 
-## 示例
-输入示例：
+## Example
+Input Example:
 
 ```
 http://www.phenobrain.cs.tsinghua.edu.cn/extract-hpo
@@ -1002,7 +1024,7 @@ Request Payload:
 }
 ```
 
-输出示例
+Output Example:
 
 ```
 {"TASK_ID":"a6ffd993-7a4a-4164-805b-68e24db80227"}
@@ -1010,30 +1032,33 @@ Request Payload:
 
 <h1 id="query-extract-hpo-result"> query-extract-hpo-result </h1>
 
-## 接口描述
-- 根据任务ID，获取表型的抽取结果
-- 请求方法：GET
-- 注：原来的API为`query-predict-result2`
+## Interface Description
 
-## 输入参数
-| 参数名称 | 类型 | 描述 |
+- Retrieve phenotype extraction results based on the task ID
+- Request method: GET
+- Note: The original API was `query-predict-result2`
+
+## Input Parameters
+
+| Parameter Name | Type   | Description |
 |------|----|----|
-| taskId | String | 任务ID |
+| taskId | String | Task ID |
 
-## 输出参数
-| 参数名称 | 类型 | 描述 |
+## Output Parameters
+
+| Parameter Name | Type   | Description                                                  |
 |------|----|----|
-| result | Array | 根据匹配得分由高到低排序的疾病列表 |
-| state | String | 当前任务的执行状态：'SUCCESS'表示预测算法执行完毕；'PROCESS\_TEXT'表示正在预处理文本；'EXTRACT\_HPO'表示表型抽取算法正在运行 |
+| result | Array | List of extracted phenotypes sorted by matching score in descending order |
+| state | String | Current task execution state: 'SUCCESS' means the extraction algorithm is complete; 'PROCESS_TEXT' means the text is being preprocessed; 'EXTRACT_HPO' means the phenotype extraction algorithm is running |
 
-## 示例
-输入示例：
+## Example
+Input Example:
 
 ```
 http://www.phenobrain.cs.tsinghua.edu.cn/query-extract-hpo-result?taskId=a6ffd993-7a4a-4164-805b-68e24db80227
 ```
 
-输出示例
+Output Example:
 
 ```
 {
@@ -1153,27 +1178,29 @@ http://www.phenobrain.cs.tsinghua.edu.cn/query-extract-hpo-result?taskId=a6ffd99
 
 <h1 id="search-hpo"> search-hpo </h1>
 
-## 接口描述
-- 表型检索
-- 请求方法：GET
+## Interface Description
+- Phenotype search
+- Request method: GET
 
-## 输入参数
-| 参数名称 | 类型 | 描述 |
+## Input Parameters
+
+| Parameter Name | Type   | Description |
 |------|----|----|
-| query | String | 输入的文本 |
+| query | String | Input text |
 
-## 输出参数
+## Output Parameters
+
 - Array of [SearchHpoInfo](#SearchHpoInfo)
 
-## 示例
-输入示例：
+## Example
+Input Example:
 
 ```
 http://www.phenobrain.cs.tsinghua.edu.cn/search-hpo?
 query=%E5%A4%A7%E5%A4%B4
 ```
 
-输出示例
+Output Example:
 
 ```
 [
@@ -1212,28 +1239,31 @@ query=%E5%A4%A7%E5%A4%B4
 
 <h1 id="search-dis"> search-dis </h1>
 
-## 接口描述
-- 疾病检索
-- 请求方法：GET
-- 注：原来的API为`search-hpo2`
+## Interface Description
 
-## 输入参数
-| 参数名称 | 类型 | 描述 |
+- Disease search
+- Request method: GET
+- Note: The original API was `search-hpo2`
+
+## Input Parameters
+
+| Parameter Name | Type   | Description |
 |------|----|----|
-| query | String | 输入的文本 |
+| query | String | Input text |
 
-## 输出参数
+## Output Parameters
+
 - Array of [SearchDisInfo](#SearchDisInfo)
 
-## 示例
-输入示例：
+## Example
+Input Example:
 
 ```
 http://www.phenobrain.cs.tsinghua.edu.cn/search-dis?
 query=%E5%A4%A7%E5%A4%B4
 ```
 
-输出示例
+Output Example:
 
 ```
 [
@@ -1283,57 +1313,57 @@ query=%E5%A4%A7%E5%A4%B4
 ]
 ```
 
-<h1 id="DataStructure"> 数据结构 </h1>
+<h1 id="DataStructure"> Data Structure </h1>
 <h2 id="HpoTreeNode"> HpoTreeNode </h2>
 
-| 参数名称 | 类型 | 描述 |
+| Parameter Name | Type                                 | Description                   |
 |------|----|----|
-| hpo | String | 表型的HPO编码 |
-| CNS_NAME | String | 表型的中文名 |
-| ENG_NAME | String | 表型的英文名 |
-| children | Array of [HpoTreeNode](#HpoTreeNode) | 子节点列表 |
+| hpo | String | HPO code of the phenotype |
+| CNS_NAME | String | Chinese name of the phenotype |
+| ENG_NAME | String | English name of the phenotype |
+| children | Array of [HpoTreeNode](#HpoTreeNode) | List of child nodes |
 
 <h2 id="HpoChildNode"> HpoChildNode </h2>
 
-| 参数名称 | 类型 | 描述 |
+| Parameter Name | Type            | Description                   |
 |------|----|----|
-| CODE | String | 表型的HPO编码 |
-| CNS_NAME | String | 表型的中文名 |
-| ENG_NAME | String | 表型的英文名 |
-| CHILD | Array of String | 表型的子节点HPO编码的列表 |
+| CODE | String | HPO code of the phenotype |
+| CNS_NAME | String | Chinese name of the phenotype |
+| ENG_NAME | String | English name of the phenotype |
+| CHILD | Array of String | List of child nodes |
 
 <h2 id="HpoInfo"> HpoInfo </h2>
 
-| 参数名称 | 类型 | 描述 |
+| Parameter Name   | Type            | Description                                                  |
 |------|----|----|
-| CODE | String | 所查询表型的HPO编码 |
-| CNS\_NAME | String | 表型的中文名称 |
-| ENG\_NAME | String | 表型的英文名称 |
-| CNS\_DEF | String | 表型的中文定义 |
-| ENG\_DEF | String | 表型的英文定义 |
-| SYNONYM | Array of String | 表型的英文同义词列表 |
-| PATH\_DICT | Object | 从根节点到该表型的路径; 当输入中包含TOTAL\_DIS\_NUM则返回该字段 |
-| PATH\_INFO\_DICT | Object | 路径上的所有表型节点的信息，当输入中包含TOTAL\_DIS\_NUM则返回该字段 |
-| REL\_DIS | Integer | 与该表型关联的罕见病数量 |
-| TOTAL\_DIS\_NUM | Integer | 所有罕见病的数目 |
+| CODE | String | HPO code of the queried phenotype |
+| CNS\_NAME | String | Chinese name of the phenotype |
+| ENG\_NAME | String | English name of the phenotype |
+| CNS\_DEF | String | Chinese definition of the phenotype |
+| ENG\_DEF | String | English definition of the phenotype |
+| SYNONYM | Array of String | List of English synonyms for the phenotype |
+| PATH\_DICT | Object | Path from the root node to this phenotype; returned if TOTAL_DIS_NUM is included in the input |
+| PATH\_INFO\_DICT | Object | Information about all phenotype nodes in the path; returned if TOTAL_DIS_NUM is included in the input |
+| REL\_DIS | Integer | Number of rare diseases associated with this phenotype |
+| TOTAL\_DIS\_NUM | Integer | Total number of rare diseases |
 
 <h2 id="SearchHpoInfo"> SearchHpoInfo </h2>
 
-| 参数名称 | 类型 | 描述 |
+| Parameter Name | Type   | Description                   |
 |------|----|----|
-| CODE | String | 表型的HPO编码 |
-| CNS\_NAME | String | 表型的中文名称 |
-| ENG\_NAME | String | 表型的英文名称 |
+| CODE | String | HPO code of the phenotype |
+| CNS\_NAME | String | Chinese name of the phenotype |
+| ENG\_NAME | String | English name of the phenotype |
 
 
 <h2 id="SearchDisInfo"> SearchDisInfo </h2>
 
-| 参数名称 | 类型 | 描述 |
+| Parameter Name | Type            | Description                 |
 |------|----|----|
-| CODE | String | 疾病编码 |
-| CNS\_NAME | String | 疾病的中文名称 |
-| ENG\_NAME | String | 疾病的英文名称 |
-| SOURCE\_CODES | Array of String | 疾病的其他编码列表 |
+| CODE | String | Disease code |
+| CNS\_NAME | String | Chinese name of the disease |
+| ENG\_NAME | String | English name of the disease |
+| SOURCE\_CODES | Array of String | List of other disease codes |
 
 
 
