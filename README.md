@@ -50,7 +50,7 @@ Python: 3.6.12
 # Create a New Conda Environment，Note that Python version 3.6.12 needs to be 
 # installed to avoid potential conflicts with other environment packages.
 
-conda create --name reviewer_version_final  python=3.6.12
+conda create --name <xxxx> python=3.6.12
 
 # install basic packages based on requirement.txt
 pip install -r requirements.txt
