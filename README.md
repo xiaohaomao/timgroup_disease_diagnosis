@@ -131,9 +131,9 @@ The "**core/predict/**" folder comprehensively describes rare disease diagnosis 
 
 
 where  ri is the rank ratio by the  i-th method, and r0=0 . Due to its high complexity, we implemented a faster recursive formula to compute the above integral as previously done：
-$$
-V_{k}=\sum_{i=1}^{k}(-1)^{i-1}\frac{V_{k-i}}{i!}r_{N-K+1}^{i},\\Z(r_{1},r_{2},...,r_{N})=N! V_{N},
-$$
+
+![公式](https://github.com/xiaohaomao/timgroup_disease_diagnosis/blob/main/example_result/faster_forumla.png)
+
 where  V0=1, and  ri is the rank ratio by the  i-th method. 
 
 For more information, please refer to the reference [1] .
