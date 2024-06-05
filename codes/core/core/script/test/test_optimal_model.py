@@ -488,7 +488,6 @@ def get_base_line_initial_paras(keep_dnames=None):
 def get_paper_sim_model_names():
 	return [
 		'ICTODQAcross-Ave-Random',
-		'ICTODQAcrossModel-Union-Random',
 
 	]
 
@@ -1147,7 +1146,6 @@ if __name__ == '__main__':
 
 
 	##### diagnostic methods #####
-    # our_methods = get_paper_sim_model_names() + get_paper_prob_model_names() + get_paper_random_spv_clf() + get_paper_ensemble_model_names()
 	our_methods = get_paper_sim_model_names() + get_paper_prob_model_names() + get_paper_random_spv_clf()
 	baseline_methods = get_paper_random_baseline()
 
