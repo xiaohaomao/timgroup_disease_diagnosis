@@ -96,9 +96,7 @@ cd $CORE_PATH
 
 Second, put the releated patient data in this folder "**codes/core/data/preprocess/patient/**".
 
-The main test datasets have been publicly released at
-
-[Zenodo]: https://zenodo.org/records/10774650)	"Zenodo."
+The main test datasets have been publicly released at [Zenodo](https://zenodo.org/records/10774650).
 
 ### Step 3
 
