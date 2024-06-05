@@ -123,9 +123,13 @@ The "**core/predict/**" folder comprehensively describes rare disease diagnosis 
 
 
 **The Ensemble model**. We observed that a single assumption or model would not completely capture the characteristics of the diverse datasets. Hence, we developed the Ensemble model by combining predictions from multiple methods using order statistics, and it achieved better results. The Ensemble model calculates one overall prediction by integrating the rankings of the previous four methods using order statistics. Suppose the number of methods is N . First, the Ensemble method normalizes the ranking of diseases within each method to obtain ranking ratios. It then calculates a Z statistic, which measures the likelihood that the observed ranking ratios are solely due to chance factors. It calculates the probability of obtaining ranking ratios through random factors that are smaller than the currently observed ranking ratios. Under the null hypothesis, the position of each disease in the overall ranking is random. In other words, for two diseases, the one with a smaller   statistic is more likely to have a top rank. The joint cumulative distribution of an N-dimensional order statistic is used to calculate the Z statistics:
-$$
-Z(r_1,r_2,...,r_N)=N!\int_0^{r_1}\int_{s_1}^{r_2}...\int_{s_{N-1}}^{r_N}ds_N ds_{N-1} ...ds_1,
-$$
+
+
+
+![公式](https://github.com/xiaohaomao/timgroup_disease_diagnosis/blob/main/example_result/ensemble.png)
+
+
+
 where  ri is the rank ratio by the  i-th method, and r0=0 . Due to its high complexity, we implemented a faster recursive formula to compute the above integral as previously done：
 $$
 V_{k}=\sum_{i=1}^{k}(-1)^{i-1}\frac{V_{k-i}}{i!}r_{N-K+1}^{i},\\Z(r_{1},r_{2},...,r_{N})=N! V_{N},
