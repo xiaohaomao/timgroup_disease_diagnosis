@@ -98,9 +98,7 @@ Second, put the releated patient data in this folder "**codes/core/data/preproce
 
 The main test datasets have been publicly released at
 
-[Zenodo]: https://zenodo.org/records/10774650)
-
-.
+[Zenodo]: https://zenodo.org/records/10774650)	"Zenodo."
 
 ### Step 3
 
