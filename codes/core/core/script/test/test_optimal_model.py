@@ -50,66 +50,50 @@ def get_data_names():
 
 
 	return [
+
+
+
+
+	## lirical dataset ##
+	#'LIRICAL',
+
+
+    ## phenomizer 753 ##
+    #'Phenomizer_753',
+
+    ## case 101 less than 3 phenotypes
+    'Case_101_less_3_phenotype',
+
 	## validation subset of RAMEDIS ##
-	#'Validation_subsets_of_RAMEDIS',
+	# 'Validation_subsets_of_RAMEDIS',
 
 	## Multi-country-test set ##
-	#'Multi-country-test',
+	# 'Multi-country-test',
 
-	## combined multi-country set ##
-	#'Combined-Multi-Country',
+
 
 	## PUMCH-L datasets ##
-	#'PUMCH-L-CText2Hpo',
-	#'PUMCH-L-Meta',
-	#'PUMCH-L-CHPO',
+
 
 	## PUMCH-MDT dataset ##
-	#'PUMCH-MDT',
+	# 'PUMCH-MDT',
 
 	## PUMCH-ADM dataset ##
-	'PUMCH-ADM',
-
-	## Sampled_100 cases ##
-	#'Multi-country-test-set-100',
-	#'RAMEDIS_100',
+	#'PUMCH-ADM-compelete-diagnosis-code',
 
 
-	## 24 methylmalonic academia cases  using different knowledge bases ##
-	# 'MUT_24_CASES_OMIM',
-	# 'MUT_24_CASES_ORPHA',
-	# 'MUT_24_CASES_CCRD',
-	# 'MUT_24_CASES_OMIM_ORPHA',
-	# 'MUT_24_CASES_CCRD_ORPHA',
-	# 'MUT_24_CASES_CCRD_OMIM',
-	# 'MUT_24_CASES_CCRD_OMIM_ORPHA',
 
 
-	## validation subsets of RAMEDIS using different knowledge bases ##
-	# 'validation_subset_RAMDEIS_CCRD',
-	# 'validation_subset_RAMDEIS_OMIM',
-	# 'validation_subset_RAMDEIS_ORPHA',
-	# 'validation_subset_RAMDEIS_CCRD_OMIM',
-	# 'validation_subset_RAMDEIS_CCRD_ORPHA',
-	# 'validation_subset_RAMDEIS_OMIM_ORPHA',
-	# 'validation_subset_RAMDEIS_CCRD_OMIM_ORPHA',
 
 
-	## multi_country_test using different knowledge bases ##
-	# 'Multi-country-test_CCRD',
-	# 'Multi-country-test_OMIM',
-	# 'Multi-country-test_ORPHA',
-	# 'Multi-country-test_CCRD_OMIM',
-	# 'Multi-country-test_CCRD_ORPHA',
-	# 'Multi-country-test_OMIM_ORPHA',
-	# 'Multi-country-test_CCRD_OMIM_ORPHA',
+
 
 
 	## simulated datasets ##
-	#'SIM_ORIGIN',
-	#'SIM_NOISE',
-	#'SIM_IMPRE',
-	 #'SIM_IMPRE_NOISE',
+	# 'SIM_ORIGIN',
+	# 'SIM_NOISE',
+	# 'SIM_IMPRE',
+	#  'SIM_IMPRE_NOISE',
 
 	]
 
@@ -117,7 +101,11 @@ def get_data_names():
 
 def get_metric_names(levels=None):
 	metric_names = [
+		#'Mic.Recall.100',
+		#'Mic.Recall.50',
+		#'Mic.Recall.20',
 		'Mic.Recall.10',
+		#'Mic.Recall.5',
 		'Mic.Recall.3',
 		'Mic.Recall.1',
 		'Mic.RankMedian'
@@ -131,6 +119,9 @@ def get_metric_names(levels=None):
 
 def get_hpo_reader(keep_dnames=None, rm_no_use_hpo=False):
 	keep_dnames = keep_dnames or ['OMIM', 'ORPHA', 'CCRD']
+	#keep_dnames = keep_dnames or ['OMIM']
+	#keep_dnames = keep_dnames or ['ORPHA']
+	#keep_dnames = keep_dnames or ['OMIM', 'CCRD']
 	return HPOIntegratedDatasetReader(keep_dnames=keep_dnames, rm_no_use_hpo=rm_no_use_hpo)
 
 
@@ -497,7 +488,7 @@ def get_base_line_initial_paras(keep_dnames=None):
 def get_paper_sim_model_names():
 	return [
 		'ICTODQAcross-Ave-Random',
-		#'ICTODQAcrossModel-Union-Random',
+		'ICTODQAcrossModel-Union-Random',
 
 	]
 
@@ -1152,11 +1143,12 @@ if __name__ == '__main__':
 
 	##### whether added 12 diagnostic methods #####
 	##### Running 12 benchmark models is slow, so you can choose to run only our model instead of using False  ######
-	benckmark_methods = True # False
+	benckmark_methods = True # True
 
 
 	##### diagnostic methods #####
-	our_methods = get_paper_sim_model_names() + get_paper_prob_model_names() + get_paper_random_spv_clf() + get_paper_ensemble_model_names()
+    # our_methods = get_paper_sim_model_names() + get_paper_prob_model_names() + get_paper_random_spv_clf() + get_paper_ensemble_model_names()
+	our_methods = get_paper_sim_model_names() + get_paper_prob_model_names() + get_paper_random_spv_clf()
 	baseline_methods = get_paper_random_baseline()
 
 	#####  added 12 benchmark methods ####
@@ -1169,7 +1161,7 @@ if __name__ == '__main__':
 	cal_metric(get_sim_model_initial_paras(), cpu_use=12, save_raw_results=save_raw_results, keep_general_dis_map=keep_general_dis_map)
 	cal_metric(get_prob_model_initial_paras(), cpu_use=12, save_raw_results=save_raw_results, keep_general_dis_map=keep_general_dis_map)
 	cal_metric(get_spv_clf_initial_paras(), cpu_use=12, save_raw_results=save_raw_results, keep_general_dis_map=keep_general_dis_map)
-	rank_ensemble(get_paper_ensemble_model_names(), cpu_use=8, save_raw_results=save_raw_results, combine_method='ave', keep_general_dis_map=keep_general_dis_map)
+
 
 	##### generate all results #####
 	cal_conf_int(diagnostic_methods, cpu_use=12, conf_level=conf_level, cal_single=True, keep_general_dis_map=keep_general_dis_map)
