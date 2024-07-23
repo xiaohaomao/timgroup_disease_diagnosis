@@ -220,7 +220,120 @@ Specifically, we prepared three examples in PhenoBrain to verify the effect of t
 
 # Steps of implementing phenotype extraction module
 
-TBC
+### Step 1
+
+You need to download the base models and place them in the following file locations. The three base models used in this document are as follows:
+
+```
+# base models
+your address + "bert_syn_project/model/bert"
+your address + "bert_syn_project/model/albert_google
+your address + "bert_syn_project/model/albert_brightmart
+
+```
+
+
+
+#### Notes
+
+- When using different types of base models, you need to switch the corresponding packages in 
+
+  ```
+  bert_syn/bert_pkg/__init__.py
+  ```
+
+  . The corresponding relationships are as follows:
+
+  - `bert`: BERT model
+  - `albert`: ALBERT by Google
+  - `albert_zh (brightmart)`: ALBERT by brightmart
+
+### Step 2
+
+Set the default environment by following the commands
+
+```
+# codes in your address
+
+RAREDIS_PATH= your address + "timgroup_disease_diagnosis" 
+
+CORE_PATH="${RAREDIS_PATH}/core"
+BERT_SYN_PRJ_PATH="${RAREDIS_PATH}/bert_syn_project"
+export PYTHONPATH=$CORE_PATH:$BERT_SYN_PRJ_PATH:$PYTHONPATH
+cd $BERT_SYN_PRJ_PATH
+```
+
+
+
+### Step 3
+
+#### Generate the training set
+
+Update source data (updated on 2022-11-01): If you need to update the source data for synonyms (used to generate training data), such as changing the version of chpo, you can follow the steps below:
+
+1. First, update the path of the chpo file: in `core/core/reader/hpo_reader`.
+
+2. Delete the old version of `chpo_dict.json`: This file is directly generated from the chpo source file in step 1, so when replacing the source file, you need to generate a new `chpo_dict.json`. Run `core/core/reader/hpo_reader.py` to generate a new `chpo_dict.json` file.
+
+3. Delete related files: As in step 2, we need to delete a series of files generated from the chpo source file. Specifically, see which files are used by `SynDictReader` in `bert_syn/core/data_helper.py`.
+
+4. Regenerate the series of files: Run `core/core/text_handler/syn_generator.py` to generate the files deleted in step 3.
+
+   
+
+Run `bert_syn/core/data_helper.py` to regenerate the corresponding datasets. For specific usage details, see `bert_syn/core/data_helper.py`.
+
+
+
+### Step 4
+
+#### Train the synonym matching model (HPO-linker)
+
+File: `bert_syn/script/run_bert_ddml_sim.py`
+
+Example command: `python bert_syn/script/run_bert_ddml_sim.py --model_name xxx --gpu 0 --epoch xxx --lr xxx`
+
+Set the address of training set:
+
+```
+# in bert_syn/core/bert_ddml_sim.py
+# in BertDDMLConfig
+self.train_data_path = os.path.join(dataset_path, 'train.csv')  # set to None if no predict
+```
+
+Setting other parameters: You can set them directly in `BertDDMLConfig` in `bert_syn/core/bert_ddml_sim.py`, or pass them through the command line.
+
+Result files (using the example above):
+
+- Stored model: 
+
+  ```
+  model/xxx
+  ```
+
+  - `bert_sim_config.json`: Model parameters
+  - `loss.png`: Loss changes during training
+  - `pred_median_rank.png`: PUMC-S test set, using spans divided by doctors in electronic medical records to see where the doctor's annotated HPO ranks, and then calculate the median rank
+  - `pred_recall_k.png`: PUMC-S test set, using spans divided by doctors in electronic medical records to see if the doctor's annotated HPO is recalled in the top k, and then calculate the top k accuracy
+
+- Detailed matching results during training (PUMC-S test set): 'result'
+
+  
+
+### Step 5
+
+#### Extract HPO Using the Trained Model
+
+- File: `bert_syn/core/span_generator.py`
+- Example command: `python bert_syn/core/span_generator.py`
+- Current configuration:
+  - Model: xxx 
+  - Matching algorithm: `CText2Hpo (S)`,`CText2Hpo (S)` is the name of the algorithm used before PBTagger
+  - Data: your address+`/core/data/raw/PUMC_PK/pumc_pk`
+  - Result folder mark: "model name"
+- You need to modify the `input_folder`
+- To switch to the model trained in the previous step, update `model_name, global_step = ...`
+- Result folder: `data/preprocess/pumc_pk/dict_bert-albertTinyDDMLSim-tune`
 
 
 
