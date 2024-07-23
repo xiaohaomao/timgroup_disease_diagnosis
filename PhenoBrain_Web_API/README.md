@@ -1001,7 +1001,7 @@ Output Example:
 | Parameter Name | Type   | Description                                                  |
 |------|----|----|
 | text | String | Description text of the patient |
-| method | String | Choose from ['Dict-HPO-CN/EN', 'Dict-UMLS-CN/EN', 'PBTagger-CN', 'PhenoTagger-EN',‘PhenoBERT-EN‘] |
+| method | String | Choose from ['HPO/CHPO', 'CHPO-UMLS', 'CText2Hpo（S）]. "HPO/CHPO", "CHPO-UMLS", and "CText2Hpo(S)" are the previous names for "Dict-HPO-CN/EN", "Dict-UMLS-CN/EN", and "PBTagger-CN", respectively. |
 | threshold | String | Score threshold; matching results below this score will be filtered out, applicable only when method is 'PBTagger-CN' |
 
 ## Output Parameters
